@@ -639,6 +639,10 @@ class VoiceConversionWrapper(torch.nn.Module):
 
                 if stream_output and mp3_bytes is not None:
                     yield _yield_stream_pair(mp3_bytes, full_audio)
+                elif (not stream_output) and should_break and full_audio is not None:
+                    # Headless/non-streaming: expose final audio once (docstring contract).
+                    # `full_audio` here is a numpy array; wrap as (sr, np.ndarray).
+                    yield _yield_stream_pair(None, (self.sr, full_audio))
                 if should_break:
                     break
         else:
@@ -676,5 +680,9 @@ class VoiceConversionWrapper(torch.nn.Module):
                 
                 if stream_output and mp3_bytes is not None:
                     yield _yield_stream_pair(mp3_bytes, full_audio)
+                elif (not stream_output) and should_break and full_audio is not None:
+                    # Headless/non-streaming: expose final audio once (docstring contract).
+                    # `full_audio` here is a numpy array; wrap as (sr, np.ndarray).
+                    yield _yield_stream_pair(None, (self.sr, full_audio))
                 if should_break:
                     break
