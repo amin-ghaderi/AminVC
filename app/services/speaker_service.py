@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 import traceback
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -191,36 +192,115 @@ def _default_storage_paths(project_root: Path) -> tuple[Path, Path, Path, Path]:
     )
 
 
+def _discover_narration_chunks(storage_dir: Path) -> list[Path]:
+    # Real narration chunks expected as 0001.wav, 0002.wav, ...
+    candidates = sorted(storage_dir.glob("[0-9][0-9][0-9][0-9].wav"))
+    return [p for p in candidates if p.is_file()]
+
+
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(message)s")
     try:
+        import argparse
+
+        parser = argparse.ArgumentParser()
+        parser.add_argument(
+            "--real-proof",
+            action="store_true",
+            help="Convert first 5 narration chunks in storage/0001.wav... using worker service",
+        )
+        args = parser.parse_args()
+
         project_root = Path(__file__).resolve().parents[2]
+        storage_dir = project_root / "storage"
         src, ref, out1, out2 = _default_storage_paths(project_root)
 
         svc = WorkerSpeakerService()
         print("service: starting (auto-start on first convert)")
 
-        # Convert twice sequentially.
-        pid_before = None
-        if svc._client is not None and svc._client.process is not None:
-            pid_before = svc._client.process.pid
+        if args.real_proof:
+            if not storage_dir.exists():
+                raise FileNotFoundError(str(storage_dir))
+            if not ref.exists():
+                raise FileNotFoundError(str(ref))
 
-        print("service: health", json.dumps(svc.health(), indent=2, ensure_ascii=False))
-        pid_after_health = svc._last_worker_pid
+            chunks = _discover_narration_chunks(storage_dir)
+            if len(chunks) == 0:
+                raise FileNotFoundError(
+                    f"No narration chunks found in {storage_dir} matching 0001.wav, 0002.wav, ..."
+                )
 
-        p1 = svc.convert_chunk(src, ref, out1, settings=None)
-        pid_after_1 = svc._last_worker_pid
-        print(f"service: convert1 ok -> {p1}")
+            chunks = chunks[:5]
+            out_dir = storage_dir / "proof_outputs"
+            out_dir.mkdir(parents=True, exist_ok=True)
 
-        p2 = svc.convert_chunk(src, ref, out2, settings=None)
-        pid_after_2 = svc._last_worker_pid
-        print(f"service: convert2 ok -> {p2}")
+            # Proof-only recycle policy
+            svc.max_conversions_per_worker = 3
 
-        same_worker = (pid_after_health is not None) and (pid_after_health == pid_after_1 == pid_after_2)
-        print(f"service: worker reused = {same_worker} (pid={pid_after_health})")
+            started = time.time()
+            worker_recycles = 0
+            successful = 0
+            failed = 0
+            last_pid: int | None = None
 
-        svc.shutdown()
-        print("service: shutdown complete")
+            print("service: health", json.dumps(svc.health(), indent=2, ensure_ascii=False))
+
+            for chunk_path in chunks:
+                name = chunk_path.name
+                out_path = out_dir / name
+
+                pid_before = svc._last_worker_pid
+                try:
+                    out = svc.convert_chunk(chunk_path, ref, out_path, settings=None)
+                    if not out.exists() or out.stat().st_size <= 0:
+                        raise RuntimeError(f"Output invalid for {name}: {out}")
+                    successful += 1
+                    print(f"[OK] chunk {name} converted")
+                except Exception as e:
+                    failed += 1
+                    print(f"[FAIL] chunk {name} failed: {e}")
+
+                pid_after = svc._last_worker_pid
+                same_worker = (pid_before is not None) and (pid_before == pid_after)
+                print(
+                    f"worker_pid_before={pid_before} worker_pid_after={pid_after} same_worker={same_worker}"
+                )
+
+                if last_pid is not None and pid_after is not None and pid_after != last_pid:
+                    worker_recycles += 1
+                if pid_after is not None:
+                    last_pid = pid_after
+
+            elapsed = time.time() - started
+            print(
+                "summary:",
+                f"total_chunks={len(chunks)}",
+                f"successful_chunks={successful}",
+                f"failed_chunks={failed}",
+                f"worker_recycles={worker_recycles}",
+                f"elapsed_seconds={elapsed:.2f}",
+            )
+
+            svc.shutdown()
+            print("service: shutdown complete")
+        else:
+            # Convert twice sequentially.
+            print("service: health", json.dumps(svc.health(), indent=2, ensure_ascii=False))
+            pid_after_health = svc._last_worker_pid
+
+            p1 = svc.convert_chunk(src, ref, out1, settings=None)
+            pid_after_1 = svc._last_worker_pid
+            print(f"service: convert1 ok -> {p1}")
+
+            p2 = svc.convert_chunk(src, ref, out2, settings=None)
+            pid_after_2 = svc._last_worker_pid
+            print(f"service: convert2 ok -> {p2}")
+
+            same_worker = (pid_after_health is not None) and (pid_after_health == pid_after_1 == pid_after_2)
+            print(f"service: worker reused = {same_worker} (pid={pid_after_health})")
+
+            svc.shutdown()
+            print("service: shutdown complete")
     except Exception:
         traceback.print_exc()
         raise
