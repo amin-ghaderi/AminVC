@@ -67,15 +67,25 @@ class GenerationStatusStore:
         path = self.path_for(intake_id)
         if not path.exists():
             return None
-        data = json.loads(path.read_text(encoding="utf-8"))
+        try:
+            raw = path.read_text(encoding="utf-8")
+        except OSError:
+            return None
+        if not raw.strip():
+            return None
+        try:
+            data = json.loads(raw)
+        except json.JSONDecodeError:
+            # File may be empty or partially written; treat as not ready yet.
+            return None
         return GenerationStatus.from_dict(data)
 
     def write(self, status: GenerationStatus) -> None:
         path = self.path_for(status.intake_id)
-        path.write_text(
-            json.dumps(status.to_dict(), ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
+        payload = json.dumps(status.to_dict(), ensure_ascii=False, indent=2)
+        tmp_path = path.with_suffix(path.suffix + ".tmp")
+        tmp_path.write_text(payload, encoding="utf-8")
+        tmp_path.replace(path)
 
     def find_active(self) -> GenerationStatus | None:
         """Return the most recently updated in-progress generation, if any."""
