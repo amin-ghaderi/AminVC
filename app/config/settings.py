@@ -65,4 +65,7 @@ class AppSettings:
     storage_root: Path = STORAGE_ROOT
     projects_root: Path = PROJECTS_ROOT
     speaker_python_executable: str = resolve_speaker_python_executable()
+    narration_base_url: str = "http://127.0.0.1:8000"
+    narration_timeout_seconds: int = 30
+    narration_poll_interval_seconds: float = 2.0
 
