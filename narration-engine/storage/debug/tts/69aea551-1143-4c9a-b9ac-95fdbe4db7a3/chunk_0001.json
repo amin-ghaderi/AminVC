@@ -1,0 +1,33 @@
+{
+  "chunk_index": 1,
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "request": {
+    "chunk_index": 1,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nThis is the opening segment. Begin with a natural audiobook intro cadence.\n\nکتاب صوتی زمان انتخاب به تلاش امین قادری، عضو حزب پادشاهی ایرانیان به قلم شاهزاده رضا پهلوی کتاب حاضر را به همۀ هم میهنانم تقديم میکنم. به پدران و مادرانی که طی دهه ها در راه پيشرفت ايران و رفاه ملت کوشيده اند. به هم نسلانم، نسل قربانی شده، که فرصت خدمتگزاری به میهن را نيافت، اگر چه خود را برای ادامۀ راه و بردوش گرفتن مسئوليت ها آماده میکرد. به کسانی که خوشبينانه به استقبال \" انقلاب \" رفتند، اما امروز از انتخاب خيش پشيمانند. به جوانان هشيار و هوشمندی که به امید آينده ای بهتر برای خيش و برای همۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند. اين کتاب را هم چنين به خاطرۀ بی گناهان، قربانيان بی عدالتی های گذشته و حال تقديم میکنم. به خاطرۀ سربازانی که از تمامیت ارضی میهن دفاع کردند. به همۀ کسانی که هم چنان برای آزادی، دموکراسی و حقوق بشر در پيکارند. من نيز همانند آنان، همواره به ايران جاويدان میانديشم و به آن وفاد ار خواهم بود. فصل اول انتخاب دموکر اتيک میشل تُبمن : آقای رضا پهلوی! شما پسر ارشد آخرين پادشاه ايران، محمد رضا شاه پهلوی، هستيد.",
+    "prompt_char_count": 2075,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "This is the opening segment. Begin with a natural audiobook intro cadence.",
+    "scene_context": "",
+    "transcript": "کتاب صوتی زمان انتخاب به تلاش امین قادری، عضو حزب پادشاهی ایرانیان به قلم شاهزاده رضا پهلوی کتاب حاضر را به همۀ هم میهنانم تقديم میکنم. به پدران و مادرانی که طی دهه ها در راه پيشرفت ايران و رفاه ملت کوشيده اند. به هم نسلانم، نسل قربانی شده، که فرصت خدمتگزاری به میهن را نيافت، اگر چه خود را برای ادامۀ راه و بردوش گرفتن مسئوليت ها آماده میکرد. به کسانی که خوشبينانه به استقبال \" انقلاب \" رفتند، اما امروز از انتخاب خيش پشيمانند. به جوانان هشيار و هوشمندی که به امید آينده ای بهتر برای خيش و برای همۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند. اين کتاب را هم چنين به خاطرۀ بی گناهان، قربانيان بی عدالتی های گذشته و حال تقديم میکنم. به خاطرۀ سربازانی که از تمامیت ارضی میهن دفاع کردند. به همۀ کسانی که هم چنان برای آزادی، دموکراسی و حقوق بشر در پيکارند. من نيز همانند آنان، همواره به ايران جاويدان میانديشم و به آن وفاد ار خواهم بود. فصل اول انتخاب دموکر اتيک میشل تُبمن : آقای رضا پهلوی! شما پسر ارشد آخرين پادشاه ايران، محمد رضا شاه پهلوی، هستيد.",
+    "transcript_char_count": 954,
+    "token_name": "project-1",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0001.wav",
+    "wav_size_bytes": 5013164,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 5013120,
+    "timestamp": 1779906816.275689
+  }
+}

@@ -1,0 +1,10 @@
+--- Page 1 ---
+EXERCISES
+
+React – create new project 1. Node.js If necessary, install Node.js. Check the installed version of node on you computer by typing this in a Command prompt window:
+Node --version If not recognized, then go to the Node.js webpage and download the installer for your computer:
+https://nodejs.org/en/download 2. npm With Node.js comes the Node package manager, npm. If your Node.js install is new, then running npm will likely prompt you to install further packages as you interact with it. You run npm in the command prompt.
+3. Vite A popular way to create a React app is provided by Vite. Type this in your command prompt, opened on a folder where you want the React project to turn up:
+npm create vite@latest 5. React The official documentation for React gives a good understanding of:
+
+https://react.dev/

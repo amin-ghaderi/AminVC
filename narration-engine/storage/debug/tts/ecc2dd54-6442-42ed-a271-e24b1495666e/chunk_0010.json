@@ -1,0 +1,33 @@
+{
+  "chunk_index": 10,
+  "intake_id": "ecc2dd54-6442-42ed-a271-e24b1495666e",
+  "request": {
+    "chunk_index": 10,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «من در تکزاس بودم که انقلاب خانواده ام را راھی تبعيد کرد. در واقع، مرگ پدرم در قاھره در ۱۹۸۰ مرا به صحنۀ سياست کشاند.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\n## Scene Context (do NOT read aloud)\n- Scene: historical documentry\n- Style: documentary\n- Tone: calm\n\nآن زمان بسيار جوان بودم و بدون تجربۀ سياسی. اما امروز که می توانم ھر لحظه با بسياری از ھموطنانم در ھر جای ايران تماس بگيرم، در آن موقع تماس گرفتن با ايران برايم بسيار دشوار بود. ھنگامی که در قاھره يا مراکش در تبعيد بودم، پاره ای اوقات برای يک گفتگوی تلفنی با ايران، پاريس يا لندن بايد ساعت ھا انتظار می کشيدم. به اين ترتيب، بيشتر با کسانی به گفتگو می پرداختم که خارج از ايران بودند، با مقامات پيشين کشور يا نمايندگان احزاب قديمی در تبعيد. اگر آن زمان آگاھی امروز را داشتم از مشاجرات داخلی، مضحک و کودکانه ای که وقت زيادی را صرف خود کردند، فاصله می گر.",
+    "prompt_char_count": 2056,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «من در تکزاس بودم که انقلاب خانواده ام را راھی تبعيد کرد. در واقع، مرگ پدرم در قاھره در ۱۹۸۰ مرا به صحنۀ سياست کشاند.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "## Scene Context (do NOT read aloud)\n- Scene: historical documentry\n- Style: documentary\n- Tone: calm",
+    "transcript": "آن زمان بسيار جوان بودم و بدون تجربۀ سياسی. اما امروز که می توانم ھر لحظه با بسياری از ھموطنانم در ھر جای ايران تماس بگيرم، در آن موقع تماس گرفتن با ايران برايم بسيار دشوار بود. ھنگامی که در قاھره يا مراکش در تبعيد بودم، پاره ای اوقات برای يک گفتگوی تلفنی با ايران، پاريس يا لندن بايد ساعت ھا انتظار می کشيدم. به اين ترتيب، بيشتر با کسانی به گفتگو می پرداختم که خارج از ايران بودند، با مقامات پيشين کشور يا نمايندگان احزاب قديمی در تبعيد. اگر آن زمان آگاھی امروز را داشتم از مشاجرات داخلی، مضحک و کودکانه ای که وقت زيادی را صرف خود کردند، فاصله می گر.",
+    "transcript_char_count": 551,
+    "token_name": "project-2",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\ecc2dd54-6442-42ed-a271-e24b1495666e\\0010.wav",
+    "wav_size_bytes": 2442284,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 2442240,
+    "timestamp": 1779806176.6175628
+  }
+}

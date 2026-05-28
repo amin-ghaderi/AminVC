@@ -1,0 +1,105 @@
+{
+  "chunks": [
+    {
+      "chunk_index": 1,
+      "intake_id": "f7205858-3b65-417f-8070-ef3e1f0d23cf",
+      "request": {
+        "chunk_index": 1,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nACTING MODE: fixed single narrator performance across entire audiobook. No variation between segments is allowed.\n\nStyle and delivery:\nWarm, emotionally engaging, cinematic, deeply human premium Persian audiobook narration.\nNatural pacing — not too slow, not robotic, smooth storytelling rhythm.\nWarm, reflective emotional depth without overly dramatic acting.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Transcript (single narrator — Sulafat):\n\n## Voice continuity (do NOT read aloud):\nMaintain continuous narration flow with identical acting style across all chunks. Do not change voice performance, pacing style, or emotional delivery between segments.\n\nکتاب صوتی زمان انتخاب با تهیه کنندگی امین قادری، عضو حزب پادشاهی ایرانیان کتاب زمان انتخاب به قلم شاهزاده رضا پھلوی کتاب حاضر را به ھمۀ ھم ميھنانم تقديم می کنم. به پدران و مادرانی که طی دھه ھا در راه پيشرفت ايران و رفاه ملت کوشيده اند. به ھم نس)نم، نسل قربانی شده، که فرصت خدمتگزاری به ميھن را نيافت، اگرچه خود را برای ادامۀ راه و بردوش گرفتن مسئوليت ھا آماده می کرد. به کسانی که خوشبينانه به استقبال \" انقلاب \" رفتند، اما امروز از کردۀ خويش پشيمانند. به جوانان ھشيار و ھوشمندی که به اميد آينده ای بھتر برای خويش و برای ھمۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند. اين کتاب را ھم چنين به خاطرۀ بی گناھان، قربانيان بی عدالتی ھای گذشته و حال تقديم می کنم. به خاطرۀ سربازانی که از تماميت ارضی ميھن دفاع کردند. به ھمۀ کسانی که ھم چنان برای آزادی، دموکراسی و حقوق بشر در پيکارند. من نيز ھمانند آنان، ھمواره به ايران جاويدان می انديشم و به آن وفاد ار خواھم بود. فصل اول انتخاب دموکر اتيک ميشل تُبمن : آقای رضا پھلوی! شما پسرارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد.",
+        "prompt_char_count": 2008,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "Maintain continuous narration flow with identical acting style across all chunks. Do not change voice performance, pacing style, or emotional delivery between segments.",
+        "scene_context": "",
+        "transcript": "کتاب صوتی زمان انتخاب با تهیه کنندگی امین قادری، عضو حزب پادشاهی ایرانیان کتاب زمان انتخاب به قلم شاهزاده رضا پھلوی کتاب حاضر را به ھمۀ ھم ميھنانم تقديم می کنم. به پدران و مادرانی که طی دھه ھا در راه پيشرفت ايران و رفاه ملت کوشيده اند. به ھم نس)نم، نسل قربانی شده، که فرصت خدمتگزاری به ميھن را نيافت، اگرچه خود را برای ادامۀ راه و بردوش گرفتن مسئوليت ھا آماده می کرد. به کسانی که خوشبينانه به استقبال \" انقلاب \" رفتند، اما امروز از کردۀ خويش پشيمانند. به جوانان ھشيار و ھوشمندی که به اميد آينده ای بھتر برای خويش و برای ھمۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند. اين کتاب را ھم چنين به خاطرۀ بی گناھان، قربانيان بی عدالتی ھای گذشته و حال تقديم می کنم. به خاطرۀ سربازانی که از تماميت ارضی ميھن دفاع کردند. به ھمۀ کسانی که ھم چنان برای آزادی، دموکراسی و حقوق بشر در پيکارند. من نيز ھمانند آنان، ھمواره به ايران جاويدان می انديشم و به آن وفاد ار خواھم بود. فصل اول انتخاب دموکر اتيک ميشل تُبمن : آقای رضا پھلوی! شما پسرارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد.",
+        "transcript_char_count": 979,
+        "token_name": "project-1",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\f7205858-3b65-417f-8070-ef3e1f0d23cf\\0001.wav",
+        "wav_size_bytes": 5685164,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 5685120,
+        "timestamp": 1779784416.9118223
+      }
+    },
+    {
+      "chunk_index": 2,
+      "intake_id": "f7205858-3b65-417f-8070-ef3e1f0d23cf",
+      "request": {
+        "chunk_index": 2,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nACTING MODE: fixed single narrator performance across entire audiobook. No variation between segments is allowed.\n\nStyle and delivery:\nWarm, emotionally engaging, cinematic, deeply human premium Persian audiobook narration.\nNatural pacing — not too slow, not robotic, smooth storytelling rhythm.\nWarm, reflective emotional depth without overly dramatic acting.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Transcript (single narrator — Sulafat):\n\n## Voice continuity (do NOT read aloud):\nMaintain continuous narration flow with identical acting style across all chunks. Do not change voice performance, pacing style, or emotional delivery between segments.\nCONTINUITY REFERENCE — for flow reference only; do NOT read these lines aloud:\nPrevious ending (period): «آقای رضا پھلوی! شما پسرارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد.»\n\nنھاد پادشاھی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامی و تسلط مذھبيون بنيادگرا به رھبری روح الله خمینی برايران، واژگون شد. ھنگامی که در نشريات نخستين سال ھای د ھۀ ھشتاد دههی هشتاد می نگريم، از عمق خطای مفسرانی شگفت زده می شويم که در آن دوران، فروپاشی سريع رژيم خمينی را پيش بينی می کردند. با خواندن کتابی که کريستيان مارک و آلن روديه در سال ٨٩١۶ دربارۀ شما منتشر کردند، تصوير شاھزاده ای جوان و فعال را می يابيم که با شخ صيت ھايی که امروز در قيد حيات نيستند و غالبا، ھمانند شاپور بختيار، به قتل رسيدند، ھمراھی می شد. در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟ در ارزيابی ھايتان کجا دچار خطا شديد؟",
+        "prompt_char_count": 1963,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "Maintain continuous narration flow with identical acting style across all chunks. Do not change voice performance, pacing style, or emotional delivery between segments.\nCONTINUITY REFERENCE — for flow reference only; do NOT read these lines aloud:\nPrevious ending (period): «آقای رضا پھلوی! شما پسرارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد.»",
+        "scene_context": "",
+        "transcript": "نھاد پادشاھی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامی و تسلط مذھبيون بنيادگرا به رھبری روح الله خمینی برايران، واژگون شد. ھنگامی که در نشريات نخستين سال ھای د ھۀ ھشتاد دههی هشتاد می نگريم، از عمق خطای مفسرانی شگفت زده می شويم که در آن دوران، فروپاشی سريع رژيم خمينی را پيش بينی می کردند. با خواندن کتابی که کريستيان مارک و آلن روديه در سال ٨٩١۶ دربارۀ شما منتشر کردند، تصوير شاھزاده ای جوان و فعال را می يابيم که با شخ صيت ھايی که امروز در قيد حيات نيستند و غالبا، ھمانند شاپور بختيار، به قتل رسيدند، ھمراھی می شد. در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟ در ارزيابی ھايتان کجا دچار خطا شديد؟",
+        "transcript_char_count": 752,
+        "token_name": "project-1",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\f7205858-3b65-417f-8070-ef3e1f0d23cf\\0002.wav",
+        "wav_size_bytes": 3667244,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 3667200,
+        "timestamp": 1779784459.6707747
+      }
+    },
+    {
+      "chunk_index": 3,
+      "intake_id": "f7205858-3b65-417f-8070-ef3e1f0d23cf",
+      "request": {
+        "chunk_index": 3,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nACTING MODE: fixed single narrator performance across entire audiobook. No variation between segments is allowed.\n\nStyle and delivery:\nWarm, emotionally engaging, cinematic, deeply human premium Persian audiobook narration.\nNatural pacing — not too slow, not robotic, smooth storytelling rhythm.\nWarm, reflective emotional depth without overly dramatic acting.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Transcript (single narrator — Sulafat):\n\n## Voice continuity (do NOT read aloud):\nMaintain continuous narration flow with identical acting style across all chunks. Do not change voice performance, pacing style, or emotional delivery between segments.\nCONTINUITY REFERENCE — for flow reference only; do NOT read these lines aloud:\nPrevious ending (question): «در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟ در ارزيابی ھايتان کجا دچار خطا شديد؟»\n\nرضا پھلوی : واقعيت آن است که رژيم اسلامی در نخستين سال استقرارش شکننده به نظر می رسيد و مراکز قدرت و تصميم گيری چندان ھمآھنگ نبودند. ھمانند بسياری از ھم ميھنانم، من نيز توانايی و ارادۀ ر ھبران رژيم انقلابی را در تامين و تثبيت پايگاه ھای قدرت خويش به ھر بھايی که شده، دستِ کم گرفتم. ھنوز از بازگشت خمينی به ايران در اول فوريۀ ۱۹۷۹ چيزی نگذشته بود که او سرکوبی ترسناک و بی رحمانه را، نه فقط عليه مخالفانش، عليه نيروھای سکوBر چپ و ملی گرايی که و ی را به قدرت رسانده بودند، آغاز کرد.",
+        "prompt_char_count": 1849,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "Maintain continuous narration flow with identical acting style across all chunks. Do not change voice performance, pacing style, or emotional delivery between segments.\nCONTINUITY REFERENCE — for flow reference only; do NOT read these lines aloud:\nPrevious ending (question): «در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟ در ارزيابی ھايتان کجا دچار خطا شديد؟»",
+        "scene_context": "",
+        "transcript": "رضا پھلوی : واقعيت آن است که رژيم اسلامی در نخستين سال استقرارش شکننده به نظر می رسيد و مراکز قدرت و تصميم گيری چندان ھمآھنگ نبودند. ھمانند بسياری از ھم ميھنانم، من نيز توانايی و ارادۀ ر ھبران رژيم انقلابی را در تامين و تثبيت پايگاه ھای قدرت خويش به ھر بھايی که شده، دستِ کم گرفتم. ھنوز از بازگشت خمينی به ايران در اول فوريۀ ۱۹۷۹ چيزی نگذشته بود که او سرکوبی ترسناک و بی رحمانه را، نه فقط عليه مخالفانش، عليه نيروھای سکوBر چپ و ملی گرايی که و ی را به قدرت رسانده بودند، آغاز کرد.",
+        "transcript_char_count": 479,
+        "token_name": "project-1",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\f7205858-3b65-417f-8070-ef3e1f0d23cf\\0003.wav",
+        "wav_size_bytes": 2344364,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 2344320,
+        "timestamp": 1779784488.8343256
+      }
+    }
+  ],
+  "intake_id": "f7205858-3b65-417f-8070-ef3e1f0d23cf",
+  "updated_at": 1779784488.8446703
+}

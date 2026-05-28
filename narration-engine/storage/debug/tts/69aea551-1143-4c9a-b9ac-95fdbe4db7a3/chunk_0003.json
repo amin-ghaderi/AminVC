@@ -1,0 +1,33 @@
+{
+  "chunk_index": 3,
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "request": {
+    "chunk_index": 3,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «در آن زمان شما نسبتا خوشبين به نظر میرسيديد و فکر میکرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب هم چنان شاهد ناگزير اُفت فعاليت های مخ الفان رژيم هستيم چه روی داده است؟ در ارزيابی هايتان کجا دچار خطا شديد؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nرضا پهلوی : واقعيت آن است که رژيم اسلامیدر نخستين سال استقرارش شکننده به نظر میرسيد و مراکز قدرت و تصمیم گيری چندان همآهنگ نبودند. همانند بسياری از هم میهنانم، من نيز توانايی و ارادۀ ر هبران رژيم انقلابی را در تامین و تثبيت پايگاه های قدرت خويش به هر بهايی که شده، دستِ کم گرفتم. هنوز از بازگشت خمینی به ايران در اول فوريۀ ۱۹۷۹ چيزی نگذشته بود که او سرکوبی ترسناک و بی رحمانه را، نه فقط عليه مخالفانش، عليه نيروهای سکولار چپ و ملی گرايی که و ی را به قدرت رسانده بودند، آغاز کرد. ما در آغاز متوجه نبوديم که انقلاب اسلامیپديده ای موقتی در تاريخ پُر تلاطم ايران و پرانتزساده ای که به سرعت بسته میشد، نيست. به بيان روشن تر، نظامیکه پدرم مظهر و نماينده اش بود، در سال ۱۹۷۹ از میان رفت و هر نوع بازگشت ی به گذشته نه امکان پذيراست و نه مطلوب. از سی سال پيش همۀ تلاش و توانم را يکسره در راه مبارزه با رژيم و رهايی ايران به کار برده ام، در پی مرگ پدرم، شاه فقيد ايران در ژوئيۀ ۱۹۸۰، به عن ـ وان وليعهد، وارد عرص ـ ۀ پيک ـ ار شدم.",
+    "prompt_char_count": 2437,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «در آن زمان شما نسبتا خوشبين به نظر میرسيديد و فکر میکرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب هم چنان شاهد ناگزير اُفت فعاليت های مخ الفان رژيم هستيم چه روی داده است؟ در ارزيابی هايتان کجا دچار خطا شديد؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "",
+    "transcript": "رضا پهلوی : واقعيت آن است که رژيم اسلامیدر نخستين سال استقرارش شکننده به نظر میرسيد و مراکز قدرت و تصمیم گيری چندان همآهنگ نبودند. همانند بسياری از هم میهنانم، من نيز توانايی و ارادۀ ر هبران رژيم انقلابی را در تامین و تثبيت پايگاه های قدرت خويش به هر بهايی که شده، دستِ کم گرفتم. هنوز از بازگشت خمینی به ايران در اول فوريۀ ۱۹۷۹ چيزی نگذشته بود که او سرکوبی ترسناک و بی رحمانه را، نه فقط عليه مخالفانش، عليه نيروهای سکولار چپ و ملی گرايی که و ی را به قدرت رسانده بودند، آغاز کرد. ما در آغاز متوجه نبوديم که انقلاب اسلامیپديده ای موقتی در تاريخ پُر تلاطم ايران و پرانتزساده ای که به سرعت بسته میشد، نيست. به بيان روشن تر، نظامیکه پدرم مظهر و نماينده اش بود، در سال ۱۹۷۹ از میان رفت و هر نوع بازگشت ی به گذشته نه امکان پذيراست و نه مطلوب. از سی سال پيش همۀ تلاش و توانم را يکسره در راه مبارزه با رژيم و رهايی ايران به کار برده ام، در پی مرگ پدرم، شاه فقيد ايران در ژوئيۀ ۱۹۸۰، به عن ـ وان وليعهد، وارد عرص ـ ۀ پيک ـ ار شدم.",
+    "transcript_char_count": 920,
+    "token_name": "project-3",
+    "attempt": 2
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0003.wav",
+    "wav_size_bytes": 4310444,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 4310400,
+    "timestamp": 1779906910.1278026
+  }
+}

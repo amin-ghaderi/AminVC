@@ -1,0 +1,33 @@
+{
+  "chunk_index": 15,
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "request": {
+    "chunk_index": 15,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اما در عين حال از آن تصويری آرمانی در ذهن نساخته ام. هويتم بسيار روشن است.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nمن يک ايرانی هستم که میهنم را عاشقانه دوست دارم و برای رهايی آن از چنگ استبداد مسئوليت ويژه ای بردوش گرفته ام. من تنها در نظامیمیتوانم زندگی کنم که در آن رقابت و توازن میان قوای سه گانه، رسانه های آزاد و افکار عمومیمانع از تمرکز قدرت میشوند؛ جايی که حقوق فردی شهروندان تضمین شده است و دستگاه قضايی و مطبوعات آزاد از اين حقوق پاسداری میکند. بدون ترديد ن ظام دموکراتيک بهترين نظام برای پيشرفت جوامع است. عملکرد دموکراسی و پيشرفت های ناشی از آن را در آمريکا و اروپا ديده ام. آرزويم اين است که در ايران نيز شاهد تحقق همۀ مزايا و پيشرفت هايی باشم که در فرانسه يا هند میبينم. بايد بگويم که استقرار دموکراسی مربوط به دين و سنت های جامعه نيست. مردم ايران نيز همانند مردمان سوئد، اسپانيا يا ژاپن قادرند و شايستۀ آن که در يک نظام دموکراتيک زندگی کنند. اين فرض که دموکراسی مختص مردمانی با فرهنگ غربی است، پذيرفتنی نيست. من میخواهم به زادگاهم بازگردم و خودم را متعلق به اي را ـ ن میدانم. میخواهم تجربه و دانشی را که در اين سی سال اندوخته ام در خدمت ايران به کار ببندم.",
+    "prompt_char_count": 2316,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اما در عين حال از آن تصويری آرمانی در ذهن نساخته ام. هويتم بسيار روشن است.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "",
+    "transcript": "من يک ايرانی هستم که میهنم را عاشقانه دوست دارم و برای رهايی آن از چنگ استبداد مسئوليت ويژه ای بردوش گرفته ام. من تنها در نظامیمیتوانم زندگی کنم که در آن رقابت و توازن میان قوای سه گانه، رسانه های آزاد و افکار عمومیمانع از تمرکز قدرت میشوند؛ جايی که حقوق فردی شهروندان تضمین شده است و دستگاه قضايی و مطبوعات آزاد از اين حقوق پاسداری میکند. بدون ترديد ن ظام دموکراتيک بهترين نظام برای پيشرفت جوامع است. عملکرد دموکراسی و پيشرفت های ناشی از آن را در آمريکا و اروپا ديده ام. آرزويم اين است که در ايران نيز شاهد تحقق همۀ مزايا و پيشرفت هايی باشم که در فرانسه يا هند میبينم. بايد بگويم که استقرار دموکراسی مربوط به دين و سنت های جامعه نيست. مردم ايران نيز همانند مردمان سوئد، اسپانيا يا ژاپن قادرند و شايستۀ آن که در يک نظام دموکراتيک زندگی کنند. اين فرض که دموکراسی مختص مردمانی با فرهنگ غربی است، پذيرفتنی نيست. من میخواهم به زادگاهم بازگردم و خودم را متعلق به اي را ـ ن میدانم. میخواهم تجربه و دانشی را که در اين سی سال اندوخته ام در خدمت ايران به کار ببندم.",
+    "transcript_char_count": 956,
+    "token_name": "project-10",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0015.wav",
+    "wav_size_bytes": 4826924,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 4826880,
+    "timestamp": 1779907415.6326041
+  }
+}

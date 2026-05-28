@@ -1,0 +1,33 @@
+{
+  "chunk_index": 20,
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "request": {
+    "chunk_index": 20,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «من نه تنها به برخورد تمدن ها اعتقاد ندارم بلکه فکر میکنم که بسياری از جوامع اگر امروز آزاد بودند، ارزش های روشنگرانۀ غربيان را نيز از آن خود میکردند. در فرانسه، رون دوما، وزير پيشين امورخارجه، امانوئل تود، يکی از روشنفکران و برخی از روزنامه نگاران غالبا ايران را به عنوان کشوری بيش و کم دموکراتيک معرفی میکنند، گيرم نوعی دموکراسی \" ناقص \" يا \" اسلامی\" پاسخ شما به آنان چيست؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nبه آنا ن پيشنهاد میکنم که شش ماهی را در ايران همانند دانشجويان، روزنامه نگاران، وبلاگ نويسان، مدافعان حقوق بشر و زنان بسياری زندگی کنند که به عنوان شهروندان درجه دو به شمار میروند، پس از مدتی آنان نيز راهی زندان و قربانی شکنجه و اعدام در ملا عام خواهند شد و خوا هند ديد که چگونه فرزندان شان هروئين تزريق خواهند کرد و دختران شان ناگزير از تن فروشی خواهند شد. پس از اين تجربه آنان میتوانند در مورد ماهيت واقعی رژيم ايران اظهار نظر کنند. اين ادعا که میتوان اين رژيم را رژيمیدموکراتيک دانست، توهين به شعور و بی توجهی به تجربه های تلخ مردم ايران است. شما در مورد رژيمیصحبت میکنيد که قانون اساسی اش مردم را ناتوان از تصمیم گيری در مورد آينده شان میداند و از اين رو رهبری مذهبی را به آنان تحمیل کرده که در عمل تنها فرد قادر به تصمیم گيری است. شما در مورد رژيمیصحبت میکنيد ک ه مجلسش تنها حق پيشنهاد قوانين را دارد، اما تصمیم گيری نهايی در مورد قانون به عهدۀ ارگان غيرمنتخبی به نام شورای نگهبان قانون اساسی يا حتی خود رهبر است، که نمايندۀ خداوند در زمین شناخته میشود!",
+    "prompt_char_count": 2620,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «من نه تنها به برخورد تمدن ها اعتقاد ندارم بلکه فکر میکنم که بسياری از جوامع اگر امروز آزاد بودند، ارزش های روشنگرانۀ غربيان را نيز از آن خود میکردند. در فرانسه، رون دوما، وزير پيشين امورخارجه، امانوئل تود، يکی از روشنفکران و برخی از روزنامه نگاران غالبا ايران را به عنوان کشوری بيش و کم دموکراتيک معرفی میکنند، گيرم نوعی دموکراسی \" ناقص \" يا \" اسلامی\" پاسخ شما به آنان چيست؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "",
+    "transcript": "به آنا ن پيشنهاد میکنم که شش ماهی را در ايران همانند دانشجويان، روزنامه نگاران، وبلاگ نويسان، مدافعان حقوق بشر و زنان بسياری زندگی کنند که به عنوان شهروندان درجه دو به شمار میروند، پس از مدتی آنان نيز راهی زندان و قربانی شکنجه و اعدام در ملا عام خواهند شد و خوا هند ديد که چگونه فرزندان شان هروئين تزريق خواهند کرد و دختران شان ناگزير از تن فروشی خواهند شد. پس از اين تجربه آنان میتوانند در مورد ماهيت واقعی رژيم ايران اظهار نظر کنند. اين ادعا که میتوان اين رژيم را رژيمیدموکراتيک دانست، توهين به شعور و بی توجهی به تجربه های تلخ مردم ايران است. شما در مورد رژيمیصحبت میکنيد که قانون اساسی اش مردم را ناتوان از تصمیم گيری در مورد آينده شان میداند و از اين رو رهبری مذهبی را به آنان تحمیل کرده که در عمل تنها فرد قادر به تصمیم گيری است. شما در مورد رژيمیصحبت میکنيد ک ه مجلسش تنها حق پيشنهاد قوانين را دارد، اما تصمیم گيری نهايی در مورد قانون به عهدۀ ارگان غيرمنتخبی به نام شورای نگهبان قانون اساسی يا حتی خود رهبر است، که نمايندۀ خداوند در زمین شناخته میشود!",
+    "transcript_char_count": 958,
+    "token_name": "project-1",
+    "attempt": 2
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0020.wav",
+    "wav_size_bytes": 4277804,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 4277760,
+    "timestamp": 1779907711.8998854
+  }
+}

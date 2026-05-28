@@ -1,0 +1,33 @@
+{
+  "chunk_index": 10,
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "request": {
+    "chunk_index": 10,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «زيرا يکه و تنها در تالار يک کاخ مصری و در فاصلۀ هزاران کيلومتر از تهران سوگند ياد کردم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nاما اگر در آن شرايط، از ادای سوگند سرباز میزدم، اين گونه تعبير میشد که خواسته ام پيوندم را با نهاد پادشاهی قطع کنم و من چنين حقی نداشتم. با اين اقدام نمادين میخواستم به مردم ايران بگويم : \" اگر چه شما به حکومت پادشاهی پشت کرده ايد، اما وارث نظام پادشاهی هرگز شما را تنها نخواهد گذاشت و برای خدمتگزاری به شما زنده است. با اين حال، نظام پادشاهی مهم تر از اراده و خواست خود شما نيست. امروزشما راه مخالفت را با آن برگزيده ايد، اما اگر تغيير نظر بدهيد، من برای خدمت به شما آماده ام.\" اندکی بعد تصمیم گرفتم با پيشنهاد انجام يک همه پرسی، اين امکان را فراهم کنم که مردم ايران بتوانند نظر خود را دربارۀ نظام پادشاهی آزادانه مطرح کنند. در اوايل دهۀ ٠٨ میلادی در مصاحبه ای با \" پاتريک واژمن \" که در نشريۀ فيگارو به چاپ رسيد در اين خصوص توضيحات مبسوطی دادم. پيشنهاد من در آن زمان با مخالفت شديد محافل طرفدار نظام پادشاهی روبرو شد. اما برای من چنين پيشنهادی برپايۀ يک موضع اصولی قرارداشت. حقانيت نظام پادشاهی از مردم نشات میگيرد.",
+    "prompt_char_count": 2289,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «زيرا يکه و تنها در تالار يک کاخ مصری و در فاصلۀ هزاران کيلومتر از تهران سوگند ياد کردم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "",
+    "transcript": "اما اگر در آن شرايط، از ادای سوگند سرباز میزدم، اين گونه تعبير میشد که خواسته ام پيوندم را با نهاد پادشاهی قطع کنم و من چنين حقی نداشتم. با اين اقدام نمادين میخواستم به مردم ايران بگويم : \" اگر چه شما به حکومت پادشاهی پشت کرده ايد، اما وارث نظام پادشاهی هرگز شما را تنها نخواهد گذاشت و برای خدمتگزاری به شما زنده است. با اين حال، نظام پادشاهی مهم تر از اراده و خواست خود شما نيست. امروزشما راه مخالفت را با آن برگزيده ايد، اما اگر تغيير نظر بدهيد، من برای خدمت به شما آماده ام.\" اندکی بعد تصمیم گرفتم با پيشنهاد انجام يک همه پرسی، اين امکان را فراهم کنم که مردم ايران بتوانند نظر خود را دربارۀ نظام پادشاهی آزادانه مطرح کنند. در اوايل دهۀ ٠٨ میلادی در مصاحبه ای با \" پاتريک واژمن \" که در نشريۀ فيگارو به چاپ رسيد در اين خصوص توضيحات مبسوطی دادم. پيشنهاد من در آن زمان با مخالفت شديد محافل طرفدار نظام پادشاهی روبرو شد. اما برای من چنين پيشنهادی برپايۀ يک موضع اصولی قرارداشت. حقانيت نظام پادشاهی از مردم نشات میگيرد.",
+    "transcript_char_count": 916,
+    "token_name": "project-7",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0010.wav",
+    "wav_size_bytes": 4032044,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 4032000,
+    "timestamp": 1779907194.4226186
+  }
+}

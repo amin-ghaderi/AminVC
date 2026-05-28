@@ -1,0 +1,394 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — {{ app_name }}{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/static/css/preview.css" />
+  <link rel="stylesheet" href="/static/css/generation.css" />
+{% endblock %}
+
+{% block content %}
+<div class="space-y-8">
+  <section
+    id="token-warning"
+    class="hidden rounded-2xl border border-amber-700/60 bg-amber-950/30 p-5 shadow-xl"
+    role="alert"
+  >
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <h2 class="text-lg font-semibold text-amber-200">No Gemini API tokens configured</h2>
+        <p class="mt-1 text-sm text-amber-100/80">
+          Add one or more API keys from Google AI Studio to generate audiobooks. The app rotates keys on quota limits.
+        </p>
+      </div>
+      <a
+        href="/settings"
+        class="rounded-lg bg-amber-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-amber-500"
+      >
+        Open settings
+      </a>
+    </div>
+  </section>
+
+  <section id="upload-section" class="rounded-2xl border border-slate-800 bg-surface-light p-6 shadow-xl">
+    <h2 class="mb-6 text-xl font-semibold text-white">New audiobook</h2>
+
+    <form id="generation-form" class="space-y-6" onsubmit="return false;">
+      <div>
+        <label class="mb-2 block text-sm font-medium text-slate-300">Source document</label>
+        <label
+          for="pdf-upload"
+          id="pdf-dropzone"
+          class="flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-600 bg-slate-900/50 px-6 py-10 transition hover:border-accent hover:bg-slate-900"
+        >
+          <svg class="mb-3 h-10 w-10 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+          </svg>
+          <span class="text-sm font-medium text-slate-200">Upload PDF</span>
+          <span id="upload-hint" class="mt-1 text-xs text-slate-500">Click to select a Persian PDF</span>
+          <input id="pdf-upload" name="pdf" type="file" accept=".pdf,application/pdf" class="sr-only" />
+        </label>
+        <p id="upload-error" class="mt-2 hidden text-sm text-red-400" role="alert"></p>
+        <p id="upload-loading" class="mt-2 hidden text-sm text-accent">Extracting text…</p>
+      </div>
+
+      <div>
+        <label for="chunk-quality" class="mb-2 block text-sm font-medium text-slate-300">Chunk Quality</label>
+        <select
+          id="chunk-quality"
+          name="chunk_quality"
+          class="w-full max-w-md rounded-lg border border-slate-600 bg-slate-900 px-4 py-2.5 text-sm text-slate-100 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+        >
+          <option value="ultra">Ultra High Quality (600 chars)</option>
+          <option value="high">High Quality (800 chars)</option>
+          <option value="balanced" selected>Balanced (1000 chars)</option>
+          <option value="fast">Fast (1150 chars)</option>
+          <option value="max">Maximum Speed (1300 chars)</option>
+        </select>
+        <p class="mt-1 text-xs text-slate-400">
+          Smaller segments improve narration quality; larger segments finish faster.
+        </p>
+      </div>
+
+      <fieldset id="scene-control-panel" class="space-y-4 rounded-xl border border-slate-700/80 bg-slate-900/40 p-4">
+        <legend class="text-sm font-medium text-slate-300">Scene control</legend>
+        <label class="flex items-center gap-3 text-sm text-slate-200">
+          <input
+            type="checkbox"
+            id="scene-enable"
+            name="use_scene"
+            class="h-4 w-4 rounded border-slate-600 bg-slate-900 text-accent focus:ring-accent"
+          />
+          Enable Scene Mode
+        </label>
+        <div id="scene-fields" class="space-y-4 opacity-60">
+          <div>
+            <label for="scene-input" class="mb-2 block text-sm font-medium text-slate-300">Scene</label>
+            <input
+              type="text"
+              id="scene-input"
+              name="scene"
+              disabled
+              placeholder="e.g. rainy library, historical documentary..."
+              class="w-full rounded-lg border border-slate-600 bg-slate-900 px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent disabled:cursor-not-allowed"
+            />
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="scene-style" class="mb-2 block text-sm font-medium text-slate-300">Style</label>
+              <select
+                id="scene-style"
+                name="style"
+                disabled
+                class="w-full rounded-lg border border-slate-600 bg-slate-900 px-4 py-2.5 text-sm text-slate-100 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent disabled:cursor-not-allowed"
+              >
+                <option value="neutral narration" selected>neutral narration</option>
+                <option value="documentary">documentary</option>
+                <option value="dramatic storytelling">dramatic storytelling</option>
+                <option value="cinematic">cinematic</option>
+              </select>
+            </div>
+            <div>
+              <label for="scene-tone" class="mb-2 block text-sm font-medium text-slate-300">Tone</label>
+              <select
+                id="scene-tone"
+                name="tone"
+                disabled
+                class="w-full rounded-lg border border-slate-600 bg-slate-900 px-4 py-2.5 text-sm text-slate-100 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent disabled:cursor-not-allowed"
+              >
+                <option value="calm" selected>calm</option>
+                <option value="formal">formal</option>
+                <option value="emotional">emotional</option>
+                <option value="neutral">neutral</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="space-y-3">
+        <legend class="text-sm font-medium text-slate-300">Generation options</legend>
+        <label class="flex cursor-not-allowed items-center gap-3 text-sm text-slate-400">
+          <input type="checkbox" name="preview_chunks" class="h-4 w-4 rounded border-slate-600 bg-slate-900 text-accent" disabled />
+          Preview first chunks
+        </label>
+        <label class="flex cursor-not-allowed items-center gap-3 text-sm text-slate-400">
+          <input type="checkbox" name="trusted_mode" class="h-4 w-4 rounded border-slate-600 bg-slate-900 text-accent" disabled />
+          Trusted mode
+        </label>
+        <label class="flex cursor-not-allowed items-center gap-3 text-sm text-slate-400">
+          <input type="checkbox" name="auto_continue" class="h-4 w-4 rounded border-slate-600 bg-slate-900 text-accent" disabled />
+          Auto continue
+        </label>
+      </fieldset>
+
+      <div class="flex flex-wrap gap-3 pt-2">
+        <button
+          type="button"
+          id="btn-start"
+          class="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white opacity-60 cursor-not-allowed"
+          disabled
+        >
+          Start generation
+        </button>
+        <button
+          type="button"
+          id="btn-resume"
+          class="rounded-lg border border-slate-600 bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-300 opacity-60 cursor-not-allowed"
+          disabled
+        >
+          Resume previous job
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <!-- PDF text preview (Phase 1) -->
+  <section id="preview-section" class="hidden rounded-2xl border border-slate-800 bg-surface-light p-6 shadow-xl">
+    <div class="mb-6 flex flex-wrap items-start justify-between gap-4">
+      <div>
+        <h2 class="text-xl font-semibold text-white">Extracted text preview</h2>
+        <p class="mt-1 text-sm text-slate-400">Review formatting before generation.</p>
+      </div>
+      <div class="flex flex-col items-end gap-2">
+      <dl class="grid gap-1 text-sm sm:text-right">
+        <div>
+          <dt class="inline text-slate-500">File: </dt>
+          <dd id="preview-filename" class="inline font-medium text-slate-200">—</dd>
+        </div>
+        <div>
+          <dt class="inline text-slate-500">Pages: </dt>
+          <dd id="preview-page-count" class="inline font-medium text-slate-200">—</dd>
+        </div>
+      </dl>
+      <span
+        id="repair-badge"
+        class="hidden rounded-full border border-emerald-800/80 bg-emerald-950/60 px-3 py-1 text-xs font-medium text-emerald-300"
+      >
+        Persian repair applied (<span id="repair-fix-count">0</span> fixes)
+      </span>
+      </div>
+    </div>
+
+    <div
+      id="preview-readonly"
+      class="preview-persian max-h-[28rem] overflow-y-auto rounded-xl border border-slate-700 bg-slate-900/80 p-4 text-base text-slate-200"
+      lang="fa"
+      dir="rtl"
+    ></div>
+
+    <textarea
+      id="preview-editor"
+      class="preview-editor hidden min-h-[20rem] w-full resize-y rounded-xl border border-slate-600 bg-slate-900 p-4 text-base text-slate-100 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+      lang="fa"
+      dir="rtl"
+    ></textarea>
+
+    <label class="mt-4 flex cursor-pointer items-center gap-3 text-sm text-slate-400">
+      <input id="skip-preview-next" type="checkbox" class="h-4 w-4 rounded border-slate-600 bg-slate-900 text-accent" />
+      Skip preview next time
+    </label>
+
+    <div class="mt-6 flex flex-wrap gap-3">
+      <button type="button" id="btn-continue" class="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent-hover">
+        Continue to generation
+      </button>
+      <button type="button" id="btn-preview-chunks" class="rounded-lg border border-indigo-600 bg-indigo-950/50 px-5 py-2.5 text-sm font-semibold text-indigo-200 hover:border-indigo-400">
+        Preview chunks
+      </button>
+      <button type="button" id="btn-edit" class="rounded-lg border border-slate-600 bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:border-slate-500">
+        Edit extracted text
+      </button>
+      <button type="button" id="btn-save-edit" class="hidden rounded-lg border border-emerald-700 bg-emerald-900/40 px-5 py-2.5 text-sm font-semibold text-emerald-200">
+        Save edits
+      </button>
+      <button type="button" id="btn-cancel" class="rounded-lg border border-slate-600 px-5 py-2.5 text-sm font-semibold text-slate-400 hover:text-slate-200">
+        Cancel
+      </button>
+    </div>
+    <p id="preview-action-msg" class="mt-3 hidden text-sm text-slate-400"></p>
+  </section>
+
+  <!-- Chunk preview modal -->
+  <div id="chunk-modal" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+    <div id="chunk-modal-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative mx-auto flex h-full max-h-screen max-w-4xl flex-col p-4 sm:p-6">
+      <div class="flex max-h-[90vh] flex-col overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-2xl">
+        <div class="flex items-start justify-between gap-4 border-b border-slate-700 px-6 py-4">
+          <div>
+            <h2 class="text-lg font-semibold text-white">Chunk preview</h2>
+            <p class="mt-1 text-xs text-slate-400">Preview uses default packing; generation uses your Chunk Quality setting (600–1300 chars).</p>
+          </div>
+          <button type="button" id="chunk-modal-close" class="rounded-lg px-3 py-1 text-sm text-slate-400 hover:bg-slate-800 hover:text-white">
+            Close
+          </button>
+        </div>
+
+        <div id="chunk-modal-stats" class="grid gap-3 border-b border-slate-800 bg-slate-900/80 px-6 py-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <p class="text-xs text-slate-500">Total chunks</p>
+            <p id="chunk-stat-total" class="text-lg font-medium text-slate-200">—</p>
+          </div>
+          <div>
+            <p class="text-xs text-slate-500">Average size</p>
+            <p id="chunk-stat-avg" class="text-lg font-medium text-slate-200">—</p>
+          </div>
+          <div>
+            <p class="text-xs text-slate-500">Smallest chunk</p>
+            <p id="chunk-stat-min" class="text-lg font-medium text-slate-200">—</p>
+          </div>
+          <div>
+            <p class="text-xs text-slate-500">Largest chunk</p>
+            <p id="chunk-stat-max" class="text-lg font-medium text-slate-200">—</p>
+          </div>
+        </div>
+
+        <div id="chunk-modal-list" class="preview-persian flex-1 overflow-y-auto px-6 py-4"></div>
+      </div>
+    </div>
+  </div>
+
+  <section
+    id="token-pool-monitor-section"
+    class="token-monitor-panel rounded-2xl border border-slate-800 bg-surface-light p-6 shadow-xl"
+  >
+    <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <h2 class="text-xl font-semibold text-white">Token pool monitor</h2>
+        <p class="mt-1 text-sm text-slate-400">Live API key usage during generation (read-only).</p>
+      </div>
+      <p id="token-monitor-updated" class="gen-last-updated">—</p>
+    </div>
+    <p id="token-now-using" class="token-now-using mb-4">Now using: <strong id="token-now-using-name">—</strong></p>
+    <div id="token-pool-list" class="token-pool-list mb-4">
+      <p class="text-sm text-slate-500">Configure tokens in <a href="/settings" class="text-accent hover:underline">Settings</a>.</p>
+    </div>
+    <div>
+      <p class="mb-2 text-xs uppercase tracking-wide text-slate-500">Recent switches</p>
+      <ul id="token-switch-history" class="token-switch-log list-none space-y-0"></ul>
+    </div>
+  </section>
+
+  <section id="generation-progress-section" class="rounded-2xl border border-slate-800 bg-surface-light p-6 shadow-xl">
+    <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+      <h2 class="text-xl font-semibold text-white">Audiobook generation</h2>
+      <p id="progress-last-updated" class="gen-last-updated">Last updated: —</p>
+    </div>
+
+    <div class="mb-5 rounded-xl bg-slate-900/60 p-4">
+      <div class="gen-live-row mb-3">
+        <span id="progress-pulse-dot" class="gen-pulse-dot is-idle" aria-hidden="true"></span>
+        <p id="progress-activity" class="gen-activity-label">
+          <span id="progress-activity-text">Waiting to start</span><span id="progress-activity-dots" class="hidden text-indigo-300" aria-hidden="true"></span>
+        </p>
+      </div>
+      <div class="gen-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div id="progress-bar-fill" class="gen-progress-fill"></div>
+      </div>
+    </div>
+
+    <div id="progress-card" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-xl bg-slate-900/60 p-4">
+        <p class="text-xs uppercase tracking-wide text-slate-500">Current segment</p>
+        <p id="progress-chunk" class="mt-1 text-lg font-medium text-slate-200">—</p>
+      </div>
+      <div class="rounded-xl bg-slate-900/60 p-4">
+        <p class="text-xs uppercase tracking-wide text-slate-500">Progress</p>
+        <p id="progress-percent" class="mt-1 text-lg font-medium text-slate-200">—</p>
+      </div>
+      <div class="rounded-xl bg-slate-900/60 p-4">
+        <p class="text-xs uppercase tracking-wide text-slate-500">Time remaining</p>
+        <p id="progress-eta" class="mt-1 text-lg font-medium text-slate-200">—</p>
+      </div>
+      <div class="rounded-xl bg-slate-900/60 p-4">
+        <p class="text-xs uppercase tracking-wide text-slate-500">Book</p>
+        <p id="progress-project" class="mt-1 truncate text-sm font-medium text-slate-400">—</p>
+      </div>
+    </div>
+
+    <details class="mt-4 rounded-xl bg-slate-900/40 px-4 py-3 text-sm text-slate-500">
+      <summary class="cursor-pointer select-none text-slate-400">Segment preview</summary>
+      <p id="progress-chunk-preview" class="preview-persian mt-3 leading-relaxed text-slate-400" dir="rtl">—</p>
+    </details>
+
+    <p id="progress-status" class="sr-only" aria-live="polite">—</p>
+    <p id="progress-chunk-size" class="sr-only">—</p>
+    <p id="progress-token" class="sr-only">—</p>
+    <div class="mt-4 flex flex-wrap gap-3">
+      <button
+        type="button"
+        id="btn-cancel-generation"
+        class="hidden rounded-lg border border-red-800/80 bg-red-950/40 px-5 py-2.5 text-sm font-semibold text-red-200 hover:border-red-600"
+      >
+        Cancel generation
+      </button>
+      <a
+        id="download-audiobook"
+        class="hidden rounded-lg border border-emerald-700 bg-emerald-900/40 px-5 py-2.5 text-sm font-semibold text-emerald-200"
+        href="#"
+        download
+      >
+        Download audiobook
+      </a>
+    </div>
+    <p id="generation-msg" class="mt-3 hidden text-sm text-slate-400"></p>
+  </section>
+
+  <section
+    id="audio-quality-section"
+    class="hidden rounded-2xl border border-slate-800 bg-surface-light p-6 shadow-xl"
+  >
+    <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <h2 class="text-xl font-semibold text-white">Audio quality report</h2>
+        <p class="mt-1 text-sm text-slate-400">Heuristic checks on chunk WAVs after merge (no ML).</p>
+      </div>
+      <span id="quality-label-badge" class="rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide">—</span>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-xl bg-slate-900/60 p-4">
+        <p class="text-xs uppercase tracking-wide text-slate-500">Avg silence ratio</p>
+        <p id="quality-silence" class="mt-1 text-lg font-medium text-slate-200">—</p>
+      </div>
+      <div class="rounded-xl bg-slate-900/60 p-4">
+        <p class="text-xs uppercase tracking-wide text-slate-500">Discontinuities</p>
+        <p id="quality-discontinuities" class="mt-1 text-lg font-medium text-slate-200">—</p>
+      </div>
+      <div class="rounded-xl bg-slate-900/60 p-4">
+        <p class="text-xs uppercase tracking-wide text-slate-500">Loudness variance</p>
+        <p id="quality-variance" class="mt-1 text-lg font-medium text-slate-200">—</p>
+      </div>
+      <div class="rounded-xl bg-slate-900/60 p-4">
+        <p class="text-xs uppercase tracking-wide text-slate-500">Chunk variation</p>
+        <p id="quality-variation" class="mt-1 text-lg font-medium text-slate-200">—</p>
+      </div>
+    </div>
+    <p id="quality-chunks-meta" class="mt-3 text-xs text-slate-500">—</p>
+  </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/static/js/app.js" defer></script>
+{% endblock %}

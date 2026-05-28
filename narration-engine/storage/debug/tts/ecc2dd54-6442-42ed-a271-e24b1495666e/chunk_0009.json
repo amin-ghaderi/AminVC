@@ -1,0 +1,33 @@
+{
+  "chunk_index": 9,
+  "intake_id": "ecc2dd54-6442-42ed-a271-e24b1495666e",
+  "request": {
+    "chunk_index": 9,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «زيرا در اين مدت به ويژه بسيار آموخته ام. من در ژوئن ۱۹۷۸، چند ماه پيش از وقوع انقلاب، برای ادامۀ تحصيل، ايران را به قصد ايالت متحدۀ آمريکا ترک کرده بودم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\n## Scene Context (do NOT read aloud)\n- Scene: historical documentry\n- Style: documentary\n- Tone: calm\n\nدر آن زمان نوجوان ھفده ساله ای بودم که گه گاه نقشی تشريفاتی ايفا می کردم و در عين تا حدودی با وظايف و طرز کار نھادھای دولت آشنا می شدم. پس از ورود به تکزاس ک)س ھای آموزش خلبانی ھواپيماھای شکاری جنگنده را در يکی از پايگاه ھای نيروی ھوايی ارتش آمريکا آغاز کردم. من در تکزاس بودم که انقلاب خانواده ام را راھی تبعيد کرد. در واقع، مرگ پدرم در قاھره در ۱۹۸۰ مرا به صحنۀ سياست کشاند.",
+    "prompt_char_count": 1918,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «زيرا در اين مدت به ويژه بسيار آموخته ام. من در ژوئن ۱۹۷۸، چند ماه پيش از وقوع انقلاب، برای ادامۀ تحصيل، ايران را به قصد ايالت متحدۀ آمريکا ترک کرده بودم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "## Scene Context (do NOT read aloud)\n- Scene: historical documentry\n- Style: documentary\n- Tone: calm",
+    "transcript": "در آن زمان نوجوان ھفده ساله ای بودم که گه گاه نقشی تشريفاتی ايفا می کردم و در عين تا حدودی با وظايف و طرز کار نھادھای دولت آشنا می شدم. پس از ورود به تکزاس ک)س ھای آموزش خلبانی ھواپيماھای شکاری جنگنده را در يکی از پايگاه ھای نيروی ھوايی ارتش آمريکا آغاز کردم. من در تکزاس بودم که انقلاب خانواده ام را راھی تبعيد کرد. در واقع، مرگ پدرم در قاھره در ۱۹۸۰ مرا به صحنۀ سياست کشاند.",
+    "transcript_char_count": 376,
+    "token_name": "project-2",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\ecc2dd54-6442-42ed-a271-e24b1495666e\\0009.wav",
+    "wav_size_bytes": 1937324,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 1937280,
+    "timestamp": 1779806140.711966
+  }
+}

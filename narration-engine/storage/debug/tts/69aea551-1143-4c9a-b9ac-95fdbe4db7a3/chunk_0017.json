@@ -1,0 +1,33 @@
+{
+  "chunk_index": 17,
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "request": {
+    "chunk_index": 17,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «دائما ناگزير از رعايت احتياط برای تامین امنيت خانواده ام هستم. اصول جهان شمول اخلاقی را من از خلال آشنايی با افراد مختلف در کشورهای گوناگون، از ب رزيل تا ويتنام، از کانادا تا مصر، فرا گرفته ام.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nاين يادگيری بخشی از تجرب ـ ه ای است که طی س ـ ی سال اندوخته ام، فرای فرهنگ ها و کشورها و جغرافيا، موجود انسانی نيازها و امیدهايی دارد که به گوش جان شنيده و فهمیده ام و میکوشم تا همه را جذب کنم. در واقع، از سی سا ل پيش من در مکتب جهان درس خوانده ام. چقدر رنج آوراست بيگانگی رهبران کنونی ايران، از خامنه ای تا احمدی نژاد، با جهان و زمان معاصر! ايران سزاوار رهبرانی است که جهان را بشناسند و جهان نيز آنان را به رسمیت بشناسد. آيا فکر میکنيد تنفر برخی از غرب، که دنيايی من حط، مادی و سلطه جو تلقی میشود، اساس و مبنايی داشته باشد؟ آيا برای شما قابل فهم است که بخشی از جهان از آمريکا متنفر باشد؟ خرده گيری از جوامع غربی بی اساس نيست. در شيوۀ زندگی غربيان چيزهايی هست که خود من نيز نمیپسندم. اما، تنفر واژۀ زشت و خشنی است. من مداف ع مادی گرايی اقتصادی بی حد و مرز نيستم که چپ به آن دليل، ايالات متحدۀ آمريکا را سرزنش میکند. من معتقد به نوعی تعادل بين اقتصاد آزاد و عدالت اجتماعی ام. نظير آنچه در جوامع اروپايی میتوان ديد. آيا فکر میکنيد که بتوان ارزش ها و الگوی غربی را وارد ايران کرد؟",
+    "prompt_char_count": 2456,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «دائما ناگزير از رعايت احتياط برای تامین امنيت خانواده ام هستم. اصول جهان شمول اخلاقی را من از خلال آشنايی با افراد مختلف در کشورهای گوناگون، از ب رزيل تا ويتنام، از کانادا تا مصر، فرا گرفته ام.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "",
+    "transcript": "اين يادگيری بخشی از تجرب ـ ه ای است که طی س ـ ی سال اندوخته ام، فرای فرهنگ ها و کشورها و جغرافيا، موجود انسانی نيازها و امیدهايی دارد که به گوش جان شنيده و فهمیده ام و میکوشم تا همه را جذب کنم. در واقع، از سی سا ل پيش من در مکتب جهان درس خوانده ام. چقدر رنج آوراست بيگانگی رهبران کنونی ايران، از خامنه ای تا احمدی نژاد، با جهان و زمان معاصر! ايران سزاوار رهبرانی است که جهان را بشناسند و جهان نيز آنان را به رسمیت بشناسد. آيا فکر میکنيد تنفر برخی از غرب، که دنيايی من حط، مادی و سلطه جو تلقی میشود، اساس و مبنايی داشته باشد؟ آيا برای شما قابل فهم است که بخشی از جهان از آمريکا متنفر باشد؟ خرده گيری از جوامع غربی بی اساس نيست. در شيوۀ زندگی غربيان چيزهايی هست که خود من نيز نمیپسندم. اما، تنفر واژۀ زشت و خشنی است. من مداف ع مادی گرايی اقتصادی بی حد و مرز نيستم که چپ به آن دليل، ايالات متحدۀ آمريکا را سرزنش میکند. من معتقد به نوعی تعادل بين اقتصاد آزاد و عدالت اجتماعی ام. نظير آنچه در جوامع اروپايی میتوان ديد. آيا فکر میکنيد که بتوان ارزش ها و الگوی غربی را وارد ايران کرد؟",
+    "transcript_char_count": 977,
+    "token_name": "project-10",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0017.wav",
+    "wav_size_bytes": 4675244,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 4675200,
+    "timestamp": 1779907542.3080614
+  }
+}

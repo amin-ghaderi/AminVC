@@ -1,0 +1,33 @@
+{
+  "chunk_index": 7,
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "request": {
+    "chunk_index": 7,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «من در تکزاس بودم که انقلاب خانواده ام را راهی تبعيد کرد. در واقع، مرگ پدرم در قاهره در ۱۹۸۰ مرا به صحنۀ سياست کشاند.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nآن زمان بسيار جوان بودم و بدون تجربۀ سياسی. برخلاف امروز که میتوانم هر لحظه با بسياری ازهموطنانم در هر جای ايران تماس بگيرم، در آن موقع تماس گرفتن با ايران برايم بسيار دشوار بود. هنگامیکه در قاهره يا مراکش در تبعيد بودم، پاره ای اوقات برای يک گفتگوی تلفنی با ايران، پاريس يا لندن بايد ساعت ها انتظار میکشيدم. به اين ترتيب، بيشتر با کسانی به گفتگو میپرداختم که خارج از ايران بودند، با مقامات پيشين کشور يا نمايندگان احزاب قديمیدر تبعيد. اگر آن زمان آگاهی امروز را داشت ــ م از مشاجرات داخل ـ ی، مضحک و کودکان ـ ه ای که وقت زي ــ ادی را صرف خ ـ ود کردن ــ د، فاصله میگر. فتم همه چيز در عرض اين سی سال تغيير کرده است. امروز دانشجويان، کارگران، زنان، اقوام مختلف ملی، روحانيت، نظامیان و حتی اعضای سپاه پاسداران نارضايی خود را اغلب با شهامت کم نظير بيان میکنند. مهم تر از همه، اکثريت بزرگ ايرانيان ديگر اعتقادی به رژيم اسلامیحا کم بر ايران ندارند.",
+    "prompt_char_count": 2244,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «من در تکزاس بودم که انقلاب خانواده ام را راهی تبعيد کرد. در واقع، مرگ پدرم در قاهره در ۱۹۸۰ مرا به صحنۀ سياست کشاند.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "",
+    "transcript": "آن زمان بسيار جوان بودم و بدون تجربۀ سياسی. برخلاف امروز که میتوانم هر لحظه با بسياری ازهموطنانم در هر جای ايران تماس بگيرم، در آن موقع تماس گرفتن با ايران برايم بسيار دشوار بود. هنگامیکه در قاهره يا مراکش در تبعيد بودم، پاره ای اوقات برای يک گفتگوی تلفنی با ايران، پاريس يا لندن بايد ساعت ها انتظار میکشيدم. به اين ترتيب، بيشتر با کسانی به گفتگو میپرداختم که خارج از ايران بودند، با مقامات پيشين کشور يا نمايندگان احزاب قديمیدر تبعيد. اگر آن زمان آگاهی امروز را داشت ــ م از مشاجرات داخل ـ ی، مضحک و کودکان ـ ه ای که وقت زي ــ ادی را صرف خ ـ ود کردن ــ د، فاصله میگر. فتم همه چيز در عرض اين سی سال تغيير کرده است. امروز دانشجويان، کارگران، زنان، اقوام مختلف ملی، روحانيت، نظامیان و حتی اعضای سپاه پاسداران نارضايی خود را اغلب با شهامت کم نظير بيان میکنند. مهم تر از همه، اکثريت بزرگ ايرانيان ديگر اعتقادی به رژيم اسلامیحا کم بر ايران ندارند.",
+    "transcript_char_count": 842,
+    "token_name": "project-6",
+    "attempt": 2
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0007.wav",
+    "wav_size_bytes": 3613484,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 3613440,
+    "timestamp": 1779907079.9118526
+  }
+}

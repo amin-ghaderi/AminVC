@@ -1,0 +1,33 @@
+{
+  "chunk_index": 2,
+  "intake_id": "f7205858-3b65-417f-8070-ef3e1f0d23cf",
+  "request": {
+    "chunk_index": 2,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nACTING MODE: fixed single narrator performance across entire audiobook. No variation between segments is allowed.\n\nStyle and delivery:\nWarm, emotionally engaging, cinematic, deeply human premium Persian audiobook narration.\nNatural pacing — not too slow, not robotic, smooth storytelling rhythm.\nWarm, reflective emotional depth without overly dramatic acting.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Transcript (single narrator — Sulafat):\n\n## Voice continuity (do NOT read aloud):\nMaintain continuous narration flow with identical acting style across all chunks. Do not change voice performance, pacing style, or emotional delivery between segments.\nCONTINUITY REFERENCE — for flow reference only; do NOT read these lines aloud:\nPrevious ending (period): «آقای رضا پھلوی! شما پسرارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد.»\n\nنھاد پادشاھی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامی و تسلط مذھبيون بنيادگرا به رھبری روح الله خمینی برايران، واژگون شد. ھنگامی که در نشريات نخستين سال ھای د ھۀ ھشتاد دههی هشتاد می نگريم، از عمق خطای مفسرانی شگفت زده می شويم که در آن دوران، فروپاشی سريع رژيم خمينی را پيش بينی می کردند. با خواندن کتابی که کريستيان مارک و آلن روديه در سال ٨٩١۶ دربارۀ شما منتشر کردند، تصوير شاھزاده ای جوان و فعال را می يابيم که با شخ صيت ھايی که امروز در قيد حيات نيستند و غالبا، ھمانند شاپور بختيار، به قتل رسيدند، ھمراھی می شد. در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟ در ارزيابی ھايتان کجا دچار خطا شديد؟",
+    "prompt_char_count": 1963,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "Maintain continuous narration flow with identical acting style across all chunks. Do not change voice performance, pacing style, or emotional delivery between segments.\nCONTINUITY REFERENCE — for flow reference only; do NOT read these lines aloud:\nPrevious ending (period): «آقای رضا پھلوی! شما پسرارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد.»",
+    "scene_context": "",
+    "transcript": "نھاد پادشاھی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامی و تسلط مذھبيون بنيادگرا به رھبری روح الله خمینی برايران، واژگون شد. ھنگامی که در نشريات نخستين سال ھای د ھۀ ھشتاد دههی هشتاد می نگريم، از عمق خطای مفسرانی شگفت زده می شويم که در آن دوران، فروپاشی سريع رژيم خمينی را پيش بينی می کردند. با خواندن کتابی که کريستيان مارک و آلن روديه در سال ٨٩١۶ دربارۀ شما منتشر کردند، تصوير شاھزاده ای جوان و فعال را می يابيم که با شخ صيت ھايی که امروز در قيد حيات نيستند و غالبا، ھمانند شاپور بختيار، به قتل رسيدند، ھمراھی می شد. در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟ در ارزيابی ھايتان کجا دچار خطا شديد؟",
+    "transcript_char_count": 752,
+    "token_name": "project-1",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\f7205858-3b65-417f-8070-ef3e1f0d23cf\\0002.wav",
+    "wav_size_bytes": 3667244,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 3667200,
+    "timestamp": 1779784459.6707747
+  }
+}

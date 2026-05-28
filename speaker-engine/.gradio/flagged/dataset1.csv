@@ -1,0 +1,2 @@
+Source Audio / 源音频,Reference Audio / 参考音频,Diffusion Steps / 扩散步数,Length Adjust / 长度调整,Intelligibility CFG Rate,Similarity CFG Rate,Top-p,Temperature,Repetition Penalty,convert style,anonymization only,Stream Output Audio / 流式输出,Full Output Audio / 完整输出,timestamp
+.gradio\flagged\Source Audio  源音频\ebf602a12ab07d43a705\final_audiobook 4.wav,,50,1,0.7,0.8,0.9,0.8,1,false,false,,,2026-05-26 12:50:47.046670

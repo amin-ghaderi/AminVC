@@ -1,0 +1,33 @@
+{
+  "chunk_index": 8,
+  "intake_id": "ecc2dd54-6442-42ed-a271-e24b1495666e",
+  "request": {
+    "chunk_index": 8,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «يا بايد مدافع جمهوری اسلامی بود يا مخالف آن. در اين جا روی سخن من با طرفداران جمهوری اسلامی نيست.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\n## Scene Context (do NOT read aloud)\n- Scene: historical documentry\n- Style: documentary\n- Tone: calm\n\nاما کسانی که مخالف نظام کنونی ھستند بايد با يکديگر گفتگو کنند و به جبھۀ واحدی برسند. در اين راستا ضروری است مرحلۀ نوينی را پشت سر بگذاريم. يعنی بايد بتوانيم ھمۀ نيروھای آزادی خواه را به ھمراھی و ھمکاری در راه پ يکار با رژيم حاکم برانگيزيم. در اين مرحله است که می توانم نقشی مفيد و سازنده ايفا کنم. دقيقا می خواھيم بدانيم که از سی سال پيش چه تغييرھايی کرده ايد؟ بعيد نيست که من ھم تغيير کرده باشم. زيرا در اين مدت به ويژه بسيار آموخته ام. من در ژوئن ۱۹۷۸، چند ماه پيش از وقوع انقلاب، برای ادامۀ تحصيل، ايران را به قصد ايالت متحدۀ آمريکا ترک کرده بودم.",
+    "prompt_char_count": 2036,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «يا بايد مدافع جمهوری اسلامی بود يا مخالف آن. در اين جا روی سخن من با طرفداران جمهوری اسلامی نيست.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "## Scene Context (do NOT read aloud)\n- Scene: historical documentry\n- Style: documentary\n- Tone: calm",
+    "transcript": "اما کسانی که مخالف نظام کنونی ھستند بايد با يکديگر گفتگو کنند و به جبھۀ واحدی برسند. در اين راستا ضروری است مرحلۀ نوينی را پشت سر بگذاريم. يعنی بايد بتوانيم ھمۀ نيروھای آزادی خواه را به ھمراھی و ھمکاری در راه پ يکار با رژيم حاکم برانگيزيم. در اين مرحله است که می توانم نقشی مفيد و سازنده ايفا کنم. دقيقا می خواھيم بدانيم که از سی سال پيش چه تغييرھايی کرده ايد؟ بعيد نيست که من ھم تغيير کرده باشم. زيرا در اين مدت به ويژه بسيار آموخته ام. من در ژوئن ۱۹۷۸، چند ماه پيش از وقوع انقلاب، برای ادامۀ تحصيل، ايران را به قصد ايالت متحدۀ آمريکا ترک کرده بودم.",
+    "transcript_char_count": 550,
+    "token_name": "project-2",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\ecc2dd54-6442-42ed-a271-e24b1495666e\\0008.wav",
+    "wav_size_bytes": 2469164,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 2469120,
+    "timestamp": 1779806116.1402187
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "chunk_index": 2,
+  "intake_id": "bf1a9a6d-ad65-4530-9c69-59fb17746cbd",
+  "request": {
+    "chunk_index": 2,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «به جوانان ھشيار و ھوشمندی که به اميد آينده ای بھتر برای خويش و برای ھمۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند. اين کتاب را ھم چنين به خاطرۀ بی گناھان، قربانيان بی عدالتی ھای گذشته و حال تقديم می کنم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\n## Scene Context (do NOT read aloud)\n- Scene: default narration environment\n- Style: neutral narration\n- Tone: calm\n\nبه خاطرۀ سربازانی که از تماميت ارضی ميھن دفاع کردند. به ھمۀ کسانی که ھم چنان برای آزادی، دموکراسی و حقوق بشر در پيکارند. من نيز ھمانند آنان، ھمواره به ايران جاويدان می انديشم و به آن وفاد ار خواھم بود. فصل اول انتخاب دموکر اتيک ميشل تُبمن : آقای رضا پھلوی! شما پسرارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد. نھاد پادشاھی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامی و تسلط مذھبيون بنيادگرا به رھبری روح الله خمینی برايران، واژگون شد.",
+    "prompt_char_count": 2057,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «به جوانان ھشيار و ھوشمندی که به اميد آينده ای بھتر برای خويش و برای ھمۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند. اين کتاب را ھم چنين به خاطرۀ بی گناھان، قربانيان بی عدالتی ھای گذشته و حال تقديم می کنم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "## Scene Context (do NOT read aloud)\n- Scene: default narration environment\n- Style: neutral narration\n- Tone: calm",
+    "transcript": "به خاطرۀ سربازانی که از تماميت ارضی ميھن دفاع کردند. به ھمۀ کسانی که ھم چنان برای آزادی، دموکراسی و حقوق بشر در پيکارند. من نيز ھمانند آنان، ھمواره به ايران جاويدان می انديشم و به آن وفاد ار خواھم بود. فصل اول انتخاب دموکر اتيک ميشل تُبمن : آقای رضا پھلوی! شما پسرارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد. نھاد پادشاھی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامی و تسلط مذھبيون بنيادگرا به رھبری روح الله خمینی برايران، واژگون شد.",
+    "transcript_char_count": 443,
+    "token_name": "project-5",
+    "attempt": 6
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\bf1a9a6d-ad65-4530-9c69-59fb17746cbd\\0002.wav",
+    "wav_size_bytes": 2647724,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 2647680,
+    "timestamp": 1779872703.2142203
+  }
+}

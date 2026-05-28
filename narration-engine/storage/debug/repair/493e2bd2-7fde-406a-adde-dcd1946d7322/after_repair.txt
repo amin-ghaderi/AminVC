@@ -1,0 +1,12 @@
+--- Page 1 ---
+EXERCISE
+
+React – CV 1. Refactored from JavaScript or make new Take the CV you did in the JavaScript workshop and refactor it in React. If you never made that workshop, just start on a blank slate. By doing this, you will exercise JSX and breaking out parts into components.
+2. Add the CV to a React project Choose an organization of folders that pleases you, maybe by separating data from images and components, or by having a CV folder with all related content.
+Consider these sections in a CV and make them into components linked on a main CV page:
+• summary,
+• social links (GitHub, LinkedIn,)
+• work experience,
+• education,
+• skills,
+• other relevant information.

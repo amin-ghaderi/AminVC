@@ -1,0 +1,732 @@
+{
+  "chunks": [
+    {
+      "chunk_index": 1,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 1,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nThis is the opening segment. Begin with a natural audiobook intro cadence.\n\nکتاب صوتی زمان انتخاب به تلاش امین قادری، عضو حزب پادشاهی ایرانیان به قلم شاهزاده رضا پهلوی کتاب حاضر را به همۀ هم میهنانم تقديم میکنم. به پدران و مادرانی که طی دهه ها در راه پيشرفت ايران و رفاه ملت کوشيده اند. به هم نسلانم، نسل قربانی شده، که فرصت خدمتگزاری به میهن را نيافت، اگر چه خود را برای ادامۀ راه و بردوش گرفتن مسئوليت ها آماده میکرد. به کسانی که خوشبينانه به استقبال \" انقلاب \" رفتند، اما امروز از انتخاب خيش پشيمانند. به جوانان هشيار و هوشمندی که به امید آينده ای بهتر برای خيش و برای همۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند. اين کتاب را هم چنين به خاطرۀ بی گناهان، قربانيان بی عدالتی های گذشته و حال تقديم میکنم. به خاطرۀ سربازانی که از تمامیت ارضی میهن دفاع کردند. به همۀ کسانی که هم چنان برای آزادی، دموکراسی و حقوق بشر در پيکارند. من نيز همانند آنان، همواره به ايران جاويدان میانديشم و به آن وفاد ار خواهم بود. فصل اول انتخاب دموکر اتيک میشل تُبمن : آقای رضا پهلوی! شما پسر ارشد آخرين پادشاه ايران، محمد رضا شاه پهلوی، هستيد.",
+        "prompt_char_count": 2075,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "This is the opening segment. Begin with a natural audiobook intro cadence.",
+        "scene_context": "",
+        "transcript": "کتاب صوتی زمان انتخاب به تلاش امین قادری، عضو حزب پادشاهی ایرانیان به قلم شاهزاده رضا پهلوی کتاب حاضر را به همۀ هم میهنانم تقديم میکنم. به پدران و مادرانی که طی دهه ها در راه پيشرفت ايران و رفاه ملت کوشيده اند. به هم نسلانم، نسل قربانی شده، که فرصت خدمتگزاری به میهن را نيافت، اگر چه خود را برای ادامۀ راه و بردوش گرفتن مسئوليت ها آماده میکرد. به کسانی که خوشبينانه به استقبال \" انقلاب \" رفتند، اما امروز از انتخاب خيش پشيمانند. به جوانان هشيار و هوشمندی که به امید آينده ای بهتر برای خيش و برای همۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند. اين کتاب را هم چنين به خاطرۀ بی گناهان، قربانيان بی عدالتی های گذشته و حال تقديم میکنم. به خاطرۀ سربازانی که از تمامیت ارضی میهن دفاع کردند. به همۀ کسانی که هم چنان برای آزادی، دموکراسی و حقوق بشر در پيکارند. من نيز همانند آنان، همواره به ايران جاويدان میانديشم و به آن وفاد ار خواهم بود. فصل اول انتخاب دموکر اتيک میشل تُبمن : آقای رضا پهلوی! شما پسر ارشد آخرين پادشاه ايران، محمد رضا شاه پهلوی، هستيد.",
+        "transcript_char_count": 954,
+        "token_name": "project-1",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0001.wav",
+        "wav_size_bytes": 5013164,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 5013120,
+        "timestamp": 1779906816.275689
+      }
+    },
+    {
+      "chunk_index": 2,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 2,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «آقای رضا پهلوی! شما پسر ارشد آخرين پادشاه ايران، محمد رضا شاه پهلوی، هستيد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nنهاد پادشاهی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامیو تسلط مذهبيون بنيادگرا به رهبری روح الله خمینی برايران، واژگون شد. هنگامیکه در نشريات نخستين سال های د هۀ هشتاد دههی هشتاد مینگريم، از عمق خطای مفسرانی شگفت زده میشويم که در آن دوران، فروپاشی سريع رژيم خمینی را پيش بينی میکردند. با خواندن کتابی که کریستیان مارک و آلن روديه در سال 1986 دربارۀ شما منتشر کردند، تصوير شاهزاده ای جوان و فعال را میيابيم که با شخ صيت هايی که امروز در قيد حيات نيستند و غالبا، همانند شاپور بختيار، به قتل رسيدند، همراهی میشد. در آن زمان شما نسبتا خوشبين به نظر میرسيديد و فکر میکرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب هم چنان شاهد ناگزير اُفت فعاليت های مخ الفان رژيم هستيم چه روی داده است؟ در ارزيابی هايتان کجا دچار خطا شديد؟",
+        "prompt_char_count": 2104,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «آقای رضا پهلوی! شما پسر ارشد آخرين پادشاه ايران، محمد رضا شاه پهلوی، هستيد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "نهاد پادشاهی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامیو تسلط مذهبيون بنيادگرا به رهبری روح الله خمینی برايران، واژگون شد. هنگامیکه در نشريات نخستين سال های د هۀ هشتاد دههی هشتاد مینگريم، از عمق خطای مفسرانی شگفت زده میشويم که در آن دوران، فروپاشی سريع رژيم خمینی را پيش بينی میکردند. با خواندن کتابی که کریستیان مارک و آلن روديه در سال 1986 دربارۀ شما منتشر کردند، تصوير شاهزاده ای جوان و فعال را میيابيم که با شخ صيت هايی که امروز در قيد حيات نيستند و غالبا، همانند شاپور بختيار، به قتل رسيدند، همراهی میشد. در آن زمان شما نسبتا خوشبين به نظر میرسيديد و فکر میکرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب هم چنان شاهد ناگزير اُفت فعاليت های مخ الفان رژيم هستيم چه روی داده است؟ در ارزيابی هايتان کجا دچار خطا شديد؟",
+        "transcript_char_count": 743,
+        "token_name": "project-2",
+        "attempt": 2
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0002.wav",
+        "wav_size_bytes": 3532844,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 3532800,
+        "timestamp": 1779906857.3051996
+      }
+    },
+    {
+      "chunk_index": 3,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 3,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «در آن زمان شما نسبتا خوشبين به نظر میرسيديد و فکر میکرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب هم چنان شاهد ناگزير اُفت فعاليت های مخ الفان رژيم هستيم چه روی داده است؟ در ارزيابی هايتان کجا دچار خطا شديد؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nرضا پهلوی : واقعيت آن است که رژيم اسلامیدر نخستين سال استقرارش شکننده به نظر میرسيد و مراکز قدرت و تصمیم گيری چندان همآهنگ نبودند. همانند بسياری از هم میهنانم، من نيز توانايی و ارادۀ ر هبران رژيم انقلابی را در تامین و تثبيت پايگاه های قدرت خويش به هر بهايی که شده، دستِ کم گرفتم. هنوز از بازگشت خمینی به ايران در اول فوريۀ ۱۹۷۹ چيزی نگذشته بود که او سرکوبی ترسناک و بی رحمانه را، نه فقط عليه مخالفانش، عليه نيروهای سکولار چپ و ملی گرايی که و ی را به قدرت رسانده بودند، آغاز کرد. ما در آغاز متوجه نبوديم که انقلاب اسلامیپديده ای موقتی در تاريخ پُر تلاطم ايران و پرانتزساده ای که به سرعت بسته میشد، نيست. به بيان روشن تر، نظامیکه پدرم مظهر و نماينده اش بود، در سال ۱۹۷۹ از میان رفت و هر نوع بازگشت ی به گذشته نه امکان پذيراست و نه مطلوب. از سی سال پيش همۀ تلاش و توانم را يکسره در راه مبارزه با رژيم و رهايی ايران به کار برده ام، در پی مرگ پدرم، شاه فقيد ايران در ژوئيۀ ۱۹۸۰، به عن ـ وان وليعهد، وارد عرص ـ ۀ پيک ـ ار شدم.",
+        "prompt_char_count": 2437,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «در آن زمان شما نسبتا خوشبين به نظر میرسيديد و فکر میکرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب هم چنان شاهد ناگزير اُفت فعاليت های مخ الفان رژيم هستيم چه روی داده است؟ در ارزيابی هايتان کجا دچار خطا شديد؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "رضا پهلوی : واقعيت آن است که رژيم اسلامیدر نخستين سال استقرارش شکننده به نظر میرسيد و مراکز قدرت و تصمیم گيری چندان همآهنگ نبودند. همانند بسياری از هم میهنانم، من نيز توانايی و ارادۀ ر هبران رژيم انقلابی را در تامین و تثبيت پايگاه های قدرت خويش به هر بهايی که شده، دستِ کم گرفتم. هنوز از بازگشت خمینی به ايران در اول فوريۀ ۱۹۷۹ چيزی نگذشته بود که او سرکوبی ترسناک و بی رحمانه را، نه فقط عليه مخالفانش، عليه نيروهای سکولار چپ و ملی گرايی که و ی را به قدرت رسانده بودند، آغاز کرد. ما در آغاز متوجه نبوديم که انقلاب اسلامیپديده ای موقتی در تاريخ پُر تلاطم ايران و پرانتزساده ای که به سرعت بسته میشد، نيست. به بيان روشن تر، نظامیکه پدرم مظهر و نماينده اش بود، در سال ۱۹۷۹ از میان رفت و هر نوع بازگشت ی به گذشته نه امکان پذيراست و نه مطلوب. از سی سال پيش همۀ تلاش و توانم را يکسره در راه مبارزه با رژيم و رهايی ايران به کار برده ام، در پی مرگ پدرم، شاه فقيد ايران در ژوئيۀ ۱۹۸۰، به عن ـ وان وليعهد، وارد عرص ـ ۀ پيک ـ ار شدم.",
+        "transcript_char_count": 920,
+        "token_name": "project-3",
+        "attempt": 2
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0003.wav",
+        "wav_size_bytes": 4310444,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 4310400,
+        "timestamp": 1779906910.1278026
+      }
+    },
+    {
+      "chunk_index": 4,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 4,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «به بيان روشن تر، نظامیکه پدرم مظهر و نماينده اش بود، در سال ۱۹۷۹ از میان رفت و هر نوع بازگشت ی به گذشته نه امکان پذيراست و نه مطلوب. از سی سال پيش همۀ تلاش و توانم را يکسره در راه مبارزه با رژيم و رهايی ايران به کار برده ام، در پی مرگ پدرم، شاه فقيد ايران در ژوئيۀ ۱۹۸۰، به عن ـ وان وليعهد، وارد عرص ـ ۀ پيک ـ ار شدم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nدر اين سال ها هم با طرفداران نظام پاد شاهی مشروطه همکاری کرده ام و هم با جمهوری خواهان، هم با نيروهای چپ و هم با نيروهای راست. در واقع، فعاليتم را به عنوان مخالف حکومت اسلامیاز هويت نهادی ام جدا کرده ام. بی هيچ ابها می، خوا ستار يک قانون اساسی دموکراتيک عرفی برای ايران هستم که بر اعلامیۀ جهانی حقوق بشر استوار شده باشد. اين رژيم دموکراتيک و عرفی میتواند دو شکل به خود بگيرد : اگر اکثريت مردم ايران يک حکومت پادشاهی مُدرن و پارلمانی را برگزينند ) نظير آنچه که امروز در نروژ، سوئد، هلند، اسپانيا يا ژاپن میبينيم ( از اين انتخاب خرسند خواهم شد و اين گز ينه ای است که من نمايندگی میکنم. اما اگر اکثريت ايرانيان موافقت خود را با يک جمهوری پارلمانی اعلام کنند، طبيعتا چنين انتخابی را نيز خواهم پذيرفت.",
+        "prompt_char_count": 2299,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «به بيان روشن تر، نظامیکه پدرم مظهر و نماينده اش بود، در سال ۱۹۷۹ از میان رفت و هر نوع بازگشت ی به گذشته نه امکان پذيراست و نه مطلوب. از سی سال پيش همۀ تلاش و توانم را يکسره در راه مبارزه با رژيم و رهايی ايران به کار برده ام، در پی مرگ پدرم، شاه فقيد ايران در ژوئيۀ ۱۹۸۰، به عن ـ وان وليعهد، وارد عرص ـ ۀ پيک ـ ار شدم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "در اين سال ها هم با طرفداران نظام پاد شاهی مشروطه همکاری کرده ام و هم با جمهوری خواهان، هم با نيروهای چپ و هم با نيروهای راست. در واقع، فعاليتم را به عنوان مخالف حکومت اسلامیاز هويت نهادی ام جدا کرده ام. بی هيچ ابها می، خوا ستار يک قانون اساسی دموکراتيک عرفی برای ايران هستم که بر اعلامیۀ جهانی حقوق بشر استوار شده باشد. اين رژيم دموکراتيک و عرفی میتواند دو شکل به خود بگيرد : اگر اکثريت مردم ايران يک حکومت پادشاهی مُدرن و پارلمانی را برگزينند ) نظير آنچه که امروز در نروژ، سوئد، هلند، اسپانيا يا ژاپن میبينيم ( از اين انتخاب خرسند خواهم شد و اين گز ينه ای است که من نمايندگی میکنم. اما اگر اکثريت ايرانيان موافقت خود را با يک جمهوری پارلمانی اعلام کنند، طبيعتا چنين انتخابی را نيز خواهم پذيرفت.",
+        "transcript_char_count": 696,
+        "token_name": "project-4",
+        "attempt": 2
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0004.wav",
+        "wav_size_bytes": 3277484,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 3277440,
+        "timestamp": 1779906951.1049345
+      }
+    },
+    {
+      "chunk_index": 5,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 5,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اگر اکثريت مردم ايران يک حکومت پادشاهی مُدرن و پارلمانی را برگزينند ) نظير آنچه که امروز در نروژ، سوئد، هلند، اسپانيا يا ژاپن میبينيم ( از اين انتخاب خرسند خواهم شد و اين گز ينه ای است که من نمايندگی میکنم. اما اگر اکثريت ايرانيان موافقت خود را با يک جمهوری پارلمانی اعلام کنند، طبيعتا چنين انتخابی را نيز خواهم پذيرفت.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nامروز بحث کردن در مورد شکل حکومت آينده زودرس است. پيش از آن که چپ باشيم يا راست، مدافع حکومت پادشاهی باشي م يا جمهوری خواه، ما دموکرات های عرفی گرايی هستيم که میخواهيم به نظام حکومت دينی در ايران پايان دهيم. امروز مهم مخالفت اساسی و بدون سازش ما با جمهوری اسلامیاست. نمیتوان در اين مورد موضع بينابينی داشت. يا بايد مدافع جمهوری اسلامیبود يا مخالف آن. در اين جا روی سخن من با طرفداران جمهوری اسلامینيست. اما کسانی که مخالف نظام کنونی هستند بايد با يکديگر گفتگو کنند و به جبهۀ واحدی برسند. در اين راستا ضروری است مرحلۀ نوينی را پشت سر بگذاريم. يعنی بايد بتوانيم همۀ نيروهای آزادی خواه را به همراهی و همکاری در راه پ يکار با رژيم حاکم برانگيزيم. در اين مرحله است که میتوانم نقشی مفيد و سازنده ايفا کنم. دقيقا میخواهيم بدانيم که از سی سال پيش چه تغييرهايی کرده ايد؟ بعيد نيست که من هم تغيير کرده باشم. زيرا در اين مدت به ويژه بسيار آموخته ام.",
+        "prompt_char_count": 2443,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اگر اکثريت مردم ايران يک حکومت پادشاهی مُدرن و پارلمانی را برگزينند ) نظير آنچه که امروز در نروژ، سوئد، هلند، اسپانيا يا ژاپن میبينيم ( از اين انتخاب خرسند خواهم شد و اين گز ينه ای است که من نمايندگی میکنم. اما اگر اکثريت ايرانيان موافقت خود را با يک جمهوری پارلمانی اعلام کنند، طبيعتا چنين انتخابی را نيز خواهم پذيرفت.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "امروز بحث کردن در مورد شکل حکومت آينده زودرس است. پيش از آن که چپ باشيم يا راست، مدافع حکومت پادشاهی باشي م يا جمهوری خواه، ما دموکرات های عرفی گرايی هستيم که میخواهيم به نظام حکومت دينی در ايران پايان دهيم. امروز مهم مخالفت اساسی و بدون سازش ما با جمهوری اسلامیاست. نمیتوان در اين مورد موضع بينابينی داشت. يا بايد مدافع جمهوری اسلامیبود يا مخالف آن. در اين جا روی سخن من با طرفداران جمهوری اسلامینيست. اما کسانی که مخالف نظام کنونی هستند بايد با يکديگر گفتگو کنند و به جبهۀ واحدی برسند. در اين راستا ضروری است مرحلۀ نوينی را پشت سر بگذاريم. يعنی بايد بتوانيم همۀ نيروهای آزادی خواه را به همراهی و همکاری در راه پ يکار با رژيم حاکم برانگيزيم. در اين مرحله است که میتوانم نقشی مفيد و سازنده ايفا کنم. دقيقا میخواهيم بدانيم که از سی سال پيش چه تغييرهايی کرده ايد؟ بعيد نيست که من هم تغيير کرده باشم. زيرا در اين مدت به ويژه بسيار آموخته ام.",
+        "transcript_char_count": 838,
+        "token_name": "project-4",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0005.wav",
+        "wav_size_bytes": 3886124,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 3886080,
+        "timestamp": 1779907003.42061
+      }
+    },
+    {
+      "chunk_index": 6,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 6,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «بعيد نيست که من هم تغيير کرده باشم. زيرا در اين مدت به ويژه بسيار آموخته ام.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nمن در ژوئن ۱۹۷۸، چند ماه پيش از وقوع انقلاب، برای ادامۀ تحصيل، ايران را به قصد ایالات متحدۀ آمريکا ترک کرده بودم. در آن زمان نوجوان هفده ساله ای بودم که گه گاه نقشی تشريفاتی ايفا میکردم و در عين تا حدودی با وظايف و طرز کار نهادهای دولت آشنا میشدم. پس از ورود به تکزاس کلاس های آموزش خلبانی هواپيماهای شکاری جنگنده را در يکی از پايگاه های نيروی هوايی ارتش آمريکا آغاز کردم. من در تکزاس بودم که انقلاب خانواده ام را راهی تبعيد کرد. در واقع، مرگ پدرم در قاهره در ۱۹۸۰ مرا به صحنۀ سياست کشاند.",
+        "prompt_char_count": 1851,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «بعيد نيست که من هم تغيير کرده باشم. زيرا در اين مدت به ويژه بسيار آموخته ام.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "من در ژوئن ۱۹۷۸، چند ماه پيش از وقوع انقلاب، برای ادامۀ تحصيل، ايران را به قصد ایالات متحدۀ آمريکا ترک کرده بودم. در آن زمان نوجوان هفده ساله ای بودم که گه گاه نقشی تشريفاتی ايفا میکردم و در عين تا حدودی با وظايف و طرز کار نهادهای دولت آشنا میشدم. پس از ورود به تکزاس کلاس های آموزش خلبانی هواپيماهای شکاری جنگنده را در يکی از پايگاه های نيروی هوايی ارتش آمريکا آغاز کردم. من در تکزاس بودم که انقلاب خانواده ام را راهی تبعيد کرد. در واقع، مرگ پدرم در قاهره در ۱۹۸۰ مرا به صحنۀ سياست کشاند.",
+        "transcript_char_count": 489,
+        "token_name": "project-5",
+        "attempt": 2
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0006.wav",
+        "wav_size_bytes": 2413484,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 2413440,
+        "timestamp": 1779907035.2191741
+      }
+    },
+    {
+      "chunk_index": 7,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 7,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «من در تکزاس بودم که انقلاب خانواده ام را راهی تبعيد کرد. در واقع، مرگ پدرم در قاهره در ۱۹۸۰ مرا به صحنۀ سياست کشاند.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nآن زمان بسيار جوان بودم و بدون تجربۀ سياسی. برخلاف امروز که میتوانم هر لحظه با بسياری ازهموطنانم در هر جای ايران تماس بگيرم، در آن موقع تماس گرفتن با ايران برايم بسيار دشوار بود. هنگامیکه در قاهره يا مراکش در تبعيد بودم، پاره ای اوقات برای يک گفتگوی تلفنی با ايران، پاريس يا لندن بايد ساعت ها انتظار میکشيدم. به اين ترتيب، بيشتر با کسانی به گفتگو میپرداختم که خارج از ايران بودند، با مقامات پيشين کشور يا نمايندگان احزاب قديمیدر تبعيد. اگر آن زمان آگاهی امروز را داشت ــ م از مشاجرات داخل ـ ی، مضحک و کودکان ـ ه ای که وقت زي ــ ادی را صرف خ ـ ود کردن ــ د، فاصله میگر. فتم همه چيز در عرض اين سی سال تغيير کرده است. امروز دانشجويان، کارگران، زنان، اقوام مختلف ملی، روحانيت، نظامیان و حتی اعضای سپاه پاسداران نارضايی خود را اغلب با شهامت کم نظير بيان میکنند. مهم تر از همه، اکثريت بزرگ ايرانيان ديگر اعتقادی به رژيم اسلامیحا کم بر ايران ندارند.",
+        "prompt_char_count": 2244,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «من در تکزاس بودم که انقلاب خانواده ام را راهی تبعيد کرد. در واقع، مرگ پدرم در قاهره در ۱۹۸۰ مرا به صحنۀ سياست کشاند.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "آن زمان بسيار جوان بودم و بدون تجربۀ سياسی. برخلاف امروز که میتوانم هر لحظه با بسياری ازهموطنانم در هر جای ايران تماس بگيرم، در آن موقع تماس گرفتن با ايران برايم بسيار دشوار بود. هنگامیکه در قاهره يا مراکش در تبعيد بودم، پاره ای اوقات برای يک گفتگوی تلفنی با ايران، پاريس يا لندن بايد ساعت ها انتظار میکشيدم. به اين ترتيب، بيشتر با کسانی به گفتگو میپرداختم که خارج از ايران بودند، با مقامات پيشين کشور يا نمايندگان احزاب قديمیدر تبعيد. اگر آن زمان آگاهی امروز را داشت ــ م از مشاجرات داخل ـ ی، مضحک و کودکان ـ ه ای که وقت زي ــ ادی را صرف خ ـ ود کردن ــ د، فاصله میگر. فتم همه چيز در عرض اين سی سال تغيير کرده است. امروز دانشجويان، کارگران، زنان، اقوام مختلف ملی، روحانيت، نظامیان و حتی اعضای سپاه پاسداران نارضايی خود را اغلب با شهامت کم نظير بيان میکنند. مهم تر از همه، اکثريت بزرگ ايرانيان ديگر اعتقادی به رژيم اسلامیحا کم بر ايران ندارند.",
+        "transcript_char_count": 842,
+        "token_name": "project-6",
+        "attempt": 2
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0007.wav",
+        "wav_size_bytes": 3613484,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 3613440,
+        "timestamp": 1779907079.9118526
+      }
+    },
+    {
+      "chunk_index": 8,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 8,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «امروز دانشجويان، کارگران، زنان، اقوام مختلف ملی، روحانيت، نظامیان و حتی اعضای سپاه پاسداران نارضايی خود را اغلب با شهامت کم نظير بيان میکنند. مهم تر از همه، اکثريت بزرگ ايرانيان ديگر اعتقادی به رژيم اسلامیحا کم بر ايران ندارند.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nنسل جديد رو به آينده دارد، در حالی که نسل های پيشين هنوز قادر نيستند زخم های گذشته را که بيشترشان ريشه حتی در جنگ جهانی دوم دارند، پشت سر بگذارند. با نسل جديد، گفتگو برسر بهترين نحوۀ حل مسائل مشخص کشور است و چنين راهی بيشتر با روحيۀ من سازگاراست. چه بخواهم، چه نخواهم، برای بسياری از ايرانيان من پسرشاه و وارث نهاد پادشاهی ام. اين سرمايۀ سياسی است که دراختيار من است اما از آن برای تبليغ نهاد پادشاهی استفاده نمیکنم. هدف من برقراری دموکراسی در ايران و تامین آزادی های و حقوق مردم است. آيا اي ن تحول درارزش ها و آرمان های تان را مهم میشماريد؟! نه من همواره به اين ارزش ها اعتقاد داشته ام. اما تلقی ای که بسياری از ايرانيان در مورد من داشتند، در سال های اخيرتحول يافته است ١٣. اکتبر ۱۹۸۰، سه ماه بعد از مرگ پدرم و در بيستمین سالگرد تولدم – هنگامیکه در تبعيد در قاهره بودم – به قانون اساسی مشروطۀ ايران سوگندم ياد کردم و خودم را وقف ملتی کردم که توانسته بود بسيار پيش از همۀ ملت های منطقه به قانون اساسی مدون دست يابد و حقوق و آزادی های افراد ملت را مشخص کند. مراسم بسيار غي رواقعی مینمود.",
+        "prompt_char_count": 2499,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «امروز دانشجويان، کارگران، زنان، اقوام مختلف ملی، روحانيت، نظامیان و حتی اعضای سپاه پاسداران نارضايی خود را اغلب با شهامت کم نظير بيان میکنند. مهم تر از همه، اکثريت بزرگ ايرانيان ديگر اعتقادی به رژيم اسلامیحا کم بر ايران ندارند.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "نسل جديد رو به آينده دارد، در حالی که نسل های پيشين هنوز قادر نيستند زخم های گذشته را که بيشترشان ريشه حتی در جنگ جهانی دوم دارند، پشت سر بگذارند. با نسل جديد، گفتگو برسر بهترين نحوۀ حل مسائل مشخص کشور است و چنين راهی بيشتر با روحيۀ من سازگاراست. چه بخواهم، چه نخواهم، برای بسياری از ايرانيان من پسرشاه و وارث نهاد پادشاهی ام. اين سرمايۀ سياسی است که دراختيار من است اما از آن برای تبليغ نهاد پادشاهی استفاده نمیکنم. هدف من برقراری دموکراسی در ايران و تامین آزادی های و حقوق مردم است. آيا اي ن تحول درارزش ها و آرمان های تان را مهم میشماريد؟! نه من همواره به اين ارزش ها اعتقاد داشته ام. اما تلقی ای که بسياری از ايرانيان در مورد من داشتند، در سال های اخيرتحول يافته است ١٣. اکتبر ۱۹۸۰، سه ماه بعد از مرگ پدرم و در بيستمین سالگرد تولدم – هنگامیکه در تبعيد در قاهره بودم – به قانون اساسی مشروطۀ ايران سوگندم ياد کردم و خودم را وقف ملتی کردم که توانسته بود بسيار پيش از همۀ ملت های منطقه به قانون اساسی مدون دست يابد و حقوق و آزادی های افراد ملت را مشخص کند. مراسم بسيار غي رواقعی مینمود.",
+        "transcript_char_count": 986,
+        "token_name": "project-6",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0008.wav",
+        "wav_size_bytes": 4690604,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 4690560,
+        "timestamp": 1779907134.8725522
+      }
+    },
+    {
+      "chunk_index": 9,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 9,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اکتبر ۱۹۸۰، سه ماه بعد از مرگ پدرم و در بيستمین سالگرد تولدم – هنگامیکه در تبعيد در قاهره بودم – به قانون اساسی مشروطۀ ايران سوگندم ياد کردم و خودم را وقف ملتی کردم که توانسته بود بسيار پيش از همۀ ملت های منطقه به قانون اساسی مدون دست يابد و حقوق و آزادی های افراد ملت را مشخص کند. مراسم بسيار غي رواقعی مینمود.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nزيرا يکه و تنها در تالار يک کاخ مصری و در فاصلۀ هزاران کيلومتر از تهران سوگند ياد کردم.",
+        "prompt_char_count": 1684,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اکتبر ۱۹۸۰، سه ماه بعد از مرگ پدرم و در بيستمین سالگرد تولدم – هنگامیکه در تبعيد در قاهره بودم – به قانون اساسی مشروطۀ ايران سوگندم ياد کردم و خودم را وقف ملتی کردم که توانسته بود بسيار پيش از همۀ ملت های منطقه به قانون اساسی مدون دست يابد و حقوق و آزادی های افراد ملت را مشخص کند. مراسم بسيار غي رواقعی مینمود.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "زيرا يکه و تنها در تالار يک کاخ مصری و در فاصلۀ هزاران کيلومتر از تهران سوگند ياد کردم.",
+        "transcript_char_count": 87,
+        "token_name": "project-7",
+        "attempt": 2
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0009.wav",
+        "wav_size_bytes": 1338284,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 1338240,
+        "timestamp": 1779907153.911218
+      }
+    },
+    {
+      "chunk_index": 10,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 10,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «زيرا يکه و تنها در تالار يک کاخ مصری و در فاصلۀ هزاران کيلومتر از تهران سوگند ياد کردم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nاما اگر در آن شرايط، از ادای سوگند سرباز میزدم، اين گونه تعبير میشد که خواسته ام پيوندم را با نهاد پادشاهی قطع کنم و من چنين حقی نداشتم. با اين اقدام نمادين میخواستم به مردم ايران بگويم : \" اگر چه شما به حکومت پادشاهی پشت کرده ايد، اما وارث نظام پادشاهی هرگز شما را تنها نخواهد گذاشت و برای خدمتگزاری به شما زنده است. با اين حال، نظام پادشاهی مهم تر از اراده و خواست خود شما نيست. امروزشما راه مخالفت را با آن برگزيده ايد، اما اگر تغيير نظر بدهيد، من برای خدمت به شما آماده ام.\" اندکی بعد تصمیم گرفتم با پيشنهاد انجام يک همه پرسی، اين امکان را فراهم کنم که مردم ايران بتوانند نظر خود را دربارۀ نظام پادشاهی آزادانه مطرح کنند. در اوايل دهۀ ٠٨ میلادی در مصاحبه ای با \" پاتريک واژمن \" که در نشريۀ فيگارو به چاپ رسيد در اين خصوص توضيحات مبسوطی دادم. پيشنهاد من در آن زمان با مخالفت شديد محافل طرفدار نظام پادشاهی روبرو شد. اما برای من چنين پيشنهادی برپايۀ يک موضع اصولی قرارداشت. حقانيت نظام پادشاهی از مردم نشات میگيرد.",
+        "prompt_char_count": 2289,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «زيرا يکه و تنها در تالار يک کاخ مصری و در فاصلۀ هزاران کيلومتر از تهران سوگند ياد کردم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "اما اگر در آن شرايط، از ادای سوگند سرباز میزدم، اين گونه تعبير میشد که خواسته ام پيوندم را با نهاد پادشاهی قطع کنم و من چنين حقی نداشتم. با اين اقدام نمادين میخواستم به مردم ايران بگويم : \" اگر چه شما به حکومت پادشاهی پشت کرده ايد، اما وارث نظام پادشاهی هرگز شما را تنها نخواهد گذاشت و برای خدمتگزاری به شما زنده است. با اين حال، نظام پادشاهی مهم تر از اراده و خواست خود شما نيست. امروزشما راه مخالفت را با آن برگزيده ايد، اما اگر تغيير نظر بدهيد، من برای خدمت به شما آماده ام.\" اندکی بعد تصمیم گرفتم با پيشنهاد انجام يک همه پرسی، اين امکان را فراهم کنم که مردم ايران بتوانند نظر خود را دربارۀ نظام پادشاهی آزادانه مطرح کنند. در اوايل دهۀ ٠٨ میلادی در مصاحبه ای با \" پاتريک واژمن \" که در نشريۀ فيگارو به چاپ رسيد در اين خصوص توضيحات مبسوطی دادم. پيشنهاد من در آن زمان با مخالفت شديد محافل طرفدار نظام پادشاهی روبرو شد. اما برای من چنين پيشنهادی برپايۀ يک موضع اصولی قرارداشت. حقانيت نظام پادشاهی از مردم نشات میگيرد.",
+        "transcript_char_count": 916,
+        "token_name": "project-7",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0010.wav",
+        "wav_size_bytes": 4032044,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 4032000,
+        "timestamp": 1779907194.4226186
+      }
+    },
+    {
+      "chunk_index": 11,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 11,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اما برای من چنين پيشنهادی برپايۀ يک موضع اصولی قرارداشت. حقانيت نظام پادشاهی از مردم نشات میگيرد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nمن امروز هم رژيم اسلامیرا به چالش میطلبم که چنين همه پرسی ای را برگزار کند. اگر ملاها به مشروعيت خود اطمینان دارند، چرا از رای مردم میترسند؟ شما خود را در هيئت ديگری به غير از يک پادشاه مشروطه خواه نمیبينيد؟ صادقانه بگويم نه :! جمهوری خواهان به من پيشنهاد کردند که از پادشاهی چشم بپوشم و همزمان اطمینان دادند که از من به عنوان نامزد آيندۀ رياست جمهوری ايران دموکراتيک پشتيبانی میکنند.",
+        "prompt_char_count": 1767,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اما برای من چنين پيشنهادی برپايۀ يک موضع اصولی قرارداشت. حقانيت نظام پادشاهی از مردم نشات میگيرد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "من امروز هم رژيم اسلامیرا به چالش میطلبم که چنين همه پرسی ای را برگزار کند. اگر ملاها به مشروعيت خود اطمینان دارند، چرا از رای مردم میترسند؟ شما خود را در هيئت ديگری به غير از يک پادشاه مشروطه خواه نمیبينيد؟ صادقانه بگويم نه :! جمهوری خواهان به من پيشنهاد کردند که از پادشاهی چشم بپوشم و همزمان اطمینان دادند که از من به عنوان نامزد آيندۀ رياست جمهوری ايران دموکراتيک پشتيبانی میکنند.",
+        "transcript_char_count": 384,
+        "token_name": "project-8",
+        "attempt": 2
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0011.wav",
+        "wav_size_bytes": 1714604,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 1714560,
+        "timestamp": 1779907217.7865064
+      }
+    },
+    {
+      "chunk_index": 12,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 12,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «صادقانه بگويم نه :! جمهوری خواهان به من پيشنهاد کردند که از پادشاهی چشم بپوشم و همزمان اطمینان دادند که از من به عنوان نامزد آيندۀ رياست جمهوری ايران دموکراتيک پشتيبانی میکنند.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nپاسخ من به آنان اين بود و هست که من حق ندارم با چنين اقدامی، گزينۀ پادشاهی را پيش ازآن که مردم ايران درباره اش تصمیم گرفته باشند، نفی کنم. آيا میتوا ن ن ظامِ پادشاهی را به دليل اشتباهات برخی پادشاهان، از ريشه محکوم کرد؟ اگر پاسخ مثبت باشد بايد نظام جمهوری را نيز به دليل انحراف ها و خطاهای برخی روسای جمهوری محکوم کرد. امروز نظام های پادشاهی به مراتب دموکراتيک تر از برخی جمهوری ها وجود دارد. ترجيحی که من برا ی نظام پادشاهی پارلمانی قايل هستم ريشه در تحليلی تاريخی و نهادی دارد. اين ترجيح در عين حال با طبع و روحيۀ من سازگاراست. يک پادشاه دموکرات میتواند نقشی سازنده در تقويت و تثبيت همبستگی ملی ايف ا کند به ويژه در کشوری که دارای اقوام و مذاهب گوناگون هستند. پادشاهی میتواند به عنوان يک نماد ملی چنين وظيفه ای به عهده بگيرد که جانب بی طرفی مطلق را رعايت کند و از دخالت در کار حکومت بپرهيزد.",
+        "prompt_char_count": 2255,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «صادقانه بگويم نه :! جمهوری خواهان به من پيشنهاد کردند که از پادشاهی چشم بپوشم و همزمان اطمینان دادند که از من به عنوان نامزد آيندۀ رياست جمهوری ايران دموکراتيک پشتيبانی میکنند.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "پاسخ من به آنان اين بود و هست که من حق ندارم با چنين اقدامی، گزينۀ پادشاهی را پيش ازآن که مردم ايران درباره اش تصمیم گرفته باشند، نفی کنم. آيا میتوا ن ن ظامِ پادشاهی را به دليل اشتباهات برخی پادشاهان، از ريشه محکوم کرد؟ اگر پاسخ مثبت باشد بايد نظام جمهوری را نيز به دليل انحراف ها و خطاهای برخی روسای جمهوری محکوم کرد. امروز نظام های پادشاهی به مراتب دموکراتيک تر از برخی جمهوری ها وجود دارد. ترجيحی که من برا ی نظام پادشاهی پارلمانی قايل هستم ريشه در تحليلی تاريخی و نهادی دارد. اين ترجيح در عين حال با طبع و روحيۀ من سازگاراست. يک پادشاه دموکرات میتواند نقشی سازنده در تقويت و تثبيت همبستگی ملی ايف ا کند به ويژه در کشوری که دارای اقوام و مذاهب گوناگون هستند. پادشاهی میتواند به عنوان يک نماد ملی چنين وظيفه ای به عهده بگيرد که جانب بی طرفی مطلق را رعايت کند و از دخالت در کار حکومت بپرهيزد.",
+        "transcript_char_count": 793,
+        "token_name": "project-8",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0012.wav",
+        "wav_size_bytes": 3765164,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 3765120,
+        "timestamp": 1779907269.153791
+      }
+    },
+    {
+      "chunk_index": 13,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 13,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «يک پادشاه دموکرات میتواند نقشی سازنده در تقويت و تثبيت همبستگی ملی ايف ا کند به ويژه در کشوری که دارای اقوام و مذاهب گوناگون هستند. پادشاهی میتواند به عنوان يک نماد ملی چنين وظيفه ای به عهده بگيرد که جانب بی طرفی مطلق را رعايت کند و از دخالت در کار حکومت بپرهيزد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nاما در نظام جمهوری رئيس دولت به سبب تعلقاتش به گروه يا حزب مشخصی مشکل بتواند بی طرفی کامل در چنين زمینه هايی اختيارکن.د نظام پادشاهی مشروطه با تکيه بر ريشه های تاريخی اش ثبات بيشتری برای جامعه به بار میآورد و برای کشوری چون ايران همانند چتری است که از همبستگی ملی و يکپارچگی ارضی کشور حفاظت میکند. نمونۀ اسپانيا را در نظر بگيريد که در آن نظام پادشاهی چنين نقشی را در طول سال ها ايفا کرده است. چنانکه پيش تر گفتم، وظيفۀ من پشتيبانی از يک ايدئولوژی، يک مسلک يا يک سياست خاص نيست. من مسئول و اداره کنندۀ امور روزمره نيستم. دغدغ ۀ من بيشتر بنيادهای جامعۀ ايران فردا است. بسيار فراتر از ساختارهای حکومتی و نوع عملکرد آنها، بايد مراقب ماهيت دموکراتيک نهادها بود.",
+        "prompt_char_count": 2205,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «يک پادشاه دموکرات میتواند نقشی سازنده در تقويت و تثبيت همبستگی ملی ايف ا کند به ويژه در کشوری که دارای اقوام و مذاهب گوناگون هستند. پادشاهی میتواند به عنوان يک نماد ملی چنين وظيفه ای به عهده بگيرد که جانب بی طرفی مطلق را رعايت کند و از دخالت در کار حکومت بپرهيزد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "اما در نظام جمهوری رئيس دولت به سبب تعلقاتش به گروه يا حزب مشخصی مشکل بتواند بی طرفی کامل در چنين زمینه هايی اختيارکن.د نظام پادشاهی مشروطه با تکيه بر ريشه های تاريخی اش ثبات بيشتری برای جامعه به بار میآورد و برای کشوری چون ايران همانند چتری است که از همبستگی ملی و يکپارچگی ارضی کشور حفاظت میکند. نمونۀ اسپانيا را در نظر بگيريد که در آن نظام پادشاهی چنين نقشی را در طول سال ها ايفا کرده است. چنانکه پيش تر گفتم، وظيفۀ من پشتيبانی از يک ايدئولوژی، يک مسلک يا يک سياست خاص نيست. من مسئول و اداره کنندۀ امور روزمره نيستم. دغدغ ۀ من بيشتر بنيادهای جامعۀ ايران فردا است. بسيار فراتر از ساختارهای حکومتی و نوع عملکرد آنها، بايد مراقب ماهيت دموکراتيک نهادها بود.",
+        "transcript_char_count": 656,
+        "token_name": "project-9",
+        "attempt": 2
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0013.wav",
+        "wav_size_bytes": 3227564,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 3227520,
+        "timestamp": 1779907311.5488496
+      }
+    },
+    {
+      "chunk_index": 14,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 14,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «دغدغ ۀ من بيشتر بنيادهای جامعۀ ايران فردا است. بسيار فراتر از ساختارهای حکومتی و نوع عملکرد آنها، بايد مراقب ماهيت دموکراتيک نهادها بود.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nبايد نگران رعايت کامل حقوق بشر، استقلال دستگاه قضايی، برابری همۀ شهروندان و نبود هرنوع تبعيض بود. اين ها وظايف من است، در صورتی که در آيندۀ هموطنانم نظام پادشاهی را به عنوان شکل حکومت مورد علاقه خود برگزينند. در مقابل اگر اکثري ت مردم ايران در يک همه پرسی مخالف خود را با نظام پادشاهی اعلام کنند، به مخالفت با نظام جمهوری بر نخواهم خاست. نقطۀ اشتراک میان نظام پادشاهی پارلمانی و جمهوری پارلمانی دموکراسی است. من همواره خود را به يک جمهوری خواه دموکرات بسيار نزديک تر احساس میکنم تا ب ه يک هواخواه سلطنت آمرانه و اقتدارطلب. آيا اين سی سالی که در غرب گذرانده ايد تغييری در شما به وجود آورده است؟ دستاوردهای فکری و سياسی که در بازگشت به ايران با خود به همراه خواهيد برد، کدامند؟ قدر مسلم من نه فقط يک ايرانی بلکه شهروند جهان نيز هستم و جامعۀ غ ربی را از درون با همۀ محاسن و کاستی هايش میشناسم و با ديدی مثبت به آن مینگرم. اما در عين حال از آن تصويری آرمانی در ذهن نساخته ام. هويتم بسيار روشن است.",
+        "prompt_char_count": 2315,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «دغدغ ۀ من بيشتر بنيادهای جامعۀ ايران فردا است. بسيار فراتر از ساختارهای حکومتی و نوع عملکرد آنها، بايد مراقب ماهيت دموکراتيک نهادها بود.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "بايد نگران رعايت کامل حقوق بشر، استقلال دستگاه قضايی، برابری همۀ شهروندان و نبود هرنوع تبعيض بود. اين ها وظايف من است، در صورتی که در آيندۀ هموطنانم نظام پادشاهی را به عنوان شکل حکومت مورد علاقه خود برگزينند. در مقابل اگر اکثري ت مردم ايران در يک همه پرسی مخالف خود را با نظام پادشاهی اعلام کنند، به مخالفت با نظام جمهوری بر نخواهم خاست. نقطۀ اشتراک میان نظام پادشاهی پارلمانی و جمهوری پارلمانی دموکراسی است. من همواره خود را به يک جمهوری خواه دموکرات بسيار نزديک تر احساس میکنم تا ب ه يک هواخواه سلطنت آمرانه و اقتدارطلب. آيا اين سی سالی که در غرب گذرانده ايد تغييری در شما به وجود آورده است؟ دستاوردهای فکری و سياسی که در بازگشت به ايران با خود به همراه خواهيد برد، کدامند؟ قدر مسلم من نه فقط يک ايرانی بلکه شهروند جهان نيز هستم و جامعۀ غ ربی را از درون با همۀ محاسن و کاستی هايش میشناسم و با ديدی مثبت به آن مینگرم. اما در عين حال از آن تصويری آرمانی در ذهن نساخته ام. هويتم بسيار روشن است.",
+        "transcript_char_count": 893,
+        "token_name": "project-10",
+        "attempt": 2
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0014.wav",
+        "wav_size_bytes": 4053164,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 4053120,
+        "timestamp": 1779907359.5786655
+      }
+    },
+    {
+      "chunk_index": 15,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 15,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اما در عين حال از آن تصويری آرمانی در ذهن نساخته ام. هويتم بسيار روشن است.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nمن يک ايرانی هستم که میهنم را عاشقانه دوست دارم و برای رهايی آن از چنگ استبداد مسئوليت ويژه ای بردوش گرفته ام. من تنها در نظامیمیتوانم زندگی کنم که در آن رقابت و توازن میان قوای سه گانه، رسانه های آزاد و افکار عمومیمانع از تمرکز قدرت میشوند؛ جايی که حقوق فردی شهروندان تضمین شده است و دستگاه قضايی و مطبوعات آزاد از اين حقوق پاسداری میکند. بدون ترديد ن ظام دموکراتيک بهترين نظام برای پيشرفت جوامع است. عملکرد دموکراسی و پيشرفت های ناشی از آن را در آمريکا و اروپا ديده ام. آرزويم اين است که در ايران نيز شاهد تحقق همۀ مزايا و پيشرفت هايی باشم که در فرانسه يا هند میبينم. بايد بگويم که استقرار دموکراسی مربوط به دين و سنت های جامعه نيست. مردم ايران نيز همانند مردمان سوئد، اسپانيا يا ژاپن قادرند و شايستۀ آن که در يک نظام دموکراتيک زندگی کنند. اين فرض که دموکراسی مختص مردمانی با فرهنگ غربی است، پذيرفتنی نيست. من میخواهم به زادگاهم بازگردم و خودم را متعلق به اي را ـ ن میدانم. میخواهم تجربه و دانشی را که در اين سی سال اندوخته ام در خدمت ايران به کار ببندم.",
+        "prompt_char_count": 2316,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اما در عين حال از آن تصويری آرمانی در ذهن نساخته ام. هويتم بسيار روشن است.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "من يک ايرانی هستم که میهنم را عاشقانه دوست دارم و برای رهايی آن از چنگ استبداد مسئوليت ويژه ای بردوش گرفته ام. من تنها در نظامیمیتوانم زندگی کنم که در آن رقابت و توازن میان قوای سه گانه، رسانه های آزاد و افکار عمومیمانع از تمرکز قدرت میشوند؛ جايی که حقوق فردی شهروندان تضمین شده است و دستگاه قضايی و مطبوعات آزاد از اين حقوق پاسداری میکند. بدون ترديد ن ظام دموکراتيک بهترين نظام برای پيشرفت جوامع است. عملکرد دموکراسی و پيشرفت های ناشی از آن را در آمريکا و اروپا ديده ام. آرزويم اين است که در ايران نيز شاهد تحقق همۀ مزايا و پيشرفت هايی باشم که در فرانسه يا هند میبينم. بايد بگويم که استقرار دموکراسی مربوط به دين و سنت های جامعه نيست. مردم ايران نيز همانند مردمان سوئد، اسپانيا يا ژاپن قادرند و شايستۀ آن که در يک نظام دموکراتيک زندگی کنند. اين فرض که دموکراسی مختص مردمانی با فرهنگ غربی است، پذيرفتنی نيست. من میخواهم به زادگاهم بازگردم و خودم را متعلق به اي را ـ ن میدانم. میخواهم تجربه و دانشی را که در اين سی سال اندوخته ام در خدمت ايران به کار ببندم.",
+        "transcript_char_count": 956,
+        "token_name": "project-10",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0015.wav",
+        "wav_size_bytes": 4826924,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 4826880,
+        "timestamp": 1779907415.6326041
+      }
+    },
+    {
+      "chunk_index": 16,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 16,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «من میخواهم به زادگاهم بازگردم و خودم را متعلق به اي را ـ ن میدانم. میخواهم تجربه و دانشی را که در اين سی سال اندوخته ام در خدمت ايران به کار ببندم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nآيا غالبا در انديشۀ بازگشت به ايران هستيد؟ از سی سال پيش، من از اين حق محروم بوده ام که آزادانه و در امنيت در کشورم زندگی کنم. به همین خاطر با همۀ توان برای بازي ابی اين حق طبيعی فعاليت میکنم. روزی که رژيم ايران تغيير کند، بلافاصله به کشورم باز خواهم گشت. برای تسريع در تغيير اوضاع اسف بار امروز ايران حاضرم جانم را نيز فدا کنم! دربارۀ ضرورت روزافزون رهايی ايران همواره با همسر و دو دخترم صحبت کرده ام. تحمل چنين وضعی برای آنان نيز دشواراست. آنان میدانند که دوست شان دارم، اما اين را نيز میدانند که برای من هيچ چيز مهم تر از ايران نيست. کاملا آگاهم که فعاليت هايم میتواند بر زندگی میليون ها تن از هموطنانم تاثير گذارد در نتيجه تنها در قالب منافع و مصالح مردم ايران گام بر میدارم. سی سال است که در سايۀ تهديد زندگی میکنم. بارها آدم کشان حرفه ای را برای کشتنم به خارج فرستاده اند. دائما ناگزير از رعايت احتياط برای تامین امنيت خانواده ام هستم. اصول جهان شمول اخلاقی را من از خلال آشنايی با افراد مختلف در کشورهای گوناگون، از ب رزيل تا ويتنام، از کانادا تا مصر، فرا گرفته ام.",
+        "prompt_char_count": 2405,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «من میخواهم به زادگاهم بازگردم و خودم را متعلق به اي را ـ ن میدانم. میخواهم تجربه و دانشی را که در اين سی سال اندوخته ام در خدمت ايران به کار ببندم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "آيا غالبا در انديشۀ بازگشت به ايران هستيد؟ از سی سال پيش، من از اين حق محروم بوده ام که آزادانه و در امنيت در کشورم زندگی کنم. به همین خاطر با همۀ توان برای بازي ابی اين حق طبيعی فعاليت میکنم. روزی که رژيم ايران تغيير کند، بلافاصله به کشورم باز خواهم گشت. برای تسريع در تغيير اوضاع اسف بار امروز ايران حاضرم جانم را نيز فدا کنم! دربارۀ ضرورت روزافزون رهايی ايران همواره با همسر و دو دخترم صحبت کرده ام. تحمل چنين وضعی برای آنان نيز دشواراست. آنان میدانند که دوست شان دارم، اما اين را نيز میدانند که برای من هيچ چيز مهم تر از ايران نيست. کاملا آگاهم که فعاليت هايم میتواند بر زندگی میليون ها تن از هموطنانم تاثير گذارد در نتيجه تنها در قالب منافع و مصالح مردم ايران گام بر میدارم. سی سال است که در سايۀ تهديد زندگی میکنم. بارها آدم کشان حرفه ای را برای کشتنم به خارج فرستاده اند. دائما ناگزير از رعايت احتياط برای تامین امنيت خانواده ام هستم. اصول جهان شمول اخلاقی را من از خلال آشنايی با افراد مختلف در کشورهای گوناگون، از ب رزيل تا ويتنام، از کانادا تا مصر، فرا گرفته ام.",
+        "transcript_char_count": 972,
+        "token_name": "project-10",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0016.wav",
+        "wav_size_bytes": 4567724,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 4567680,
+        "timestamp": 1779907482.0214212
+      }
+    },
+    {
+      "chunk_index": 17,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 17,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «دائما ناگزير از رعايت احتياط برای تامین امنيت خانواده ام هستم. اصول جهان شمول اخلاقی را من از خلال آشنايی با افراد مختلف در کشورهای گوناگون، از ب رزيل تا ويتنام، از کانادا تا مصر، فرا گرفته ام.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nاين يادگيری بخشی از تجرب ـ ه ای است که طی س ـ ی سال اندوخته ام، فرای فرهنگ ها و کشورها و جغرافيا، موجود انسانی نيازها و امیدهايی دارد که به گوش جان شنيده و فهمیده ام و میکوشم تا همه را جذب کنم. در واقع، از سی سا ل پيش من در مکتب جهان درس خوانده ام. چقدر رنج آوراست بيگانگی رهبران کنونی ايران، از خامنه ای تا احمدی نژاد، با جهان و زمان معاصر! ايران سزاوار رهبرانی است که جهان را بشناسند و جهان نيز آنان را به رسمیت بشناسد. آيا فکر میکنيد تنفر برخی از غرب، که دنيايی من حط، مادی و سلطه جو تلقی میشود، اساس و مبنايی داشته باشد؟ آيا برای شما قابل فهم است که بخشی از جهان از آمريکا متنفر باشد؟ خرده گيری از جوامع غربی بی اساس نيست. در شيوۀ زندگی غربيان چيزهايی هست که خود من نيز نمیپسندم. اما، تنفر واژۀ زشت و خشنی است. من مداف ع مادی گرايی اقتصادی بی حد و مرز نيستم که چپ به آن دليل، ايالات متحدۀ آمريکا را سرزنش میکند. من معتقد به نوعی تعادل بين اقتصاد آزاد و عدالت اجتماعی ام. نظير آنچه در جوامع اروپايی میتوان ديد. آيا فکر میکنيد که بتوان ارزش ها و الگوی غربی را وارد ايران کرد؟",
+        "prompt_char_count": 2456,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «دائما ناگزير از رعايت احتياط برای تامین امنيت خانواده ام هستم. اصول جهان شمول اخلاقی را من از خلال آشنايی با افراد مختلف در کشورهای گوناگون، از ب رزيل تا ويتنام، از کانادا تا مصر، فرا گرفته ام.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "اين يادگيری بخشی از تجرب ـ ه ای است که طی س ـ ی سال اندوخته ام، فرای فرهنگ ها و کشورها و جغرافيا، موجود انسانی نيازها و امیدهايی دارد که به گوش جان شنيده و فهمیده ام و میکوشم تا همه را جذب کنم. در واقع، از سی سا ل پيش من در مکتب جهان درس خوانده ام. چقدر رنج آوراست بيگانگی رهبران کنونی ايران، از خامنه ای تا احمدی نژاد، با جهان و زمان معاصر! ايران سزاوار رهبرانی است که جهان را بشناسند و جهان نيز آنان را به رسمیت بشناسد. آيا فکر میکنيد تنفر برخی از غرب، که دنيايی من حط، مادی و سلطه جو تلقی میشود، اساس و مبنايی داشته باشد؟ آيا برای شما قابل فهم است که بخشی از جهان از آمريکا متنفر باشد؟ خرده گيری از جوامع غربی بی اساس نيست. در شيوۀ زندگی غربيان چيزهايی هست که خود من نيز نمیپسندم. اما، تنفر واژۀ زشت و خشنی است. من مداف ع مادی گرايی اقتصادی بی حد و مرز نيستم که چپ به آن دليل، ايالات متحدۀ آمريکا را سرزنش میکند. من معتقد به نوعی تعادل بين اقتصاد آزاد و عدالت اجتماعی ام. نظير آنچه در جوامع اروپايی میتوان ديد. آيا فکر میکنيد که بتوان ارزش ها و الگوی غربی را وارد ايران کرد؟",
+        "transcript_char_count": 977,
+        "token_name": "project-10",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0017.wav",
+        "wav_size_bytes": 4675244,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 4675200,
+        "timestamp": 1779907542.3080614
+      }
+    },
+    {
+      "chunk_index": 18,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 18,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «نظير آنچه در جوامع اروپايی میتوان ديد. آيا فکر میکنيد که بتوان ارزش ها و الگوی غربی را وارد ايران کرد؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nمنظورتان از \" ارزش های غربی \" چيست؟ آيا منظورتان، آزادی اديان، آزادی بيان و احترام به حقوق فرد است؟",
+        "prompt_char_count": 1489,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «نظير آنچه در جوامع اروپايی میتوان ديد. آيا فکر میکنيد که بتوان ارزش ها و الگوی غربی را وارد ايران کرد؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "منظورتان از \" ارزش های غربی \" چيست؟ آيا منظورتان، آزادی اديان، آزادی بيان و احترام به حقوق فرد است؟",
+        "transcript_char_count": 99,
+        "token_name": "project-10",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0018.wav",
+        "wav_size_bytes": 535724,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 535680,
+        "timestamp": 1779907551.9352138
+      }
+    },
+    {
+      "chunk_index": 19,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 19,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «منظورتان از \" ارزش های غربی \" چيست؟ آيا منظورتان، آزادی اديان، آزادی بيان و احترام به حقوق فرد است؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nآيا میدانيد که بسياری از اين \" ارزش های غربی \" دوهزار و پانصد سال پيش در دوران پادشاهی کوروش کبير در ايران زاده شدند؟ کوروش همان پادشاهی است که سخنانش دربارۀ آزادی بيان و مذهب نخستين اعلامیۀ حقوق بشر شناخته شده است؟ بسياری از انديشه هايی که در حوزۀ سياست يا فلسفه، در ساختن آنچه امروز غرب خوانده میشود نقش داشته اند، ريشه در شرق دارند. بسيار پيش از گاليله و کوپرنيک، اخترشناسان مصری و فنيقی و چينی بودند. بی آنکه خود را اسير تمايزهايی نظير \" شرق \" \" و غرب \" بدانم، معتقدم که ارزش های جهان شمولی وجود دارد که آن ها را در غرب تحقق يافته میيابيم. من نه تنها به برخورد تمدن ها اعتقاد ندارم بلکه فکر میکنم که بسياری از جوامع اگر امروز آزاد بودند، ارزش های روشنگرانۀ غربيان را نيز از آن خود میکردند. در فرانسه، رون دوما، وزير پيشين امورخارجه، امانوئل تود، يکی از روشنفکران و برخی از روزنامه نگاران غالبا ايران را به عنوان کشوری بيش و کم دموکراتيک معرفی میکنند، گيرم نوعی دموکراسی \" ناقص \" يا \" اسلامی\" پاسخ شما به آنان چيست؟",
+        "prompt_char_count": 2305,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «منظورتان از \" ارزش های غربی \" چيست؟ آيا منظورتان، آزادی اديان، آزادی بيان و احترام به حقوق فرد است؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "آيا میدانيد که بسياری از اين \" ارزش های غربی \" دوهزار و پانصد سال پيش در دوران پادشاهی کوروش کبير در ايران زاده شدند؟ کوروش همان پادشاهی است که سخنانش دربارۀ آزادی بيان و مذهب نخستين اعلامیۀ حقوق بشر شناخته شده است؟ بسياری از انديشه هايی که در حوزۀ سياست يا فلسفه، در ساختن آنچه امروز غرب خوانده میشود نقش داشته اند، ريشه در شرق دارند. بسيار پيش از گاليله و کوپرنيک، اخترشناسان مصری و فنيقی و چينی بودند. بی آنکه خود را اسير تمايزهايی نظير \" شرق \" \" و غرب \" بدانم، معتقدم که ارزش های جهان شمولی وجود دارد که آن ها را در غرب تحقق يافته میيابيم. من نه تنها به برخورد تمدن ها اعتقاد ندارم بلکه فکر میکنم که بسياری از جوامع اگر امروز آزاد بودند، ارزش های روشنگرانۀ غربيان را نيز از آن خود میکردند. در فرانسه، رون دوما، وزير پيشين امورخارجه، امانوئل تود، يکی از روشنفکران و برخی از روزنامه نگاران غالبا ايران را به عنوان کشوری بيش و کم دموکراتيک معرفی میکنند، گيرم نوعی دموکراسی \" ناقص \" يا \" اسلامی\" پاسخ شما به آنان چيست؟",
+        "transcript_char_count": 918,
+        "token_name": "project-10",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0019.wav",
+        "wav_size_bytes": 4014764,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 4014720,
+        "timestamp": 1779907608.0648866
+      }
+    },
+    {
+      "chunk_index": 20,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 20,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «من نه تنها به برخورد تمدن ها اعتقاد ندارم بلکه فکر میکنم که بسياری از جوامع اگر امروز آزاد بودند، ارزش های روشنگرانۀ غربيان را نيز از آن خود میکردند. در فرانسه، رون دوما، وزير پيشين امورخارجه، امانوئل تود، يکی از روشنفکران و برخی از روزنامه نگاران غالبا ايران را به عنوان کشوری بيش و کم دموکراتيک معرفی میکنند، گيرم نوعی دموکراسی \" ناقص \" يا \" اسلامی\" پاسخ شما به آنان چيست؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nبه آنا ن پيشنهاد میکنم که شش ماهی را در ايران همانند دانشجويان، روزنامه نگاران، وبلاگ نويسان، مدافعان حقوق بشر و زنان بسياری زندگی کنند که به عنوان شهروندان درجه دو به شمار میروند، پس از مدتی آنان نيز راهی زندان و قربانی شکنجه و اعدام در ملا عام خواهند شد و خوا هند ديد که چگونه فرزندان شان هروئين تزريق خواهند کرد و دختران شان ناگزير از تن فروشی خواهند شد. پس از اين تجربه آنان میتوانند در مورد ماهيت واقعی رژيم ايران اظهار نظر کنند. اين ادعا که میتوان اين رژيم را رژيمیدموکراتيک دانست، توهين به شعور و بی توجهی به تجربه های تلخ مردم ايران است. شما در مورد رژيمیصحبت میکنيد که قانون اساسی اش مردم را ناتوان از تصمیم گيری در مورد آينده شان میداند و از اين رو رهبری مذهبی را به آنان تحمیل کرده که در عمل تنها فرد قادر به تصمیم گيری است. شما در مورد رژيمیصحبت میکنيد ک ه مجلسش تنها حق پيشنهاد قوانين را دارد، اما تصمیم گيری نهايی در مورد قانون به عهدۀ ارگان غيرمنتخبی به نام شورای نگهبان قانون اساسی يا حتی خود رهبر است، که نمايندۀ خداوند در زمین شناخته میشود!",
+        "prompt_char_count": 2620,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «من نه تنها به برخورد تمدن ها اعتقاد ندارم بلکه فکر میکنم که بسياری از جوامع اگر امروز آزاد بودند، ارزش های روشنگرانۀ غربيان را نيز از آن خود میکردند. در فرانسه، رون دوما، وزير پيشين امورخارجه، امانوئل تود، يکی از روشنفکران و برخی از روزنامه نگاران غالبا ايران را به عنوان کشوری بيش و کم دموکراتيک معرفی میکنند، گيرم نوعی دموکراسی \" ناقص \" يا \" اسلامی\" پاسخ شما به آنان چيست؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "به آنا ن پيشنهاد میکنم که شش ماهی را در ايران همانند دانشجويان، روزنامه نگاران، وبلاگ نويسان، مدافعان حقوق بشر و زنان بسياری زندگی کنند که به عنوان شهروندان درجه دو به شمار میروند، پس از مدتی آنان نيز راهی زندان و قربانی شکنجه و اعدام در ملا عام خواهند شد و خوا هند ديد که چگونه فرزندان شان هروئين تزريق خواهند کرد و دختران شان ناگزير از تن فروشی خواهند شد. پس از اين تجربه آنان میتوانند در مورد ماهيت واقعی رژيم ايران اظهار نظر کنند. اين ادعا که میتوان اين رژيم را رژيمیدموکراتيک دانست، توهين به شعور و بی توجهی به تجربه های تلخ مردم ايران است. شما در مورد رژيمیصحبت میکنيد که قانون اساسی اش مردم را ناتوان از تصمیم گيری در مورد آينده شان میداند و از اين رو رهبری مذهبی را به آنان تحمیل کرده که در عمل تنها فرد قادر به تصمیم گيری است. شما در مورد رژيمیصحبت میکنيد ک ه مجلسش تنها حق پيشنهاد قوانين را دارد، اما تصمیم گيری نهايی در مورد قانون به عهدۀ ارگان غيرمنتخبی به نام شورای نگهبان قانون اساسی يا حتی خود رهبر است، که نمايندۀ خداوند در زمین شناخته میشود!",
+        "transcript_char_count": 958,
+        "token_name": "project-1",
+        "attempt": 2
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0020.wav",
+        "wav_size_bytes": 4277804,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 4277760,
+        "timestamp": 1779907711.8998854
+      }
+    },
+    {
+      "chunk_index": 21,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 21,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (exclamation): «شما در مورد رژيمیصحبت میکنيد که قانون اساسی اش مردم را ناتوان از تصمیم گيری در مورد آينده شان میداند و از اين رو رهبری مذهبی را به آنان تحمیل کرده که در عمل تنها فرد قادر به تصمیم گيری است. شما در مورد رژيمیصحبت میکنيد ک ه مجلسش تنها حق پيشنهاد قوانين را دارد، اما تصمیم گيری نهايی در مورد قانون به عهدۀ ارگان غيرمنتخبی به نام شورای نگهبان قانون اساسی يا حتی خود رهبر است، که نمايندۀ خداوند در زمین شناخته میشود!»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nشما در مورد رژيمیصحبت م ی کنيد که نامزدهای انتخاباتی اش - اعم ا ز اين که انتخابات محلی باشد يا سراسری، انتخابات مجلس و يا رياست جمهوری – بايد ازصافی دولتی بگذرند و دارای \" صلاحیت \" شناخته شوند. آيا غرب در دورۀ جنگ سرد به اصطلاح \" انتخابات \" اتحاد شوروی را انتخابات آزاد و دموکراتيک قلمداد میکرد؟ گفتن اين که رژيم ايران نوعی از انواع دموکراسی است، ولو ناقص، نه فقط خطاست بلکه شايد ناشی از علاقه به پرده پوشی برواقعيت های غيرقابل انکاراست. پاره ای در غرب فکر میکنند که اسلام بنيادگرا، سازگار با طبع مردمان کشوری همانند ايران است. آنان براين باورند که مردمان شرق \" از نظرفرهنگی \" نات وان از دستيابی به ارزش های حقوق بشر و دموکراسی اند. آنان اين داوری نادرست را \" اختلاف فرهنگی \" (différentialisme culturel) نام نهاده اند. آنچه برای شرقی ها خوب است، برای ديگران خوب نيست. اين تفرعن غربی، متقابلا در جوامع رو به رشد نظريه هايی به همان اندازه مر دود در مخالفت با غرب مطرح ساخته که در واقع بستر توسعۀ جنبش خمینی و ديگر رهبران افراطی بوده است. هرکشوری تاريخ و فرهنگ ويژۀ خود دارد.",
+        "prompt_char_count": 2675,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (exclamation): «شما در مورد رژيمیصحبت میکنيد که قانون اساسی اش مردم را ناتوان از تصمیم گيری در مورد آينده شان میداند و از اين رو رهبری مذهبی را به آنان تحمیل کرده که در عمل تنها فرد قادر به تصمیم گيری است. شما در مورد رژيمیصحبت میکنيد ک ه مجلسش تنها حق پيشنهاد قوانين را دارد، اما تصمیم گيری نهايی در مورد قانون به عهدۀ ارگان غيرمنتخبی به نام شورای نگهبان قانون اساسی يا حتی خود رهبر است، که نمايندۀ خداوند در زمین شناخته میشود!»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "شما در مورد رژيمیصحبت م ی کنيد که نامزدهای انتخاباتی اش - اعم ا ز اين که انتخابات محلی باشد يا سراسری، انتخابات مجلس و يا رياست جمهوری – بايد ازصافی دولتی بگذرند و دارای \" صلاحیت \" شناخته شوند. آيا غرب در دورۀ جنگ سرد به اصطلاح \" انتخابات \" اتحاد شوروی را انتخابات آزاد و دموکراتيک قلمداد میکرد؟ گفتن اين که رژيم ايران نوعی از انواع دموکراسی است، ولو ناقص، نه فقط خطاست بلکه شايد ناشی از علاقه به پرده پوشی برواقعيت های غيرقابل انکاراست. پاره ای در غرب فکر میکنند که اسلام بنيادگرا، سازگار با طبع مردمان کشوری همانند ايران است. آنان براين باورند که مردمان شرق \" از نظرفرهنگی \" نات وان از دستيابی به ارزش های حقوق بشر و دموکراسی اند. آنان اين داوری نادرست را \" اختلاف فرهنگی \" (différentialisme culturel) نام نهاده اند. آنچه برای شرقی ها خوب است، برای ديگران خوب نيست. اين تفرعن غربی، متقابلا در جوامع رو به رشد نظريه هايی به همان اندازه مر دود در مخالفت با غرب مطرح ساخته که در واقع بستر توسعۀ جنبش خمینی و ديگر رهبران افراطی بوده است. هرکشوری تاريخ و فرهنگ ويژۀ خود دارد.",
+        "transcript_char_count": 972,
+        "token_name": "project-5",
+        "attempt": 5
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0021.wav",
+        "wav_size_bytes": 4659884,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 4659840,
+        "timestamp": 1779907770.5656233
+      }
+    },
+    {
+      "chunk_index": 22,
+      "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+      "request": {
+        "chunk_index": 22,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اين تفرعن غربی، متقابلا در جوامع رو به رشد نظريه هايی به همان اندازه مر دود در مخالفت با غرب مطرح ساخته که در واقع بستر توسعۀ جنبش خمینی و ديگر رهبران افراطی بوده است. هرکشوری تاريخ و فرهنگ ويژۀ خود دارد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nآرزو نمیکنم که ايران سنت ها، اسطوره ها و فرهنگ خود را بفراموشی بسپرد. در عين حال، معتقدم که از نظر سياسی، ما ناگزيريم، در عين وفاداری به هويت و فرهنگ خود، از ارزش های غرب نيز الهام بگيريم. پس شما میگوييد : \" من جهان گرا هستم؟\" در کل آری! البته من نخست يک ايرانی و در عين حال، به سخن سعدی معتقدم که » بنی آدم اعضای يک پيکرند « و اين نقطۀ مقابل خمینی گرايی و اسلام گرايانی است که به يک دين برتر معتقدند و پيروان خويش را به دشمنی با غيرخودی فرا میخوانند! حال اين غير \" \" میخواهد مسيحی و يهودی باشد يا همجنس گرا و غربی و حتی سُنی!",
+        "prompt_char_count": 2016,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اين تفرعن غربی، متقابلا در جوامع رو به رشد نظريه هايی به همان اندازه مر دود در مخالفت با غرب مطرح ساخته که در واقع بستر توسعۀ جنبش خمینی و ديگر رهبران افراطی بوده است. هرکشوری تاريخ و فرهنگ ويژۀ خود دارد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+        "scene_context": "",
+        "transcript": "آرزو نمیکنم که ايران سنت ها، اسطوره ها و فرهنگ خود را بفراموشی بسپرد. در عين حال، معتقدم که از نظر سياسی، ما ناگزيريم، در عين وفاداری به هويت و فرهنگ خود، از ارزش های غرب نيز الهام بگيريم. پس شما میگوييد : \" من جهان گرا هستم؟\" در کل آری! البته من نخست يک ايرانی و در عين حال، به سخن سعدی معتقدم که » بنی آدم اعضای يک پيکرند « و اين نقطۀ مقابل خمینی گرايی و اسلام گرايانی است که به يک دين برتر معتقدند و پيروان خويش را به دشمنی با غيرخودی فرا میخوانند! حال اين غير \" \" میخواهد مسيحی و يهودی باشد يا همجنس گرا و غربی و حتی سُنی!",
+        "transcript_char_count": 526,
+        "token_name": "project-7",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0022.wav",
+        "wav_size_bytes": 2417324,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 2417280,
+        "timestamp": 1779907889.3172257
+      }
+    }
+  ],
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "updated_at": 1779907889.3298829
+}

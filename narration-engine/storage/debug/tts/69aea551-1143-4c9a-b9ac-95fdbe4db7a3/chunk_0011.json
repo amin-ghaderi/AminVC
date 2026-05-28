@@ -1,0 +1,33 @@
+{
+  "chunk_index": 11,
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "request": {
+    "chunk_index": 11,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اما برای من چنين پيشنهادی برپايۀ يک موضع اصولی قرارداشت. حقانيت نظام پادشاهی از مردم نشات میگيرد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nمن امروز هم رژيم اسلامیرا به چالش میطلبم که چنين همه پرسی ای را برگزار کند. اگر ملاها به مشروعيت خود اطمینان دارند، چرا از رای مردم میترسند؟ شما خود را در هيئت ديگری به غير از يک پادشاه مشروطه خواه نمیبينيد؟ صادقانه بگويم نه :! جمهوری خواهان به من پيشنهاد کردند که از پادشاهی چشم بپوشم و همزمان اطمینان دادند که از من به عنوان نامزد آيندۀ رياست جمهوری ايران دموکراتيک پشتيبانی میکنند.",
+    "prompt_char_count": 1767,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «اما برای من چنين پيشنهادی برپايۀ يک موضع اصولی قرارداشت. حقانيت نظام پادشاهی از مردم نشات میگيرد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "",
+    "transcript": "من امروز هم رژيم اسلامیرا به چالش میطلبم که چنين همه پرسی ای را برگزار کند. اگر ملاها به مشروعيت خود اطمینان دارند، چرا از رای مردم میترسند؟ شما خود را در هيئت ديگری به غير از يک پادشاه مشروطه خواه نمیبينيد؟ صادقانه بگويم نه :! جمهوری خواهان به من پيشنهاد کردند که از پادشاهی چشم بپوشم و همزمان اطمینان دادند که از من به عنوان نامزد آيندۀ رياست جمهوری ايران دموکراتيک پشتيبانی میکنند.",
+    "transcript_char_count": 384,
+    "token_name": "project-8",
+    "attempt": 2
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0011.wav",
+    "wav_size_bytes": 1714604,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 1714560,
+    "timestamp": 1779907217.7865064
+  }
+}

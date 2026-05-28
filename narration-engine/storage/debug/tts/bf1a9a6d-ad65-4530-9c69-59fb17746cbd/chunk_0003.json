@@ -1,0 +1,33 @@
+{
+  "chunk_index": 3,
+  "intake_id": "bf1a9a6d-ad65-4530-9c69-59fb17746cbd",
+  "request": {
+    "chunk_index": 3,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «شما پسرارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد. نھاد پادشاھی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامی و تسلط مذھبيون بنيادگرا به رھبری روح الله خمینی برايران، واژگون شد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\n## Scene Context (do NOT read aloud)\n- Scene: default narration environment\n- Style: neutral narration\n- Tone: calm\n\nھنگامی که در نشريات نخستين سال ھای د ھۀ ھشتاد دههی هشتاد می نگريم، از عمق خطای مفسرانی شگفت زده می شويم که در آن دوران، فروپاشی سريع رژيم خمينی را پيش بينی می کردند. با خواندن کتابی که کريستيان مارک و آلن روديه در سال ٨٩١۶ دربارۀ شما منتشر کردند، تصوير شاھزاده ای جوان و فعال را می يابيم که با شخ صيت ھايی که امروز در قيد حيات نيستند و غالبا، ھمانند شاپور بختيار، به قتل رسيدند، ھمراھی می شد. در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟",
+    "prompt_char_count": 2176,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «شما پسرارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد. نھاد پادشاھی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامی و تسلط مذھبيون بنيادگرا به رھبری روح الله خمینی برايران، واژگون شد.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "## Scene Context (do NOT read aloud)\n- Scene: default narration environment\n- Style: neutral narration\n- Tone: calm",
+    "transcript": "ھنگامی که در نشريات نخستين سال ھای د ھۀ ھشتاد دههی هشتاد می نگريم، از عمق خطای مفسرانی شگفت زده می شويم که در آن دوران، فروپاشی سريع رژيم خمينی را پيش بينی می کردند. با خواندن کتابی که کريستيان مارک و آلن روديه در سال ٨٩١۶ دربارۀ شما منتشر کردند، تصوير شاھزاده ای جوان و فعال را می يابيم که با شخ صيت ھايی که امروز در قيد حيات نيستند و غالبا، ھمانند شاپور بختيار، به قتل رسيدند، ھمراھی می شد. در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟",
+    "transcript_char_count": 587,
+    "token_name": "project-10",
+    "attempt": 12
+  },
+  "response": {
+    "success": false,
+    "error": "500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}",
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\bf1a9a6d-ad65-4530-9c69-59fb17746cbd\\0003.wav",
+    "wav_size_bytes": null,
+    "mime_type": null,
+    "audio_bytes": null,
+    "timestamp": 1779874029.968914
+  }
+}

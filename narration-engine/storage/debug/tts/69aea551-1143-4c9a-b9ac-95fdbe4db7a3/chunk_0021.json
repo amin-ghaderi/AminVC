@@ -1,0 +1,33 @@
+{
+  "chunk_index": 21,
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "request": {
+    "chunk_index": 21,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (exclamation): «شما در مورد رژيمیصحبت میکنيد که قانون اساسی اش مردم را ناتوان از تصمیم گيری در مورد آينده شان میداند و از اين رو رهبری مذهبی را به آنان تحمیل کرده که در عمل تنها فرد قادر به تصمیم گيری است. شما در مورد رژيمیصحبت میکنيد ک ه مجلسش تنها حق پيشنهاد قوانين را دارد، اما تصمیم گيری نهايی در مورد قانون به عهدۀ ارگان غيرمنتخبی به نام شورای نگهبان قانون اساسی يا حتی خود رهبر است، که نمايندۀ خداوند در زمین شناخته میشود!»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nشما در مورد رژيمیصحبت م ی کنيد که نامزدهای انتخاباتی اش - اعم ا ز اين که انتخابات محلی باشد يا سراسری، انتخابات مجلس و يا رياست جمهوری – بايد ازصافی دولتی بگذرند و دارای \" صلاحیت \" شناخته شوند. آيا غرب در دورۀ جنگ سرد به اصطلاح \" انتخابات \" اتحاد شوروی را انتخابات آزاد و دموکراتيک قلمداد میکرد؟ گفتن اين که رژيم ايران نوعی از انواع دموکراسی است، ولو ناقص، نه فقط خطاست بلکه شايد ناشی از علاقه به پرده پوشی برواقعيت های غيرقابل انکاراست. پاره ای در غرب فکر میکنند که اسلام بنيادگرا، سازگار با طبع مردمان کشوری همانند ايران است. آنان براين باورند که مردمان شرق \" از نظرفرهنگی \" نات وان از دستيابی به ارزش های حقوق بشر و دموکراسی اند. آنان اين داوری نادرست را \" اختلاف فرهنگی \" (différentialisme culturel) نام نهاده اند. آنچه برای شرقی ها خوب است، برای ديگران خوب نيست. اين تفرعن غربی، متقابلا در جوامع رو به رشد نظريه هايی به همان اندازه مر دود در مخالفت با غرب مطرح ساخته که در واقع بستر توسعۀ جنبش خمینی و ديگر رهبران افراطی بوده است. هرکشوری تاريخ و فرهنگ ويژۀ خود دارد.",
+    "prompt_char_count": 2675,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (exclamation): «شما در مورد رژيمیصحبت میکنيد که قانون اساسی اش مردم را ناتوان از تصمیم گيری در مورد آينده شان میداند و از اين رو رهبری مذهبی را به آنان تحمیل کرده که در عمل تنها فرد قادر به تصمیم گيری است. شما در مورد رژيمیصحبت میکنيد ک ه مجلسش تنها حق پيشنهاد قوانين را دارد، اما تصمیم گيری نهايی در مورد قانون به عهدۀ ارگان غيرمنتخبی به نام شورای نگهبان قانون اساسی يا حتی خود رهبر است، که نمايندۀ خداوند در زمین شناخته میشود!»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "",
+    "transcript": "شما در مورد رژيمیصحبت م ی کنيد که نامزدهای انتخاباتی اش - اعم ا ز اين که انتخابات محلی باشد يا سراسری، انتخابات مجلس و يا رياست جمهوری – بايد ازصافی دولتی بگذرند و دارای \" صلاحیت \" شناخته شوند. آيا غرب در دورۀ جنگ سرد به اصطلاح \" انتخابات \" اتحاد شوروی را انتخابات آزاد و دموکراتيک قلمداد میکرد؟ گفتن اين که رژيم ايران نوعی از انواع دموکراسی است، ولو ناقص، نه فقط خطاست بلکه شايد ناشی از علاقه به پرده پوشی برواقعيت های غيرقابل انکاراست. پاره ای در غرب فکر میکنند که اسلام بنيادگرا، سازگار با طبع مردمان کشوری همانند ايران است. آنان براين باورند که مردمان شرق \" از نظرفرهنگی \" نات وان از دستيابی به ارزش های حقوق بشر و دموکراسی اند. آنان اين داوری نادرست را \" اختلاف فرهنگی \" (différentialisme culturel) نام نهاده اند. آنچه برای شرقی ها خوب است، برای ديگران خوب نيست. اين تفرعن غربی، متقابلا در جوامع رو به رشد نظريه هايی به همان اندازه مر دود در مخالفت با غرب مطرح ساخته که در واقع بستر توسعۀ جنبش خمینی و ديگر رهبران افراطی بوده است. هرکشوری تاريخ و فرهنگ ويژۀ خود دارد.",
+    "transcript_char_count": 972,
+    "token_name": "project-5",
+    "attempt": 5
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0021.wav",
+    "wav_size_bytes": 4659884,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 4659840,
+    "timestamp": 1779907770.5656233
+  }
+}

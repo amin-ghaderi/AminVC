@@ -1,0 +1,33 @@
+{
+  "chunk_index": 16,
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "request": {
+    "chunk_index": 16,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «من میخواهم به زادگاهم بازگردم و خودم را متعلق به اي را ـ ن میدانم. میخواهم تجربه و دانشی را که در اين سی سال اندوخته ام در خدمت ايران به کار ببندم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nآيا غالبا در انديشۀ بازگشت به ايران هستيد؟ از سی سال پيش، من از اين حق محروم بوده ام که آزادانه و در امنيت در کشورم زندگی کنم. به همین خاطر با همۀ توان برای بازي ابی اين حق طبيعی فعاليت میکنم. روزی که رژيم ايران تغيير کند، بلافاصله به کشورم باز خواهم گشت. برای تسريع در تغيير اوضاع اسف بار امروز ايران حاضرم جانم را نيز فدا کنم! دربارۀ ضرورت روزافزون رهايی ايران همواره با همسر و دو دخترم صحبت کرده ام. تحمل چنين وضعی برای آنان نيز دشواراست. آنان میدانند که دوست شان دارم، اما اين را نيز میدانند که برای من هيچ چيز مهم تر از ايران نيست. کاملا آگاهم که فعاليت هايم میتواند بر زندگی میليون ها تن از هموطنانم تاثير گذارد در نتيجه تنها در قالب منافع و مصالح مردم ايران گام بر میدارم. سی سال است که در سايۀ تهديد زندگی میکنم. بارها آدم کشان حرفه ای را برای کشتنم به خارج فرستاده اند. دائما ناگزير از رعايت احتياط برای تامین امنيت خانواده ام هستم. اصول جهان شمول اخلاقی را من از خلال آشنايی با افراد مختلف در کشورهای گوناگون، از ب رزيل تا ويتنام، از کانادا تا مصر، فرا گرفته ام.",
+    "prompt_char_count": 2405,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «من میخواهم به زادگاهم بازگردم و خودم را متعلق به اي را ـ ن میدانم. میخواهم تجربه و دانشی را که در اين سی سال اندوخته ام در خدمت ايران به کار ببندم.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "",
+    "transcript": "آيا غالبا در انديشۀ بازگشت به ايران هستيد؟ از سی سال پيش، من از اين حق محروم بوده ام که آزادانه و در امنيت در کشورم زندگی کنم. به همین خاطر با همۀ توان برای بازي ابی اين حق طبيعی فعاليت میکنم. روزی که رژيم ايران تغيير کند، بلافاصله به کشورم باز خواهم گشت. برای تسريع در تغيير اوضاع اسف بار امروز ايران حاضرم جانم را نيز فدا کنم! دربارۀ ضرورت روزافزون رهايی ايران همواره با همسر و دو دخترم صحبت کرده ام. تحمل چنين وضعی برای آنان نيز دشواراست. آنان میدانند که دوست شان دارم، اما اين را نيز میدانند که برای من هيچ چيز مهم تر از ايران نيست. کاملا آگاهم که فعاليت هايم میتواند بر زندگی میليون ها تن از هموطنانم تاثير گذارد در نتيجه تنها در قالب منافع و مصالح مردم ايران گام بر میدارم. سی سال است که در سايۀ تهديد زندگی میکنم. بارها آدم کشان حرفه ای را برای کشتنم به خارج فرستاده اند. دائما ناگزير از رعايت احتياط برای تامین امنيت خانواده ام هستم. اصول جهان شمول اخلاقی را من از خلال آشنايی با افراد مختلف در کشورهای گوناگون، از ب رزيل تا ويتنام، از کانادا تا مصر، فرا گرفته ام.",
+    "transcript_char_count": 972,
+    "token_name": "project-10",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0016.wav",
+    "wav_size_bytes": 4567724,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 4567680,
+    "timestamp": 1779907482.0214212
+  }
+}

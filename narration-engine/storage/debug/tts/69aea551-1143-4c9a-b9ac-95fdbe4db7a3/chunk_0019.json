@@ -1,0 +1,33 @@
+{
+  "chunk_index": 19,
+  "intake_id": "69aea551-1143-4c9a-b9ac-95fdbe4db7a3",
+  "request": {
+    "chunk_index": 19,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «منظورتان از \" ارزش های غربی \" چيست؟ آيا منظورتان، آزادی اديان، آزادی بيان و احترام به حقوق فرد است؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\nآيا میدانيد که بسياری از اين \" ارزش های غربی \" دوهزار و پانصد سال پيش در دوران پادشاهی کوروش کبير در ايران زاده شدند؟ کوروش همان پادشاهی است که سخنانش دربارۀ آزادی بيان و مذهب نخستين اعلامیۀ حقوق بشر شناخته شده است؟ بسياری از انديشه هايی که در حوزۀ سياست يا فلسفه، در ساختن آنچه امروز غرب خوانده میشود نقش داشته اند، ريشه در شرق دارند. بسيار پيش از گاليله و کوپرنيک، اخترشناسان مصری و فنيقی و چينی بودند. بی آنکه خود را اسير تمايزهايی نظير \" شرق \" \" و غرب \" بدانم، معتقدم که ارزش های جهان شمولی وجود دارد که آن ها را در غرب تحقق يافته میيابيم. من نه تنها به برخورد تمدن ها اعتقاد ندارم بلکه فکر میکنم که بسياری از جوامع اگر امروز آزاد بودند، ارزش های روشنگرانۀ غربيان را نيز از آن خود میکردند. در فرانسه، رون دوما، وزير پيشين امورخارجه، امانوئل تود، يکی از روشنفکران و برخی از روزنامه نگاران غالبا ايران را به عنوان کشوری بيش و کم دموکراتيک معرفی میکنند، گيرم نوعی دموکراسی \" ناقص \" يا \" اسلامی\" پاسخ شما به آنان چيست؟",
+    "prompt_char_count": 2305,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (question): «منظورتان از \" ارزش های غربی \" چيست؟ آيا منظورتان، آزادی اديان، آزادی بيان و احترام به حقوق فرد است؟»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "",
+    "transcript": "آيا میدانيد که بسياری از اين \" ارزش های غربی \" دوهزار و پانصد سال پيش در دوران پادشاهی کوروش کبير در ايران زاده شدند؟ کوروش همان پادشاهی است که سخنانش دربارۀ آزادی بيان و مذهب نخستين اعلامیۀ حقوق بشر شناخته شده است؟ بسياری از انديشه هايی که در حوزۀ سياست يا فلسفه، در ساختن آنچه امروز غرب خوانده میشود نقش داشته اند، ريشه در شرق دارند. بسيار پيش از گاليله و کوپرنيک، اخترشناسان مصری و فنيقی و چينی بودند. بی آنکه خود را اسير تمايزهايی نظير \" شرق \" \" و غرب \" بدانم، معتقدم که ارزش های جهان شمولی وجود دارد که آن ها را در غرب تحقق يافته میيابيم. من نه تنها به برخورد تمدن ها اعتقاد ندارم بلکه فکر میکنم که بسياری از جوامع اگر امروز آزاد بودند، ارزش های روشنگرانۀ غربيان را نيز از آن خود میکردند. در فرانسه، رون دوما، وزير پيشين امورخارجه، امانوئل تود، يکی از روشنفکران و برخی از روزنامه نگاران غالبا ايران را به عنوان کشوری بيش و کم دموکراتيک معرفی میکنند، گيرم نوعی دموکراسی \" ناقص \" يا \" اسلامی\" پاسخ شما به آنان چيست؟",
+    "transcript_char_count": 918,
+    "token_name": "project-10",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\69aea551-1143-4c9a-b9ac-95fdbe4db7a3\\0019.wav",
+    "wav_size_bytes": 4014764,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 4014720,
+    "timestamp": 1779907608.0648866
+  }
+}

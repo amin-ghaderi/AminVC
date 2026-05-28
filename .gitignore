@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+venv/
+.venv/
+env/
+
+# Models / checkpoints
+models/
+checkpoints/
+
+# Audio outputs
+outputs/
+temp/
+*.wav
+*.mp3
+*.flac
+
+# Cursor / VSCode
+.vscode/
+.cursor/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

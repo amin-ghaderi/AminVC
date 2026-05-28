@@ -1,0 +1,33 @@
+{
+  "chunk_index": 6,
+  "intake_id": "ecc2dd54-6442-42ed-a271-e24b1495666e",
+  "request": {
+    "chunk_index": 6,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nCONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «از سی سال پيش ھمۀ تلاش و توانم را يکسره در راه مبارزه با رژيم و رھايی ايران به کار برده ام، در پی مرگ پدرم، شاه فقيد ايران در ژوئيۀ ۱۹۸۰، به عنوان وليعھد، وارد عرصۀ پيکار شدم. در اين سال ھا ھم با طرفداران نظام پاد شاھی مشروطه ھمکاری کرده ام و ھم با جمهوری خواھان، ھم با نيروھای چپ و ھم با نيروھای راست.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.\n\n## Scene Context (do NOT read aloud)\n- Scene: historical documentry\n- Style: documentary\n- Tone: calm\n\nدر واقع، فعاليتم را به عنوان مخالف حکومت اسلامی از ھويت نھادی ام جدا کرده ام. بی ھيچ ابھا می، خوا ستار يک قانون اساسی دموکراتيک عرفی برای ايران ھستم که بر اعلاميۀ جھانی حقوق بشر استوار شده باشد. اين رژيم دموکراتيک و عرفی می تواند دو شکل به خود بگيرد : اگر اکثريت مردم ايران يک حکومت پادشاھی مُدرن و پارلمانی را برگزينند ) نظير آنچه که امروز در نروژ، سوئد، ھلند، اسپانيا يا ژاپن می بينيم ( از اين انتخاب خرسند خواھم شد و اين گز ينه ای است که من نمايندگی می کنم. اما اگر اکثريت ايرانيان موافقت خود را با يک جمهوری پارلمانی اعلام کنند، طبيعتا چنين انتخابی را نيز خواھم پذيرفت.",
+    "prompt_char_count": 2264,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "CONTINUITY REFERENCE — for pacing and tone only; do NOT read these lines aloud:\nPrevious ending (period): «از سی سال پيش ھمۀ تلاش و توانم را يکسره در راه مبارزه با رژيم و رھايی ايران به کار برده ام، در پی مرگ پدرم، شاه فقيد ايران در ژوئيۀ ۱۹۸۰، به عنوان وليعھد، وارد عرصۀ پيکار شدم. در اين سال ھا ھم با طرفداران نظام پاد شاھی مشروطه ھمکاری کرده ام و ھم با جمهوری خواھان، ھم با نيروھای چپ و ھم با نيروھای راست.»\nThe prior segment ended on a full stop. Begin the transcript below with a gentle fresh beat while keeping the same narrator voice.",
+    "scene_context": "## Scene Context (do NOT read aloud)\n- Scene: historical documentry\n- Style: documentary\n- Tone: calm",
+    "transcript": "در واقع، فعاليتم را به عنوان مخالف حکومت اسلامی از ھويت نھادی ام جدا کرده ام. بی ھيچ ابھا می، خوا ستار يک قانون اساسی دموکراتيک عرفی برای ايران ھستم که بر اعلاميۀ جھانی حقوق بشر استوار شده باشد. اين رژيم دموکراتيک و عرفی می تواند دو شکل به خود بگيرد : اگر اکثريت مردم ايران يک حکومت پادشاھی مُدرن و پارلمانی را برگزينند ) نظير آنچه که امروز در نروژ، سوئد، ھلند، اسپانيا يا ژاپن می بينيم ( از اين انتخاب خرسند خواھم شد و اين گز ينه ای است که من نمايندگی می کنم. اما اگر اکثريت ايرانيان موافقت خود را با يک جمهوری پارلمانی اعلام کنند، طبيعتا چنين انتخابی را نيز خواھم پذيرفت.",
+    "transcript_char_count": 573,
+    "token_name": "project-2",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVoice\\storage\\temp\\audio\\ecc2dd54-6442-42ed-a271-e24b1495666e\\0006.wav",
+    "wav_size_bytes": 2632364,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 2632320,
+    "timestamp": 1779806067.0525448
+  }
+}
