@@ -1,77 +1,26 @@
 """
-Manifest contracts (Phase 1).
+Manifest service interface (Phase 1).
 
-These are the app-owned data contracts that describe *what exists* in storage.
-In Phase 1 we define only schemas/types, not IO.
+Architecture correction:
+- Contract models live under `app/contracts/`
+- Services live under `app/services/`
+
+This module provides a service boundary and re-exports contract models for
+backwards-compatible imports.
+No IO. No persistence. No implementation.
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from datetime import datetime, timezone
-from pathlib import Path
 from typing import Any
 
-
-@dataclass(frozen=True, slots=True)
-class NarrationChunk:
-    """
-    Contract v1 NarrationChunk.
-
-    Notes:
-    - `duration_estimate` is a contract field but is not computed in Phase 1.
-    - `tts_audio_path` is a *path reference* only; creation is out of scope.
-    """
-
-    chunk_id: int
-    text: str
-    duration_estimate: float | None = None
-    tts_audio_path: Path | None = None
-
-
-@dataclass(frozen=True, slots=True)
-class SpeakerChunk:
-    """Contract v1 SpeakerChunk mapping: preserves chunk_id and file mapping."""
-
-    chunk_id: int
-    source_audio_path: Path
-    speaker_audio_path: Path | None = None
-
-
-@dataclass(frozen=True, slots=True)
-class ChunkManifest:
-    """
-    Ordered chunk list for a project.
-
-    Phase 1: schema only.
-    """
-
-    project_id: str
-    chunks: list[NarrationChunk]
-    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
-    metadata: dict[str, Any] = field(default_factory=dict)
-
-
-@dataclass(frozen=True, slots=True)
-class NarrationManifest:
-    """Describes narration artifacts produced for a project (schema only)."""
-
-    project_id: str
-    intake_id: str | None
-    chunk_audio_paths: list[Path] = field(default_factory=list)
-    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
-    metadata: dict[str, Any] = field(default_factory=dict)
-
-
-@dataclass(frozen=True, slots=True)
-class SpeakerManifest:
-    """Describes speaker conversion artifacts produced for a project (schema only)."""
-
-    project_id: str
-    reference_audio_path: Path | None = None
-    converted_audio_paths: list[Path] = field(default_factory=list)
-    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
-    metadata: dict[str, Any] = field(default_factory=dict)
+from app.contracts.manifests import (
+    ChunkManifest,
+    NarrationChunk,
+    NarrationManifest,
+    SpeakerChunk,
+    SpeakerManifest,
+)
 
 
 class ManifestService:
@@ -89,4 +38,15 @@ class ManifestService:
 
     def build_speaker_manifest(self, *args: Any, **kwargs: Any) -> SpeakerManifest:
         raise NotImplementedError
+
+
+__all__ = [
+    "ManifestService",
+    # Compatibility re-exports
+    "NarrationChunk",
+    "SpeakerChunk",
+    "ChunkManifest",
+    "NarrationManifest",
+    "SpeakerManifest",
+]
 

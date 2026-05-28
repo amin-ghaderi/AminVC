@@ -1,27 +1,16 @@
 """
-Pipeline state contract (Contract v1).
+Compatibility re-export (Phase 1 architecture correction).
 
-Phase 1 scope: define the allowed states only.
-No hidden states. No transition logic. No persistence.
+Runtime state must live under `app/state/`, while schema/contracts live under
+`app/contracts/`.
+
+This module remains to avoid breaking older imports:
+`from app.state.pipeline_states import PipelineState`
 """
 
 from __future__ import annotations
 
-from enum import Enum
+from app.contracts.pipeline import PipelineState
 
-
-class PipelineState(str, Enum):
-    created = "created"
-    uploaded = "uploaded"
-    repaired = "repaired"
-    chunked = "chunked"
-    tts_generating = "tts_generating"
-    tts_completed = "tts_completed"
-    speaker_conversion = "speaker_conversion"
-    speaker_completed = "speaker_completed"
-    merging = "merging"
-    mastering = "mastering"
-    completed = "completed"
-    failed = "failed"
-    cancelled = "cancelled"
+__all__ = ["PipelineState"]
 

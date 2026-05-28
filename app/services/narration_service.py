@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Protocol
 
-from app.services.manifest_service import NarrationManifest
+from app.contracts.manifests import NarrationManifest
 
 
 @dataclass(frozen=True, slots=True)
