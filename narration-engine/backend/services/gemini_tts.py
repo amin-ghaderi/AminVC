@@ -36,9 +36,9 @@ MODEL = "gemini-3.1-flash-tts-preview"
 # Single narrator for all chunks — locked in speech_config (no multi-speaker).
 NARRATOR_VOICE_NAME = "Sulafat"
 
-# Phase T1: client HTTP cap (ms) for fast token rotation after a transient failure on the chunk.
-# Google genai HttpOptions.timeout is milliseconds; also sets X-Server-Timeout (seconds).
-_TTS_FAIL_FAST_TIMEOUT_MS = 2_800
+# Phase T1: server deadline cap (ms) for fast token rotation after a transient failure on the chunk.
+# HttpOptions.timeout is sent as X-Server-Timeout; Gemini enforces a 10s minimum deadline.
+_TTS_FAIL_FAST_TIMEOUT_MS = 10_500
 
 # After the first failing token on a chunk, fast-fail at most this many additional tokens
 # before allowing a long generateContent attempt (success can take 60s+).
@@ -198,6 +198,20 @@ def _is_rate_limit_error(exc: Exception) -> bool:
     return "429" in message or "RESOURCE_EXHAUSTED" in message
 
 
+def _is_fatal_tts_config_error(exc: Exception) -> bool:
+    """
+    Non-retryable client/config errors — abort the current chunk immediately.
+
+    Do not rotate tokens, sleep/retry, or treat as transient failover.
+    """
+    message = str(exc)
+    upper = message.upper()
+    if "INVALID_ARGUMENT" not in upper and "400" not in message:
+        return False
+    lower = message.lower()
+    return "deadline" in lower or "too short" in lower
+
+
 def _is_transport_timeout_error(exc: Exception) -> bool:
     """HTTP/client timeouts — treat like other transient failover signals."""
     if isinstance(exc, TimeoutError):
@@ -236,6 +250,8 @@ def _is_transient_failover_error(exc: Exception) -> bool:
 
     IMPORTANT: This is not a permanent quarantine. It only influences intra-chunk rotation.
     """
+    if _is_fatal_tts_config_error(exc):
+        return False
     if _is_transport_timeout_error(exc):
         return True
     message = str(exc).upper()
@@ -259,9 +275,9 @@ def _should_use_fail_fast_http_timeout(
     Use a short HTTP timeout only while rotating through likely-dead tokens.
 
     The first token on a chunk keeps the default (unlimited) timeout so healthy
-  128s+ generations are not cut off. After the first transient failure, cap the
-    next few failover attempts at ~2.8s, then allow a long attempt again so a
-    working token late in the pool can still finish (see api_events proof intake).
+    128s+ generations are not cut off. After the first transient failure, cap the
+    next few failover attempts at the minimum server deadline (~10.5s), then allow
+    a long attempt again so a working token late in the pool can still finish.
     """
     if not failed_tokens_this_chunk:
         return False
@@ -511,6 +527,15 @@ def generate_audio(
             raise
         except Exception as exc:
             last_error = exc
+            if _is_fatal_tts_config_error(exc):
+                _persist_debug(
+                    success=False,
+                    token_name=token_name,
+                    attempt=attempt + 1,
+                    error=str(exc),
+                    wav_path=str(Path(output_path).resolve()),
+                )
+                raise RuntimeError(f"TTS fatal config error for chunk: {exc}") from exc
             if _is_transient_failover_error(exc):
                 exhausted_name = token_pool.current_name()
                 failed_tokens_this_chunk.add(exhausted_name)

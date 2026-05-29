@@ -4,6 +4,7 @@ from backend.services.gemini_tts import (
     _TTS_FAIL_FAST_MAX_ADDITIONAL_TOKENS,
     _TTS_FAIL_FAST_TIMEOUT_MS,
     _config_for_tts_request,
+    _is_fatal_tts_config_error,
     _is_transport_timeout_error,
     _is_transient_failover_error,
     _should_use_fail_fast_http_timeout,
@@ -44,3 +45,20 @@ def test_transport_timeout_is_transient():
 
 def test_internal_still_transient():
     assert _is_transient_failover_error(RuntimeError("500 INTERNAL"))
+
+
+def test_fail_fast_timeout_meets_google_minimum():
+    assert _TTS_FAIL_FAST_TIMEOUT_MS >= 10_000
+
+
+def test_deadline_too_short_is_fatal_not_transient():
+    exc = RuntimeError(
+        "400 INVALID_ARGUMENT. {'error': {'message': "
+        "'Manually set deadline 3s is too short. Minimum allowed deadline is 10s.'}}"
+    )
+    assert _is_fatal_tts_config_error(exc)
+    assert not _is_transient_failover_error(exc)
+
+
+def test_other_invalid_argument_not_fatal():
+    assert not _is_fatal_tts_config_error(RuntimeError("400 INVALID_ARGUMENT bad voice"))
