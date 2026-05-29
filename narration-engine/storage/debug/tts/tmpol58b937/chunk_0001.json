@@ -1,0 +1,33 @@
+{
+  "chunk_index": 1,
+  "intake_id": "tmpol58b937",
+  "request": {
+    "chunk_index": 1,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nhello",
+    "prompt_char_count": 1009,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "",
+    "scene_context": "",
+    "transcript": "hello",
+    "transcript_char_count": 5,
+    "token_name": "token-1",
+    "attempt": 6
+  },
+  "response": {
+    "success": false,
+    "error": "after 6 attempts (all tokens exhausted): 429 RESOURCE_EXHAUSTED",
+    "wav_path": "C:\\Users\\info\\AppData\\Local\\Temp\\tmpol58b937\\0001.wav",
+    "wav_size_bytes": null,
+    "mime_type": null,
+    "audio_bytes": null,
+    "timestamp": 1780050485.4439516
+  }
+}

@@ -184,6 +184,26 @@ def _is_rate_limit_error(exc: Exception) -> bool:
     return "429" in message or "RESOURCE_EXHAUSTED" in message
 
 
+def _is_transient_failover_error(exc: Exception) -> bool:
+    """
+    Errors that should trigger fast token failover for the current chunk.
+
+    IMPORTANT: This is not a permanent quarantine. It only influences intra-chunk rotation.
+    """
+    message = str(exc).upper()
+    return any(
+        token in message
+        for token in (
+            "429",
+            "RESOURCE_EXHAUSTED",
+            "500",
+            "503",
+            "INTERNAL",
+            "UNAVAILABLE",
+        )
+    )
+
+
 def _build_tts_prompt(
     transcript: str,
     continuity_note: str | None = None,
@@ -239,6 +259,7 @@ def generate_audio(
     last_error: Exception | None = None
     tried_all_tokens = False
     cancel_checker = hooks.cancel_checker if hooks else None
+    failed_tokens_this_chunk: set[str] = set()
 
     def _persist_debug(
         *,
@@ -278,6 +299,27 @@ def generate_audio(
     for attempt in range(max_attempts):
         if cancel_checker and cancel_checker():
             raise GenerationCancelled("Generation cancelled.")
+
+        # Skip any tokens that already failed for this chunk (fast failover).
+        # TokenPool itself stays unchanged; this is purely local state.
+        skip_hops = 0
+        while token_pool.total and token_pool.current_name() in failed_tokens_this_chunk:
+            skip_hops += 1
+            if not token_pool.advance():
+                # Pool cycle exhausted; clear chunk-local failures after cooldown reset.
+                if hooks and hooks.on_pool_waiting:
+                    hooks.on_pool_waiting(token_pool.wait_seconds)
+                if hooks and hooks.on_rate_limited:
+                    hooks.on_rate_limited(token_pool.wait_seconds)
+                token_pool.wait_and_reset(
+                    cancel_checker=cancel_checker,
+                    on_tick=hooks.on_waiting_tick if hooks else None,
+                )
+                tried_all_tokens = True
+                failed_tokens_this_chunk.clear()
+                break
+            if skip_hops > token_pool.total:
+                break
 
         token_name = token_pool.current_name()
         if hooks and hooks.on_token_used:
@@ -336,25 +378,32 @@ def generate_audio(
             raise
         except Exception as exc:
             last_error = exc
-            if _is_rate_limit_error(exc):
+            if _is_transient_failover_error(exc):
                 exhausted_name = token_pool.current_name()
-                if hooks and hooks.on_quota_exhausted:
+                failed_tokens_this_chunk.add(exhausted_name)
+
+                # Only mark monitor quota failure for true quota/rate-limit errors.
+                if _is_rate_limit_error(exc) and hooks and hooks.on_quota_exhausted:
                     hooks.on_quota_exhausted(exhausted_name)
-                if hooks and hooks.on_rate_limited:
-                    hooks.on_rate_limited(token_pool.wait_seconds)
+
+                # Honest waiting: only signal rate-limited when we actually wait/reset.
                 if not token_pool.advance():
                     if hooks and hooks.on_pool_waiting:
                         hooks.on_pool_waiting(token_pool.wait_seconds)
+                    if hooks and hooks.on_rate_limited:
+                        hooks.on_rate_limited(token_pool.wait_seconds)
                     token_pool.wait_and_reset(
                         cancel_checker=cancel_checker,
                         on_tick=hooks.on_waiting_tick if hooks else None,
                     )
                     tried_all_tokens = True
+                    failed_tokens_this_chunk.clear()
                 elif hooks and hooks.on_token_switched:
+                    reason = "429_quota" if _is_rate_limit_error(exc) else "transient_error"
                     hooks.on_token_switched(
                         exhausted_name,
                         token_pool.current_name(),
-                        "429_quota",
+                        reason,
                     )
                 continue
 
