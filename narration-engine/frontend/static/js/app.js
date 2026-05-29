@@ -356,7 +356,11 @@
                 : status === "waiting"
                   ? "Waiting"
                   : status === "failed"
-                    ? "Failed"
+                    ? item.failure_kind === "quota"
+                      ? "Failed (quota)"
+                      : item.failure_kind === "transient"
+                        ? "Failed (transient)"
+                        : "Failed"
                     : "Idle";
             return (
               '<div class="' +

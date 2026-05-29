@@ -1,0 +1,39 @@
+{
+  "chunks": [
+    {
+      "chunk_index": 1,
+      "intake_id": "tmpse7i71ik",
+      "request": {
+        "chunk_index": 1,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nhello",
+        "prompt_char_count": 1009,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "",
+        "scene_context": "",
+        "transcript": "hello",
+        "transcript_char_count": 5,
+        "token_name": "project-5",
+        "attempt": 3
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\info\\AppData\\Local\\Temp\\tmpse7i71ik\\0001.wav",
+        "wav_size_bytes": 244,
+        "mime_type": "audio/L16;rate=24000",
+        "audio_bytes": 200,
+        "timestamp": 1780051426.6282744
+      }
+    }
+  ],
+  "intake_id": "tmpse7i71ik",
+  "updated_at": 1780051426.6314304
+}

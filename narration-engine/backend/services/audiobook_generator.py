@@ -247,6 +247,9 @@ class AudiobookGenerator:
             ),
             on_token_used=lambda name: monitor.record_token_used(name, chunk_index),
             on_quota_exhausted=lambda name: monitor.record_quota_failure(name, chunk_index),
+            on_transient_failure=lambda name: monitor.record_transient_failure(
+                name, chunk_index
+            ),
             on_token_switched=lambda from_n, to_n, reason: monitor.record_switch(
                 from_n, to_n, reason, chunk_index
             ),

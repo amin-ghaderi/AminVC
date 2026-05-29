@@ -86,6 +86,7 @@ class TtsProgressHooks:
     # Observability only — does not affect token selection.
     on_token_used: Callable[[str], None] | None = None
     on_quota_exhausted: Callable[[str], None] | None = None
+    on_transient_failure: Callable[[str], None] | None = None
     on_token_switched: Callable[[str, str, str], None] | None = None
     on_pool_waiting: Callable[[int], None] | None = None
     on_chunk_success: Callable[[str], None] | None = None
@@ -382,9 +383,11 @@ def generate_audio(
                 exhausted_name = token_pool.current_name()
                 failed_tokens_this_chunk.add(exhausted_name)
 
-                # Only mark monitor quota failure for true quota/rate-limit errors.
-                if _is_rate_limit_error(exc) and hooks and hooks.on_quota_exhausted:
-                    hooks.on_quota_exhausted(exhausted_name)
+                if _is_rate_limit_error(exc):
+                    if hooks and hooks.on_quota_exhausted:
+                        hooks.on_quota_exhausted(exhausted_name)
+                elif hooks and hooks.on_transient_failure:
+                    hooks.on_transient_failure(exhausted_name)
 
                 # Honest waiting: only signal rate-limited when we actually wait/reset.
                 if not token_pool.advance():

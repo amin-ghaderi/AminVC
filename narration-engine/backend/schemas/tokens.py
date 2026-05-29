@@ -41,6 +41,7 @@ class TokenMonitorItem(BaseModel):
     name: str
     priority: int
     status: str
+    failure_kind: str | None = None
 
 
 class UsageHistoryItem(BaseModel):

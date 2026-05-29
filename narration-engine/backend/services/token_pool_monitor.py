@@ -38,6 +38,7 @@ class TokenPoolState:
     active_token_index: int = 0
     active_token_name: str = ""
     failed_tokens: list[str] = field(default_factory=list)
+    failed_token_reasons: dict[str, str] = field(default_factory=dict)
     pool_waiting: bool = False
     current_chunk: int = 0
     total_chunks: int = 0
@@ -58,11 +59,15 @@ class TokenPoolState:
                 status = "failed"
             else:
                 status = "idle"
+            failure_kind = None
+            if name in failed_set:
+                failure_kind = self.failed_token_reasons.get(name, "quota")
             tokens.append(
                 {
                     "name": name,
                     "priority": index,
                     "status": status,
+                    "failure_kind": failure_kind,
                 }
             )
 
@@ -147,8 +152,17 @@ class TokenPoolMonitor:
         with self._lock:
             if token_name not in self._state.failed_tokens:
                 self._state.failed_tokens.append(token_name)
+            self._state.failed_token_reasons[token_name] = "quota"
             self._append_usage(token_name, chunk_id, "quota_failed")
         logger.info("Token monitor: quota hit on %s (chunk %s)", token_name, chunk_id)
+
+    def record_transient_failure(self, token_name: str, chunk_id: int) -> None:
+        with self._lock:
+            if token_name not in self._state.failed_tokens:
+                self._state.failed_tokens.append(token_name)
+            self._state.failed_token_reasons[token_name] = "transient"
+            self._append_usage(token_name, chunk_id, "transient_failed")
+        logger.info("Token monitor: transient failure on %s (chunk %s)", token_name, chunk_id)
 
     def record_switch(self, from_token: str, to_token: str, reason: str, chunk_id: int) -> None:
         with self._lock:
@@ -197,6 +211,7 @@ class TokenPoolMonitor:
                 self._state.failed_tokens = [
                     name for name in self._state.failed_tokens if name != token_name
                 ]
+            self._state.failed_token_reasons.pop(token_name, None)
 
     def snapshot(self) -> dict:
         with self._lock:
