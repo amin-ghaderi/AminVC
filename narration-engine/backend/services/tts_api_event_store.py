@@ -42,6 +42,8 @@ def persist_tts_api_event(
     token_switch_reason: str | None = None,
     request_id: str | None = None,
     exception: BaseException | None = None,
+    fail_fast: bool | None = None,
+    http_timeout_ms: int | None = None,
 ) -> None:
     """Write one structured API event JSON file; failures are swallowed."""
     try:
@@ -61,6 +63,8 @@ def persist_tts_api_event(
             token_switch_reason=token_switch_reason,
             request_id=request_id,
             exception=exception,
+            fail_fast=fail_fast,
+            http_timeout_ms=http_timeout_ms,
         )
         path = _event_path(event["timestamp"], token_name, attempt_number, chunk_id, intake_id)
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -164,6 +168,8 @@ def _build_event(
     token_switch_reason: str | None,
     request_id: str | None,
     exception: BaseException | None,
+    fail_fast: bool | None,
+    http_timeout_ms: int | None,
 ) -> dict[str, Any]:
     now = datetime.now(timezone.utc)
     event: dict[str, Any] = {
@@ -185,6 +191,10 @@ def _build_event(
         "chunk_id": chunk_id,
         "intake_id": intake_id,
     }
+    if fail_fast is not None:
+        event["fail_fast"] = fail_fast
+    if http_timeout_ms is not None:
+        event["http_timeout_ms"] = http_timeout_ms
     if not success and exception is not None:
         event["exception_traceback"] = "".join(
             traceback.format_exception(type(exception), exception, exception.__traceback__)

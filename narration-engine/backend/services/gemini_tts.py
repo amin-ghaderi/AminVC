@@ -36,6 +36,14 @@ MODEL = "gemini-3.1-flash-tts-preview"
 # Single narrator for all chunks — locked in speech_config (no multi-speaker).
 NARRATOR_VOICE_NAME = "Sulafat"
 
+# Phase T1: client HTTP cap (ms) for fast token rotation after a transient failure on the chunk.
+# Google genai HttpOptions.timeout is milliseconds; also sets X-Server-Timeout (seconds).
+_TTS_FAIL_FAST_TIMEOUT_MS = 2_800
+
+# After the first failing token on a chunk, fast-fail at most this many additional tokens
+# before allowing a long generateContent attempt (success can take 60s+).
+_TTS_FAIL_FAST_MAX_ADDITIONAL_TOKENS = 4
+
 _DIRECTOR_PROMPT = """Read the following Persian audiobook narration.
 
 # Director's note
@@ -190,12 +198,46 @@ def _is_rate_limit_error(exc: Exception) -> bool:
     return "429" in message or "RESOURCE_EXHAUSTED" in message
 
 
+def _is_transport_timeout_error(exc: Exception) -> bool:
+    """HTTP/client timeouts — treat like other transient failover signals."""
+    if isinstance(exc, TimeoutError):
+        return True
+    try:
+        import httpx
+
+        if isinstance(
+            exc,
+            (
+                httpx.TimeoutException,
+                httpx.ReadTimeout,
+                httpx.ConnectTimeout,
+                httpx.WriteTimeout,
+                httpx.PoolTimeout,
+            ),
+        ):
+            return True
+    except ImportError:
+        pass
+    message = str(exc).upper()
+    return any(
+        token in message
+        for token in (
+            "TIMEOUT",
+            "TIMED OUT",
+            "DEADLINE_EXCEEDED",
+            "DEADLINE EXCEEDED",
+        )
+    )
+
+
 def _is_transient_failover_error(exc: Exception) -> bool:
     """
     Errors that should trigger fast token failover for the current chunk.
 
     IMPORTANT: This is not a permanent quarantine. It only influences intra-chunk rotation.
     """
+    if _is_transport_timeout_error(exc):
+        return True
     message = str(exc).upper()
     return any(
         token in message
@@ -207,6 +249,36 @@ def _is_transient_failover_error(exc: Exception) -> bool:
             "INTERNAL",
             "UNAVAILABLE",
         )
+    )
+
+
+def _should_use_fail_fast_http_timeout(
+    failed_tokens_this_chunk: set[str],
+) -> bool:
+    """
+    Use a short HTTP timeout only while rotating through likely-dead tokens.
+
+    The first token on a chunk keeps the default (unlimited) timeout so healthy
+  128s+ generations are not cut off. After the first transient failure, cap the
+    next few failover attempts at ~2.8s, then allow a long attempt again so a
+    working token late in the pool can still finish (see api_events proof intake).
+    """
+    if not failed_tokens_this_chunk:
+        return False
+    return len(failed_tokens_this_chunk) <= _TTS_FAIL_FAST_MAX_ADDITIONAL_TOKENS
+
+
+def _config_for_tts_request(
+    base_config: types.GenerateContentConfig,
+    *,
+    fail_fast: bool,
+) -> types.GenerateContentConfig:
+    if not fail_fast:
+        return base_config
+    return base_config.model_copy(
+        update={
+            "http_options": types.HttpOptions(timeout=_TTS_FAIL_FAST_TIMEOUT_MS),
+        },
     )
 
 
@@ -333,17 +405,25 @@ def generate_audio(
 
         api_key = token_pool.current_key()
         client = genai.Client(api_key=api_key)
+        fail_fast = _should_use_fail_fast_http_timeout(failed_tokens_this_chunk)
+        request_config = _config_for_tts_request(config, fail_fast=fail_fast)
+        http_timeout_ms = _TTS_FAIL_FAST_TIMEOUT_MS if fail_fast else None
         try:
             if hooks and hooks.on_calling:
                 hooks.on_calling()
-            logger.info("Calling Gemini TTS (token %s/%s)", token_pool.current_index, token_pool.total)
+            logger.info(
+                "Calling Gemini TTS (token %s/%s, fail_fast=%s)",
+                token_pool.current_index,
+                token_pool.total,
+                fail_fast,
+            )
 
             api_started = time.perf_counter()
             try:
                 response = client.models.generate_content(
                     model=MODEL,
                     contents=contents,
-                    config=config,
+                    config=request_config,
                 )
             except Exception as api_exc:
                 elapsed_ms = (time.perf_counter() - api_started) * 1000.0
@@ -367,7 +447,10 @@ def generate_audio(
                     google_error_status=google_status,
                     google_error_message=google_message,
                     token_switch_reason=switch_reason,
+                    request_id=None,
                     exception=api_exc,
+                    fail_fast=fail_fast,
+                    http_timeout_ms=http_timeout_ms,
                 )
                 raise
 
@@ -384,6 +467,8 @@ def generate_audio(
                 intake_id=intake_id,
                 status_code=200,
                 request_id=extract_request_id(response),
+                fail_fast=fail_fast,
+                http_timeout_ms=http_timeout_ms,
             )
 
             if hooks and hooks.on_received:
