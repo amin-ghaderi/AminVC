@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-05-29T15:00:42.456955+00:00",
+  "provider": "google_gemini",
+  "endpoint": "models/gemini-3.1-flash-tts-preview:generateContent",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "token_name": "project-15",
+  "attempt_number": 11,
+  "text_length": 1679,
+  "elapsed_ms": 22565.81,
+  "success": false,
+  "status_code": 500,
+  "google_error_status": "INTERNAL",
+  "google_error_message": "Internal error encountered.",
+  "token_switch_reason": "transient_error",
+  "request_id": null,
+  "chunk_id": 1,
+  "intake_id": "9faf4d47-8baa-477e-b1ea-8ef9328d7e0f",
+  "fail_fast": false,
+  "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Public\\Myapps\\AminVC\\narration-engine\\backend\\services\\gemini_tts.py\", line 439, in generate_audio\n    response = client.models.generate_content(\n        model=MODEL,\n        contents=contents,\n        config=request_config,\n    )\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\google\\genai\\models.py\", line 6495, in generate_content\n    response = self._generate_content(\n        model=model, contents=contents, config=parsed_config\n    )\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\google\\genai\\models.py\", line 4931, in _generate_content\n    response = self._api_client.request(\n        'post', path, request_dict, http_options\n    )\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\google\\genai\\_api_client.py\", line 1611, in request\n    response = self._request(http_request, http_options, stream=False)\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\google\\genai\\_api_client.py\", line 1404, in _request\n    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\tenacity\\__init__.py\", line 470, in __call__\n    do = self.iter(retry_state=retry_state)\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\tenacity\\__init__.py\", line 371, in iter\n    result = action(retry_state)\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\tenacity\\__init__.py\", line 413, in exc_check\n    raise retry_exc.reraise()\n          ~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\tenacity\\__init__.py\", line 184, in reraise\n    raise self.last_attempt.result()\n          ~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\concurrent\\futures\\_base.py\", line 443, in result\n    return self.__get_result()\n           ~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\concurrent\\futures\\_base.py\", line 395, in __get_result\n    raise self._exception\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\tenacity\\__init__.py\", line 473, in __call__\n    result = fn(*args, **kwargs)\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\google\\genai\\_api_client.py\", line 1381, in _request_once\n    errors.APIError.raise_for_response(response)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\google\\genai\\errors.py\", line 155, in raise_for_response\n    cls.raise_error(response.status_code, response_json, response)\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\info\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\google\\genai\\errors.py\", line 186, in raise_error\n    raise ServerError(status_code, response_json, response)\ngoogle.genai.errors.ServerError: 500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}\n"
+}
