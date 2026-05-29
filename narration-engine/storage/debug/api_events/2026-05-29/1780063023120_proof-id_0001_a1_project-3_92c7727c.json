@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-05-29T13:57:03.119861+00:00",
+  "provider": "google_gemini",
+  "endpoint": "models/gemini-3.1-flash-tts-preview:generateContent",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "token_name": "project-3",
+  "attempt_number": 1,
+  "text_length": 1014,
+  "elapsed_ms": 0.0,
+  "success": false,
+  "status_code": 500,
+  "google_error_status": "INTERNAL",
+  "google_error_message": "500 INTERNAL. status=INTERNAL",
+  "token_switch_reason": "transient_error",
+  "request_id": null,
+  "chunk_id": 1,
+  "intake_id": "proof-id",
+  "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Public\\Myapps\\AminVC\\narration-engine\\backend\\services\\gemini_tts.py\", line 343, in generate_audio\n    response = client.models.generate_content(\n        model=MODEL,\n        contents=contents,\n        config=config,\n    )\n  File \"<string>\", line 16, in generate_content\n    raise RuntimeError('500 INTERNAL. status=INTERNAL')\nRuntimeError: 500 INTERNAL. status=INTERNAL\n"
+}

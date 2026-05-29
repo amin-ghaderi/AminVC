@@ -18,16 +18,16 @@
     "scene_context": "",
     "transcript": "زمان انتخاب رضا پھلوی کتاب حاضر را به ھمۀ ھم ميھنانم تقديم می کنم. به پدران و مادرانی که طی دھه ھا در راه پيشرفت ايران و رفاه ملت کوشيده اند. به ھم نس)نم، نسل قربانی شده، که فرصت خدمتگزاری به ميھن را نيافت، اگرچه خود را برای ادامۀ راه و بردوش گرفتن مسئوليت ھا آماده می کرد. به کسانی که خوشبينانه به استقبال \" انقلاب \" رفتند، اما امروز از کردۀ خويش پشيمانند. به جوانان ھشيار و ھوشمندی که به اميد آينده ای بھتر برای خويش و برای ھمۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند. اين کتاب را ھم چنين به خاطرۀ بی گناھان، قربانيان بی عدالتی ھای گذشته و حال تقديم می کنم.",
     "transcript_char_count": 569,
-    "token_name": "project-13",
+    "token_name": "project-1",
     "attempt": 12
   },
   "response": {
     "success": false,
-    "error": "after 12 attempts: 500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}",
+    "error": "after 12 attempts (all tokens exhausted): 500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}",
     "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\narration-engine\\storage\\temp\\audio\\55d5fd35-e942-499a-b93f-7d81acd58f72\\0001.wav",
     "wav_size_bytes": null,
     "mime_type": null,
     "audio_bytes": null,
-    "timestamp": 1780051607.1717556
+    "timestamp": 1780052543.1218584
   }
 }

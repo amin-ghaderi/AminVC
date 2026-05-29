@@ -15,6 +15,11 @@ from google.genai import types
 
 from backend.services.scene_context import SceneContext
 from backend.services.token_pool import GenerationCancelled, TokenPool
+from backend.services.tts_api_event_store import (
+    extract_google_error_fields,
+    extract_request_id,
+    persist_tts_api_event,
+)
 from backend.services.tts_debug_store import (
     build_request_payload,
     build_response_payload,
@@ -333,10 +338,52 @@ def generate_audio(
                 hooks.on_calling()
             logger.info("Calling Gemini TTS (token %s/%s)", token_pool.current_index, token_pool.total)
 
-            response = client.models.generate_content(
+            api_started = time.perf_counter()
+            try:
+                response = client.models.generate_content(
+                    model=MODEL,
+                    contents=contents,
+                    config=config,
+                )
+            except Exception as api_exc:
+                elapsed_ms = (time.perf_counter() - api_started) * 1000.0
+                status_code, google_status, google_message = extract_google_error_fields(api_exc)
+                switch_reason: str | None = None
+                if _is_transient_failover_error(api_exc):
+                    switch_reason = (
+                        "429_quota" if _is_rate_limit_error(api_exc) else "transient_error"
+                    )
+                persist_tts_api_event(
+                    model=MODEL,
+                    voice=NARRATOR_VOICE_NAME,
+                    token_name=token_name,
+                    attempt_number=attempt + 1,
+                    text_length=len(prompt),
+                    elapsed_ms=elapsed_ms,
+                    success=False,
+                    chunk_id=chunk_index,
+                    intake_id=intake_id,
+                    status_code=status_code,
+                    google_error_status=google_status,
+                    google_error_message=google_message,
+                    token_switch_reason=switch_reason,
+                    exception=api_exc,
+                )
+                raise
+
+            elapsed_ms = (time.perf_counter() - api_started) * 1000.0
+            persist_tts_api_event(
                 model=MODEL,
-                contents=contents,
-                config=config,
+                voice=NARRATOR_VOICE_NAME,
+                token_name=token_name,
+                attempt_number=attempt + 1,
+                text_length=len(prompt),
+                elapsed_ms=elapsed_ms,
+                success=True,
+                chunk_id=chunk_index,
+                intake_id=intake_id,
+                status_code=200,
+                request_id=extract_request_id(response),
             )
 
             if hooks and hooks.on_received:
