@@ -1,6 +1,15 @@
 import { http, HttpResponse } from 'msw'
 
 import type { Part, Project, QueueSnapshot, WorkerStatus } from '@/types/api'
+import {
+  queueMonitorHandlers,
+  resetQueueMonitorData,
+  setMonitorSnapshot,
+} from '@/test/msw/queueMonitorHandlers'
+import {
+  resetWorkspaceData,
+  workspaceHandlers,
+} from '@/test/msw/workspaceHandlers'
 
 const API = '/api/v1'
 
@@ -25,15 +34,14 @@ function partKey(projectId: string, partId: string) {
 }
 
 let workerStatus: WorkerStatus = { running: false, state: 'idle' }
-let queueSnapshot: QueueSnapshot = {
-  queued: 1,
-  running: 0,
-  completed: 2,
-  failed: 0,
-  cancelled: 0,
-}
+
+export { resetWorkspaceData } from '@/test/msw/workspaceHandlers'
+
+export { resetQueueMonitorData } from '@/test/msw/queueMonitorHandlers'
 
 export function resetTestData() {
+  resetWorkspaceData()
+  resetQueueMonitorData() // publishes merged recent events for MSW
   projects = [
     {
       project_id: 'demo',
@@ -53,13 +61,6 @@ export function resetTestData() {
     delete partChunkCounts[key]
   }
   workerStatus = { running: false, state: 'idle' }
-  queueSnapshot = {
-    queued: 1,
-    running: 0,
-    completed: 2,
-    failed: 0,
-    cancelled: 0,
-  }
 }
 
 export function setProjectsList(list: Project[]) {
@@ -71,7 +72,7 @@ export function setWorkerStatus(status: WorkerStatus) {
 }
 
 export function setQueueSnapshot(snapshot: QueueSnapshot) {
-  queueSnapshot = snapshot
+  setMonitorSnapshot(snapshot)
 }
 
 export const handlers = [
@@ -181,5 +182,6 @@ export const handlers = [
     },
   ),
   http.get(`${API}/worker`, () => HttpResponse.json(workerStatus)),
-  http.get(`${API}/queue`, () => HttpResponse.json(queueSnapshot)),
+  ...queueMonitorHandlers,
+  ...workspaceHandlers,
 ]

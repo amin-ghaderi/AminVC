@@ -9,6 +9,12 @@ import type {
   SourceUploadResponse,
 } from '@/types/api'
 
+export function getPart(projectId: string, partId: string): Promise<Part> {
+  return apiClient<Part>(
+    `/projects/${encodeURIComponent(projectId)}/parts/${encodeURIComponent(partId)}`,
+  )
+}
+
 export function listParts(projectId: string): Promise<Part[]> {
   return apiClient<Part[]>(
     `/projects/${encodeURIComponent(projectId)}/parts`,

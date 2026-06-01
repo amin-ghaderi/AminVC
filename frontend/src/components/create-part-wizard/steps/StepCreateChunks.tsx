@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 
 interface StepCreateChunksProps {
   projectId: string
+  partId: string
   creating: boolean
   success: boolean
   chunksCreated: number | null
@@ -13,6 +13,7 @@ interface StepCreateChunksProps {
 
 export function StepCreateChunks({
   projectId,
+  partId,
   creating,
   success,
   chunksCreated,
@@ -28,9 +29,12 @@ export function StepCreateChunks({
           </p>
         </div>
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-          <Button disabled className="gap-2">
-            Open Part Workspace
-            <Badge variant="outline">Coming Soon</Badge>
+          <Button asChild>
+            <Link
+              to={`/projects/${encodeURIComponent(projectId)}/parts/${encodeURIComponent(partId)}`}
+            >
+              Open Part Workspace
+            </Link>
           </Button>
           <Button asChild variant="outline">
             <Link to={`/projects/${encodeURIComponent(projectId)}`}>

@@ -73,6 +73,89 @@ export interface PartSummary {
   interrupted: number
 }
 
+export interface AssetSlot {
+  status: string
+  file: string | null
+  duration_seconds: number | null
+}
+
+export interface Chunk {
+  chunk_id: number
+  state: string
+  narration_approved: boolean
+  vc_approved: boolean
+  text: string
+  narration: AssetSlot
+  vc: AssetSlot
+  retry_count: number
+  last_error: string | null
+  updated_at: string
+}
+
+export interface ChunkAssets {
+  narration_exists: boolean
+  vc_exists: boolean
+  narration_url: string
+  vc_url: string
+  narration_size: number | null
+  vc_size: number | null
+}
+
+export interface EventEnvelope {
+  event_id: string
+  event_type: string
+  timestamp: string
+  project_id: string | null
+  part_id: string | null
+  chunk_id: number | null
+  payload: Record<string, unknown>
+}
+
+export interface QueueJobBody {
+  project_id: string
+  part_id: string
+  chunk_id: number
+}
+
+export interface QueueJob {
+  job_id: string
+  job_type: string
+  project_id: string
+  part_id: string
+  chunk_id: number | null
+  status: string
+  created_at: string
+  started_at: string | null
+  completed_at: string | null
+  attempts: number
+  last_error: string | null
+}
+
+export interface QueueJobsResponse {
+  queued: QueueJob[]
+  running: QueueJob[]
+  completed: QueueJob[]
+  failed: QueueJob[]
+  cancelled: QueueJob[]
+}
+
+export interface VcProgressPayload {
+  current_step: number
+  total_steps: number
+  elapsed_seconds: number
+  estimated_remaining_seconds: number
+}
+
+export type QueueMonitorFilter = 'all' | 'narration' | 'vc' | 'build'
+
+export type ChunkListFilter =
+  | 'all'
+  | 'narration'
+  | 'vc'
+  | 'approved'
+  | 'failed'
+  | 'interrupted'
+
 export interface ApiErrorBody {
   error: string
 }

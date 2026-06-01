@@ -1,4 +1,5 @@
-import { Badge } from '@/components/ui/badge'
+import { Link } from 'react-router-dom'
+
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -26,11 +27,14 @@ export function PartCard({ part }: PartCardProps) {
           State: {part.state || '—'}
         </p>
       </CardContent>
-      <CardFooter className="flex items-center justify-between gap-2">
-        <Button size="sm" disabled>
-          Open
+      <CardFooter>
+        <Button asChild size="sm">
+          <Link
+            to={`/projects/${encodeURIComponent(part.project_id)}/parts/${encodeURIComponent(part.part_id)}`}
+          >
+            Open
+          </Link>
         </Button>
-        <Badge variant="outline">Coming Soon</Badge>
       </CardFooter>
     </Card>
   )

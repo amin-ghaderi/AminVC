@@ -175,6 +175,7 @@ export function CreatePartWizardPage() {
         {step === 6 && (
           <StepCreateChunks
             projectId={projectId}
+            partId={partId}
             creating={chunksMutation.isPending}
             success={success}
             chunksCreated={chunksCreated}

@@ -8,8 +8,23 @@ export const queryKeys = {
   },
   worker: {
     status: ['worker'] as const,
+    statusMonitor: ['worker-status'] as const,
   },
   queue: {
     snapshot: ['queue', 'snapshot'] as const,
+    jobs: ['queue-jobs'] as const,
+  },
+  eventsRecent: ['events-recent'] as const,
+  vcProgress: ['vc-progress'] as const,
+  partSummary: (projectId: string, partId: string) =>
+    ['part-summary', projectId, partId] as const,
+  chunks: (projectId: string, partId: string) =>
+    ['chunks', projectId, partId] as const,
+  chunk: (projectId: string, partId: string, chunkId: number) =>
+    ['chunk', projectId, partId, chunkId] as const,
+  chunkAssets: (projectId: string, partId: string, chunkId: number) =>
+    ['chunk-assets', projectId, partId, chunkId] as const,
+  events: {
+    recent: ['events', 'recent'] as const,
   },
 }

@@ -5,8 +5,8 @@ import { cn } from '@/lib/utils'
 
 const items = [
   { to: '/projects', label: 'Projects', enabled: true },
-  { to: '/queue', label: 'Queue', enabled: false },
-  { to: '/progress', label: 'Progress', enabled: false },
+  { to: '/queue', label: 'Queue', enabled: true },
+  { to: '/progress', label: 'Progress', enabled: true },
   { to: '/events', label: 'Events', enabled: false },
   { to: '/builds', label: 'Builds', enabled: false },
 ] as const
