@@ -24,7 +24,11 @@ from pathlib import Path
 from typing import Any
 
 from app.config.settings import AppSettings
-from app.contracts.manifests import NarrationChunk, NarrationManifest
+from app.contracts.manifests import ChunkManifest, NarrationChunk, NarrationManifest
+from app.services.narration_chunk_executor import (
+    NarrationChunkExecutor,
+    WaveNarrationChunkExecutor,
+)
 
 
 logger = logging.getLogger(__name__)
@@ -113,6 +117,29 @@ class NarrationService:
             raise RuntimeError(
                 f"Narration engine unreachable at {self._base_url}: {exc}"
             ) from exc
+
+    def generate_chunk(
+        self,
+        *,
+        project_id: str,
+        part_id: str,
+        chunk: ChunkManifest,
+        output_path: Path,
+        executor: NarrationChunkExecutor | None = None,
+    ) -> Path:
+        """
+        Generate narration audio for a single E0 chunk (E6 worker path).
+
+        Worker jobs use GeminiNarrationChunkExecutor by default (E6.1). This helper
+        keeps WaveNarrationChunkExecutor unless an executor is passed explicitly.
+        """
+        runner = executor or WaveNarrationChunkExecutor()
+        return runner.generate_chunk(
+            project_id=project_id,
+            part_id=part_id,
+            chunk=chunk,
+            output_path=output_path,
+        )
 
     def health(self) -> dict[str, Any]:
         """

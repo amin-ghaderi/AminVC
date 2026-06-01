@@ -60,6 +60,7 @@ class QueueManager:
         part_id: str,
         job_type: JobTypeArg,
         chunk_id: int | None = None,
+        job_id: str | None = None,
     ) -> QueueItem:
         self._store.ensure_tree()
         if job_type in ("narration", "vc") and chunk_id is None:
@@ -68,7 +69,7 @@ class QueueManager:
             raise QueueError("build jobs must have chunk_id null")
 
         item = QueueItem(
-            job_id=self._new_job_id(),
+            job_id=job_id or self._new_job_id(),
             project_id=project_id,
             part_id=part_id,
             chunk_id=chunk_id,

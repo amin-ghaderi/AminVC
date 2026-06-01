@@ -74,10 +74,10 @@ class VcProgressEvent:
 # E4.0 — Event Bus
 # ---------------------------------------------------------------------------
 
-EventCategory = Literal["queue", "recovery", "narration", "vc", "build", "system"]
+EventCategory = Literal["queue", "recovery", "narration", "vc", "build", "system", "worker"]
 
 VALID_EVENT_CATEGORIES: frozenset[str] = frozenset(
-    {"queue", "recovery", "narration", "vc", "build", "system"}
+    {"queue", "recovery", "narration", "vc", "build", "system", "worker"}
 )
 
 # Queue
@@ -125,6 +125,13 @@ EVENT_BUILD_FAILED: Literal["build.failed"] = "build.failed"
 EVENT_SYSTEM_WARNING: Literal["system.warning"] = "system.warning"
 EVENT_SYSTEM_ERROR: Literal["system.error"] = "system.error"
 
+# Worker (E6)
+EVENT_WORKER_STARTED: Literal["worker.started"] = "worker.started"
+EVENT_WORKER_STOPPED: Literal["worker.stopped"] = "worker.stopped"
+EVENT_WORKER_JOB_STARTED: Literal["worker.job_started"] = "worker.job_started"
+EVENT_WORKER_JOB_COMPLETED: Literal["worker.job_completed"] = "worker.job_completed"
+EVENT_WORKER_JOB_FAILED: Literal["worker.job_failed"] = "worker.job_failed"
+
 VALID_EVENT_TYPES: frozenset[str] = frozenset(
     {
         EVENT_QUEUE_JOB_QUEUED,
@@ -148,6 +155,11 @@ VALID_EVENT_TYPES: frozenset[str] = frozenset(
         EVENT_BUILD_FAILED,
         EVENT_SYSTEM_WARNING,
         EVENT_SYSTEM_ERROR,
+        EVENT_WORKER_STARTED,
+        EVENT_WORKER_STOPPED,
+        EVENT_WORKER_JOB_STARTED,
+        EVENT_WORKER_JOB_COMPLETED,
+        EVENT_WORKER_JOB_FAILED,
     }
 )
 
