@@ -1,0 +1,33 @@
+{
+  "chunk_index": 1,
+  "intake_id": "06ebf2c0-099b-45fe-b682-bfb42b3fef30",
+  "request": {
+    "chunk_index": 1,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n## Voice continuity (do NOT read aloud):\nThis is the opening segment. Begin with a natural audiobook intro cadence.\n\nکتاب صوتی زمان انتخاب با تهیه کنندگی امین قادری، عضو حزب پادشاهی ایرانیان به قلم شاهزاده رضا پھلوی کتاب حاضر را به ھمۀ ھم ميھنانم تقديم می کنم. به پدران و مادرانی که طی دھه ھا در راه پيشرفت ايران و رفاه ملت کوشيده اند. به ھم نسلانم، نسل قربانی شده، که فرصت خدمتگزاری به ميھن را نيافت، اگرچه خود را برای ادامۀ راه و بردوش گرفتن مسئوليت ھا آماده می کرد. به کسانی که خوشبينانه به استقبال \" انقلاب \" رفتند، اما امروز از انتخاب خيش پشيمانند. به جوانان ھشيار و ھوشمندی که به اميد آينده ای بھتر برای خيش و برای ھمۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند.",
+    "prompt_char_count": 1679,
+    "config": {
+      "model": "gemini-3.1-flash-tts-preview",
+      "temperature": 1,
+      "voice_name": "Sulafat",
+      "response_modalities": [
+        "audio"
+      ],
+      "speech_mode": "single_speaker"
+    },
+    "continuity_note": "This is the opening segment. Begin with a natural audiobook intro cadence.",
+    "scene_context": "",
+    "transcript": "کتاب صوتی زمان انتخاب با تهیه کنندگی امین قادری، عضو حزب پادشاهی ایرانیان به قلم شاهزاده رضا پھلوی کتاب حاضر را به ھمۀ ھم ميھنانم تقديم می کنم. به پدران و مادرانی که طی دھه ھا در راه پيشرفت ايران و رفاه ملت کوشيده اند. به ھم نسلانم، نسل قربانی شده، که فرصت خدمتگزاری به ميھن را نيافت، اگرچه خود را برای ادامۀ راه و بردوش گرفتن مسئوليت ھا آماده می کرد. به کسانی که خوشبينانه به استقبال \" انقلاب \" رفتند، اما امروز از انتخاب خيش پشيمانند. به جوانان ھشيار و ھوشمندی که به اميد آينده ای بھتر برای خيش و برای ھمۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند.",
+    "transcript_char_count": 558,
+    "token_name": "project-1",
+    "attempt": 1
+  },
+  "response": {
+    "success": true,
+    "error": null,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\narration-engine\\storage\\temp\\audio\\06ebf2c0-099b-45fe-b682-bfb42b3fef30\\0001.wav",
+    "wav_size_bytes": 3235244,
+    "mime_type": "audio/l16; rate=24000; channels=1",
+    "audio_bytes": 3235200,
+    "timestamp": 1780297564.6000555
+  }
+}
