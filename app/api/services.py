@@ -8,7 +8,12 @@ from app.config.settings import AppSettings
 from app.events.bus import EventBus
 from app.lifecycle import ApprovalService, RebuildService
 from app.queue.manager import QueueManager
+from app.queue.store import QueueStore
 from app.recovery.recovery_service import RecoveryService
+from app.services.audio_asset_service import AudioAssetService
+from app.services.part_summary_service import PartSummaryService
+from app.services.part_text_service import PartTextService
+from app.services.queue_query_service import QueueQueryService
 from app.services.storage_service import StorageService
 from app.storage.project_store import ProjectStore
 from app.worker.execution_engine import WorkerExecutionEngine
@@ -25,6 +30,10 @@ class ApplicationServices:
     approval: ApprovalService
     rebuild: RebuildService
     worker: WorkerExecutionEngine
+    queue_query: QueueQueryService
+    audio_assets: AudioAssetService
+    part_summary: PartSummaryService
+    part_text: PartTextService
 
     @classmethod
     def create(cls, settings: AppSettings | None = None) -> ApplicationServices:
@@ -32,7 +41,9 @@ class ApplicationServices:
         event_bus = EventBus()
         project_store = ProjectStore(settings)
         storage = StorageService(settings)
+        queue_store = QueueStore(settings)
         queue = QueueManager(
+            store=queue_store,
             project_store=project_store,
             event_bus=event_bus,
         )
@@ -58,4 +69,8 @@ class ApplicationServices:
             approval=approval,
             rebuild=rebuild,
             worker=worker,
+            queue_query=QueueQueryService(queue_store),
+            audio_assets=AudioAssetService(project_store),
+            part_summary=PartSummaryService(project_store),
+            part_text=PartTextService(project_store),
         )

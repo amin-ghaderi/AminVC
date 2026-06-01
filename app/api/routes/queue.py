@@ -10,12 +10,45 @@ from app.api.dependencies import get_services
 from app.api.mappers import queue_job_response, queue_snapshot_response
 from app.api.schemas.common import (
     QueueJobRequest,
+    QueueJobRow,
+    QueueJobsResponse,
     QueueResumeRequest,
     QueueSnapshotResponse,
 )
+from app.contracts.queue import QueueItem
 from app.api.services import ApplicationServices
 
 router = APIRouter(prefix="/queue", tags=["queue"])
+
+
+def _job_row(item: QueueItem) -> QueueJobRow:
+    return QueueJobRow(
+        job_id=item.job_id,
+        job_type=item.job_type,
+        project_id=item.project_id,
+        part_id=item.part_id,
+        chunk_id=item.chunk_id,
+        status=item.status,
+        created_at=item.created_at,
+        started_at=item.started_at,
+        completed_at=item.completed_at,
+        attempts=item.attempts,
+        last_error=item.last_error,
+    )
+
+
+@router.get("/jobs", response_model=QueueJobsResponse)
+def list_queue_jobs(
+    services: ApplicationServices = Depends(get_services),
+) -> QueueJobsResponse:
+    view = services.queue_query.list_jobs()
+    return QueueJobsResponse(
+        queued=[_job_row(i) for i in view.queued],
+        running=[_job_row(i) for i in view.running],
+        completed=[_job_row(i) for i in view.completed],
+        failed=[_job_row(i) for i in view.failed],
+        cancelled=[_job_row(i) for i in view.cancelled],
+    )
 
 
 @router.get("", response_model=QueueSnapshotResponse)

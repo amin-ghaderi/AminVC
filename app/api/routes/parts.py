@@ -7,8 +7,12 @@ from fastapi import APIRouter, Depends, File, UploadFile
 from app.api.dependencies import get_services
 from app.api.mappers import part_response
 from app.api.schemas.common import (
+    ChunkingRequest,
+    ChunkingResponse,
     CreatePartRequest,
+    ExtractTextResponse,
     PartResponse,
+    PartSummaryResponse,
     PartTextResponse,
     SavePartTextRequest,
     SourceUploadResponse,
@@ -101,3 +105,47 @@ def save_part_text(
             body.text,
         )
     return PartTextResponse(text=body.text, source=EDITED_TEXT_NAME)
+
+
+@router.post("/{part_id}/extract-text", response_model=ExtractTextResponse)
+def extract_part_text(
+    project_id: str,
+    part_id: str,
+    services: ApplicationServices = Depends(get_services),
+) -> ExtractTextResponse:
+    text = services.part_text.extract_text_from_source_pdf(project_id, part_id)
+    return ExtractTextResponse(text=text)
+
+
+@router.post("/{part_id}/chunking", response_model=ChunkingResponse, status_code=201)
+def create_part_chunks(
+    project_id: str,
+    part_id: str,
+    body: ChunkingRequest,
+    services: ApplicationServices = Depends(get_services),
+) -> ChunkingResponse:
+    count = services.part_text.save_text_and_create_chunks(
+        project_id,
+        part_id,
+        body.text,
+        body.chunk_size,
+    )
+    return ChunkingResponse(chunks_created=count)
+
+
+@router.get("/{part_id}/summary", response_model=PartSummaryResponse)
+def part_summary(
+    project_id: str,
+    part_id: str,
+    services: ApplicationServices = Depends(get_services),
+) -> PartSummaryResponse:
+    summary = services.part_summary.summarize(project_id, part_id)
+    return PartSummaryResponse(
+        total_chunks=summary.total_chunks,
+        narration_ready=summary.narration_ready,
+        narration_approved=summary.narration_approved,
+        vc_ready=summary.vc_ready,
+        vc_approved=summary.vc_approved,
+        failed=summary.failed,
+        interrupted=summary.interrupted,
+    )

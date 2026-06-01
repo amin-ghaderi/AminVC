@@ -155,6 +155,60 @@ class RestartPlanResponse(BaseModel):
     chunks: list[int]
 
 
+class QueueJobRow(BaseModel):
+    job_id: str
+    job_type: str
+    project_id: str
+    part_id: str
+    chunk_id: int | None = None
+    status: str
+    created_at: str = ""
+    started_at: str | None = None
+    completed_at: str | None = None
+    attempts: int = 0
+    last_error: str | None = None
+
+
+class QueueJobsResponse(BaseModel):
+    queued: list[QueueJobRow]
+    running: list[QueueJobRow]
+    completed: list[QueueJobRow]
+    failed: list[QueueJobRow]
+    cancelled: list[QueueJobRow]
+
+
+class ExtractTextResponse(BaseModel):
+    text: str
+
+
+class ChunkingRequest(BaseModel):
+    text: str
+    chunk_size: int
+
+
+class ChunkingResponse(BaseModel):
+    chunks_created: int
+
+
+class PartSummaryResponse(BaseModel):
+    total_chunks: int
+    narration_ready: int
+    narration_approved: int
+    vc_ready: int
+    vc_approved: int
+    failed: int
+    interrupted: int
+
+
+class ChunkAssetsResponse(BaseModel):
+    narration_exists: bool
+    vc_exists: bool
+    narration_url: str
+    vc_url: str
+    narration_size: int | None = None
+    vc_size: int | None = None
+
+
 class EventEnvelopeResponse(BaseModel):
     event_id: str
     event_type: str

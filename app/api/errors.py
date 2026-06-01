@@ -10,6 +10,8 @@ from app.lifecycle.exceptions import (
     InvalidStateTransitionError,
 )
 from app.queue.manager import QueueError
+from app.services.audio_asset_service import AudioNotFoundError
+from app.services.part_text_service import PartChunkingError, PdfTextExtractionError
 from app.storage.project_store import (
     BuildNotFoundError,
     ChunkNotFoundError,
@@ -35,9 +37,21 @@ def register_exception_handlers(app: FastAPI) -> None:
     async def not_found_handler(_request: Request, exc: Exception) -> JSONResponse:
         return JSONResponse(status_code=404, content=error_body(str(exc)))
 
+    @app.exception_handler(AudioNotFoundError)
+    async def audio_not_found_handler(
+        _request: Request,
+        _exc: AudioNotFoundError,
+    ) -> JSONResponse:
+        return JSONResponse(status_code=404, content=error_body("Audio file not found"))
+
     @app.exception_handler(FileNotFoundError)
     async def file_not_found_handler(_request: Request, exc: FileNotFoundError) -> JSONResponse:
         return JSONResponse(status_code=404, content=error_body(str(exc)))
+
+    @app.exception_handler(PdfTextExtractionError)
+    @app.exception_handler(PartChunkingError)
+    async def part_text_handler(_request: Request, exc: Exception) -> JSONResponse:
+        return JSONResponse(status_code=400, content=error_body(str(exc)))
 
     @app.exception_handler(FileExistsError)
     async def exists_handler(_request: Request, exc: FileExistsError) -> JSONResponse:
