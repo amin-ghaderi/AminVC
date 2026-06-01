@@ -19,6 +19,7 @@ import uuid
 from collections import deque
 from dataclasses import dataclass, field
 from pathlib import Path
+from collections.abc import Callable
 from typing import Any
 
 from app.config.settings import AppSettings
@@ -29,7 +30,10 @@ from app.contracts.worker_messages import (
     HealthRequest,
     HealthResponse,
     InitRequest,
+    ProgressResponse,
     ShutdownRequest,
+    is_terminal_response,
+    parse_progress,
     to_json_dict,
 )
 
@@ -142,6 +146,7 @@ class SpeakerWorkerClient:
         output_path: Path,
         settings: dict[str, Any] | None = None,
         job_id: str | None = None,
+        on_progress: Callable[[ProgressResponse], None] | None = None,
     ) -> dict[str, Any]:
         msg = ConvertRequest(
             job_id=job_id or str(uuid.uuid4()),
@@ -150,7 +155,29 @@ class SpeakerWorkerClient:
             output_path=str(output_path),
             settings=settings or {},
         )
-        return self._request(msg)
+        return self._request_convert(msg, on_progress=on_progress)
+
+    def _request_convert(
+        self,
+        message: ConvertRequest,
+        *,
+        on_progress: Callable[[ProgressResponse], None] | None = None,
+    ) -> dict[str, Any]:
+        self._write(message)
+        while True:
+            payload = self._read_line()
+            msg_type = payload.get("type")
+            if msg_type == "progress":
+                if on_progress is not None:
+                    try:
+                        on_progress(parse_progress(payload))
+                    except Exception:
+                        pass
+                continue
+            if is_terminal_response(payload):
+                return payload
+            if msg_type == "non_json_output":
+                return payload
 
     def shutdown(self) -> dict[str, Any]:
         try:

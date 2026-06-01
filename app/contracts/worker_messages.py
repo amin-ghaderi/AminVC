@@ -20,6 +20,7 @@ from typing import Any, Literal, TypedDict, cast
 RequestType = Literal["init", "convert", "health", "shutdown"]
 ResponseType = Literal[
     "ready",
+    "progress",
     "convert_completed",
     "health_response",
     "error",
@@ -76,6 +77,14 @@ class HealthResponse:
 
 
 @dataclass(frozen=True, slots=True)
+class ProgressResponse:
+    type: Literal["progress"] = "progress"
+    chunk_id: int = 0
+    current_step: int = 0
+    total_steps: int = 0
+
+
+@dataclass(frozen=True, slots=True)
 class ConvertCompletedResponse:
     type: Literal["convert_completed"] = "convert_completed"
     job_id: str = ""
@@ -129,4 +138,17 @@ def parse_request(payload: dict[str, Any]) -> InitRequest | HealthRequest | Shut
             settings=cast(dict[str, Any], payload.get("settings") or {}),
         )
     raise ValueError(f"Unknown request type: {msg_type!r}")
+
+
+def parse_progress(payload: dict[str, Any]) -> ProgressResponse:
+    return ProgressResponse(
+        chunk_id=int(payload.get("chunk_id", 0)),
+        current_step=int(payload.get("current_step", 0)),
+        total_steps=int(payload.get("total_steps", 0)),
+    )
+
+
+def is_terminal_response(payload: dict[str, Any]) -> bool:
+    msg_type = payload.get("type")
+    return msg_type in ("convert_completed", "error", "shutdown_complete")
 

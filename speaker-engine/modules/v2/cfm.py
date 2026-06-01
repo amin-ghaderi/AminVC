@@ -1,5 +1,10 @@
+from collections.abc import Callable
+from typing import Any
+
 import torch
 from tqdm import tqdm
+
+ProgressCallback = Callable[[int, int], Any]
 
 class CFM(torch.nn.Module):
     def __init__(
@@ -22,6 +27,7 @@ class CFM(torch.nn.Module):
                   temperature=1.0,
                   inference_cfg_rate=[0.5, 0.5],
                   random_voice=False,
+                  progress_callback: ProgressCallback | None = None,
                   ):
         """Forward diffusion
 
@@ -46,8 +52,30 @@ class CFM(torch.nn.Module):
         z = torch.randn([B, self.in_channels, T], device=mu.device) * temperature
         t_span = torch.linspace(0, 1, n_timesteps + 1, device=mu.device)
         t_span = t_span + (-1) * (torch.cos(torch.pi / 2 * t_span) - 1 + t_span)
-        return self.solve_euler(z, x_lens, prompt, mu, style, t_span, inference_cfg_rate, random_voice)
-    def solve_euler(self, x, x_lens, prompt, mu, style, t_span, inference_cfg_rate=[0.5, 0.5], random_voice=False,):
+        return self.solve_euler(
+            z,
+            x_lens,
+            prompt,
+            mu,
+            style,
+            t_span,
+            inference_cfg_rate,
+            random_voice,
+            progress_callback=progress_callback,
+        )
+
+    def solve_euler(
+        self,
+        x,
+        x_lens,
+        prompt,
+        mu,
+        style,
+        t_span,
+        inference_cfg_rate=[0.5, 0.5],
+        random_voice=False,
+        progress_callback: ProgressCallback | None = None,
+    ):
         """
         Fixed euler solver for ODEs.
         Args:
@@ -73,6 +101,8 @@ class CFM(torch.nn.Module):
         prompt_x = torch.zeros_like(x)
         prompt_x[..., :prompt_len] = prompt[..., :prompt_len]
         x[..., :prompt_len] = 0
+        total_steps = len(t_span) - 1
+        last_reported_step = 0
         for step in tqdm(range(1, len(t_span))):
             if random_voice:
                 cfg_dphi_dt = self.estimator(
@@ -128,6 +158,13 @@ class CFM(torch.nn.Module):
             if step < len(t_span) - 1:
                 dt = t_span[step + 1] - t
             x[:, :, :prompt_len] = 0
+            current_step = step
+            if progress_callback is not None and current_step != last_reported_step:
+                try:
+                    progress_callback(current_step, total_steps)
+                except Exception:
+                    pass
+                last_reported_step = current_step
 
         return x
 

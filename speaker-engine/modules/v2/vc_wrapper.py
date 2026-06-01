@@ -512,6 +512,7 @@ class VoiceConversionWrapper(torch.nn.Module):
             dtype: torch.dtype = None,
             stream_output: bool = True,
             for_gradio: bool = False,
+            progress_callback=None,
     ):
         """
         Convert voice with streaming support for long audio files.
@@ -629,6 +630,7 @@ class VoiceConversionWrapper(torch.nn.Module):
                         target_mel, target_style, diffusion_steps,
                         inference_cfg_rate=[intelligebility_cfg_rate, similarity_cfg_rate],
                         random_voice=anonymization_only,
+                        progress_callback=progress_callback,
                     )
                     vc_mel = vc_mel[:, :, target_mel_len:original_len]
                 vc_wave = self.vocoder(vc_mel).squeeze()[None]
@@ -669,6 +671,7 @@ class VoiceConversionWrapper(torch.nn.Module):
                         target_mel, target_style, diffusion_steps,
                         inference_cfg_rate=[intelligebility_cfg_rate, similarity_cfg_rate],
                         random_voice=anonymization_only,
+                        progress_callback=progress_callback,
                     )
                 vc_mel = vc_mel[:, :, target_mel_len:original_len]
                 vc_wave = self.vocoder(vc_mel).squeeze()[None]

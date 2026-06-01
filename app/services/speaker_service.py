@@ -25,6 +25,9 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Protocol
 
+from app.events.bus import EventBus
+from app.vc.bridge import VcProgressBridge
+from app.vc.progress_adapter import VcProgressAdapter
 from app.workers.speaker_worker_client import SpeakerWorkerClient
 
 
@@ -161,21 +164,68 @@ class WorkerSpeakerService:
         self._maybe_recycle()
 
         logger.info("Speaker conversion started")
-        payload = self._client.convert(
-            source_audio_path=src_abs,
-            reference_audio_path=ref_abs,
-            output_path=out_abs,
-            settings=settings or {},
-            job_id=None,
-        )
-
-        if not (isinstance(payload, dict) and payload.get("type") == "convert_completed"):
-            raise RuntimeError(f"Speaker conversion failed: {payload}")
-
-        if not out_abs.exists():
-            raise RuntimeError(
-                f"Speaker conversion completed but output file missing: {out_abs}"
+        settings_dict = dict(settings or {})
+        diffusion_steps = int(settings_dict.get("diffusion_steps", 30))
+        progress_adapter: VcProgressAdapter | None = None
+        progress_bridge: VcProgressBridge | None = None
+        if (
+            event_bus is not None
+            and project_id is not None
+            and part_id is not None
+            and chunk_id is not None
+        ):
+            settings_dict.setdefault("chunk_id", chunk_id)
+            progress_adapter = VcProgressAdapter(
+                project_id=project_id,
+                part_id=part_id,
+                event_bus=event_bus,
+                total_steps=diffusion_steps,
             )
+            progress_bridge = VcProgressBridge(progress_adapter)
+            try:
+                progress_adapter.start_chunk(chunk_id)
+            except Exception:
+                logger.warning("VC progress start_chunk failed", exc_info=True)
+
+        try:
+            payload = self._client.convert(
+                source_audio_path=src_abs,
+                reference_audio_path=ref_abs,
+                output_path=out_abs,
+                settings=settings_dict,
+                job_id=None,
+                on_progress=(
+                    progress_bridge.on_progress_message
+                    if progress_bridge is not None
+                    else None
+                ),
+            )
+
+            if not (isinstance(payload, dict) and payload.get("type") == "convert_completed"):
+                if progress_adapter is not None:
+                    try:
+                        progress_adapter.fail_chunk(str(payload))
+                    except Exception:
+                        logger.warning("VC progress fail_chunk failed", exc_info=True)
+                raise RuntimeError(f"Speaker conversion failed: {payload}")
+
+            if not out_abs.exists():
+                raise RuntimeError(
+                    f"Speaker conversion completed but output file missing: {out_abs}"
+                )
+
+            if progress_adapter is not None:
+                try:
+                    progress_adapter.complete_chunk()
+                except Exception:
+                    logger.warning("VC progress complete_chunk failed", exc_info=True)
+        except Exception as exc:
+            if progress_adapter is not None and progress_adapter.session is not None:
+                try:
+                    progress_adapter.fail_chunk(str(exc))
+                except Exception:
+                    logger.warning("VC progress fail_chunk failed", exc_info=True)
+            raise
 
         self._conversions_since_start += 1
         logger.info("Speaker conversion completed")

@@ -29,6 +29,7 @@ from app.contracts.worker_messages import (
     ErrorResponse,
     HealthResponse,
     InitRequest,
+    ProgressResponse,
     ReadyResponse,
     ShutdownCompleteResponse,
     ShutdownRequest,
@@ -150,11 +151,30 @@ class SpeakerWorker:
 
         # Settings are pass-through placeholders; only known keys are forwarded.
         s = req.settings or {}
+        diffusion_steps = int(s.get("diffusion_steps", 30))
+        chunk_id = int(s.get("chunk_id", 0))
+        last_reported_step = 0
+
+        def progress_callback(current_step: int, total_steps: int) -> None:
+            nonlocal last_reported_step
+            if current_step == last_reported_step:
+                return
+            last_reported_step = current_step
+            try:
+                _write_jsonl(
+                    ProgressResponse(
+                        chunk_id=chunk_id,
+                        current_step=current_step,
+                        total_steps=total_steps,
+                    )
+                )
+            except Exception:
+                pass
 
         generator = self._vc_wrapper.convert_voice_with_streaming(  # type: ignore[union-attr]
             source_audio_path=source,
             target_audio_path=reference,
-            diffusion_steps=int(s.get("diffusion_steps", 30)),
+            diffusion_steps=diffusion_steps,
             length_adjust=float(s.get("length_adjust", 1.0)),
             intelligebility_cfg_rate=float(s.get("intelligebility_cfg_rate", 0.7)),
             similarity_cfg_rate=float(s.get("similarity_cfg_rate", 0.7)),
@@ -167,6 +187,7 @@ class SpeakerWorker:
             dtype=self._dtype,
             stream_output=False,
             for_gradio=False,
+            progress_callback=progress_callback,
         )
 
         final: tuple[int, Any] | None = None
