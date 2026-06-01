@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useQueryClient } from '@tanstack/react-query'
 
 import { Badge } from '@/components/ui/badge'
@@ -46,6 +47,14 @@ export function PartHeader({
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
+          <Button type="button" variant="outline" size="sm" asChild>
+            <Link
+              to={`/projects/${projectId}/parts/${partId}/builds`}
+              data-testid="build-manager-link"
+            >
+              Build Manager
+            </Link>
+          </Button>
           <Button type="button" variant="outline" size="sm" onClick={handleRefresh}>
             Refresh
           </Button>

@@ -16,6 +16,14 @@ export const queryKeys = {
   },
   eventsRecent: ['events-recent'] as const,
   vcProgress: ['vc-progress'] as const,
+  builds: {
+    all: ['builds'] as const,
+    list: (projectId: string, partId: string) =>
+      ['builds', projectId, partId] as const,
+    detail: (projectId: string, partId: string, buildId: string) =>
+      ['build', projectId, partId, buildId] as const,
+    status: (buildId: string) => ['build-status', buildId] as const,
+  },
   partSummary: (projectId: string, partId: string) =>
     ['part-summary', projectId, partId] as const,
   chunks: (projectId: string, partId: string) =>

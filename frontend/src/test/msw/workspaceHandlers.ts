@@ -17,7 +17,7 @@ export function resetWorkspaceData() {
   workspaceChunks = [
     makeChunk(1, 'NarrationReady', 'Alpha text chunk', false, false, true, false),
     makeChunk(2, 'NarrationApproved', 'Beta approved', true, false, true, false),
-    makeChunk(3, 'VCReady', 'Gamma vc ready', true, false, false, true),
+    makeChunk(3, 'VCReady', 'Gamma vc ready', true, true, false, true),
     makeChunk(4, 'VCApproved', 'Delta done', true, true, false, true),
     makeChunk(5, 'NarrationFailed', 'Epsilon failed', false, false, false, false),
     makeChunk(6, 'TextSaved', 'No audio yet', false, false, false, false),

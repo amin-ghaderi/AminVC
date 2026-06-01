@@ -2,6 +2,10 @@ import { http, HttpResponse } from 'msw'
 
 import type { Part, Project, QueueSnapshot, WorkerStatus } from '@/types/api'
 import {
+  buildManagerHandlers,
+  resetBuildManagerData,
+} from '@/test/msw/buildManagerHandlers'
+import {
   queueMonitorHandlers,
   resetQueueMonitorData,
   setMonitorSnapshot,
@@ -38,10 +42,12 @@ let workerStatus: WorkerStatus = { running: false, state: 'idle' }
 export { resetWorkspaceData } from '@/test/msw/workspaceHandlers'
 
 export { resetQueueMonitorData } from '@/test/msw/queueMonitorHandlers'
+export { resetBuildManagerData } from '@/test/msw/buildManagerHandlers'
 
 export function resetTestData() {
   resetWorkspaceData()
   resetQueueMonitorData() // publishes merged recent events for MSW
+  resetBuildManagerData()
   projects = [
     {
       project_id: 'demo',
@@ -183,5 +189,6 @@ export const handlers = [
   ),
   http.get(`${API}/worker`, () => HttpResponse.json(workerStatus)),
   ...queueMonitorHandlers,
+  ...buildManagerHandlers,
   ...workspaceHandlers,
 ]

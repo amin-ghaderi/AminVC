@@ -146,6 +146,32 @@ export interface VcProgressPayload {
   estimated_remaining_seconds: number
 }
 
+export interface Build {
+  build_id: string
+  project_id: string
+  part_id: string
+  name: string
+  created_at: string
+  updated_at: string
+  chunks: number[]
+  output_file: string
+  duration_seconds: number | null
+}
+
+export interface CreateBuildRequest {
+  name: string
+  chunks: number[]
+  build_id?: string | null
+}
+
+export type BuildStatus =
+  | 'Created'
+  | 'Queued'
+  | 'Running'
+  | 'Completed'
+  | 'Failed'
+  | 'Cancelled'
+
 export type QueueMonitorFilter = 'all' | 'narration' | 'vc' | 'build'
 
 export type ChunkListFilter =

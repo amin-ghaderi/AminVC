@@ -170,6 +170,45 @@ export function getMonitorJobs() {
   return monitorJobs
 }
 
+export function setMonitorJobs(jobs: QueueJobsResponse) {
+  monitorJobs = structuredClone(jobs)
+}
+
+export function queueBuildJob(
+  projectId: string,
+  partId: string,
+  buildId: string,
+) {
+  monitorJobs = {
+    ...monitorJobs,
+    queued: [
+      ...monitorJobs.queued.filter((j) => j.job_id !== buildId),
+      {
+        job_id: buildId,
+        job_type: 'build',
+        project_id: projectId,
+        part_id: partId,
+        chunk_id: null,
+        status: 'queued',
+        created_at: '2026-01-03T10:05:00Z',
+        started_at: null,
+        completed_at: null,
+        attempts: 0,
+        last_error: null,
+      },
+    ],
+  }
+}
+
+export function removeQueuedBuildJob(buildId: string) {
+  removeQueued(buildId)
+}
+
+export function pushMonitorEvent(event: EventEnvelope) {
+  monitorEvents = [...monitorEvents, event]
+  publishMonitorEvents()
+}
+
 function removeQueued(jobId: string) {
   const cancelledJob = monitorJobs.queued.find((j) => j.job_id === jobId)
   monitorJobs = {

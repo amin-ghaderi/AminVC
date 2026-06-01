@@ -1,3 +1,6 @@
 export const QUEUE_MONITOR_POLL_MS = 3000
 export const VC_PROGRESS_POLL_MS = 2000
 export const EVENTS_POLL_MS = 2000
+export const BUILDS_POLL_MS = 5000
+export const BUILD_QUEUE_JOBS_POLL_MS = 3000
+export const BUILD_EVENTS_POLL_MS = 5000

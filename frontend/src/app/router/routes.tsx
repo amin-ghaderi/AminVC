@@ -2,6 +2,7 @@ import { Navigate } from 'react-router-dom'
 import type { RouteObject } from 'react-router-dom'
 
 import { AppShell } from '@/app/layout/AppShell'
+import { BuildManagerPage } from '@/pages/BuildManagerPage/BuildManagerPage'
 import { CreatePartWizardPage } from '@/pages/CreatePartWizardPage/CreatePartWizardPage'
 import { PartWorkspacePage } from '@/pages/PartWorkspacePage/PartWorkspacePage'
 import { ProgressDashboardPage } from '@/pages/ProgressDashboardPage/ProgressDashboardPage'
@@ -26,6 +27,10 @@ export const appRoutes: RouteObject[] = [
       {
         path: 'projects/:projectId/parts/:partId',
         element: <PartWorkspacePage />,
+      },
+      {
+        path: 'projects/:projectId/parts/:partId/builds',
+        element: <BuildManagerPage />,
       },
     ],
   },
