@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 from app.config.settings import AppSettings
-from app.contracts.queue import QueueItem, queue_item_from_dict
+from app.contracts.queue import MAX_QUEUE_HISTORY, QueueItem, queue_item_from_dict
 from app.queue.layout import QueueLayout, QueueLayoutService
 from app.storage.json_io import read_json, write_json_atomic
 
@@ -80,9 +80,9 @@ class QueueStore:
         write_json_atomic(
             self._layout.history_path,
             {
-                "completed": [item.to_dict() for item in completed],
-                "failed": [item.to_dict() for item in failed],
-                "cancelled": [item.to_dict() for item in cancelled],
+                "completed": [item.to_dict() for item in _trim_history(completed)],
+                "failed": [item.to_dict() for item in _trim_history(failed)],
+                "cancelled": [item.to_dict() for item in _trim_history(cancelled)],
             },
         )
 
@@ -100,6 +100,12 @@ class QueueStore:
         completed, failed, cancelled = self.load_history()
         cancelled.append(item)
         self.save_history(completed, failed, cancelled)
+
+
+def _trim_history(items: list[QueueItem]) -> list[QueueItem]:
+    if len(items) <= MAX_QUEUE_HISTORY:
+        return items
+    return items[-MAX_QUEUE_HISTORY:]
 
 
 def _items_from_list(raw: object) -> list[QueueItem]:

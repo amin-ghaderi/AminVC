@@ -178,6 +178,7 @@ VALID_EVENT_TYPES: frozenset[str] = frozenset(
 )
 
 MAX_EVENT_HISTORY = 1000
+MAX_EVENT_LOG_SIZE_BYTES = 10 * 1024 * 1024
 
 
 @dataclass(slots=True)

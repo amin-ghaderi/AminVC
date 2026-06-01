@@ -7,7 +7,11 @@ from fastapi import APIRouter, Depends
 from app.api.dependencies import get_services
 from app.api.errors import NotImplementedApiError
 from app.api.mappers import project_response
-from app.api.schemas.common import CreateProjectRequest, ProjectResponse
+from app.api.schemas.common import (
+    CreateProjectRequest,
+    ProjectResponse,
+    RecoveryReportResponse,
+)
 from app.api.services import ApplicationServices
 
 router = APIRouter(prefix="/projects", tags=["projects"])
@@ -37,6 +41,25 @@ def get_project(
     services: ApplicationServices = Depends(get_services),
 ) -> ProjectResponse:
     return project_response(services.project_store.load_project(project_id))
+
+
+@router.get("/{project_id}/recovery-report", response_model=RecoveryReportResponse)
+def get_recovery_report(
+    project_id: str,
+    part_id: str,
+    services: ApplicationServices = Depends(get_services),
+) -> RecoveryReportResponse:
+    report = services.recovery.build_recovery_report(project_id, part_id)
+    return RecoveryReportResponse(
+        project_id=report.project_id,
+        part_id=report.part_id,
+        last_completed_chunk=report.last_completed_chunk,
+        next_chunk=report.next_chunk,
+        interrupted_chunks=list(report.interrupted_chunks),
+        failed_chunks=list(report.failed_chunks),
+        pending_chunks=list(report.pending_chunks),
+        completed_chunks=list(report.completed_chunks),
+    )
 
 
 @router.delete("/{project_id}")

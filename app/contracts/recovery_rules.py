@@ -9,6 +9,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from app.contracts.manifests import ChunkManifest
+from app.contracts.wav_validation import is_valid_wav
 from app.contracts.states import (
     STATE_BUILD_READY,
     STATE_INTERRUPTED,
@@ -59,16 +60,16 @@ def detect_interrupted_narration(
 ) -> bool:
     if chunk.state != STATE_NARRATION_PROCESSING:
         return False
-    return not narration_output_path.is_file()
+    return not is_valid_wav(narration_output_path)
 
 
 def detect_interrupted_vc(chunk: ChunkManifest, vc_output_path: Path) -> bool:
     """
-  Interrupted detection (E0):
+  Interrupted detection (E0/E9.1):
 
-      state == VCProcessing AND output file missing
+      state == VCProcessing AND output file missing or invalid
       → Interrupted
     """
     if chunk.state != STATE_VC_PROCESSING:
         return False
-    return not vc_output_path.is_file()
+    return not is_valid_wav(vc_output_path)

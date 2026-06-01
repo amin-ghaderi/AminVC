@@ -19,6 +19,8 @@ VALID_JOB_STATUSES: frozenset[str] = frozenset(
 
 INTERRUPTED_EXECUTION_ERROR = "Interrupted during execution"
 
+MAX_QUEUE_HISTORY = 1000
+
 
 @dataclass(frozen=True, slots=True)
 class QueueItemIdentity:

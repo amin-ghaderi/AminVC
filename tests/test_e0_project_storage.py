@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import json
+import wave
 from pathlib import Path
 
 import pytest
 
 from app.config.settings import AppSettings
 from app.contracts.events import VcProgressEvent
-from app.contracts.manifests import ChunkManifest
+from app.contracts.manifests import AssetSlot, ChunkManifest
 from app.contracts.queue import QueueItemIdentity
 from app.contracts.recovery_rules import detect_interrupted_vc
 from app.contracts.states import (
@@ -79,15 +80,24 @@ def test_invalid_state_rejected(store: ProjectStore) -> None:
 
 
 def test_recovery_rule_detect_interrupted(tmp_path: Path) -> None:
-    from app.contracts.manifests import AssetSlot
-    from app.contracts.recovery_rules import detect_interrupted_vc
-
     chunk = ChunkManifest(chunk_id=1, state=STATE_VC_PROCESSING, vc=AssetSlot(file="vc/0001.wav"))
     missing = tmp_path / "vc" / "0001.wav"
     assert detect_interrupted_vc(chunk, missing) is True
     missing.parent.mkdir(parents=True)
     missing.write_bytes(b"wav")
-    assert detect_interrupted_vc(chunk, missing) is False
+    assert detect_interrupted_vc(chunk, missing) is True
+    valid = tmp_path / "vc" / "0002.wav"
+    with wave.open(str(valid), "wb") as handle:
+        handle.setnchannels(1)
+        handle.setsampwidth(2)
+        handle.setframerate(24000)
+        handle.writeframes(b"\x00\x00" * 100)
+    chunk_ok = ChunkManifest(
+        chunk_id=2,
+        state=STATE_VC_PROCESSING,
+        vc=AssetSlot(file="vc/0002.wav"),
+    )
+    assert detect_interrupted_vc(chunk_ok, valid) is False
 
 
 def test_event_and_queue_contracts() -> None:

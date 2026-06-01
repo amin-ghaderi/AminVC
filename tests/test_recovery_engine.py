@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import wave
 
 import pytest
 
@@ -52,8 +53,21 @@ def test_interrupted_vc_detection(tmp_path: Path) -> None:
     )
     assert detect_interrupted_vc(chunk, tmp_path / "missing.wav") is True
     (tmp_path / "vc").mkdir()
-    (tmp_path / "vc" / "0001.wav").write_bytes(b"x")
-    assert detect_interrupted_vc(chunk, tmp_path / "vc" / "0001.wav") is False
+    corrupt = tmp_path / "vc" / "0001.wav"
+    corrupt.write_bytes(b"x")
+    assert detect_interrupted_vc(chunk, corrupt) is True
+    valid = tmp_path / "vc" / "0002.wav"
+    with wave.open(str(valid), "wb") as handle:
+        handle.setnchannels(1)
+        handle.setsampwidth(2)
+        handle.setframerate(24000)
+        handle.writeframes(b"\x00\x00" * 100)
+    chunk_valid = ChunkManifest(
+        chunk_id=2,
+        state=STATE_VC_PROCESSING,
+        vc=AssetSlot(file="vc/0002.wav"),
+    )
+    assert detect_interrupted_vc(chunk_valid, valid) is False
 
 
 def test_interrupted_narration_detection(tmp_path: Path) -> None:

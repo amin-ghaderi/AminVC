@@ -142,6 +142,17 @@ class CreateBuildRequest(BaseModel):
     build_id: str | None = None
 
 
+class RecoveryReportResponse(BaseModel):
+    project_id: str
+    part_id: str
+    last_completed_chunk: int | None = None
+    next_chunk: int | None = None
+    interrupted_chunks: list[int] = Field(default_factory=list)
+    failed_chunks: list[int] = Field(default_factory=list)
+    pending_chunks: list[int] = Field(default_factory=list)
+    completed_chunks: list[int] = Field(default_factory=list)
+
+
 class ResumePlanResponse(BaseModel):
     project_id: str
     part_id: str

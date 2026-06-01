@@ -27,6 +27,8 @@ from app.services.speaker_service import WorkerSpeakerService
 
 logger = logging.getLogger(__name__)
 
+WAV_MERGE_CHUNK_FRAMES = 8192
+
 
 @dataclass(frozen=True, slots=True)
 class AudiobookResult:
@@ -154,11 +156,21 @@ def merge_pcm_wavs(chunk_paths: list[Path], output_path: Path) -> None:
                     f"framerate={framerate}, comptype={comptype!r}; got {other}"
                 )
 
-    with wave.open(str(output_path), "wb") as out:
+    output_path = Path(output_path)
+    tmp_path = output_path.with_suffix(output_path.suffix + ".tmp")
+    tmp_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with wave.open(str(tmp_path), "wb") as out:
         out.setparams(params)
         for path in chunk_paths:
-            with wave.open(str(path), "rb") as w:
-                out.writeframes(w.readframes(w.getnframes()))
+            with wave.open(str(path), "rb") as src:
+                while True:
+                    frames = src.readframes(WAV_MERGE_CHUNK_FRAMES)
+                    if not frames:
+                        break
+                    out.writeframesraw(frames)
+
+    tmp_path.replace(output_path)
 
 
 if __name__ == "__main__":
