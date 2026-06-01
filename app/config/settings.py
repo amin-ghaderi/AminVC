@@ -24,6 +24,9 @@ STORAGE_ROOT: Path = PROJECT_ROOT / "storage"
 PROJECTS_ROOT: Path = STORAGE_ROOT / "projects"
 """Project workspace root (Contract v1): storage/projects/{project_id}/..."""
 
+QUEUE_ROOT: Path = STORAGE_ROOT / "queue"
+"""E3.0 filesystem queue root: storage/queue/queue.json, running.json, history.json."""
+
 SPEAKER_ENGINE_ROOT: Path = PROJECT_ROOT / "speaker-engine"
 """Location of the speaker engine within the monorepo."""
 
@@ -64,6 +67,7 @@ class AppSettings:
     project_root: Path = PROJECT_ROOT
     storage_root: Path = STORAGE_ROOT
     projects_root: Path = PROJECTS_ROOT
+    queue_root: Path = QUEUE_ROOT
     speaker_python_executable: str = resolve_speaker_python_executable()
     narration_base_url: str = "http://127.0.0.1:8000"
     narration_timeout_seconds: int = 30
