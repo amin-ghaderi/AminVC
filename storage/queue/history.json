@@ -1,5 +1,19 @@
 {
-  "completed": [],
+  "completed": [
+    {
+      "job_id": "6df713ff341043f1a7f9ad4e6705c6ac",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 1,
+      "job_type": "narration",
+      "status": "completed",
+      "created_at": "2026-06-01T20:11:02.464837+00:00",
+      "started_at": "2026-06-01T20:11:02.752600+00:00",
+      "completed_at": "2026-06-01T20:11:39.519870+00:00",
+      "attempts": 0,
+      "last_error": null
+    }
+  ],
   "failed": [
     {
       "job_id": "ccec31e10b2a4bf998e19157b320a7f1",
@@ -26,6 +40,45 @@
       "completed_at": "2026-06-01T14:34:14.857404+00:00",
       "attempts": 1,
       "last_error": "Chunk not found: book-1/part-001/0001"
+    },
+    {
+      "job_id": "22b0cf8693844eb7815e53c0cd59a0bc",
+      "project_id": "book-1",
+      "part_id": "part-001",
+      "chunk_id": 1,
+      "job_type": "narration",
+      "status": "failed",
+      "created_at": "2026-06-01T14:34:14.667509+00:00",
+      "started_at": "2026-06-01T20:06:24.045791+00:00",
+      "completed_at": "2026-06-01T20:06:24.063355+00:00",
+      "attempts": 1,
+      "last_error": "Chunk not found: book-1/part-001/0001"
+    },
+    {
+      "job_id": "eb796678a26a4edbb83418ab9f020066",
+      "project_id": "book-1",
+      "part_id": "part-001",
+      "chunk_id": 1,
+      "job_type": "vc",
+      "status": "failed",
+      "created_at": "2026-06-01T14:34:15.393075+00:00",
+      "started_at": "2026-06-01T20:06:24.082903+00:00",
+      "completed_at": "2026-06-01T20:06:24.094760+00:00",
+      "attempts": 1,
+      "last_error": "Chunk not found: book-1/part-001/0001"
+    },
+    {
+      "job_id": "5f0342a0090946ab9dc30251d8e6f266",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 1,
+      "job_type": "vc",
+      "status": "failed",
+      "created_at": "2026-06-01T20:26:03.449129+00:00",
+      "started_at": "2026-06-01T20:26:03.680642+00:00",
+      "completed_at": "2026-06-01T20:26:03.715585+00:00",
+      "attempts": 1,
+      "last_error": "reference audio not found for 0001/part-01"
     }
   ],
   "cancelled": []
