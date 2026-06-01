@@ -17,11 +17,15 @@ from app.contracts.states import (
     STATE_DRAFT,
     STATE_INTERRUPTED,
     STATE_NARRATION_FAILED,
+    STATE_NARRATION_PROCESSING,
     STATE_NARRATION_QUEUED,
     STATE_TEXT_SAVED,
     STATE_VC_FAILED,
+    STATE_VC_PROCESSING,
     STATE_VC_QUEUED,
 )
+from app.events.bus import EventBus
+from app.recovery.events import publish_interrupted_detected
 from app.storage.project_store import ProjectStore
 
 _PENDING_STATES = frozenset(
@@ -36,8 +40,13 @@ _FAILED_STATES = frozenset({STATE_NARRATION_FAILED, STATE_VC_FAILED})
 
 
 class RecoveryScanner:
-    def __init__(self, store: ProjectStore) -> None:
+    def __init__(
+        self,
+        store: ProjectStore,
+        event_bus: EventBus | None = None,
+    ) -> None:
         self._store = store
+        self._event_bus = event_bus
 
     def scan_project(self, project_id: str) -> ProjectScanResult:
         project = self._store.load_project(project_id)
@@ -74,11 +83,29 @@ class RecoveryScanner:
         narration_path, vc_path = self._asset_paths(project_id, part_id, chunk)
 
         if detect_interrupted_narration(chunk, narration_path):
+            prior_state = chunk.state
             chunk.state = STATE_INTERRUPTED
             self._store.save_chunk(project_id, part_id, chunk)
+            if prior_state == STATE_NARRATION_PROCESSING:
+                publish_interrupted_detected(
+                    self._event_bus,
+                    project_id=project_id,
+                    part_id=part_id,
+                    chunk_id=chunk.chunk_id,
+                    state=prior_state,
+                )
         elif detect_interrupted_vc(chunk, vc_path):
+            prior_state = chunk.state
             chunk.state = STATE_INTERRUPTED
             self._store.save_chunk(project_id, part_id, chunk)
+            if prior_state == STATE_VC_PROCESSING:
+                publish_interrupted_detected(
+                    self._event_bus,
+                    project_id=project_id,
+                    part_id=part_id,
+                    chunk_id=chunk.chunk_id,
+                    state=prior_state,
+                )
 
         category = self._classify(chunk, narration_path, vc_path)
         return ChunkScanResult(

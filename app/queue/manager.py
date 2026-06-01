@@ -10,6 +10,15 @@ import uuid
 from typing import Literal
 
 from app.config.settings import AppSettings
+from app.events.bus import EventBus
+from app.queue.events import (
+    publish_job_cancelled,
+    publish_job_completed,
+    publish_job_failed,
+    publish_job_queued,
+    publish_job_started,
+    publish_snapshot_updated,
+)
 from app.contracts.queue import (
     INTERRUPTED_EXECUTION_ERROR,
     JobType,
@@ -35,10 +44,14 @@ class QueueManager:
         self,
         store: QueueStore | None = None,
         project_store: ProjectStore | None = None,
+        event_bus: EventBus | None = None,
     ) -> None:
         settings = AppSettings()
-        self._store = store or QueueStore(settings)
-        self._project_store = project_store or ProjectStore(settings)
+        self._store = store if store is not None else QueueStore(settings)
+        self._project_store = (
+            project_store if project_store is not None else ProjectStore(settings)
+        )
+        self._event_bus = event_bus
 
     def enqueue(
         self,
@@ -66,6 +79,8 @@ class QueueManager:
         items.append(item)
         self._store.save_queued(items)
         self._update_chunk_queued_state(item)
+        publish_job_queued(self._event_bus, item)
+        self._emit_snapshot()
         return item
 
     def enqueue_resume_plan(
@@ -115,6 +130,8 @@ class QueueManager:
                 self._store.save_queued(items)
                 removed.status = "cancelled"
                 self._store.append_history_cancelled(removed)
+                publish_job_cancelled(self._event_bus, removed)
+                self._emit_snapshot()
                 return removed
         raise QueueError(f"queued job not found: {job_id}")
 
@@ -128,7 +145,9 @@ class QueueManager:
             running.attempts += 1
             self._store.append_history_failed(running)
             self._store.save_running(None)
-        return self.snapshot()
+        snap = self.snapshot()
+        self._emit_snapshot(snap)
+        return snap
 
     def snapshot(self) -> QueueSnapshot:
         self._store.ensure_tree()
@@ -150,6 +169,8 @@ class QueueManager:
         job.status = "running"
         job.started_at = utc_now_iso()
         self._store.save_running(job)
+        publish_job_started(self._event_bus, job)
+        self._emit_snapshot()
         return job
 
     def mark_completed(self, job_id: str) -> QueueResult:
@@ -159,6 +180,8 @@ class QueueManager:
         job.last_error = None
         self._store.append_history_completed(job)
         self._store.save_running(None)
+        publish_job_completed(self._event_bus, job)
+        self._emit_snapshot()
         return QueueResult(job_id=job_id, success=True, error=None)
 
     def mark_failed(self, job_id: str, error: str) -> QueueResult:
@@ -169,6 +192,8 @@ class QueueManager:
         job.attempts += 1
         self._store.append_history_failed(job)
         self._store.save_running(None)
+        publish_job_failed(self._event_bus, job, error)
+        self._emit_snapshot()
         return QueueResult(job_id=job_id, success=False, error=error)
 
     def _require_running(self, job_id: str) -> QueueItem:
@@ -196,3 +221,9 @@ class QueueManager:
         elif item.job_type == "vc":
             chunk.state = STATE_VC_QUEUED
         self._project_store.save_chunk(item.project_id, item.part_id, chunk)
+
+    def _emit_snapshot(self, snapshot: QueueSnapshot | None = None) -> None:
+        publish_snapshot_updated(
+            self._event_bus,
+            snapshot if snapshot is not None else self.snapshot(),
+        )

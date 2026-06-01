@@ -22,6 +22,8 @@ from app.contracts.states import (
     STATE_NARRATION_FAILED,
     STATE_VC_FAILED,
 )
+from app.events.bus import EventBus
+from app.recovery.events import publish_restart_plan_created, publish_resume_plan_created
 from app.recovery.scanner import RecoveryScanner
 from app.services.storage_service import StorageService
 from app.storage.project_store import ProjectStore
@@ -34,11 +36,13 @@ class RecoveryService:
         self,
         store: ProjectStore | None = None,
         scanner: RecoveryScanner | None = None,
+        event_bus: EventBus | None = None,
     ) -> None:
         settings = AppSettings()
-        self._store = store or ProjectStore(settings)
+        self._store = store if store is not None else ProjectStore(settings)
         self._storage = StorageService(settings)
-        self._scanner = scanner or RecoveryScanner(self._store)
+        self._event_bus = event_bus
+        self._scanner = scanner or RecoveryScanner(self._store, event_bus=event_bus)
 
     def _ensure_part(self, project_id: str, part_id: str) -> None:
         self._storage.ensure_part_tree(project_id, part_id)
@@ -58,12 +62,14 @@ class RecoveryService:
         scan = self.scan_part(project_id, part_id)
         report = self._report_from_scan(scan)
         if report.next_chunk is None:
-            return ResumePlan(
+            plan = ResumePlan(
                 project_id=project_id,
                 part_id=part_id,
                 start_chunk=0,
                 remaining_chunks=[],
             )
+            publish_resume_plan_created(self._event_bus, plan)
+            return plan
         ordered = sorted(r.chunk_id for r in scan.chunks)
         remaining = [
             cid
@@ -72,20 +78,24 @@ class RecoveryService:
             and cid not in report.completed_chunks
             and cid not in report.failed_chunks
         ]
-        return ResumePlan(
+        plan = ResumePlan(
             project_id=project_id,
             part_id=part_id,
             start_chunk=report.next_chunk,
             remaining_chunks=remaining,
         )
+        publish_resume_plan_created(self._event_bus, plan)
+        return plan
 
     def create_restart_plan(self, project_id: str, part_id: str) -> RestartPlan:
         chunks = self._store.list_chunks(project_id, part_id)
-        return RestartPlan(
+        plan = RestartPlan(
             project_id=project_id,
             part_id=part_id,
             chunks=sorted(c.chunk_id for c in chunks),
         )
+        publish_restart_plan_created(self._event_bus, plan)
+        return plan
 
     def apply_resume_preparation(self, project_id: str, part_id: str) -> ResumePlan:
         """
