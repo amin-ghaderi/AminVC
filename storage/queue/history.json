@@ -1,0 +1,32 @@
+{
+  "completed": [],
+  "failed": [
+    {
+      "job_id": "ccec31e10b2a4bf998e19157b320a7f1",
+      "project_id": "book-1",
+      "part_id": "part-001",
+      "chunk_id": 1,
+      "job_type": "narration",
+      "status": "failed",
+      "created_at": "2026-06-01T14:33:58.150115+00:00",
+      "started_at": "2026-06-01T14:33:58.312864+00:00",
+      "completed_at": "2026-06-01T14:33:58.323678+00:00",
+      "attempts": 1,
+      "last_error": "Chunk not found: book-1/part-001/0001"
+    },
+    {
+      "job_id": "653aa59ce496412c965df8e42e0ba73b",
+      "project_id": "book-1",
+      "part_id": "part-001",
+      "chunk_id": 1,
+      "job_type": "vc",
+      "status": "failed",
+      "created_at": "2026-06-01T14:33:58.883529+00:00",
+      "started_at": "2026-06-01T14:34:14.847706+00:00",
+      "completed_at": "2026-06-01T14:34:14.857404+00:00",
+      "attempts": 1,
+      "last_error": "Chunk not found: book-1/part-001/0001"
+    }
+  ],
+  "cancelled": []
+}

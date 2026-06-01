@@ -28,6 +28,8 @@ from app.contracts.queue import (
 )
 from app.contracts.recovery import ResumePlan
 from app.contracts.states import STATE_NARRATION_QUEUED, STATE_VC_QUEUED
+from app.lifecycle.exceptions import ApprovalRequiredError
+from app.lifecycle.lifecycle_service import LifecycleService
 from app.queue.store import QueueStore
 from app.storage.project_store import ChunkNotFoundError, ProjectStore
 from app.storage.serialization import utc_now_iso
@@ -67,6 +69,9 @@ class QueueManager:
             raise QueueError(f"{job_type} jobs require chunk_id")
         if job_type == "build" and chunk_id is not None:
             raise QueueError("build jobs must have chunk_id null")
+
+        if job_type == "vc" and chunk_id is not None:
+            self._require_narration_approval(project_id, part_id, chunk_id)
 
         item = QueueItem(
             job_id=job_id or self._new_job_id(),
@@ -205,6 +210,19 @@ class QueueManager:
 
     def _new_job_id(self) -> str:
         return uuid.uuid4().hex
+
+    def _require_narration_approval(
+        self,
+        project_id: str,
+        part_id: str,
+        chunk_id: int,
+    ) -> None:
+        chunk = self._project_store.load_chunk(project_id, part_id, chunk_id)
+        if not LifecycleService.can_queue_vc(chunk):
+            raise ApprovalRequiredError(
+                "Narration approval required before VC can be queued "
+                f"(chunk {chunk_id} state={chunk.state!r})"
+            )
 
     def _update_chunk_queued_state(self, item: QueueItem) -> None:
         if item.chunk_id is None:

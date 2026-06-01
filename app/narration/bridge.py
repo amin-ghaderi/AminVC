@@ -17,7 +17,7 @@ from app.config.settings import PROJECT_ROOT
 
 logger = logging.getLogger(__name__)
 
-NARRATION_ENGINE_BACKEND_ROOT = PROJECT_ROOT / "narration-engine" / "backend"
+NARRATION_ENGINE_ROOT = PROJECT_ROOT / "narration-engine"
 
 
 @dataclass(frozen=True, slots=True)
@@ -27,7 +27,7 @@ class NarrationEngineStatus:
 
 
 def ensure_narration_engine_path() -> None:
-    path = str(NARRATION_ENGINE_BACKEND_ROOT.resolve())
+    path = str(NARRATION_ENGINE_ROOT.resolve())
     if path not in sys.path:
         sys.path.insert(0, path)
 

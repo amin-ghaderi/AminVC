@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "job_id": "22b0cf8693844eb7815e53c0cd59a0bc",
+      "project_id": "book-1",
+      "part_id": "part-001",
+      "chunk_id": 1,
+      "job_type": "narration",
+      "status": "queued",
+      "created_at": "2026-06-01T14:34:14.667509+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "attempts": 0,
+      "last_error": null
+    },
+    {
+      "job_id": "eb796678a26a4edbb83418ab9f020066",
+      "project_id": "book-1",
+      "part_id": "part-001",
+      "chunk_id": 1,
+      "job_type": "vc",
+      "status": "queued",
+      "created_at": "2026-06-01T14:34:15.393075+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "attempts": 0,
+      "last_error": null
+    }
+  ]
+}

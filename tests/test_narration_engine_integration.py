@@ -35,6 +35,7 @@ from app.services.narration_chunk_executor import (
 from app.storage.project_store import ProjectStore
 from app.worker.execution_engine import WorkerExecutionEngine
 from app.worker.job_runner import JobRunner
+from tests.lifecycle_helpers import mark_narration_approved_for_vc
 
 
 @pytest.fixture
@@ -295,7 +296,7 @@ def test_event_emission(project_store: ProjectStore, event_bus: EventBus) -> Non
 
 
 def test_vc_path_unaffected(project_store: ProjectStore) -> None:
-    from app.contracts.states import STATE_VC_QUEUED, STATE_VC_READY
+    from app.contracts.states import STATE_VC_QUEUED, STATE_VC_READY  # noqa: F401
 
     pid, part = _setup_part(project_store)
     ref = project_store.part_layout(pid, part).root / "reference.wav"
@@ -305,15 +306,17 @@ def test_vc_path_unaffected(project_store: ProjectStore) -> None:
     project_store.save_part(part_m)
 
     project_store.create_chunk(pid, part, 1)
-    chunk = project_store.load_chunk(pid, part, 1)
-    chunk.state = STATE_VC_QUEUED
-    project_store.save_chunk(pid, part, chunk)
     _write_speech_like_wav(project_store.part_layout(pid, part).narration_wav_path(1))
+    mark_narration_approved_for_vc(project_store, pid, part, 1)
 
     speaker = MagicMock()
     speaker.convert_chunk = MagicMock(
         return_value=project_store.part_layout(pid, part).vc_wav_path(1)
     )
+
+    chunk = project_store.load_chunk(pid, part, 1)
+    chunk.state = STATE_VC_QUEUED
+    project_store.save_chunk(pid, part, chunk)
 
     with patch(
         "app.narration.bridge.check_narration_engine_ready",

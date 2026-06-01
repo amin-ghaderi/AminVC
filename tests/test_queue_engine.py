@@ -16,6 +16,7 @@ from app.queue.store import QueueStore
 from app.recovery.recovery_service import RecoveryService
 from app.storage.json_io import read_json
 from app.storage.project_store import ProjectStore
+from tests.lifecycle_helpers import mark_narration_approved_for_vc
 
 
 @pytest.fixture
@@ -42,6 +43,8 @@ def _setup_part(store: ProjectStore) -> tuple[str, str]:
     store.create_chunk("book-1", "part-001", 31)
     store.create_chunk("book-1", "part-001", 32)
     store.create_chunk("book-1", "part-001", 33)
+    for cid in (31, 32, 33):
+        mark_narration_approved_for_vc(store, "book-1", "part-001", cid)
     return "book-1", "part-001"
 
 
@@ -236,6 +239,7 @@ def test_resume_plan_enqueue_integration(
     for cid in (31, 32, 33):
         chunk = project_store.load_chunk("book-1", "part-001", cid)
         chunk.state = "Interrupted"
+        chunk.narration_approved = True
         project_store.save_chunk("book-1", "part-001", chunk)
 
     plan = recovery.create_resume_plan("book-1", "part-001")

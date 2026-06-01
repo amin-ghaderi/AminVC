@@ -109,12 +109,20 @@ EVENT_NARRATION_CHUNK_COMPLETED: Literal["narration.chunk_completed"] = (
 EVENT_NARRATION_CHUNK_FAILED: Literal["narration.chunk_failed"] = (
     "narration.chunk_failed"
 )
+EVENT_NARRATION_APPROVED: Literal["narration.approved"] = "narration.approved"
+EVENT_NARRATION_UNAPPROVED: Literal["narration.unapproved"] = "narration.unapproved"
+EVENT_NARRATION_REBUILD_REQUESTED: Literal["narration.rebuild_requested"] = (
+    "narration.rebuild_requested"
+)
 
 # VC
 EVENT_VC_CHUNK_STARTED: Literal["vc.chunk_started"] = "vc.chunk_started"
 EVENT_VC_CHUNK_COMPLETED: Literal["vc.chunk_completed"] = "vc.chunk_completed"
 EVENT_VC_CHUNK_FAILED: Literal["vc.chunk_failed"] = "vc.chunk_failed"
 EVENT_VC_PROGRESS: Literal["vc.progress"] = "vc.progress"
+EVENT_VC_APPROVED: Literal["vc.approved"] = "vc.approved"
+EVENT_VC_UNAPPROVED: Literal["vc.unapproved"] = "vc.unapproved"
+EVENT_VC_REBUILD_REQUESTED: Literal["vc.rebuild_requested"] = "vc.rebuild_requested"
 
 # Build
 EVENT_BUILD_STARTED: Literal["build.started"] = "build.started"
@@ -146,10 +154,16 @@ VALID_EVENT_TYPES: frozenset[str] = frozenset(
         EVENT_NARRATION_CHUNK_STARTED,
         EVENT_NARRATION_CHUNK_COMPLETED,
         EVENT_NARRATION_CHUNK_FAILED,
+        EVENT_NARRATION_APPROVED,
+        EVENT_NARRATION_UNAPPROVED,
+        EVENT_NARRATION_REBUILD_REQUESTED,
         EVENT_VC_CHUNK_STARTED,
         EVENT_VC_CHUNK_COMPLETED,
         EVENT_VC_CHUNK_FAILED,
         EVENT_VC_PROGRESS,
+        EVENT_VC_APPROVED,
+        EVENT_VC_UNAPPROVED,
+        EVENT_VC_REBUILD_REQUESTED,
         EVENT_BUILD_STARTED,
         EVENT_BUILD_COMPLETED,
         EVENT_BUILD_FAILED,

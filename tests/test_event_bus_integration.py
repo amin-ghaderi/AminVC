@@ -26,6 +26,7 @@ from app.queue.manager import QueueManager
 from app.queue.store import QueueStore
 from app.recovery.recovery_service import RecoveryService
 from app.storage.project_store import ProjectStore
+from tests.lifecycle_helpers import mark_narration_approved_for_vc
 
 
 @pytest.fixture
@@ -73,6 +74,7 @@ def _setup_part(store: ProjectStore) -> tuple[str, str]:
     store.create_project("book-1")
     store.create_part("book-1", part_id="part-001")
     store.create_chunk("book-1", "part-001", 17)
+    mark_narration_approved_for_vc(store, "book-1", "part-001", 17)
     return "book-1", "part-001"
 
 

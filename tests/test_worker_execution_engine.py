@@ -35,6 +35,7 @@ from app.storage.project_store import ProjectStore
 from app.worker.execution_engine import WorkerExecutionEngine
 from app.worker.job_runner import JobExecutionError, JobRunner
 from app.worker.state import WorkerState
+from tests.lifecycle_helpers import mark_narration_approved_for_vc
 
 
 @pytest.fixture
@@ -143,10 +144,8 @@ def test_vc_job_execution(
 ) -> None:
     pid, part = _setup_part(project_store)
     project_store.create_chunk(pid, part, 1)
-    chunk = project_store.load_chunk(pid, part, 1)
-    chunk.state = STATE_VC_QUEUED
-    project_store.save_chunk(pid, part, chunk)
     _write_wav(project_store.part_layout(pid, part).narration_wav_path(1))
+    mark_narration_approved_for_vc(project_store, pid, part, 1)
 
     speaker = MagicMock()
     speaker.convert_chunk = MagicMock(return_value=Path("out.wav"))
@@ -281,9 +280,8 @@ def test_queue_failure_integration(
 ) -> None:
     pid, part = _setup_part(project_store)
     project_store.create_chunk(pid, part, 1)
-    chunk = project_store.load_chunk(pid, part, 1)
-    chunk.state = STATE_VC_QUEUED
-    project_store.save_chunk(pid, part, chunk)
+    _write_wav(project_store.part_layout(pid, part).narration_wav_path(1))
+    mark_narration_approved_for_vc(project_store, pid, part, 1)
 
     speaker = MagicMock()
     speaker.convert_chunk = MagicMock(side_effect=RuntimeError("vc fail"))
@@ -411,10 +409,8 @@ def test_vc_progress_path_kwarg(
 ) -> None:
     pid, part = _setup_part(project_store)
     project_store.create_chunk(pid, part, 1)
-    chunk = project_store.load_chunk(pid, part, 1)
-    chunk.state = STATE_VC_QUEUED
-    project_store.save_chunk(pid, part, chunk)
     _write_wav(project_store.part_layout(pid, part).narration_wav_path(1))
+    mark_narration_approved_for_vc(project_store, pid, part, 1)
 
     speaker = MagicMock()
 
