@@ -15,7 +15,7 @@ from __future__ import annotations
 from typing import Any
 
 from app.contracts.manifests import (
-    ChunkManifest,
+    ChunkListManifest,
     NarrationChunk,
     NarrationManifest,
     SpeakerChunk,
@@ -30,7 +30,7 @@ class ManifestService:
     Phase 1: no persistence and no filesystem IO. Phase 2+ may add read/write.
     """
 
-    def build_chunk_manifest(self, *args: Any, **kwargs: Any) -> ChunkManifest:
+    def build_chunk_manifest(self, *args: Any, **kwargs: Any) -> ChunkListManifest:
         raise NotImplementedError
 
     def build_narration_manifest(self, *args: Any, **kwargs: Any) -> NarrationManifest:
@@ -45,7 +45,7 @@ __all__ = [
     # Compatibility re-exports
     "NarrationChunk",
     "SpeakerChunk",
-    "ChunkManifest",
+    "ChunkListManifest",
     "NarrationManifest",
     "SpeakerManifest",
 ]

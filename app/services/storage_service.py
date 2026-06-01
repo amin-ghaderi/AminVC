@@ -1,10 +1,8 @@
 """
-Storage path contracts (Phase 1).
+E0 storage path resolver.
 
-Phase 1 hard rule: define deterministic paths only.
-- no filesystem IO
-- no directory creation
-- no reading/writing manifests
+Delegates to `ProjectLayoutService` for canonical layout under
+`storage/projects/{project_id}/`.
 """
 
 from __future__ import annotations
@@ -13,61 +11,44 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from app.config.settings import AppSettings
+from app.storage.layout import PartLayout, ProjectLayout, ProjectLayoutService
 
 
 @dataclass(frozen=True, slots=True)
-class StoragePaths:
-    """
-    Deterministic project path layout (Contract v1).
-
-    All paths are *references* only. Creation and IO are out of scope for Phase 1.
-    """
-
+class ProjectStoragePaths:
     project_dir: Path
-    input_dir: Path
-    extracted_dir: Path
-    narration_dir: Path
-    speaker_dir: Path
-    merged_dir: Path
-    final_dir: Path
-    reports_dir: Path
+    project_manifest_path: Path
+    parts_dir: Path
+    project_builds_dir: Path
 
 
 class StorageService:
-    """
-    Contract-only storage path resolver.
+    def __init__(self, settings: AppSettings | None = None) -> None:
+        self._layout = ProjectLayoutService(settings)
 
-    This service defines the project directory layout under:
-    `storage/projects/{project_id}/...`
-    """
+    def get_project_layout(self, project_id: str) -> ProjectLayout:
+        return self._layout.layout(project_id)
 
-    def __init__(self, settings: AppSettings) -> None:
-        self._settings = settings
+    def get_part_layout(self, project_id: str, part_id: str) -> PartLayout:
+        return self._layout.layout(project_id).part_layout(part_id)
 
-    def get_project_dir(self, project_id: str) -> Path:
-        raise NotImplementedError
+    def get_paths(self, project_id: str) -> ProjectStoragePaths:
+        layout = self._layout.layout(project_id)
+        return ProjectStoragePaths(
+            project_dir=layout.root,
+            project_manifest_path=layout.project_manifest_path,
+            parts_dir=layout.parts_dir,
+            project_builds_dir=layout.builds_dir,
+        )
 
-    def get_input_dir(self, project_id: str) -> Path:
-        raise NotImplementedError
+    def ensure_project_tree(self, project_id: str) -> ProjectStoragePaths:
+        layout = self._layout.ensure_project_tree(project_id)
+        return ProjectStoragePaths(
+            project_dir=layout.root,
+            project_manifest_path=layout.project_manifest_path,
+            parts_dir=layout.parts_dir,
+            project_builds_dir=layout.builds_dir,
+        )
 
-    def get_extracted_dir(self, project_id: str) -> Path:
-        raise NotImplementedError
-
-    def get_narration_dir(self, project_id: str) -> Path:
-        raise NotImplementedError
-
-    def get_speaker_dir(self, project_id: str) -> Path:
-        raise NotImplementedError
-
-    def get_merged_dir(self, project_id: str) -> Path:
-        raise NotImplementedError
-
-    def get_final_dir(self, project_id: str) -> Path:
-        raise NotImplementedError
-
-    def get_reports_dir(self, project_id: str) -> Path:
-        raise NotImplementedError
-
-    def get_paths(self, project_id: str) -> StoragePaths:
-        raise NotImplementedError
-
+    def ensure_part_tree(self, project_id: str, part_id: str) -> PartLayout:
+        return self._layout.ensure_part_tree(project_id, part_id)
