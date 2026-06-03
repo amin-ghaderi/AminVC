@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import wave
 from pathlib import Path
 
 import pytest
@@ -37,6 +38,15 @@ def queue(
     return QueueManager(store=queue_store, project_store=project_store)
 
 
+def _write_wav(path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with wave.open(str(path), "wb") as handle:
+        handle.setnchannels(1)
+        handle.setsampwidth(2)
+        handle.setframerate(24000)
+        handle.writeframes(b"\x00\x01" * 1200)
+
+
 def _setup_part(store: ProjectStore) -> tuple[str, str]:
     store.create_project("book-1")
     store.create_part("book-1", part_id="part-001")
@@ -45,6 +55,7 @@ def _setup_part(store: ProjectStore) -> tuple[str, str]:
     store.create_chunk("book-1", "part-001", 33)
     for cid in (31, 32, 33):
         mark_narration_approved_for_vc(store, "book-1", "part-001", cid)
+    _write_wav(store.part_layout("book-1", "part-001").reference_wav_path())
     return "book-1", "part-001"
 
 

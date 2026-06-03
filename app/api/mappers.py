@@ -9,7 +9,9 @@ from app.api.schemas.common import (
     EventEnvelopeResponse,
     PartResponse,
     ProjectResponse,
+    ReferenceAudioResponse,
 )
+from app.services.reference_audio_service import ReferenceAudioMetadata
 from app.contracts.events import EventEnvelope
 from app.contracts.manifests import (
     AssetSlot,
@@ -32,13 +34,26 @@ def project_response(manifest: ProjectManifest) -> ProjectResponse:
     )
 
 
-def part_response(manifest: PartManifest) -> PartResponse:
+def reference_audio_response(meta: ReferenceAudioMetadata) -> ReferenceAudioResponse:
+    return ReferenceAudioResponse(
+        exists=meta.exists,
+        path=meta.path,
+        size_bytes=meta.size_bytes,
+    )
+
+
+def part_response(
+    manifest: PartManifest,
+    *,
+    reference_audio: ReferenceAudioMetadata,
+) -> PartResponse:
     return PartResponse(
         part_id=manifest.part_id,
         project_id=manifest.project_id,
         title=manifest.title,
         state=manifest.state,
         processing_profile=manifest.processing_profile,
+        reference_audio=reference_audio_response(reference_audio),
         chunks_total=manifest.chunks_total,
         chunks_completed_narration=manifest.chunks_completed_narration,
         chunks_completed_vc=manifest.chunks_completed_vc,

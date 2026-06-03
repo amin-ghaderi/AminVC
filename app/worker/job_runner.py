@@ -14,12 +14,14 @@ from app.contracts.states import (
     STATE_NARRATION_QUEUED,
     STATE_NARRATION_READY,
     STATE_VC_APPROVED,
+    STATE_VC_FAILED,
     STATE_VC_PROCESSING,
     STATE_VC_QUEUED,
     STATE_VC_READY,
 )
 from app.services.build_service import BuildService
 from app.services.narration_chunk_executor import NarrationChunkExecutor
+from app.services.reference_audio_service import resolve_reference_audio_path
 from app.services.speaker_service import WorkerSpeakerService
 from app.storage.project_store import ProjectStore
 
@@ -31,6 +33,11 @@ _NARRATION_BLOCKED = frozenset(
 )
 _VC_ALLOWED = frozenset({STATE_VC_QUEUED, STATE_INTERRUPTED})
 _VC_BLOCKED = frozenset({STATE_VC_READY, STATE_VC_APPROVED, STATE_VC_PROCESSING})
+
+_REFERENCE_MISSING_MSG = (
+    "Reference voice not configured for this part. "
+    "Upload a reference WAV before queueing voice conversion."
+)
 
 
 class JobExecutionError(Exception):
@@ -101,31 +108,61 @@ class JobRunner:
         pl = self._store.part_layout(job.project_id, job.part_id)
         narr_path = pl.narration_wav_path(job.chunk_id)
         if not narr_path.is_file():
-            raise JobExecutionError(f"narration file missing for chunk {job.chunk_id}")
+            self._fail_vc_preflight(
+                job,
+                chunk,
+                f"narration file missing for chunk {job.chunk_id}",
+            )
+
+        reference = resolve_reference_audio_path(
+            self._store,
+            job.project_id,
+            job.part_id,
+        )
+        if reference is None:
+            self._fail_vc_preflight(job, chunk, _REFERENCE_MISSING_MSG)
 
         chunk.state = STATE_VC_PROCESSING
         self._store.save_chunk(job.project_id, job.part_id, chunk)
 
-        reference = self._resolve_reference_audio(job.project_id, job.part_id)
         output_path = pl.vc_wav_path(job.chunk_id)
         settings = {"diffusion_steps": 30}
 
-        self._speaker.convert_chunk(
-            narr_path,
-            reference,
-            output_path,
-            settings=settings,
-            project_id=job.project_id,
-            part_id=job.part_id,
-            chunk_id=job.chunk_id,
-            event_bus=self._event_bus,
-        )
+        try:
+            self._speaker.convert_chunk(
+                narr_path,
+                reference,
+                output_path,
+                settings=settings,
+                project_id=job.project_id,
+                part_id=job.part_id,
+                chunk_id=job.chunk_id,
+                event_bus=self._event_bus,
+            )
+        except Exception as exc:
+            chunk = self._store.load_chunk(job.project_id, job.part_id, job.chunk_id)
+            chunk.state = STATE_VC_FAILED
+            chunk.last_error = str(exc)
+            self._store.save_chunk(job.project_id, job.part_id, chunk)
+            raise
 
         chunk = self._store.load_chunk(job.project_id, job.part_id, job.chunk_id)
         chunk.state = STATE_VC_READY
         chunk.vc.file = f"vc/{output_path.name}"
         chunk.vc.status = "ready"
+        chunk.last_error = None
         self._store.save_chunk(job.project_id, job.part_id, chunk)
+
+    def _fail_vc_preflight(
+        self,
+        job: QueueItem,
+        chunk: ChunkManifest,
+        error: str,
+    ) -> None:
+        chunk.state = STATE_VC_FAILED
+        chunk.last_error = error
+        self._store.save_chunk(job.project_id, job.part_id, chunk)
+        raise JobExecutionError(error)
 
     def _execute_build(self, job: QueueItem) -> None:
         build_id = job.job_id
@@ -148,21 +185,3 @@ class JobRunner:
                 f"chunk {job.chunk_id} expected {sorted(allowed)}, got {chunk.state}"
             )
         return chunk
-
-    def _resolve_reference_audio(self, project_id: str, part_id: str) -> Path:
-        part = self._store.load_part(project_id, part_id)
-        if part.processing_profile:
-            candidate = self._store.resolve_part_path(
-                project_id,
-                part_id,
-                part.processing_profile,
-            )
-            if candidate.is_file():
-                return candidate
-        pl = self._store.part_layout(project_id, part_id)
-        default = pl.root / "reference.wav"
-        if default.is_file():
-            return default
-        raise JobExecutionError(
-            f"reference audio not found for {project_id}/{part_id}"
-        )

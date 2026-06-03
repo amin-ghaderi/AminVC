@@ -14,6 +14,7 @@ from app.services.audio_asset_service import AudioAssetService
 from app.services.part_summary_service import PartSummaryService
 from app.services.part_text_service import PartTextService
 from app.services.queue_query_service import QueueQueryService
+from app.services.reference_audio_service import ReferenceAudioService
 from app.services.storage_service import StorageService
 from app.storage.project_store import ProjectStore
 from app.worker.execution_engine import WorkerExecutionEngine
@@ -34,6 +35,7 @@ class ApplicationServices:
     audio_assets: AudioAssetService
     part_summary: PartSummaryService
     part_text: PartTextService
+    reference_audio: ReferenceAudioService
 
     @classmethod
     def create(cls, settings: AppSettings | None = None) -> ApplicationServices:
@@ -73,4 +75,5 @@ class ApplicationServices:
             audio_assets=AudioAssetService(project_store),
             part_summary=PartSummaryService(project_store),
             part_text=PartTextService(project_store),
+            reference_audio=ReferenceAudioService(project_store),
         )

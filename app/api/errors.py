@@ -8,7 +8,9 @@ from fastapi.responses import JSONResponse
 from app.lifecycle.exceptions import (
     ApprovalRequiredError,
     InvalidStateTransitionError,
+    ReferenceAudioRequiredError,
 )
+from app.services.reference_audio_service import ReferenceAudioInvalidError
 from app.queue.manager import QueueError
 from app.services.audio_asset_service import AudioNotFoundError
 from app.services.part_text_service import PartChunkingError, PdfTextExtractionError
@@ -59,8 +61,16 @@ def register_exception_handlers(app: FastAPI) -> None:
 
     @app.exception_handler(InvalidStateTransitionError)
     @app.exception_handler(ApprovalRequiredError)
+    @app.exception_handler(ReferenceAudioRequiredError)
     async def conflict_handler(_request: Request, exc: Exception) -> JSONResponse:
         return JSONResponse(status_code=409, content=error_body(str(exc)))
+
+    @app.exception_handler(ReferenceAudioInvalidError)
+    async def reference_invalid_handler(
+        _request: Request,
+        exc: ReferenceAudioInvalidError,
+    ) -> JSONResponse:
+        return JSONResponse(status_code=400, content=error_body(str(exc)))
 
     @app.exception_handler(InvalidStateError)
     @app.exception_handler(QueueError)

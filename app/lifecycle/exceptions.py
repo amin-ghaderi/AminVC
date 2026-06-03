@@ -13,3 +13,7 @@ class InvalidStateTransitionError(LifecycleError):
 
 class ApprovalRequiredError(LifecycleError):
     """Raised when VC cannot be queued without narration approval."""
+
+
+class ReferenceAudioRequiredError(LifecycleError):
+    """Raised when VC cannot be queued without part reference audio."""

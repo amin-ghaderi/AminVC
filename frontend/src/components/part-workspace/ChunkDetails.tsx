@@ -15,9 +15,15 @@ interface ChunkDetailsProps {
   projectId: string
   partId: string
   chunkId: number | null
+  referenceAudioReady: boolean
 }
 
-export function ChunkDetails({ projectId, partId, chunkId }: ChunkDetailsProps) {
+export function ChunkDetails({
+  projectId,
+  partId,
+  chunkId,
+  referenceAudioReady,
+}: ChunkDetailsProps) {
   const activeTab = usePartWorkspaceStore((s) => s.activeTab)
   const setActiveTab = usePartWorkspaceStore((s) => s.setActiveTab)
 
@@ -84,6 +90,7 @@ export function ChunkDetails({ projectId, partId, chunkId }: ChunkDetailsProps) 
             partId={partId}
             chunk={chunk}
             assets={assetsQuery.data}
+            referenceAudioReady={referenceAudioReady}
           />
         </TabsContent>
         <TabsContent value="history">

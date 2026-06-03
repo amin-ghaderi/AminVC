@@ -141,6 +141,11 @@ class WorkerSpeakerService:
         reference_audio_path: Path,
         output_path: Path,
         settings: dict[str, Any] | None = None,
+        *,
+        project_id: str | None = None,
+        part_id: str | None = None,
+        chunk_id: int | None = None,
+        event_bus: EventBus | None = None,
     ) -> Path:
         # Path safety: validate before worker call
         source_audio_path = Path(source_audio_path)

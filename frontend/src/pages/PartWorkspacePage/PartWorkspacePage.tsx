@@ -6,6 +6,7 @@ import { ChunkFilters } from '@/components/part-workspace/ChunkFilters'
 import { ChunkList } from '@/components/part-workspace/ChunkList'
 import { ChunkSearch } from '@/components/part-workspace/ChunkSearch'
 import { PartHeader } from '@/components/part-workspace/PartHeader'
+import { ReferenceVoicePanel } from '@/components/part-workspace/ReferenceVoicePanel'
 import { Skeleton } from '@/components/ui/skeleton'
 import { filterChunks } from '@/lib/chunkFilters'
 import {
@@ -99,6 +100,11 @@ export function PartWorkspacePage() {
         partId={partId}
         selectedChunkId={selectedChunkId}
       />
+      <ReferenceVoicePanel
+        projectId={projectId}
+        partId={partId}
+        part={partQuery.data}
+      />
       <div className="grid gap-4 lg:grid-cols-[280px_1fr]">
         <div className="space-y-3">
           <ChunkFilters value={filter} onChange={setFilter} />
@@ -113,6 +119,7 @@ export function PartWorkspacePage() {
           projectId={projectId}
           partId={partId}
           chunkId={selectedChunkId}
+          referenceAudioReady={partQuery.data.reference_audio.exists}
         />
       </div>
     </div>

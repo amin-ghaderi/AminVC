@@ -1,3 +1,15 @@
 {
-  "current_job": null
+  "current_job": {
+    "job_id": "f4db44898df545079b1da54d1ba772e7",
+    "project_id": "0001",
+    "part_id": "part-01",
+    "chunk_id": 1,
+    "job_type": "vc",
+    "status": "running",
+    "created_at": "2026-06-03T14:27:51.579682+00:00",
+    "started_at": "2026-06-03T14:27:51.740744+00:00",
+    "completed_at": null,
+    "attempts": 0,
+    "last_error": null
+  }
 }

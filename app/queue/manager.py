@@ -28,7 +28,8 @@ from app.contracts.queue import (
 )
 from app.contracts.recovery import ResumePlan
 from app.contracts.states import STATE_NARRATION_QUEUED, STATE_VC_QUEUED
-from app.lifecycle.exceptions import ApprovalRequiredError
+from app.lifecycle.exceptions import ApprovalRequiredError, ReferenceAudioRequiredError
+from app.services.reference_audio_service import reference_audio_ready
 from app.lifecycle.lifecycle_service import LifecycleService
 from app.queue.store import QueueStore
 from app.storage.project_store import ChunkNotFoundError, ProjectStore
@@ -72,6 +73,7 @@ class QueueManager:
 
         if job_type == "vc" and chunk_id is not None:
             self._require_narration_approval(project_id, part_id, chunk_id)
+            self._require_reference_audio(project_id, part_id)
 
         item = QueueItem(
             job_id=job_id or self._new_job_id(),
@@ -222,6 +224,17 @@ class QueueManager:
             raise ApprovalRequiredError(
                 "Narration approval required before VC can be queued "
                 f"(chunk {chunk_id} state={chunk.state!r})"
+            )
+
+    def _require_reference_audio(self, project_id: str, part_id: str) -> None:
+        if not reference_audio_ready(
+            self._project_store,
+            project_id=project_id,
+            part_id=part_id,
+        ):
+            raise ReferenceAudioRequiredError(
+                "Reference voice not configured for this part. "
+                "Upload a reference WAV before queueing voice conversion."
             )
 
     def _update_chunk_queued_state(self, item: QueueItem) -> None:

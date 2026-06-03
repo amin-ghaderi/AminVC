@@ -39,12 +39,29 @@ class CreateProjectRequest(BaseModel):
     title: str = ""
 
 
+class ReferenceAudioResponse(BaseModel):
+    exists: bool
+    path: str | None = None
+    size_bytes: int | None = None
+
+
+class ReferenceAudioUploadResponse(BaseModel):
+    filename: str
+    size_bytes: int
+    path: str
+
+
+class ReferenceAudioDeleteResponse(BaseModel):
+    status: str = "deleted"
+
+
 class PartResponse(BaseModel):
     part_id: str
     project_id: str
     title: str = ""
     state: str = ""
     processing_profile: str = ""
+    reference_audio: ReferenceAudioResponse
     chunks_total: int = 0
     chunks_completed_narration: int = 0
     chunks_completed_vc: int = 0

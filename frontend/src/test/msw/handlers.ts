@@ -39,7 +39,10 @@ function partKey(projectId: string, partId: string) {
 
 let workerStatus: WorkerStatus = { running: false, state: 'idle' }
 
-export { resetWorkspaceData } from '@/test/msw/workspaceHandlers'
+export {
+  resetWorkspaceData,
+  setWorkspaceReferenceExists,
+} from '@/test/msw/workspaceHandlers'
 
 export { resetQueueMonitorData } from '@/test/msw/queueMonitorHandlers'
 export { resetBuildManagerData } from '@/test/msw/buildManagerHandlers'
@@ -116,6 +119,7 @@ export const handlers = [
       title: body.title,
       state: 'created',
       processing_profile: 'default',
+      reference_audio: { exists: false, path: null, size_bytes: null },
       chunks_total: 0,
       chunks_completed_narration: 0,
       chunks_completed_vc: 0,

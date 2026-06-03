@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Depends, File, UploadFile
+from fastapi.responses import FileResponse
 
 from app.api.dependencies import get_services
 from app.api.mappers import part_response
@@ -14,13 +15,27 @@ from app.api.schemas.common import (
     PartResponse,
     PartSummaryResponse,
     PartTextResponse,
+    ReferenceAudioDeleteResponse,
+    ReferenceAudioUploadResponse,
     SavePartTextRequest,
     SourceUploadResponse,
 )
 from app.api.services import ApplicationServices
+from app.contracts.manifests import PartManifest
 from app.storage.layout import EDITED_TEXT_NAME, EXTRACTED_TEXT_NAME
 
 router = APIRouter(prefix="/projects/{project_id}/parts", tags=["parts"])
+
+
+def _part_response(
+    services: ApplicationServices,
+    manifest: PartManifest,
+) -> PartResponse:
+    meta = services.reference_audio.reference_metadata(
+        manifest.project_id,
+        manifest.part_id,
+    )
+    return part_response(manifest, reference_audio=meta)
 
 
 @router.get("", response_model=list[PartResponse])
@@ -28,7 +43,10 @@ def list_parts(
     project_id: str,
     services: ApplicationServices = Depends(get_services),
 ) -> list[PartResponse]:
-    return [part_response(p) for p in services.project_store.list_parts(project_id)]
+    return [
+        _part_response(services, p)
+        for p in services.project_store.list_parts(project_id)
+    ]
 
 
 @router.post("", response_model=PartResponse, status_code=201)
@@ -42,7 +60,7 @@ def create_part(
         part_id=body.part_id,
         title=body.title,
     )
-    return part_response(manifest)
+    return _part_response(services, manifest)
 
 
 @router.get("/{part_id}", response_model=PartResponse)
@@ -51,7 +69,49 @@ def get_part(
     part_id: str,
     services: ApplicationServices = Depends(get_services),
 ) -> PartResponse:
-    return part_response(services.project_store.load_part(project_id, part_id))
+    manifest = services.project_store.load_part(project_id, part_id)
+    return _part_response(services, manifest)
+
+
+@router.post("/{part_id}/reference", response_model=ReferenceAudioUploadResponse)
+async def upload_reference_audio(
+    project_id: str,
+    part_id: str,
+    file: UploadFile = File(...),
+    services: ApplicationServices = Depends(get_services),
+) -> ReferenceAudioUploadResponse:
+    services.storage.ensure_part_tree(project_id, part_id)
+    data = await file.read()
+    result = services.reference_audio.upload_reference_audio(
+        project_id,
+        part_id,
+        data,
+    )
+    return ReferenceAudioUploadResponse(
+        filename=result.filename,
+        size_bytes=result.size_bytes,
+        path=result.path,
+    )
+
+
+@router.get("/{part_id}/reference")
+def download_reference_audio(
+    project_id: str,
+    part_id: str,
+    services: ApplicationServices = Depends(get_services),
+) -> FileResponse:
+    path = services.reference_audio.reference_path(project_id, part_id)
+    return FileResponse(path, media_type="audio/wav", filename=path.name)
+
+
+@router.delete("/{part_id}/reference", response_model=ReferenceAudioDeleteResponse)
+def delete_reference_audio(
+    project_id: str,
+    part_id: str,
+    services: ApplicationServices = Depends(get_services),
+) -> ReferenceAudioDeleteResponse:
+    services.reference_audio.delete_reference_audio(project_id, part_id)
+    return ReferenceAudioDeleteResponse()
 
 
 @router.post("/{part_id}/source", response_model=SourceUploadResponse)

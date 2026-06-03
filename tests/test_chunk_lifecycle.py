@@ -345,6 +345,7 @@ def test_recovery_compatibility_with_approval(
     chunk.narration_approved = True
     project_store.save_chunk(pid, part, chunk)
     _write_wav(project_store.part_layout(pid, part).narration_wav_path(cid))
+    _write_wav(project_store.part_layout(pid, part).reference_wav_path())
 
     vc_items = queue.enqueue_resume_plan(
         recovery.create_resume_plan(pid, part),

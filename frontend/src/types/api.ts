@@ -7,12 +7,29 @@ export interface Project {
   parts: string[]
 }
 
+export interface ReferenceAudio {
+  exists: boolean
+  path: string | null
+  size_bytes: number | null
+}
+
+export interface ReferenceAudioUploadResponse {
+  filename: string
+  size_bytes: number
+  path: string
+}
+
+export interface ReferenceAudioDeleteResponse {
+  status: string
+}
+
 export interface Part {
   part_id: string
   project_id: string
   title: string
   state: string
   processing_profile: string
+  reference_audio: ReferenceAudio
   chunks_total: number
   chunks_completed_narration: number
   chunks_completed_vc: number

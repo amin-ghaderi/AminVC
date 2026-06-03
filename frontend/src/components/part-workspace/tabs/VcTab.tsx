@@ -20,14 +20,24 @@ import {
 } from '@/hooks/usePartWorkspace'
 import type { Chunk, ChunkAssets } from '@/types/api'
 
+const REFERENCE_REQUIRED_MSG =
+  'Reference voice required. Upload a reference WAV first.'
+
 interface VcTabProps {
   projectId: string
   partId: string
   chunk: Chunk
   assets: ChunkAssets | undefined
+  referenceAudioReady: boolean
 }
 
-export function VcTab({ projectId, partId, chunk, assets }: VcTabProps) {
+export function VcTab({
+  projectId,
+  partId,
+  chunk,
+  assets,
+  referenceAudioReady,
+}: VcTabProps) {
   const [rebuildOpen, setRebuildOpen] = useState(false)
   const { toast } = useToast()
   const queueMutation = useQueueVcMutation(projectId, partId)
@@ -48,12 +58,25 @@ export function VcTab({ projectId, partId, chunk, assets }: VcTabProps) {
   const narrationApproved =
     chunk.state === 'NarrationApproved' || chunk.narration_approved
 
+  const vcActionsDisabled =
+    !narrationApproved || !referenceAudioReady || queueMutation.isPending
+
+  const referenceHint = !referenceAudioReady ? (
+    <p
+      className="text-sm text-amber-600 dark:text-amber-400"
+      data-testid="vc-reference-required"
+    >
+      {REFERENCE_REQUIRED_MSG}
+    </p>
+  ) : null
+
   if (!assets?.vc_exists) {
     return (
       <div className="space-y-4" data-testid="vc-tab">
         <p className="text-sm text-[var(--color-muted-foreground)]">
           No VC generated yet
         </p>
+        {referenceHint}
         <Button
           type="button"
           onClick={() =>
@@ -73,7 +96,7 @@ export function VcTab({ projectId, partId, chunk, assets }: VcTabProps) {
               },
             })
           }
-          disabled={!narrationApproved || queueMutation.isPending}
+          disabled={vcActionsDisabled}
         >
           Queue VC
         </Button>
@@ -89,6 +112,7 @@ export function VcTab({ projectId, partId, chunk, assets }: VcTabProps) {
         fileSize={assets.vc_size}
         state={chunk.vc.status || chunk.state}
       />
+      {referenceHint}
       <div className="flex flex-wrap gap-2">
         <Button
           type="button"
@@ -110,7 +134,7 @@ export function VcTab({ projectId, partId, chunk, assets }: VcTabProps) {
               },
             })
           }
-          disabled={!narrationApproved || queueMutation.isPending}
+          disabled={vcActionsDisabled}
         >
           Queue VC
         </Button>
@@ -144,7 +168,12 @@ export function VcTab({ projectId, partId, chunk, assets }: VcTabProps) {
         >
           Unapprove VC
         </Button>
-        <Button type="button" variant="outline" onClick={() => setRebuildOpen(true)}>
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => setRebuildOpen(true)}
+          disabled={!referenceAudioReady}
+        >
           Rebuild VC
         </Button>
       </div>
@@ -162,6 +191,7 @@ export function VcTab({ projectId, partId, chunk, assets }: VcTabProps) {
             </Button>
             <Button
               type="button"
+              disabled={!referenceAudioReady || rebuildMutation.isPending}
               onClick={() =>
                 rebuildMutation.mutate(undefined, {
                   onSuccess: () => {

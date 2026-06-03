@@ -6,6 +6,8 @@ const API = '/api/v1'
 
 let workspaceChunks: Chunk[] = []
 let workspaceEvents: EventEnvelope[] = []
+let workspaceReferenceExists = true
+let workspaceReferenceSize = 4800
 
 const emptySlot = { status: '', file: null, duration_seconds: null }
 
@@ -13,7 +15,13 @@ export function getWorkspaceEventsForMock() {
   return workspaceEvents
 }
 
+export function setWorkspaceReferenceExists(exists: boolean) {
+  workspaceReferenceExists = exists
+}
+
 export function resetWorkspaceData() {
+  workspaceReferenceExists = true
+  workspaceReferenceSize = 4800
   workspaceChunks = [
     makeChunk(1, 'NarrationReady', 'Alpha text chunk', false, false, true, false),
     makeChunk(2, 'NarrationApproved', 'Beta approved', true, false, true, false),
@@ -98,6 +106,11 @@ export const workspaceHandlers = [
       title: 'Workspace Part',
       state: 'TextSaved',
       processing_profile: 'default',
+      reference_audio: {
+        exists: workspaceReferenceExists,
+        path: workspaceReferenceExists ? 'reference.wav' : null,
+        size_bytes: workspaceReferenceExists ? workspaceReferenceSize : null,
+      },
       chunks_total: workspaceChunks.length,
       chunks_completed_narration: 0,
       chunks_completed_vc: 0,
@@ -245,6 +258,32 @@ export const workspaceHandlers = [
       })
     },
   ),
+  http.post(
+    `${API}/projects/:projectId/parts/:partId/reference`,
+    async () => {
+      workspaceReferenceExists = true
+      workspaceReferenceSize = 9600
+      return HttpResponse.json({
+        filename: 'reference.wav',
+        size_bytes: workspaceReferenceSize,
+        path: 'reference.wav',
+      })
+    },
+  ),
+  http.get(`${API}/projects/:projectId/parts/:partId/reference`, () => {
+    if (!workspaceReferenceExists) {
+      return HttpResponse.json({ error: 'not found' }, { status: 404 })
+    }
+    return new HttpResponse(new Blob([], { type: 'audio/wav' }), {
+      status: 200,
+      headers: { 'Content-Type': 'audio/wav' },
+    })
+  }),
+  http.delete(`${API}/projects/:projectId/parts/:partId/reference`, () => {
+    workspaceReferenceExists = false
+    workspaceReferenceSize = 0
+    return HttpResponse.json({ status: 'deleted' })
+  }),
   http.post(`${API}/queue/narration`, () =>
     HttpResponse.json({ job_id: 'j1', status: 'queued' }),
   ),
@@ -258,6 +297,15 @@ export const workspaceHandlers = [
     if (!chunk?.narration_approved && chunk?.state !== 'NarrationApproved') {
       return HttpResponse.json(
         { error: 'Narration approval required before VC can be queued' },
+        { status: 409 },
+      )
+    }
+    if (!workspaceReferenceExists) {
+      return HttpResponse.json(
+        {
+          error:
+            'Reference voice not configured for this part. Upload a reference WAV before queueing voice conversion.',
+        },
         { status: 409 },
       )
     }

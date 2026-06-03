@@ -7,6 +7,7 @@ projects/{project_id}/
   parts/part-XXX/source/source.pdf
   parts/part-XXX/text/extracted.txt
   parts/part-XXX/text/edited.txt
+  parts/part-XXX/reference.wav
   parts/part-XXX/narration/0001.wav
   parts/part-XXX/vc/0001.wav
   parts/part-XXX/builds/build-XXX.json
@@ -25,6 +26,7 @@ from app.config.settings import AppSettings
 PROJECT_MANIFEST_FILE = "project.json"
 PART_MANIFEST_FILE = "manifest.json"
 SOURCE_PDF_NAME = "source.pdf"
+REFERENCE_WAV_NAME = "reference.wav"
 EXTRACTED_TEXT_NAME = "extracted.txt"
 EDITED_TEXT_NAME = "edited.txt"
 
@@ -74,6 +76,9 @@ class PartLayout:
 
     def vc_wav_path(self, chunk_id: int) -> Path:
         return self.vc_dir / f"{format_chunk_basename(chunk_id)}.wav"
+
+    def reference_wav_path(self) -> Path:
+        return self.root / REFERENCE_WAV_NAME
 
     def build_manifest_path(self, build_id: str) -> Path:
         return self.builds_dir / build_manifest_filename(build_id)
