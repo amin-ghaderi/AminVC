@@ -3,18 +3,18 @@ import {
   workerFromStatus,
 } from '@/components/progress/WorkerStatusCard'
 import { CurrentJobCard } from '@/components/progress/CurrentJobCard'
-import { VcProgressWidget } from '@/components/progress/VcProgressWidget'
+import { PartVcProgressPanel } from '@/components/progress/PartVcProgressPanel'
 import { RecentEventsList } from '@/components/progress/RecentEventsList'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useQueueJobsMonitor } from '@/hooks/useQueueMonitor'
 import { useWorkerStatusMonitor } from '@/hooks/useQueueMonitor'
-import { useVcProgress } from '@/hooks/useVcProgress'
+import { useDashboardPartVcProgress } from '@/hooks/usePartVcProgress'
 import { useRecentEventsMonitor } from '@/hooks/useVcProgressEvents'
 
 export function ProgressDashboardPage() {
   const workerQuery = useWorkerStatusMonitor()
   const jobsQuery = useQueueJobsMonitor()
-  const vcProgressQuery = useVcProgress()
+  const vcProgressQuery = useDashboardPartVcProgress()
   const eventsQuery = useRecentEventsMonitor(20)
 
   const workers = workerQuery.data
@@ -48,8 +48,8 @@ export function ProgressDashboardPage() {
         <CurrentJobCard job={currentJob} />
       )}
 
-      <VcProgressWidget
-        progress={vcProgressQuery.data ?? null}
+      <PartVcProgressPanel
+        progress={vcProgressQuery}
         isLoading={vcProgressQuery.isLoading}
         isError={vcProgressQuery.isError}
       />

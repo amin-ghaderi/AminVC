@@ -20,14 +20,55 @@ export function parseVcProgressPayload(
   }
 }
 
-export function findLatestVcProgress(
+export function findLatestVcProgressEvent(
   events: EventEnvelope[],
-): VcProgressPayload | null {
+): EventEnvelope | null {
   const vcEvents = events
     .filter((e) => e.event_type === 'vc.progress')
     .sort((a, b) => b.timestamp.localeCompare(a.timestamp))
-  if (!vcEvents.length) return null
-  return parseVcProgressPayload(vcEvents[0].payload)
+  return vcEvents[0] ?? null
+}
+
+export function findLatestVcProgress(
+  events: EventEnvelope[],
+): VcProgressPayload | null {
+  const latest = findLatestVcProgressEvent(events)
+  if (!latest) return null
+  return parseVcProgressPayload(latest.payload)
+}
+
+export function findLatestVcProgressForPart(
+  events: EventEnvelope[],
+  projectId: string,
+  partId: string,
+  chunkId?: number,
+): VcProgressPayload | null {
+  const event = findLatestVcProgressEventForPart(
+    events,
+    projectId,
+    partId,
+    chunkId,
+  )
+  if (!event) return null
+  return parseVcProgressPayload(event.payload)
+}
+
+export function findLatestVcProgressEventForPart(
+  events: EventEnvelope[],
+  projectId: string,
+  partId: string,
+  chunkId?: number,
+): EventEnvelope | null {
+  const vcEvents = events
+    .filter(
+      (e) =>
+        e.event_type === 'vc.progress' &&
+        e.project_id === projectId &&
+        e.part_id === partId &&
+        (chunkId === undefined || e.chunk_id === chunkId),
+    )
+    .sort((a, b) => b.timestamp.localeCompare(a.timestamp))
+  return vcEvents[0] ?? null
 }
 
 export function vcProgressPercent(progress: VcProgressPayload): number {

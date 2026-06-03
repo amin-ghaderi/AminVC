@@ -12,12 +12,14 @@ import {
 import { useToast } from '@/components/shared/ToastProvider'
 import { ApiError } from '@/api/client'
 import { vcAudioUrl } from '@/api/chunks'
+import { PartVcProgressPanel } from '@/components/progress/PartVcProgressPanel'
 import {
   useApproveVcMutation,
   useQueueVcMutation,
   useRebuildVcMutation,
   useUnapproveVcMutation,
 } from '@/hooks/usePartWorkspace'
+import { usePartVcProgress } from '@/hooks/usePartVcProgress'
 import type { Chunk, ChunkAssets } from '@/types/api'
 
 const REFERENCE_REQUIRED_MSG =
@@ -48,6 +50,12 @@ export function VcTab({
     chunk.chunk_id,
   )
   const rebuildMutation = useRebuildVcMutation(projectId, partId, chunk.chunk_id)
+  const isProcessing = chunk.state === 'VCProcessing'
+  const vcProgress = usePartVcProgress(projectId, partId, {
+    chunkId: chunk.chunk_id,
+    requireChunkProcessing: true,
+    chunkIsProcessing: isProcessing,
+  })
 
   const jobBody = {
     project_id: projectId,
@@ -70,9 +78,19 @@ export function VcTab({
     </p>
   ) : null
 
+  const progressBlock = isProcessing ? (
+    <PartVcProgressPanel
+      progress={vcProgress}
+      isLoading={vcProgress.isLoading}
+      isError={vcProgress.isError}
+      compact
+    />
+  ) : null
+
   if (!assets?.vc_exists) {
     return (
       <div className="space-y-4" data-testid="vc-tab">
+        {progressBlock}
         <p className="text-sm text-[var(--color-muted-foreground)]">
           No VC generated yet
         </p>
@@ -106,6 +124,7 @@ export function VcTab({
 
   return (
     <div className="space-y-4" data-testid="vc-tab">
+      {progressBlock}
       <AudioPlayerBlock
         label="VC"
         src={vcAudioUrl(projectId, partId, chunk.chunk_id)}

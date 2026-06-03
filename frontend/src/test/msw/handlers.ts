@@ -178,7 +178,22 @@ export const handlers = [
   http.get(
     `${API}/projects/:projectId/parts/:partId/summary`,
     ({ params }) => {
-      const key = partKey(String(params.projectId), String(params.partId))
+      const projectId = String(params.projectId)
+      const partId = String(params.partId)
+      if (projectId === 'demo' && partId === 'part-3') {
+        return HttpResponse.json({
+          total_chunks: 7,
+          narration_ready: 5,
+          narration_approved: 5,
+          vc_ready: 2,
+          vc_approved: 0,
+          vc_queued: 4,
+          vc_processing: 1,
+          failed: 0,
+          interrupted: 0,
+        })
+      }
+      const key = partKey(projectId, partId)
       const total = partChunkCounts[key] ?? 0
       return HttpResponse.json({
         total_chunks: total,
@@ -186,6 +201,8 @@ export const handlers = [
         narration_approved: 0,
         vc_ready: 0,
         vc_approved: 0,
+        vc_queued: 0,
+        vc_processing: 0,
         failed: 0,
         interrupted: 0,
       })

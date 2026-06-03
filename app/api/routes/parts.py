@@ -206,6 +206,8 @@ def part_summary(
         narration_approved=summary.narration_approved,
         vc_ready=summary.vc_ready,
         vc_approved=summary.vc_approved,
+        vc_queued=summary.vc_queued,
+        vc_processing=summary.vc_processing,
         failed=summary.failed,
         interrupted=summary.interrupted,
     )

@@ -86,6 +86,8 @@ export interface PartSummary {
   narration_approved: number
   vc_ready: number
   vc_approved: number
+  vc_queued: number
+  vc_processing: number
   failed: number
   interrupted: number
 }

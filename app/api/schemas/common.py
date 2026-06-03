@@ -224,6 +224,8 @@ class PartSummaryResponse(BaseModel):
     narration_approved: int
     vc_ready: int
     vc_approved: int
+    vc_queued: int
+    vc_processing: int
     failed: int
     interrupted: int
 

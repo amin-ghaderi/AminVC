@@ -205,6 +205,8 @@ def test_part_summary_endpoint(api_client: TestClient) -> None:
     assert data["narration_ready"] == 2
     assert data["narration_approved"] == 1
     assert data["vc_ready"] == 1
+    assert data["vc_queued"] == 0
+    assert data["vc_processing"] == 0
 
 
 def test_chunk_assets_endpoint(api_client: TestClient) -> None:

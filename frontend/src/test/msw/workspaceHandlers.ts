@@ -126,8 +126,13 @@ export const workspaceHandlers = [
       narration_ready: workspaceChunks.filter((c) => c.state === 'NarrationReady')
         .length,
       narration_approved: workspaceChunks.filter((c) => c.narration_approved).length,
-      vc_ready: workspaceChunks.filter((c) => c.state === 'VCReady').length,
+      vc_ready: workspaceChunks.filter(
+        (c) => c.state === 'VCReady' || c.state === 'VCApproved',
+      ).length,
       vc_approved: workspaceChunks.filter((c) => c.vc_approved).length,
+      vc_queued: workspaceChunks.filter((c) => c.state === 'VCQueued').length,
+      vc_processing: workspaceChunks.filter((c) => c.state === 'VCProcessing')
+        .length,
       failed: workspaceChunks.filter(
         (c) => c.state === 'NarrationFailed' || c.state === 'VCFailed',
       ).length,

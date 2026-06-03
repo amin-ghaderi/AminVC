@@ -11,6 +11,8 @@ from app.contracts.states import (
     STATE_NARRATION_READY,
     STATE_VC_APPROVED,
     STATE_VC_FAILED,
+    STATE_VC_PROCESSING,
+    STATE_VC_QUEUED,
     STATE_VC_READY,
 )
 from app.storage.project_store import ProjectStore
@@ -23,6 +25,8 @@ class PartSummary:
     narration_approved: int
     vc_ready: int
     vc_approved: int
+    vc_queued: int
+    vc_processing: int
     failed: int
     interrupted: int
 
@@ -38,6 +42,8 @@ class PartSummaryService:
         narration_approved = 0
         vc_ready = 0
         vc_approved = 0
+        vc_queued = 0
+        vc_processing = 0
         failed = 0
         interrupted = 0
 
@@ -50,6 +56,10 @@ class PartSummaryService:
                 vc_ready += 1
             if chunk.state == STATE_VC_APPROVED or chunk.vc_approved:
                 vc_approved += 1
+            if chunk.state == STATE_VC_QUEUED:
+                vc_queued += 1
+            if chunk.state == STATE_VC_PROCESSING:
+                vc_processing += 1
             if chunk.state in (STATE_NARRATION_FAILED, STATE_VC_FAILED):
                 failed += 1
             if chunk.state == STATE_INTERRUPTED:
@@ -61,6 +71,8 @@ class PartSummaryService:
             narration_approved=narration_approved,
             vc_ready=vc_ready,
             vc_approved=vc_approved,
+            vc_queued=vc_queued,
+            vc_processing=vc_processing,
             failed=failed,
             interrupted=interrupted,
         )

@@ -100,15 +100,16 @@ describe('E8.1-D Queue Monitor & Progress', () => {
   it('9. VC progress extraction', async () => {
     renderApp({ initialEntries: ['/progress'] })
     await waitFor(() => {
-      expect(screen.getByTestId('vc-progress-widget')).toBeInTheDocument()
-      expect(screen.getByTestId('vc-progress-step')).toHaveTextContent('Step 12 / 30')
+      expect(screen.getByTestId('part-vc-progress-panel')).toBeInTheDocument()
+      expect(screen.getByTestId('part-vc-step')).toHaveTextContent('Step 12 / 30')
+      expect(screen.getByTestId('part-vc-completed')).toHaveTextContent('2 / 7 Completed')
     })
   })
 
   it('10. progress bar calculation', async () => {
     renderApp({ initialEntries: ['/progress'] })
     await waitFor(() => {
-      const bar = screen.getByTestId('vc-progress-bar')
+      const bar = screen.getByTestId('part-vc-step-bar')
       expect(bar).toHaveStyle({ width: '40%' })
     })
   })
@@ -127,7 +128,7 @@ describe('E8.1-D Queue Monitor & Progress', () => {
     ])
     renderApp({ initialEntries: ['/progress'] })
     await waitFor(() => {
-      expect(screen.getByTestId('vc-progress-empty')).toBeInTheDocument()
+      expect(screen.getByTestId('part-vc-current-chunk-empty')).toBeInTheDocument()
       expect(
         screen.getByText('No VC conversion currently active'),
       ).toBeInTheDocument()
