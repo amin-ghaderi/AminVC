@@ -4,7 +4,8 @@ from typing import Any
 import torch
 from tqdm import tqdm
 
-ProgressCallback = Callable[[int, int], Any]
+# (current_step, total_steps, segment_index, segment_total); 2-arg callers remain valid.
+ProgressCallback = Callable[..., Any]
 
 class CFM(torch.nn.Module):
     def __init__(

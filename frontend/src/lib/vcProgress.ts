@@ -8,6 +8,15 @@ export function parseVcProgressPayload(
   if (typeof current !== 'number' || typeof total !== 'number' || total <= 0) {
     return null
   }
+  const segmentIndex =
+    typeof payload.segment_index === 'number' && payload.segment_index > 0
+      ? payload.segment_index
+      : null
+  const segmentTotal =
+    typeof payload.segment_total === 'number' && payload.segment_total > 0
+      ? payload.segment_total
+      : null
+
   return {
     current_step: current,
     total_steps: total,
@@ -17,7 +26,19 @@ export function parseVcProgressPayload(
       typeof payload.estimated_remaining_seconds === 'number'
         ? payload.estimated_remaining_seconds
         : 0,
+    segment_index: segmentIndex,
+    segment_total: segmentTotal,
   }
+}
+
+export function hasSegmentProgress(progress: VcProgressPayload): boolean {
+  return (
+    progress.segment_index !== null &&
+    progress.segment_index !== undefined &&
+    progress.segment_total !== null &&
+    progress.segment_total !== undefined &&
+    progress.segment_total > 0
+  )
 }
 
 export function findLatestVcProgressEvent(

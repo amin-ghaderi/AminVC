@@ -281,22 +281,33 @@ class VcProgressPayload:
     total_steps: int
     elapsed_seconds: float
     estimated_remaining_seconds: float
+    segment_index: int | None = None
+    segment_total: int | None = None
 
     def to_dict(self) -> dict[str, object]:
-        return {
+        out: dict[str, object] = {
             "current_step": self.current_step,
             "total_steps": self.total_steps,
             "elapsed_seconds": self.elapsed_seconds,
             "estimated_remaining_seconds": self.estimated_remaining_seconds,
         }
+        if self.segment_index is not None:
+            out["segment_index"] = self.segment_index
+        if self.segment_total is not None:
+            out["segment_total"] = self.segment_total
+        return out
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> VcProgressPayload:
+        seg_idx = data.get("segment_index")
+        seg_tot = data.get("segment_total")
         return cls(
             current_step=int(data["current_step"]),
             total_steps=int(data["total_steps"]),
             elapsed_seconds=float(data["elapsed_seconds"]),
             estimated_remaining_seconds=float(data["estimated_remaining_seconds"]),
+            segment_index=int(seg_idx) if seg_idx is not None else None,
+            segment_total=int(seg_tot) if seg_tot is not None else None,
         )
 
 

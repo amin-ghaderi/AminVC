@@ -2,22 +2,28 @@ import type { EventEnvelope, PartSummary, VcProgressPayload } from '@/types/api'
 
 import {
   findLatestVcProgressEventForPart,
+  hasSegmentProgress,
   parseVcProgressPayload,
   vcProgressPercent,
 } from '@/lib/vcProgress'
 
 export interface PartVcProgressView {
   currentChunkId: number | null
+  narrationChunkPosition: number | null
   currentStep: number
   totalSteps: number
+  segmentIndex: number | null
+  segmentTotal: number | null
   completedChunks: number
   totalChunks: number
-  currentChunkPosition: number | null
-  currentChunkEtaSeconds: number | null
+  segmentEtaSeconds: number | null
+  chunkEtaSeconds: number | null
+  chunkEtaLearning: boolean
   overallEtaSeconds: number | null
   progressPercent: number
   stepPercent: number
   hasActiveProgress: boolean
+  hasSegmentProgress: boolean
   overallEtaAvailable: boolean
 }
 
@@ -55,6 +61,64 @@ export function averageVcChunkDuration(
   return durations.reduce((sum, d) => sum + d, 0) / durations.length
 }
 
+/** Completed internal segment durations within the current chunk (from vc.progress history). */
+export function completedSegmentDurationsForChunk(
+  events: EventEnvelope[],
+  projectId: string,
+  partId: string,
+  chunkId: number,
+): number[] {
+  const sorted = events
+    .filter(
+      (e) =>
+        e.event_type === 'vc.progress' &&
+        e.project_id === projectId &&
+        e.part_id === partId &&
+        e.chunk_id === chunkId,
+    )
+    .sort((a, b) => a.timestamp.localeCompare(b.timestamp))
+
+  const durations: number[] = []
+  let lastSegment: number | null = null
+  let lastTimestamp: string | null = null
+
+  for (const event of sorted) {
+    const progress = parseVcProgressPayload(event.payload)
+    if (!progress || !hasSegmentProgress(progress)) continue
+    const seg = progress.segment_index!
+    if (lastSegment !== null && seg !== lastSegment && lastTimestamp) {
+      const elapsed =
+        (new Date(event.timestamp).getTime() - new Date(lastTimestamp).getTime()) /
+        1000
+      if (elapsed > 0) durations.push(elapsed)
+    }
+    lastSegment = seg
+    lastTimestamp = event.timestamp
+  }
+  return durations
+}
+
+export function averageSegmentDuration(durations: number[]): number | null {
+  if (!durations.length) return null
+  return durations.reduce((sum, d) => sum + d, 0) / durations.length
+}
+
+export function calculateChunkEtaSeconds(
+  segmentRemainingSeconds: number,
+  segmentIndex: number,
+  segmentTotal: number,
+  avgSegmentDuration: number | null,
+): { seconds: number | null; learning: boolean } {
+  if (avgSegmentDuration === null) {
+    return { seconds: null, learning: true }
+  }
+  const remainingSegments = Math.max(0, segmentTotal - segmentIndex)
+  return {
+    seconds: segmentRemainingSeconds + avgSegmentDuration * remainingSegments,
+    learning: false,
+  }
+}
+
 export function remainingVcChunksAfterCurrent(
   totalChunks: number,
   vcReady: number,
@@ -85,16 +149,21 @@ export function computePartVcProgress(input: {
 }): PartVcProgressView {
   const empty: PartVcProgressView = {
     currentChunkId: null,
+    narrationChunkPosition: null,
     currentStep: 0,
     totalSteps: 0,
+    segmentIndex: null,
+    segmentTotal: null,
     completedChunks: 0,
     totalChunks: 0,
-    currentChunkPosition: null,
-    currentChunkEtaSeconds: null,
+    segmentEtaSeconds: null,
+    chunkEtaSeconds: null,
+    chunkEtaLearning: false,
     overallEtaSeconds: null,
     progressPercent: 0,
     stepPercent: 0,
     hasActiveProgress: false,
+    hasSegmentProgress: false,
     overallEtaAvailable: false,
   }
 
@@ -105,6 +174,8 @@ export function computePartVcProgress(input: {
   const completedChunks = summary.vc_ready
   const progressPercent =
     totalChunks > 0 ? Math.floor((completedChunks / totalChunks) * 100) : 0
+  const narrationChunkPosition =
+    summary.vc_processing > 0 ? completedChunks + 1 : null
 
   if (input.requireChunkProcessing && !input.chunkIsProcessing) {
     return {
@@ -112,6 +183,7 @@ export function computePartVcProgress(input: {
       completedChunks,
       totalChunks,
       progressPercent,
+      narrationChunkPosition,
     }
   }
 
@@ -149,19 +221,46 @@ export function computePartVcProgress(input: {
       completedChunks,
       totalChunks,
       progressPercent,
+      narrationChunkPosition,
       overallEtaSeconds,
       overallEtaAvailable: avgDuration !== null,
     }
   }
 
   const currentChunkId = progressEvent?.chunk_id ?? null
-  const currentChunkPosition =
-    summary.vc_processing > 0 ? completedChunks + 1 : null
-  const currentChunkEtaSeconds =
+  const segmentVisible = hasSegmentProgress(progress)
+  const segmentEtaSeconds =
     progress.estimated_remaining_seconds > 0
       ? progress.estimated_remaining_seconds
       : null
 
+  let chunkEtaSeconds: number | null = null
+  let chunkEtaLearning = false
+  if (
+    segmentVisible &&
+    progress.segment_index != null &&
+    progress.segment_total != null &&
+    currentChunkId !== null
+  ) {
+    const segDurations = completedSegmentDurationsForChunk(
+      events,
+      projectId,
+      partId,
+      currentChunkId,
+    )
+    const avgSeg = averageSegmentDuration(segDurations)
+    const chunkEta = calculateChunkEtaSeconds(
+      progress.estimated_remaining_seconds,
+      progress.segment_index,
+      progress.segment_total,
+      avgSeg,
+    )
+    chunkEtaSeconds = chunkEta.seconds
+    chunkEtaLearning = chunkEta.learning
+  }
+
+  const chunkRemainingForPart =
+    chunkEtaSeconds ?? progress.estimated_remaining_seconds
   const avgDuration = averageVcChunkDuration(events, projectId, partId)
   const remaining = remainingVcChunksAfterCurrent(
     totalChunks,
@@ -171,7 +270,7 @@ export function computePartVcProgress(input: {
   const overallEtaSeconds =
     avgDuration !== null
       ? calculatePartEtaSeconds(
-          progress.estimated_remaining_seconds,
+          chunkRemainingForPart,
           avgDuration,
           remaining,
         )
@@ -179,16 +278,21 @@ export function computePartVcProgress(input: {
 
   return {
     currentChunkId,
+    narrationChunkPosition,
     currentStep: progress.current_step,
     totalSteps: progress.total_steps,
+    segmentIndex: progress.segment_index ?? null,
+    segmentTotal: progress.segment_total ?? null,
     completedChunks,
     totalChunks,
-    currentChunkPosition,
-    currentChunkEtaSeconds,
+    segmentEtaSeconds,
+    chunkEtaSeconds,
+    chunkEtaLearning,
     overallEtaSeconds,
     progressPercent,
     stepPercent: vcProgressPercent(progress),
     hasActiveProgress: true,
+    hasSegmentProgress: segmentVisible,
     overallEtaAvailable: avgDuration !== null,
   }
 }

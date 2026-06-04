@@ -1,7 +1,7 @@
 """
 E5.0 VC Progress Adapter — engine-agnostic progress → EventBus.
 
-No VC engine imports. Call update_step(step_number) from future engine hooks.
+No VC engine imports. Call update_progress() from worker/engine hooks.
 """
 
 from __future__ import annotations
@@ -67,19 +67,63 @@ class VcProgressAdapter:
         )
 
     def update_step(self, step_number: int) -> None:
+        """Backward-compatible entry; uses session segment fields when set."""
         session = self._require_session()
-        if step_number < 0 or step_number > session.total_steps:
+        self.update_progress(
+            step_number,
+            session.total_steps,
+            session.segment_index,
+            session.segment_total,
+        )
+
+    def update_progress(
+        self,
+        step_number: int,
+        total_steps: int,
+        segment_index: int | None = None,
+        segment_total: int | None = None,
+    ) -> None:
+        session = self._require_session()
+        if total_steps < 1:
+            raise VcProgressError("total_steps must be >= 1")
+        if step_number < 0 or step_number > total_steps:
             raise VcProgressError(
-                f"step_number must be between 0 and {session.total_steps}"
+                f"step_number must be between 0 and {total_steps}"
             )
-        if step_number == session.current_step:
+
+        now = self._now()
+        seg_idx = segment_index if segment_index and segment_index > 0 else None
+        seg_tot = segment_total if segment_total and segment_total > 0 else None
+
+        if seg_idx is not None and seg_idx != session.segment_index:
+            if session.segment_start_time is not None and session.segment_index is not None:
+                seg_elapsed = elapsed_seconds_since(
+                    session.segment_start_time.timestamp(),
+                    now.timestamp(),
+                )
+                session.completed_segment_durations.append(float(seg_elapsed))
+            session.segment_index = seg_idx
+            session.segment_start_time = now
+            if seg_tot is not None:
+                session.segment_total = seg_tot
+        elif seg_tot is not None and session.segment_total is None:
+            session.segment_total = seg_tot
+            if session.segment_start_time is None:
+                session.segment_start_time = now
+
+        if (
+            step_number == session.current_step
+            and total_steps == session.total_steps
+            and seg_idx == session.segment_index
+        ):
             return
 
         session.current_step = step_number
+        session.total_steps = total_steps
         elapsed = self._elapsed_seconds(session)
         remaining = estimate_remaining_seconds(
             step_number,
-            session.total_steps,
+            total_steps,
             elapsed,
         )
         publish_vc_progress(
@@ -88,9 +132,11 @@ class VcProgressAdapter:
             part_id=self._part_id,
             chunk_id=session.chunk_id,
             current_step=step_number,
-            total_steps=session.total_steps,
+            total_steps=total_steps,
             elapsed_seconds=elapsed,
             estimated_remaining_seconds=remaining,
+            segment_index=session.segment_index,
+            segment_total=session.segment_total,
         )
 
     def complete_chunk(self) -> float:

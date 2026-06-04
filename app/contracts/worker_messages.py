@@ -82,6 +82,8 @@ class ProgressResponse:
     chunk_id: int = 0
     current_step: int = 0
     total_steps: int = 0
+    segment_index: int = 0
+    segment_total: int = 0
 
 
 @dataclass(frozen=True, slots=True)
@@ -145,6 +147,8 @@ def parse_progress(payload: dict[str, Any]) -> ProgressResponse:
         chunk_id=int(payload.get("chunk_id", 0)),
         current_step=int(payload.get("current_step", 0)),
         total_steps=int(payload.get("total_steps", 0)),
+        segment_index=int(payload.get("segment_index", 0)),
+        segment_total=int(payload.get("segment_total", 0)),
     )
 
 

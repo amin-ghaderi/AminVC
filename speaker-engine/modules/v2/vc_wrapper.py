@@ -17,6 +17,50 @@ DEFAULT_CE_WIDE_CHECKPOINT = "bsq2048/bsq2048_light.pth"
 DEFAULT_SE_REPO_ID = "funasr/campplus"
 DEFAULT_SE_CHECKPOINT = "campplus_cn_common.bin"
 
+
+def count_default_vc_segments(
+    cond_len: int,
+    max_source_window: int,
+    overlap_frame_len: int,
+) -> int:
+    """
+    Count VC internal segments using the same while-loop advance as
+    convert_voice_with_streaming (default branch).
+    """
+    if cond_len <= 0:
+        return 1
+    count = 0
+    processed_frames = 0
+    while processed_frames < cond_len:
+        count += 1
+        if processed_frames + max_source_window >= cond_len:
+            break
+        chunk_frames = min(max_source_window, cond_len - processed_frames)
+        advance = chunk_frames - overlap_frame_len
+        if advance <= 0:
+            advance = chunk_frames if chunk_frames > 0 else 1
+        processed_frames += advance
+    return max(1, count)
+
+
+def count_style_vc_segments(src_reduced_len: int, max_chunk_size: int) -> int:
+    """Count VC internal segments for convert_style token-chunk loop."""
+    if src_reduced_len <= 0 or max_chunk_size <= 0:
+        return 1
+    return max(1, (src_reduced_len + max_chunk_size - 1) // max_chunk_size)
+
+
+def bind_segment_progress_callback(progress_callback, segment_index: int, segment_total: int):
+    """Wrap a 4-arg progress callback for CFM's 2-arg diffusion hook."""
+    if progress_callback is None:
+        return None
+
+    def inner(current_step: int, total_steps: int) -> None:
+        progress_callback(current_step, total_steps, segment_index, segment_total)
+
+    return inner
+
+
 class VoiceConversionWrapper(torch.nn.Module):
     def __init__(
             self,
@@ -594,10 +638,18 @@ class VoiceConversionWrapper(torch.nn.Module):
             tgt_narrow_reduced, tgt_narrow_len = self.duration_reduction_func(target_narrow_indices[0], 1)
             # Process src_narrow_reduced in chunks of max 1000 tokens
             max_chunk_size = self.ar_max_content_len - tgt_narrow_len
+            segment_total = count_style_vc_segments(
+                len(src_narrow_reduced), int(max_chunk_size)
+            )
+            segment_index = 0
 
             # Process src_narrow_reduced in chunks
             for i in range(0, len(src_narrow_reduced), max_chunk_size):
+                segment_index += 1
                 is_last_chunk = i + max_chunk_size >= len(src_narrow_reduced)
+                segment_progress = bind_segment_progress_callback(
+                    progress_callback, segment_index, segment_total
+                )
                 with torch.autocast(device_type=device.type, dtype=dtype):
                     chunk = src_narrow_reduced[i:i + max_chunk_size]
                     if anonymization_only:
@@ -630,7 +682,7 @@ class VoiceConversionWrapper(torch.nn.Module):
                         target_mel, target_style, diffusion_steps,
                         inference_cfg_rate=[intelligebility_cfg_rate, similarity_cfg_rate],
                         random_voice=anonymization_only,
-                        progress_callback=progress_callback,
+                        progress_callback=segment_progress,
                     )
                     vc_mel = vc_mel[:, :, target_mel_len:original_len]
                 vc_wave = self.vocoder(vc_mel).squeeze()[None]
@@ -652,11 +704,21 @@ class VoiceConversionWrapper(torch.nn.Module):
 
             # Process in chunks for streaming
             max_source_window = max_context_window - target_mel.size(2)
+            segment_total = count_default_vc_segments(
+                int(cond.size(1)),
+                int(max_source_window),
+                int(self.overlap_frame_len),
+            )
+            segment_index = 0
 
             # Generate chunk by chunk and stream the output
             while processed_frames < cond.size(1):
+                segment_index += 1
                 chunk_cond = cond[:, processed_frames:processed_frames + max_source_window]
                 is_last_chunk = processed_frames + max_source_window >= cond.size(1)
+                segment_progress = bind_segment_progress_callback(
+                    progress_callback, segment_index, segment_total
+                )
                 cat_condition = torch.cat([prompt_condition, chunk_cond], dim=1)
                 original_len = cat_condition.size(1)
                 # pad cat_condition to compile_len
@@ -671,7 +733,7 @@ class VoiceConversionWrapper(torch.nn.Module):
                         target_mel, target_style, diffusion_steps,
                         inference_cfg_rate=[intelligebility_cfg_rate, similarity_cfg_rate],
                         random_voice=anonymization_only,
-                        progress_callback=progress_callback,
+                        progress_callback=segment_progress,
                     )
                 vc_mel = vc_mel[:, :, target_mel_len:original_len]
                 vc_wave = self.vocoder(vc_mel).squeeze()[None]

@@ -163,6 +163,8 @@ export interface VcProgressPayload {
   total_steps: number
   elapsed_seconds: number
   estimated_remaining_seconds: number
+  segment_index?: number | null
+  segment_total?: number | null
 }
 
 export interface Build {

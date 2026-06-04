@@ -12,11 +12,11 @@ logger = logging.getLogger(__name__)
 
 
 class VcProgressBridge:
-    """Maps worker `progress` JSONL messages to adapter step updates."""
+    """Maps worker `progress` JSONL messages to adapter progress updates."""
 
     def __init__(self, adapter: VcProgressAdapter) -> None:
         self._adapter = adapter
-        self._last_step = 0
+        self._last_key: tuple[int, int, int, int] | None = None
 
     def on_progress_message(self, message: dict[str, Any] | ProgressResponse) -> None:
         try:
@@ -25,10 +25,23 @@ class VcProgressBridge:
                 if isinstance(message, ProgressResponse)
                 else parse_progress(message)
             )
-            if progress.current_step == self._last_step:
+            seg_idx = progress.segment_index if progress.segment_index > 0 else 0
+            seg_tot = progress.segment_total if progress.segment_total > 0 else 0
+            key = (
+                progress.current_step,
+                progress.total_steps,
+                seg_idx,
+                seg_tot,
+            )
+            if key == self._last_key:
                 return
-            self._last_step = progress.current_step
-            self._adapter.update_step(progress.current_step)
+            self._last_key = key
+            self._adapter.update_progress(
+                progress.current_step,
+                progress.total_steps,
+                progress.segment_index if progress.segment_index > 0 else None,
+                progress.segment_total if progress.segment_total > 0 else None,
+            )
         except Exception:
             logger.warning(
                 "VC progress bridge update failed",

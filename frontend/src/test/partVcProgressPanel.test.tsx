@@ -6,32 +6,53 @@ import type { PartVcProgressView } from '@/lib/partVcProgress'
 
 const activeView: PartVcProgressView = {
   currentChunkId: 3,
-  currentStep: 17,
+  narrationChunkPosition: 3,
+  currentStep: 11,
   totalSteps: 30,
+  segmentIndex: 3,
+  segmentTotal: 8,
   completedChunks: 2,
   totalChunks: 7,
-  currentChunkPosition: 3,
-  currentChunkEtaSeconds: 240,
-  overallEtaSeconds: 3060,
+  segmentEtaSeconds: 24,
+  chunkEtaSeconds: 197,
+  chunkEtaLearning: false,
+  overallEtaSeconds: 1601,
   progressPercent: 28,
-  stepPercent: 57,
+  stepPercent: 37,
   hasActiveProgress: true,
+  hasSegmentProgress: true,
   overallEtaAvailable: true,
 }
 
 describe('PartVcProgressPanel', () => {
-  it('renders current chunk step and ETAs', () => {
+  it('renders three-level hierarchy and clock ETAs', () => {
     render(<PartVcProgressPanel progress={activeView} />)
-    expect(screen.getByTestId('part-vc-chunk-position')).toHaveTextContent('Chunk 3 / 7')
-    expect(screen.getByTestId('part-vc-step')).toHaveTextContent('Step 17 / 30')
-    expect(screen.getByTestId('part-vc-step-percent')).toHaveTextContent('57%')
-    expect(screen.getByTestId('part-vc-chunk-eta')).toHaveTextContent('4m')
-    expect(screen.getByTestId('part-vc-completed')).toHaveTextContent('2 / 7 Completed')
-    expect(screen.getByTestId('part-vc-overall-percent')).toHaveTextContent('28%')
-    expect(screen.getByTestId('part-vc-overall-eta-value')).toHaveTextContent('51m')
+    expect(screen.getByTestId('part-vc-narration-position')).toHaveTextContent('3 / 7')
+    expect(screen.getByTestId('part-vc-segment-position')).toHaveTextContent('3 / 8')
+    expect(screen.getByTestId('part-vc-step')).toHaveTextContent('11 / 30')
+    expect(screen.getByTestId('part-vc-segment-eta')).toHaveTextContent('00:24')
+    expect(screen.getByTestId('part-vc-chunk-eta')).toHaveTextContent('03:17')
+    expect(screen.getByTestId('part-vc-overall-eta-value')).toHaveTextContent('26:41')
   })
 
-  it('renders learning state when overall ETA unavailable', () => {
+  it('hides segment block when segment data unavailable', () => {
+    render(
+      <PartVcProgressPanel
+        progress={{
+          ...activeView,
+          hasSegmentProgress: false,
+          segmentIndex: null,
+          segmentTotal: null,
+          chunkEtaLearning: true,
+          chunkEtaSeconds: null,
+        }}
+      />,
+    )
+    expect(screen.queryByTestId('part-vc-segment')).not.toBeInTheDocument()
+    expect(screen.getByTestId('part-vc-chunk-eta-learning')).toHaveTextContent('Learning...')
+  })
+
+  it('shows learning for part ETA when unavailable', () => {
     render(
       <PartVcProgressPanel
         progress={{
@@ -41,11 +62,6 @@ describe('PartVcProgressPanel', () => {
         }}
       />,
     )
-    expect(screen.getByTestId('part-vc-overall-eta-learning')).toHaveTextContent(
-      'Learning...',
-    )
-    expect(screen.getByTestId('part-vc-overall-eta-learning')).toHaveTextContent(
-      'Need completed VC chunks',
-    )
+    expect(screen.getByTestId('part-vc-overall-eta-learning')).toHaveTextContent('Learning...')
   })
 })

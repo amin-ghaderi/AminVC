@@ -141,6 +141,8 @@ def test_worker_progress_message_emission() -> None:
         "chunk_id": 17,
         "current_step": 1,
         "total_steps": 30,
+        "segment_index": 0,
+        "segment_total": 0,
     }
 
 
@@ -260,9 +262,16 @@ def test_bridge_failure_isolation(event_bus: EventBus) -> None:
     adapter.start_chunk(1)
     bridge = VcProgressBridge(adapter)
 
-    with patch.object(adapter, "update_step", side_effect=RuntimeError("adapter down")):
+    with patch.object(adapter, "update_progress", side_effect=RuntimeError("adapter down")):
         bridge.on_progress_message(
-            {"type": "progress", "chunk_id": 1, "current_step": 2, "total_steps": 30}
+            {
+                "type": "progress",
+                "chunk_id": 1,
+                "current_step": 2,
+                "total_steps": 30,
+                "segment_index": 1,
+                "segment_total": 2,
+            }
         )
     assert adapter.session is not None
 
@@ -299,10 +308,19 @@ def test_no_duplicate_step_events_bridge() -> None:
 
 def test_parse_progress_schema() -> None:
     progress = parse_progress(
-        {"type": "progress", "chunk_id": 17, "current_step": 12, "total_steps": 30}
+        {
+            "type": "progress",
+            "chunk_id": 17,
+            "current_step": 12,
+            "total_steps": 30,
+            "segment_index": 2,
+            "segment_total": 5,
+        }
     )
     assert progress.chunk_id == 17
     assert progress.current_step == 12
+    assert progress.segment_index == 2
+    assert progress.segment_total == 5
 
 
 @pytest.mark.integration

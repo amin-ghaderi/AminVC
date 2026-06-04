@@ -125,6 +125,8 @@ const defaultEvents: EventEnvelope[] = [
       total_steps: 30,
       elapsed_seconds: 48,
       estimated_remaining_seconds: 72,
+      segment_index: 2,
+      segment_total: 5,
     },
   },
   {

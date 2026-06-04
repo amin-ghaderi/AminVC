@@ -51,6 +51,71 @@
       "completed_at": "2026-06-03T16:22:50.330336+00:00",
       "attempts": 0,
       "last_error": null
+    },
+    {
+      "job_id": "1cc4b102a85a4da19c953e65d478a030",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 3,
+      "job_type": "narration",
+      "status": "completed",
+      "created_at": "2026-06-04T16:29:11.151771+00:00",
+      "started_at": "2026-06-04T16:29:11.394331+00:00",
+      "completed_at": "2026-06-04T16:29:42.037667+00:00",
+      "attempts": 0,
+      "last_error": null
+    },
+    {
+      "job_id": "793e758c9d7044ca86ac12ace2854068",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 4,
+      "job_type": "narration",
+      "status": "completed",
+      "created_at": "2026-06-04T16:29:14.698510+00:00",
+      "started_at": "2026-06-04T16:29:42.057727+00:00",
+      "completed_at": "2026-06-04T16:30:10.553438+00:00",
+      "attempts": 0,
+      "last_error": null
+    },
+    {
+      "job_id": "ac26c0c6182c4b0e8f497a41c3b47ad1",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 5,
+      "job_type": "narration",
+      "status": "completed",
+      "created_at": "2026-06-04T16:29:17.227901+00:00",
+      "started_at": "2026-06-04T16:30:10.572821+00:00",
+      "completed_at": "2026-06-04T16:30:46.906932+00:00",
+      "attempts": 0,
+      "last_error": null
+    },
+    {
+      "job_id": "a3f5579987b74b8cb5a36dd948ecc03c",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 6,
+      "job_type": "narration",
+      "status": "completed",
+      "created_at": "2026-06-04T16:29:19.646679+00:00",
+      "started_at": "2026-06-04T16:30:46.928447+00:00",
+      "completed_at": "2026-06-04T16:31:15.064085+00:00",
+      "attempts": 0,
+      "last_error": null
+    },
+    {
+      "job_id": "2de4f23a67424161b95dea8b9e60c1e0",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 7,
+      "job_type": "narration",
+      "status": "completed",
+      "created_at": "2026-06-04T16:29:22.177515+00:00",
+      "started_at": "2026-06-04T16:31:15.079462+00:00",
+      "completed_at": "2026-06-04T16:31:43.917270+00:00",
+      "attempts": 0,
+      "last_error": null
     }
   ],
   "failed": [

@@ -1,5 +1,5 @@
 import { Skeleton } from '@/components/ui/skeleton'
-import { formatEtaSeconds } from '@/lib/formatEta'
+import { formatEtaClock } from '@/lib/formatEta'
 import type { PartVcProgressView } from '@/lib/partVcProgress'
 
 interface PartVcProgressPanelProps {
@@ -8,6 +8,10 @@ interface PartVcProgressPanelProps {
   isError?: boolean
   /** Compact layout for workspace VC tab */
   compact?: boolean
+}
+
+function Divider() {
+  return <hr className="border-[var(--color-border)]" />
 }
 
 export function PartVcProgressPanel({
@@ -25,109 +29,144 @@ export function PartVcProgressPanel({
   }
 
   if (isLoading) {
-    return <Skeleton className="h-40 w-full" data-testid="part-vc-progress-loading" />
+    return <Skeleton className="h-48 w-full" data-testid="part-vc-progress-loading" />
   }
 
-  const chunkEtaLabel = formatEtaSeconds(progress.currentChunkEtaSeconds)
-  const overallEtaLabel = formatEtaSeconds(progress.overallEtaSeconds)
+  const segmentEtaLabel = formatEtaClock(progress.segmentEtaSeconds)
+  const chunkEtaLabel = progress.chunkEtaLearning
+    ? null
+    : formatEtaClock(progress.chunkEtaSeconds)
+  const overallEtaLabel = formatEtaClock(progress.overallEtaSeconds)
+
+  if (!progress.hasActiveProgress) {
+    return (
+      <div
+        className="space-y-4 rounded-lg border border-[var(--color-border)] p-4"
+        data-testid="part-vc-progress-panel"
+      >
+        <section data-testid="part-vc-inactive">
+          <p className="text-sm text-[var(--color-muted-foreground)]">
+            No VC conversion currently active
+          </p>
+        </section>
+        {!compact ? (
+          <>
+            <Divider />
+            <section data-testid="part-vc-narration-chunk">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-muted-foreground)]">
+                Narration Chunk
+              </h3>
+              <p className="mt-2 text-base font-medium" data-testid="part-vc-narration-position">
+                {progress.completedChunks} / {progress.totalChunks}
+              </p>
+            </section>
+          </>
+        ) : null}
+      </div>
+    )
+  }
 
   return (
     <div
       className="space-y-4 rounded-lg border border-[var(--color-border)] p-4"
       data-testid="part-vc-progress-panel"
     >
-      {progress.hasActiveProgress ? (
-        <section data-testid="part-vc-current-chunk">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-muted-foreground)]">
-            Current Chunk
-          </h3>
-          {progress.currentChunkPosition !== null && progress.totalChunks > 0 ? (
-            <p className="mt-2 text-base font-medium" data-testid="part-vc-chunk-position">
-              Chunk {progress.currentChunkPosition} / {progress.totalChunks}
-            </p>
-          ) : null}
-          {progress.currentChunkId !== null ? (
-            <p className="text-sm text-[var(--color-muted-foreground)]" data-testid="part-vc-chunk-id">
-              Chunk #{progress.currentChunkId}
-            </p>
-          ) : null}
-          <p className="mt-2 text-sm" data-testid="part-vc-step">
-            Step {progress.currentStep} / {progress.totalSteps}
-          </p>
-          <p className="mt-1 text-sm text-[var(--color-muted-foreground)]" data-testid="part-vc-step-percent">
-            {progress.stepPercent}%
-          </p>
-          <div className="mt-2 h-2 overflow-hidden rounded-full bg-[var(--color-muted)]">
-            <div
-              className="h-full bg-[var(--color-primary)] transition-all"
-              style={{ width: `${progress.stepPercent}%` }}
-              data-testid="part-vc-step-bar"
-              role="progressbar"
-              aria-valuenow={progress.stepPercent}
-              aria-valuemin={0}
-              aria-valuemax={100}
-            />
-          </div>
-          <p className="mt-3 text-sm" data-testid="part-vc-chunk-eta">
-            <span className="font-medium">Current Chunk ETA</span>
-            <br />
-            {chunkEtaLabel ?? '—'}
-          </p>
-        </section>
-      ) : (
-        <section data-testid="part-vc-current-chunk-empty">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-muted-foreground)]">
-            Current Chunk
-          </h3>
-          <p className="mt-2 text-sm text-[var(--color-muted-foreground)]">
-            No VC conversion currently active
-          </p>
-        </section>
-      )}
-
-      {!compact ? <hr className="border-[var(--color-border)]" /> : null}
-
-      <section data-testid="part-vc-part-progress">
+      <section data-testid="part-vc-narration-chunk">
         <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-muted-foreground)]">
-          Part Progress
+          Narration Chunk
         </h3>
-        <p className="mt-2 text-base font-medium" data-testid="part-vc-completed">
-          {progress.completedChunks} / {progress.totalChunks} Completed
+        <p className="mt-2 text-base font-medium" data-testid="part-vc-narration-position">
+          {progress.narrationChunkPosition ?? progress.completedChunks + 1} /{' '}
+          {progress.totalChunks}
         </p>
-        <p className="mt-1 text-sm text-[var(--color-muted-foreground)]" data-testid="part-vc-overall-percent">
-          {progress.progressPercent}%
+      </section>
+
+      <Divider />
+
+      {progress.hasSegmentProgress &&
+      progress.segmentIndex !== null &&
+      progress.segmentTotal !== null ? (
+        <section data-testid="part-vc-segment">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-muted-foreground)]">
+            VC Segment
+          </h3>
+          <p className="mt-2 text-base font-medium" data-testid="part-vc-segment-position">
+            {progress.segmentIndex} / {progress.segmentTotal}
+          </p>
+        </section>
+      ) : null}
+
+      {progress.hasSegmentProgress ? <Divider /> : null}
+
+      <section data-testid="part-vc-diffusion-step">
+        <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-muted-foreground)]">
+          Diffusion Step
+        </h3>
+        <p className="mt-2 text-base font-medium" data-testid="part-vc-step">
+          {progress.currentStep} / {progress.totalSteps}
+        </p>
+        <p className="mt-1 text-sm text-[var(--color-muted-foreground)]" data-testid="part-vc-step-percent">
+          {progress.stepPercent}%
         </p>
         <div className="mt-2 h-2 overflow-hidden rounded-full bg-[var(--color-muted)]">
           <div
             className="h-full bg-[var(--color-primary)] transition-all"
-            style={{ width: `${progress.progressPercent}%` }}
-            data-testid="part-vc-overall-bar"
+            style={{ width: `${progress.stepPercent}%` }}
+            data-testid="part-vc-step-bar"
             role="progressbar"
-            aria-valuenow={progress.progressPercent}
+            aria-valuenow={progress.stepPercent}
             aria-valuemin={0}
             aria-valuemax={100}
           />
         </div>
       </section>
 
-      <section data-testid="part-vc-overall-eta">
-        <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-muted-foreground)]">
-          Overall ETA
-        </h3>
-        {progress.overallEtaAvailable && overallEtaLabel ? (
-          <p className="mt-2 text-base font-medium" data-testid="part-vc-overall-eta-value">
-            {overallEtaLabel}
-          </p>
-        ) : (
-          <div
-            className="mt-2 text-sm text-[var(--color-muted-foreground)]"
-            data-testid="part-vc-overall-eta-learning"
-          >
-            <p>Learning...</p>
-            <p>Need completed VC chunks</p>
-          </div>
-        )}
+      <Divider />
+
+      <section className="space-y-2" data-testid="part-vc-etas">
+        <div className="flex justify-between text-sm" data-testid="part-vc-segment-eta">
+          <span className="font-medium">Segment ETA</span>
+          <span>{segmentEtaLabel ?? '—'}</span>
+        </div>
+        <div className="flex justify-between text-sm" data-testid="part-vc-chunk-eta">
+          <span className="font-medium">Chunk ETA</span>
+          {progress.chunkEtaLearning ? (
+            <span
+              className="text-[var(--color-muted-foreground)]"
+              data-testid="part-vc-chunk-eta-learning"
+            >
+              Learning...
+            </span>
+          ) : (
+            <span>{chunkEtaLabel ?? '—'}</span>
+          )}
+        </div>
+        <div className="flex justify-between text-sm" data-testid="part-vc-overall-eta">
+          <span className="font-medium">Part ETA</span>
+          {progress.overallEtaAvailable && overallEtaLabel ? (
+            <span data-testid="part-vc-overall-eta-value">{overallEtaLabel}</span>
+          ) : (
+            <span
+              className="text-[var(--color-muted-foreground)]"
+              data-testid="part-vc-overall-eta-learning"
+            >
+              Learning...
+            </span>
+          )}
+        </div>
       </section>
+
+      {!compact ? (
+        <>
+          <Divider />
+          <section data-testid="part-vc-part-summary">
+            <p className="text-sm text-[var(--color-muted-foreground)]">
+              Part completion: {progress.completedChunks} / {progress.totalChunks} (
+              {progress.progressPercent}%)
+            </p>
+          </section>
+        </>
+      ) : null}
     </div>
   )
 }

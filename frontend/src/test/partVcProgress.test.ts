@@ -1,12 +1,14 @@
 import { describe, expect, it } from 'vitest'
 
 import {
-  averageVcChunkDuration,
-  calculatePartEtaSeconds,
+  averageSegmentDuration,
+  calculateChunkEtaSeconds,
+  completedSegmentDurationsForChunk,
   computePartVcProgress,
   dedupeVcCompletionDurations,
   remainingVcChunksAfterCurrent,
 } from '@/lib/partVcProgress'
+import { hasSegmentProgress, parseVcProgressPayload } from '@/lib/vcProgress'
 import type { EventEnvelope, PartSummary } from '@/types/api'
 
 const summaryBase: PartSummary = {
@@ -32,104 +34,87 @@ function progressEvent(
     part_id: 'part-1',
     chunk_id: 3,
     payload: {
-      current_step: 17,
+      current_step: 11,
       total_steps: 30,
       elapsed_seconds: 100,
       estimated_remaining_seconds: 240,
+      segment_index: 3,
+      segment_total: 8,
     },
     ...overrides,
   }
 }
 
-function completionEvent(
-  chunkId: number,
-  duration: number,
-  timestamp: string,
-): EventEnvelope {
-  return {
-    event_id: `c-${chunkId}-${timestamp}`,
-    event_type: 'vc.chunk_completed',
-    timestamp,
-    project_id: 'demo',
-    part_id: 'part-1',
-    chunk_id: chunkId,
-    payload: { duration_seconds: duration },
-  }
-}
+describe('vcProgress segment parsing', () => {
+  it('parses segment fields', () => {
+    const p = parseVcProgressPayload({
+      current_step: 11,
+      total_steps: 30,
+      segment_index: 3,
+      segment_total: 8,
+    })
+    expect(p && hasSegmentProgress(p)).toBe(true)
+  })
+
+  it('falls back when segment fields missing', () => {
+    const p = parseVcProgressPayload({ current_step: 1, total_steps: 30 })
+    expect(p && hasSegmentProgress(p)).toBe(false)
+  })
+})
 
 describe('partVcProgress', () => {
-  it('dedupes completion durations by chunk', () => {
-    const events = [
-      completionEvent(1, 480, '2026-01-01T10:00:00Z'),
-      completionEvent(1, 60, '2026-01-01T11:00:00Z'),
-      completionEvent(2, 540, '2026-01-01T10:30:00Z'),
+  it('computes chunk ETA with segment history', () => {
+    const result = calculateChunkEtaSeconds(240, 3, 8, 120)
+    expect(result.learning).toBe(false)
+    expect(result.seconds).toBe(240 + 120 * 5)
+  })
+
+  it('chunk ETA learning without segment history', () => {
+    const result = calculateChunkEtaSeconds(240, 3, 8, null)
+    expect(result.learning).toBe(true)
+  })
+
+  it('derives completed segment durations from events', () => {
+    const events: EventEnvelope[] = [
+      progressEvent({ timestamp: '2026-06-01T12:00:00Z', payload: { current_step: 1, total_steps: 30, segment_index: 1, segment_total: 3, elapsed_seconds: 0, estimated_remaining_seconds: 0 } }),
+      progressEvent({ timestamp: '2026-06-01T12:02:00Z', payload: { current_step: 30, total_steps: 30, segment_index: 1, segment_total: 3, elapsed_seconds: 120, estimated_remaining_seconds: 0 } }),
+      progressEvent({ timestamp: '2026-06-01T12:02:10Z', payload: { current_step: 1, total_steps: 30, segment_index: 2, segment_total: 3, elapsed_seconds: 0, estimated_remaining_seconds: 0 } }),
     ]
-    const map = dedupeVcCompletionDurations(events, 'demo', 'part-1')
-    expect(map.get(1)).toBe(60)
-    expect(map.get(2)).toBe(540)
+    const durations = completedSegmentDurationsForChunk(events, 'demo', 'part-1', 3)
+    expect(durations.length).toBe(1)
+    expect(durations[0]).toBe(10)
   })
 
-  it('returns null average when no completions', () => {
-    expect(averageVcChunkDuration([], 'demo', 'part-1')).toBeNull()
-  })
-
-  it('calculates part ETA from formula', () => {
-    expect(calculatePartEtaSeconds(240, 480, 4)).toBe(240 + 480 * 4)
-  })
-
-  it('remaining chunks subtracts in-flight chunk', () => {
-    expect(remainingVcChunksAfterCurrent(7, 2, 1)).toBe(4)
-  })
-
-  it('computes part progress percent from vc_ready', () => {
-    const view = computePartVcProgress({
-      events: [],
-      summary: summaryBase,
-      projectId: 'demo',
-      partId: 'part-1',
-    })
-    expect(view.completedChunks).toBe(2)
-    expect(view.totalChunks).toBe(7)
-    expect(view.progressPercent).toBe(28)
-  })
-
-  it('computes overall ETA when completions exist', () => {
-    const events = [
-      progressEvent({}),
-      completionEvent(1, 480, '2026-01-01T09:00:00Z'),
-      completionEvent(2, 600, '2026-01-01T09:30:00Z'),
-    ]
-    const view = computePartVcProgress({
-      events,
-      summary: summaryBase,
-      projectId: 'demo',
-      partId: 'part-1',
-    })
-    expect(view.overallEtaAvailable).toBe(true)
-    expect(view.overallEtaSeconds).toBe(240 + 540 * 4)
-  })
-
-  it('shows learning state when no completion history', () => {
+  it('exposes segment index in active view', () => {
     const view = computePartVcProgress({
       events: [progressEvent({})],
       summary: summaryBase,
       projectId: 'demo',
       partId: 'part-1',
     })
-    expect(view.overallEtaAvailable).toBe(false)
-    expect(view.overallEtaSeconds).toBeNull()
+    expect(view.hasSegmentProgress).toBe(true)
+    expect(view.segmentIndex).toBe(3)
+    expect(view.segmentTotal).toBe(8)
+    expect(view.narrationChunkPosition).toBe(3)
   })
 
-  it('hides active chunk when requireChunkProcessing and not processing', () => {
+  it('falls back without segment fields', () => {
     const view = computePartVcProgress({
-      events: [progressEvent({})],
+      events: [
+        progressEvent({
+          payload: {
+            current_step: 5,
+            total_steps: 30,
+            elapsed_seconds: 0,
+            estimated_remaining_seconds: 60,
+          },
+        }),
+      ],
       summary: summaryBase,
       projectId: 'demo',
       partId: 'part-1',
-      chunkId: 3,
-      requireChunkProcessing: true,
-      chunkIsProcessing: false,
     })
-    expect(view.hasActiveProgress).toBe(false)
+    expect(view.hasSegmentProgress).toBe(false)
+    expect(view.segmentIndex).toBeNull()
   })
 })

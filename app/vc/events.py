@@ -44,12 +44,16 @@ def publish_vc_progress(
     total_steps: int,
     elapsed_seconds: int,
     estimated_remaining_seconds: int,
+    segment_index: int | None = None,
+    segment_total: int | None = None,
 ) -> None:
     payload = VcProgressPayload(
         current_step=current_step,
         total_steps=total_steps,
         elapsed_seconds=float(elapsed_seconds),
         estimated_remaining_seconds=float(estimated_remaining_seconds),
+        segment_index=segment_index,
+        segment_total=segment_total,
     )
     safe_publish(
         event_bus,

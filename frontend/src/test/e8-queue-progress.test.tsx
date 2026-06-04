@@ -101,8 +101,9 @@ describe('E8.1-D Queue Monitor & Progress', () => {
     renderApp({ initialEntries: ['/progress'] })
     await waitFor(() => {
       expect(screen.getByTestId('part-vc-progress-panel')).toBeInTheDocument()
-      expect(screen.getByTestId('part-vc-step')).toHaveTextContent('Step 12 / 30')
-      expect(screen.getByTestId('part-vc-completed')).toHaveTextContent('2 / 7 Completed')
+      expect(screen.getByTestId('part-vc-step')).toHaveTextContent('12 / 30')
+      expect(screen.getByTestId('part-vc-narration-position')).toHaveTextContent('3 / 7')
+      expect(screen.getByTestId('part-vc-segment-position')).toHaveTextContent('2 / 5')
     })
   })
 
@@ -128,7 +129,7 @@ describe('E8.1-D Queue Monitor & Progress', () => {
     ])
     renderApp({ initialEntries: ['/progress'] })
     await waitFor(() => {
-      expect(screen.getByTestId('part-vc-current-chunk-empty')).toBeInTheDocument()
+      expect(screen.getByTestId('part-vc-inactive')).toBeInTheDocument()
       expect(
         screen.getByText('No VC conversion currently active'),
       ).toBeInTheDocument()

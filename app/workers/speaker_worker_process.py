@@ -153,19 +153,27 @@ class SpeakerWorker:
         s = req.settings or {}
         diffusion_steps = int(s.get("diffusion_steps", 30))
         chunk_id = int(s.get("chunk_id", 0))
-        last_reported_step = 0
+        last_progress_key: tuple[int, int, int, int] | None = None
 
-        def progress_callback(current_step: int, total_steps: int) -> None:
-            nonlocal last_reported_step
-            if current_step == last_reported_step:
+        def progress_callback(
+            current_step: int,
+            total_steps: int,
+            segment_index: int = 0,
+            segment_total: int = 0,
+        ) -> None:
+            nonlocal last_progress_key
+            key = (current_step, total_steps, segment_index, segment_total)
+            if key == last_progress_key:
                 return
-            last_reported_step = current_step
+            last_progress_key = key
             try:
                 _write_jsonl(
                     ProgressResponse(
                         chunk_id=chunk_id,
                         current_step=current_step,
                         total_steps=total_steps,
+                        segment_index=segment_index,
+                        segment_total=segment_total,
                     )
                 )
             except Exception:
