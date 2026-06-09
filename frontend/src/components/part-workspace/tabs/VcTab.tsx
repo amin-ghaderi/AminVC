@@ -87,10 +87,28 @@ export function VcTab({
     />
   ) : null
 
+  const vcFailedBlock =
+    chunk.state === 'VCFailed' ? (
+      <div className="space-y-1" data-testid="vc-failed-block">
+        <p
+          className="text-sm font-medium text-red-400"
+          data-testid="vc-failed-heading"
+        >
+          VC Conversion Failed
+        </p>
+        {chunk.last_error ? (
+          <p className="text-sm text-red-300" data-testid="vc-last-error">
+            {chunk.last_error}
+          </p>
+        ) : null}
+      </div>
+    ) : null
+
   if (!assets?.vc_exists) {
     return (
       <div className="space-y-4" data-testid="vc-tab">
         {progressBlock}
+        {vcFailedBlock}
         <p className="text-sm text-[var(--color-muted-foreground)]">
           No VC generated yet
         </p>
@@ -125,6 +143,7 @@ export function VcTab({
   return (
     <div className="space-y-4" data-testid="vc-tab">
       {progressBlock}
+      {vcFailedBlock}
       <AudioPlayerBlock
         label="VC"
         src={vcAudioUrl(projectId, partId, chunk.chunk_id)}
