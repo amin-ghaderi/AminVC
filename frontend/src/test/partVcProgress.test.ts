@@ -114,7 +114,73 @@ describe('partVcProgress', () => {
       projectId: 'demo',
       partId: 'part-1',
     })
+    expect(view.hasActiveProgress).toBe(true)
     expect(view.hasSegmentProgress).toBe(false)
     expect(view.segmentIndex).toBeNull()
+    expect(view.currentStep).toBe(5)
+    expect(view.totalSteps).toBe(30)
+  })
+
+  it('activates hierarchy when vc.progress exists even if vc_processing is 0', () => {
+    const view = computePartVcProgress({
+      events: [progressEvent({ payload: { current_step: 13, total_steps: 30, elapsed_seconds: 10, estimated_remaining_seconds: 200 } })],
+      summary: { ...summaryBase, vc_processing: 0 },
+      projectId: 'demo',
+      partId: 'part-1',
+    })
+    expect(view.hasActiveProgress).toBe(true)
+    expect(view.currentStep).toBe(13)
+    expect(view.totalSteps).toBe(30)
+    expect(view.narrationChunkPosition).toBe(3)
+  })
+
+  it('shows segment section when segment fields are present', () => {
+    const view = computePartVcProgress({
+      events: [progressEvent({})],
+      summary: summaryBase,
+      projectId: 'demo',
+      partId: 'part-1',
+    })
+    expect(view.hasActiveProgress).toBe(true)
+    expect(view.hasSegmentProgress).toBe(true)
+    expect(view.segmentIndex).toBe(3)
+    expect(view.segmentTotal).toBe(8)
+  })
+
+  it('scopes active progress to chunk when chunkId is provided', () => {
+    const view = computePartVcProgress({
+      events: [progressEvent({ chunk_id: 5 })],
+      summary: summaryBase,
+      projectId: 'demo',
+      partId: 'part-1',
+      chunkId: 3,
+      requireChunkProcessing: true,
+      chunkIsProcessing: true,
+    })
+    expect(view.hasActiveProgress).toBe(false)
+  })
+
+  it('activates for scoped chunk when chunkId matches progress event', () => {
+    const view = computePartVcProgress({
+      events: [progressEvent({ chunk_id: 3 })],
+      summary: { ...summaryBase, vc_processing: 0 },
+      projectId: 'demo',
+      partId: 'part-1',
+      chunkId: 3,
+      requireChunkProcessing: true,
+      chunkIsProcessing: true,
+    })
+    expect(view.hasActiveProgress).toBe(true)
+    expect(view.currentStep).toBe(11)
+  })
+
+  it('stays inactive without matching vc.progress events', () => {
+    const view = computePartVcProgress({
+      events: [],
+      summary: summaryBase,
+      projectId: 'demo',
+      partId: 'part-1',
+    })
+    expect(view.hasActiveProgress).toBe(false)
   })
 })

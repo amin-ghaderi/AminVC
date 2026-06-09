@@ -3,8 +3,8 @@
   "intake_id": "narration",
   "request": {
     "chunk_index": 3,
-    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nھنگامی که در نشريات نخستين سال ھای د ھۀ ھشتاد دهه‌ی هشتاد می نگريم، از عمق خطای مفسرانی شگفت زده می شويم که در آن دوران، فروپاشی سريع رژيم خمينی را پيش بينی می کردند . با خواندن کتابی که کريستيان مارک و آلن روديه در سال 1986 دربارۀ شما منتشر کردند، تصوير شاھزاده ای جوان و فعال را می يابيم که با شخ صيت ھايی که امروز در قيد حيات نيستند و غالبا، ھمانند شاپور بختيار، به قتل رسيدند، ھمراھی می شد . در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟",
-    "prompt_char_count": 1594,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nماده ۳ ـ اسناد بنیادین پارمان الف) اساسنامه اساسنامه عالی‌ترین سند سازمانی پارمان بوده و چارچوب حکمرانی، ارکان، حدود اختیارات، حقوق و تکالیف هموندان و نحوه اداره پارمان را تعیین می‌نماید. ب) مرامنامه مرامنامه بیان‌کننده اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان است. پ) آیین‌نامه‌ها آیین‌نامه‌ها به منظور تبیین فرآیندها، رویه‌ها و الزامات اجرایی در چارچوب اساسنامه و مرامنامه تدوین و تصویب می‌گردند. تبصره ۱- آیین‌نامه‌ها در چارچوب اساسنامه و مرامنامه تدوین می‌شوند و نمی‌توانند با مفاد آن‌ها مغایرت داشته باشند.",
+    "prompt_char_count": 1531,
     "config": {
       "model": "gemini-3.1-flash-tts-preview",
       "temperature": 1,
@@ -16,18 +16,18 @@
     },
     "continuity_note": "",
     "scene_context": "",
-    "transcript": "ھنگامی که در نشريات نخستين سال ھای د ھۀ ھشتاد دهه‌ی هشتاد می نگريم، از عمق خطای مفسرانی شگفت زده می شويم که در آن دوران، فروپاشی سريع رژيم خمينی را پيش بينی می کردند . با خواندن کتابی که کريستيان مارک و آلن روديه در سال 1986 دربارۀ شما منتشر کردند، تصوير شاھزاده ای جوان و فعال را می يابيم که با شخ صيت ھايی که امروز در قيد حيات نيستند و غالبا، ھمانند شاپور بختيار، به قتل رسيدند، ھمراھی می شد . در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟",
-    "transcript_char_count": 590,
+    "transcript": "ماده ۳ ـ اسناد بنیادین پارمان الف) اساسنامه اساسنامه عالی‌ترین سند سازمانی پارمان بوده و چارچوب حکمرانی، ارکان، حدود اختیارات، حقوق و تکالیف هموندان و نحوه اداره پارمان را تعیین می‌نماید. ب) مرامنامه مرامنامه بیان‌کننده اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان است. پ) آیین‌نامه‌ها آیین‌نامه‌ها به منظور تبیین فرآیندها، رویه‌ها و الزامات اجرایی در چارچوب اساسنامه و مرامنامه تدوین و تصویب می‌گردند. تبصره ۱- آیین‌نامه‌ها در چارچوب اساسنامه و مرامنامه تدوین می‌شوند و نمی‌توانند با مفاد آن‌ها مغایرت داشته باشند.",
+    "transcript_char_count": 527,
     "token_name": "project-1",
     "attempt": 1
   },
   "response": {
     "success": true,
     "error": null,
-    "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\0001\\parts\\part-01\\narration\\0003.wav",
-    "wav_size_bytes": 2659244,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\telegram\\parts\\part-01\\narration\\0003.wav",
+    "wav_size_bytes": 2991404,
     "mime_type": "audio/l16; rate=24000; channels=1",
-    "audio_bytes": 2659200,
-    "timestamp": 1780590582.0183668
+    "audio_bytes": 2991360,
+    "timestamp": 1781029460.6078222
   }
 }

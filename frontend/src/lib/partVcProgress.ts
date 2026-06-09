@@ -174,8 +174,6 @@ export function computePartVcProgress(input: {
   const completedChunks = summary.vc_ready
   const progressPercent =
     totalChunks > 0 ? Math.floor((completedChunks / totalChunks) * 100) : 0
-  const narrationChunkPosition =
-    summary.vc_processing > 0 ? completedChunks + 1 : null
 
   if (input.requireChunkProcessing && !input.chunkIsProcessing) {
     return {
@@ -183,7 +181,7 @@ export function computePartVcProgress(input: {
       completedChunks,
       totalChunks,
       progressPercent,
-      narrationChunkPosition,
+      narrationChunkPosition: null,
     }
   }
 
@@ -198,11 +196,14 @@ export function computePartVcProgress(input: {
     ? parseVcProgressPayload(progressEvent.payload)
     : null
 
-  const hasActiveProgress =
-    Boolean(progress) &&
-    summary.vc_processing > 0 &&
-    (input.chunkId === undefined ||
-      progressEvent?.chunk_id === input.chunkId)
+  const chunkScopeMatches =
+    input.chunkId === undefined || progressEvent?.chunk_id === input.chunkId
+  const hasActiveProgress = Boolean(progress) && chunkScopeMatches
+
+  const narrationChunkPosition =
+    hasActiveProgress || summary.vc_processing > 0
+      ? completedChunks + 1
+      : null
 
   if (!hasActiveProgress || !progress) {
     const avgDuration = averageVcChunkDuration(events, projectId, partId)

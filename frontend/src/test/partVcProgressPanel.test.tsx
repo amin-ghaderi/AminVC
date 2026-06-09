@@ -64,4 +64,29 @@ describe('PartVcProgressPanel', () => {
     )
     expect(screen.getByTestId('part-vc-overall-eta-learning')).toHaveTextContent('Learning...')
   })
+
+  it('shows diffusion step when active without segment fields', () => {
+    render(
+      <PartVcProgressPanel
+        progress={{
+          ...activeView,
+          hasSegmentProgress: false,
+          segmentIndex: null,
+          segmentTotal: null,
+          currentStep: 13,
+          stepPercent: 43,
+        }}
+      />,
+    )
+    expect(screen.queryByTestId('part-vc-inactive')).not.toBeInTheDocument()
+    expect(screen.queryByTestId('part-vc-segment')).not.toBeInTheDocument()
+    expect(screen.getByTestId('part-vc-step')).toHaveTextContent('13 / 30')
+    expect(screen.getByTestId('part-vc-narration-position')).toHaveTextContent('3 / 7')
+  })
+
+  it('does not show inactive message when hasActiveProgress is true', () => {
+    render(<PartVcProgressPanel progress={activeView} />)
+    expect(screen.queryByTestId('part-vc-inactive')).not.toBeInTheDocument()
+    expect(screen.queryByText('No VC conversion currently active')).not.toBeInTheDocument()
+  })
 })

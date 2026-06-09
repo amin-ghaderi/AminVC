@@ -5,8 +5,8 @@
       "intake_id": "narration",
       "request": {
         "chunk_index": 1,
-        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nکتاب صوتی زمان انتخاب با تهیه کنندگی امین قادری ، عضو حزب پادشاهی ایرانیان به قلم شاهزاده رضا پھلوی کتاب حاضر را به ھمۀ ھم ميھنانم تقديم می کنم . به پدران و مادرانی که طی دھه ھا در راه پيشرفت ايران و رفاه ملت کوشيده اند . به ھم نسلانم، نسل قربانی شده، که فرصت خدمتگزاری به ميھن را نيافت، اگرچه خود را برای ادامۀ راه و بردوش گرفتن مسئوليت ھا آماده می کرد . به کسانی که خوشبينانه به استقبال \" انقلاب \" رفتند، اما امروز از انتخاب خيش پشيمانند . به جوانان ھشيار و ھوشمندی که به اميد آينده ای بھتر برای خيش و برای ھمۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند .",
-        "prompt_char_count": 1568,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nماده ۱ ـ نام، هویت و جایگاه حقوقی پارمان الف) نام و عنوان رسمی پارمان نام رسمی این تشکل سیاسی «پارمان پادشاهی ایرانیان» است. به منظور پاسداشت و گسترش کاربرد زبان پارسی در اسناد و مکاتبات تشکیلاتی، در این اساسنامه واژه «پارمان» به عنوان برابر پارسی واژه «حزب» به کار می‌رود و در تمامی مواردی که از «پارمان» نام برده می‌شود، منظور «پارمان پادشاهی ایرانیان» است. ب) هویت پارمان پارمان یک تشکل سیاسی، مستقل، غیرانتفاعی و عضو‌محور است که بر پایه مشارکت داوطلبانه اعضا فعالیت می‌کند. پ) جایگاه حقوقی پارمان پارمان دارای شخصیت سازمانی مستقل بوده و حقوق، تعهدات، دارایی‌ها و مسئولیت‌های آن مستقل از اعضا، بنیان‌گذاران و مدیران پارمان می‌باشد. عضویت، استعفا، تغییر مسئولیت، عزل، فوت یا خروج اعضا، مدیران و بنیان‌گذاران تأثیری بر تداوم موجودیت، حقوق و تعهدات پارمان نخواهد داشت. مرکز اصلی پارمان در ایران خواهد بود و پارمان می‌تواند تا زمان فراهم شدن شرایط فعالیت رسمی در کشور، در خارج از ایران نیز دارای شعب، دفاتر، نمایندگی‌ها و فعالیت‌های تشکیلاتی باشد.",
+        "prompt_char_count": 1950,
         "config": {
           "model": "gemini-3.1-flash-tts-preview",
           "temperature": 1,
@@ -18,19 +18,19 @@
         },
         "continuity_note": "",
         "scene_context": "",
-        "transcript": "کتاب صوتی زمان انتخاب با تهیه کنندگی امین قادری ، عضو حزب پادشاهی ایرانیان به قلم شاهزاده رضا پھلوی کتاب حاضر را به ھمۀ ھم ميھنانم تقديم می کنم . به پدران و مادرانی که طی دھه ھا در راه پيشرفت ايران و رفاه ملت کوشيده اند . به ھم نسلانم، نسل قربانی شده، که فرصت خدمتگزاری به ميھن را نيافت، اگرچه خود را برای ادامۀ راه و بردوش گرفتن مسئوليت ھا آماده می کرد . به کسانی که خوشبينانه به استقبال \" انقلاب \" رفتند، اما امروز از انتخاب خيش پشيمانند . به جوانان ھشيار و ھوشمندی که به اميد آينده ای بھتر برای خيش و برای ھمۀ ايرانيان يک لحظه از تلاش و پيکار باز نايستاده اند .",
-        "transcript_char_count": 564,
+        "transcript": "ماده ۱ ـ نام، هویت و جایگاه حقوقی پارمان الف) نام و عنوان رسمی پارمان نام رسمی این تشکل سیاسی «پارمان پادشاهی ایرانیان» است. به منظور پاسداشت و گسترش کاربرد زبان پارسی در اسناد و مکاتبات تشکیلاتی، در این اساسنامه واژه «پارمان» به عنوان برابر پارسی واژه «حزب» به کار می‌رود و در تمامی مواردی که از «پارمان» نام برده می‌شود، منظور «پارمان پادشاهی ایرانیان» است. ب) هویت پارمان پارمان یک تشکل سیاسی، مستقل، غیرانتفاعی و عضو‌محور است که بر پایه مشارکت داوطلبانه اعضا فعالیت می‌کند. پ) جایگاه حقوقی پارمان پارمان دارای شخصیت سازمانی مستقل بوده و حقوق، تعهدات، دارایی‌ها و مسئولیت‌های آن مستقل از اعضا، بنیان‌گذاران و مدیران پارمان می‌باشد. عضویت، استعفا، تغییر مسئولیت، عزل، فوت یا خروج اعضا، مدیران و بنیان‌گذاران تأثیری بر تداوم موجودیت، حقوق و تعهدات پارمان نخواهد داشت. مرکز اصلی پارمان در ایران خواهد بود و پارمان می‌تواند تا زمان فراهم شدن شرایط فعالیت رسمی در کشور، در خارج از ایران نیز دارای شعب، دفاتر، نمایندگی‌ها و فعالیت‌های تشکیلاتی باشد.",
+        "transcript_char_count": 946,
         "token_name": "project-1",
         "attempt": 1
       },
       "response": {
         "success": true,
         "error": null,
-        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\0001\\parts\\part-01\\narration\\0001.wav",
-        "wav_size_bytes": 2793644,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\telegram\\parts\\part-01\\narration\\0001.wav",
+        "wav_size_bytes": 4978604,
         "mime_type": "audio/l16; rate=24000; channels=1",
-        "audio_bytes": 2793600,
-        "timestamp": 1780344699.5010254
+        "audio_bytes": 4978560,
+        "timestamp": 1781029391.450469
       }
     },
     {
@@ -38,8 +38,8 @@
       "intake_id": "narration",
       "request": {
         "chunk_index": 2,
-        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nاين کتاب را ھم چنين به خاطرۀ بی گناھان، قربانيان بی عدالتی ھای گذشته و حال تقديم می کنم . به خاطرۀ سربازانی که از تماميت ارضی ميھن دفاع کردند . به ھمۀ کسانی که ھم چنان برای آزادی، دموکراسی و حقوق بشر در پيکارند . من نيز ھمانند آنان، ھمواره به ايران جاويدان می انديشم و به آن وفاد ار خواھم بود . فصل اول انتخاب دموکر اتيک ميشل تُبمن : آقای رضا پھلوی ! شما پسره ارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد . نھاد پادشاھی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامی و تسلط مذھبيون بنيادگرا به رھبری روح الله خمینی برايران، واژگون شد .",
-        "prompt_char_count": 1545,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n-- ماده ۲ ـ اهداف و آرمان‌های پارمان پارمان با هدف پاسداری، ترویج و پیشبرد اندیشه پادشاهی ایرانی به عنوان نماد تداوم تاریخی ملت ایران، پاسدار یکپارچگی سرزمینی، حاکمیت قانون، آزادی‌های بنیادین شهروندان و پایداری دولت ملی فعالیت می‌نماید. پارمان می‌کوشد از طریق مشارکت سازمان‌یافته هموندان در حیات سیاسی کشور، زمینه تحقق حکمرانی مردم‌سالار، توسعه ملی، مسئولیت‌پذیری مدنی و پیشرفت پایدار ایران را فراهم آورد. اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان در مرامنامه تبیین و تفسیر می‌گردد.",
+        "prompt_char_count": 1501,
         "config": {
           "model": "gemini-3.1-flash-tts-preview",
           "temperature": 1,
@@ -51,19 +51,19 @@
         },
         "continuity_note": "",
         "scene_context": "",
-        "transcript": "اين کتاب را ھم چنين به خاطرۀ بی گناھان، قربانيان بی عدالتی ھای گذشته و حال تقديم می کنم . به خاطرۀ سربازانی که از تماميت ارضی ميھن دفاع کردند . به ھمۀ کسانی که ھم چنان برای آزادی، دموکراسی و حقوق بشر در پيکارند . من نيز ھمانند آنان، ھمواره به ايران جاويدان می انديشم و به آن وفاد ار خواھم بود . فصل اول انتخاب دموکر اتيک ميشل تُبمن : آقای رضا پھلوی ! شما پسره ارشد آخرين پادشاه ايران، محمد رضا شاه پھلوی، ھستيد . نھاد پادشاھی ايران در آغاز سال ۱۹۷۹ با پيروزی انقلاب اسلامی و تسلط مذھبيون بنيادگرا به رھبری روح الله خمینی برايران، واژگون شد .",
-        "transcript_char_count": 541,
+        "transcript": "-- ماده ۲ ـ اهداف و آرمان‌های پارمان پارمان با هدف پاسداری، ترویج و پیشبرد اندیشه پادشاهی ایرانی به عنوان نماد تداوم تاریخی ملت ایران، پاسدار یکپارچگی سرزمینی، حاکمیت قانون، آزادی‌های بنیادین شهروندان و پایداری دولت ملی فعالیت می‌نماید. پارمان می‌کوشد از طریق مشارکت سازمان‌یافته هموندان در حیات سیاسی کشور، زمینه تحقق حکمرانی مردم‌سالار، توسعه ملی، مسئولیت‌پذیری مدنی و پیشرفت پایدار ایران را فراهم آورد. اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان در مرامنامه تبیین و تفسیر می‌گردد.",
+        "transcript_char_count": 497,
         "token_name": "project-1",
         "attempt": 1
       },
       "response": {
         "success": true,
         "error": null,
-        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\0001\\parts\\part-01\\narration\\0002.wav",
-        "wav_size_bytes": 2580524,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\telegram\\parts\\part-01\\narration\\0002.wav",
+        "wav_size_bytes": 2630444,
         "mime_type": "audio/l16; rate=24000; channels=1",
-        "audio_bytes": 2580480,
-        "timestamp": 1780496814.5851479
+        "audio_bytes": 2630400,
+        "timestamp": 1781029424.5862484
       }
     },
     {
@@ -71,8 +71,8 @@
       "intake_id": "narration",
       "request": {
         "chunk_index": 3,
-        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nھنگامی که در نشريات نخستين سال ھای د ھۀ ھشتاد دهه‌ی هشتاد می نگريم، از عمق خطای مفسرانی شگفت زده می شويم که در آن دوران، فروپاشی سريع رژيم خمينی را پيش بينی می کردند . با خواندن کتابی که کريستيان مارک و آلن روديه در سال 1986 دربارۀ شما منتشر کردند، تصوير شاھزاده ای جوان و فعال را می يابيم که با شخ صيت ھايی که امروز در قيد حيات نيستند و غالبا، ھمانند شاپور بختيار، به قتل رسيدند، ھمراھی می شد . در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟",
-        "prompt_char_count": 1594,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nماده ۳ ـ اسناد بنیادین پارمان الف) اساسنامه اساسنامه عالی‌ترین سند سازمانی پارمان بوده و چارچوب حکمرانی، ارکان، حدود اختیارات، حقوق و تکالیف هموندان و نحوه اداره پارمان را تعیین می‌نماید. ب) مرامنامه مرامنامه بیان‌کننده اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان است. پ) آیین‌نامه‌ها آیین‌نامه‌ها به منظور تبیین فرآیندها، رویه‌ها و الزامات اجرایی در چارچوب اساسنامه و مرامنامه تدوین و تصویب می‌گردند. تبصره ۱- آیین‌نامه‌ها در چارچوب اساسنامه و مرامنامه تدوین می‌شوند و نمی‌توانند با مفاد آن‌ها مغایرت داشته باشند.",
+        "prompt_char_count": 1531,
         "config": {
           "model": "gemini-3.1-flash-tts-preview",
           "temperature": 1,
@@ -84,19 +84,19 @@
         },
         "continuity_note": "",
         "scene_context": "",
-        "transcript": "ھنگامی که در نشريات نخستين سال ھای د ھۀ ھشتاد دهه‌ی هشتاد می نگريم، از عمق خطای مفسرانی شگفت زده می شويم که در آن دوران، فروپاشی سريع رژيم خمينی را پيش بينی می کردند . با خواندن کتابی که کريستيان مارک و آلن روديه در سال 1986 دربارۀ شما منتشر کردند، تصوير شاھزاده ای جوان و فعال را می يابيم که با شخ صيت ھايی که امروز در قيد حيات نيستند و غالبا، ھمانند شاپور بختيار، به قتل رسيدند، ھمراھی می شد . در آن زمان شما نسبتا خوشبين به نظر می رسيديد و فکر می کرديد که بتوانيد به سرعت به ايران بازگرديد اما، سی سال پس از انقلاب ھم چنان شاھد ناگزير اُفت فعاليت ھای مخ الفان رژيم ھستيم چه روی داده است؟",
-        "transcript_char_count": 590,
+        "transcript": "ماده ۳ ـ اسناد بنیادین پارمان الف) اساسنامه اساسنامه عالی‌ترین سند سازمانی پارمان بوده و چارچوب حکمرانی، ارکان، حدود اختیارات، حقوق و تکالیف هموندان و نحوه اداره پارمان را تعیین می‌نماید. ب) مرامنامه مرامنامه بیان‌کننده اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان است. پ) آیین‌نامه‌ها آیین‌نامه‌ها به منظور تبیین فرآیندها، رویه‌ها و الزامات اجرایی در چارچوب اساسنامه و مرامنامه تدوین و تصویب می‌گردند. تبصره ۱- آیین‌نامه‌ها در چارچوب اساسنامه و مرامنامه تدوین می‌شوند و نمی‌توانند با مفاد آن‌ها مغایرت داشته باشند.",
+        "transcript_char_count": 527,
         "token_name": "project-1",
         "attempt": 1
       },
       "response": {
         "success": true,
         "error": null,
-        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\0001\\parts\\part-01\\narration\\0003.wav",
-        "wav_size_bytes": 2659244,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\telegram\\parts\\part-01\\narration\\0003.wav",
+        "wav_size_bytes": 2991404,
         "mime_type": "audio/l16; rate=24000; channels=1",
-        "audio_bytes": 2659200,
-        "timestamp": 1780590582.0183668
+        "audio_bytes": 2991360,
+        "timestamp": 1781029460.6078222
       }
     },
     {
@@ -233,5 +233,5 @@
     }
   ],
   "intake_id": "narration",
-  "updated_at": 1780590703.9071436
+  "updated_at": 1781029460.6217356
 }

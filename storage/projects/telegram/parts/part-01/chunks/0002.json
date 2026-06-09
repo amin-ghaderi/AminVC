@@ -1,0 +1,20 @@
+{
+  "chunk_id": 2,
+  "state": "VCFailed",
+  "narration_approved": true,
+  "vc_approved": false,
+  "text": "-- ماده ۲ ـ اهداف و آرمان‌های پارمان پارمان با هدف پاسداری، ترویج و پیشبرد اندیشه پادشاهی ایرانی به عنوان نماد تداوم تاریخی ملت ایران، پاسدار یکپارچگی سرزمینی، حاکمیت قانون، آزادی‌های بنیادین شهروندان و پایداری دولت ملی فعالیت می‌نماید. پارمان می‌کوشد از طریق مشارکت سازمان‌یافته هموندان در حیات سیاسی کشور، زمینه تحقق حکمرانی مردم‌سالار، توسعه ملی، مسئولیت‌پذیری مدنی و پیشرفت پایدار ایران را فراهم آورد. اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان در مرامنامه تبیین و تفسیر می‌گردد.",
+  "narration": {
+    "status": "ready",
+    "file": "narration/0002.wav",
+    "duration_seconds": null
+  },
+  "vc": {
+    "status": "",
+    "file": "vc/0002.wav",
+    "duration_seconds": null
+  },
+  "retry_count": 0,
+  "last_error": "Speaker worker failed health check: {'type': 'progress', 'chunk_id': 4, 'current_step': 8, 'total_steps': 30, 'segment_index': 1, 'segment_total': 5}",
+  "updated_at": "2026-06-09T18:48:53.813795+00:00"
+}
