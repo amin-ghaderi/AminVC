@@ -1,3 +1,4 @@
+import { WorkerControlButtons } from '@/components/worker/WorkerControlButtons'
 import { useWorkerStatus } from '@/hooks/useWorker'
 import { Skeleton } from '@/components/ui/skeleton'
 
@@ -22,6 +23,7 @@ export function WorkerWidget() {
         {data.running ? 'Running' : 'Stopped'}
       </div>
       <div className="text-[var(--color-muted-foreground)]">State: {data.state}</div>
+      <WorkerControlButtons running={data.running} className="mt-2 flex items-center gap-2" />
     </div>
   )
 }

@@ -19,6 +19,7 @@ import {
   useQueueSnapshotMonitor,
   useWorkerStatusMonitor,
 } from '@/hooks/useQueueMonitor'
+import { WorkerStoppedBanner } from '@/components/worker/WorkerStoppedBanner'
 import { useQueueMonitorStore } from '@/store/queueMonitorStore'
 
 export function QueueMonitorPage() {
@@ -72,6 +73,8 @@ export function QueueMonitorPage() {
           Operational queue visibility
         </p>
       </div>
+
+      <WorkerStoppedBanner />
 
       {snapshotQuery.isError ? (
         <p className="text-sm text-red-400" data-testid="queue-load-error">

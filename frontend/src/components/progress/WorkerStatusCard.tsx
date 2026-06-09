@@ -1,4 +1,5 @@
 import { Badge } from '@/components/ui/badge'
+import { WorkerControlButtons } from '@/components/worker/WorkerControlButtons'
 import type { WorkerStatus } from '@/types/api'
 
 export interface WorkerCardModel {
@@ -45,6 +46,11 @@ export function WorkerStatusCard({ workers }: WorkerStatusCardProps) {
             <p className="mt-2 text-sm text-[var(--color-muted-foreground)]">
               State: {worker.state}
             </p>
+            <WorkerControlButtons
+              running={worker.running}
+              size="sm"
+              className="mt-3 flex items-center gap-2"
+            />
           </div>
         ))}
       </div>

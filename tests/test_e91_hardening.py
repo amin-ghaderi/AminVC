@@ -59,6 +59,7 @@ def api_client(tmp_path: Path) -> TestClient:
         projects_root=tmp_path / "projects",
         queue_root=tmp_path / "queue",
         events_root=tmp_path / "events",
+        auto_start_worker=False,
     )
     services = ApplicationServices.create(settings)
     app = create_app(services)

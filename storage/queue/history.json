@@ -116,6 +116,19 @@
       "completed_at": "2026-06-04T16:31:43.917270+00:00",
       "attempts": 0,
       "last_error": null
+    },
+    {
+      "job_id": "79d5b9b33f2148ff9c0702031a540cb1",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 3,
+      "job_type": "vc",
+      "status": "completed",
+      "created_at": "2026-06-05T14:43:45.308119+00:00",
+      "started_at": "2026-06-05T14:43:45.812769+00:00",
+      "completed_at": "2026-06-05T15:33:02.001167+00:00",
+      "attempts": 0,
+      "last_error": null
     }
   ],
   "failed": [
@@ -183,6 +196,110 @@
       "completed_at": "2026-06-01T20:26:03.715585+00:00",
       "attempts": 1,
       "last_error": "reference audio not found for 0001/part-01"
+    },
+    {
+      "job_id": "c4247862762247f18754a097459135f4",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 4,
+      "job_type": "vc",
+      "status": "failed",
+      "created_at": "2026-06-05T15:40:23.883944+00:00",
+      "started_at": "2026-06-05T15:40:24.076219+00:00",
+      "completed_at": "2026-06-05T15:40:57.382201+00:00",
+      "attempts": 1,
+      "last_error": "Speaker conversion failed: {'type': 'error', 'message': 'non_json_output', 'detail': {'stdout_line': 'min value is  tensor(-1.1087)', 'stderr_tail': [' 47%|####6     | 14/30 [04:25<05:07, 19.24s/it]', ' 50%|#####     | 15/30 [04:44<04:48, 19.20s/it]', ' 53%|#####3    | 16/30 [05:03<04:27, 19.13s/it]', ' 57%|#####6    | 17/30 [05:22<04:07, 19.06s/it]', ' 60%|######    | 18/30 [05:41<03:47, 18.99s/it]', ' 63%|######3   | 19/30 [06:00<03:28, 19.00s/it]', ' 67%|######6   | 20/30 [06:19<03:08, 18.90s/it]', ' 70%|#######   | 21/30 [06:38<02:50, 18.97s/it]', ' 73%|#######3  | 22/30 [06:57<02:31, 18.95s/it]', ' 77%|#######6  | 23/30 [07:15<02:12, 18.88s/it]', ' 80%|########  | 24/30 [07:34<01:53, 18.91s/it]', ' 83%|########3 | 25/30 [07:54<01:35, 19.02s/it]', ' 87%|########6 | 26/30 [08:15<01:18, 19.73s/it]', ' 90%|######### | 27/30 [08:38<01:01, 20.63s/it]', ' 93%|#########3| 28/30 [08:58<00:40, 20.42s/it]', ' 97%|#########6| 29/30 [09:17<00:20, 20.15s/it]', '100%|##########| 30/30 [09:36<00:00, 19.76s/it]', '100%|##########| 30/30 [09:36<00:00, 19.22s/it]', '  0%|          | 0/30 [00:00<?, ?it/s]', '  3%|3         | 1/30 [00:14<07:06, 14.72s/it]', '  7%|6         | 2/30 [00:29<06:49, 14.64s/it]', ' 10%|#         | 3/30 [00:44<06:45, 15.01s/it]', ' 13%|#3        | 4/30 [00:59<06:27, 14.92s/it]', ' 17%|#6        | 5/30 [01:14<06:11, 14.86s/it]', ' 20%|##        | 6/30 [01:28<05:53, 14.75s/it]', ' 23%|##3       | 7/30 [01:43<05:39, 14.74s/it]', ' 27%|##6       | 8/30 [01:58<05:25, 14.78s/it]', ' 30%|###       | 9/30 [02:12<05:09, 14.72s/it]', ' 33%|###3      | 10/30 [02:27<04:53, 14.69s/it]', ' 37%|###6      | 11/30 [02:42<04:40, 14.74s/it]', ' 40%|####      | 12/30 [02:57<04:24, 14.71s/it]', ' 43%|####3     | 13/30 [03:13<04:20, 15.30s/it]', ' 47%|####6     | 14/30 [03:32<04:19, 16.24s/it]', ' 50%|#####     | 15/30 [03:50<04:12, 16.84s/it]', ' 53%|#####3    | 16/30 [04:05<03:47, 16.23s/it]', ' 57%|#####6    | 17/30 [04:19<03:24, 15.73s/it]', ' 60%|######    | 18/30 [04:34<03:04, 15.37s/it]', ' 63%|######3   | 19/30 [04:48<02:46, 15.11s/it]', ' 67%|######6   | 20/30 [05:03<02:29, 14.92s/it]', ' 70%|#######   | 21/30 [05:17<02:12, 14.76s/it]', ' 73%|#######3  | 22/30 [05:32<01:57, 14.65s/it]', ' 77%|#######6  | 23/30 [05:46<01:42, 14.61s/it]', ' 80%|########  | 24/30 [06:01<01:27, 14.61s/it]', ' 83%|########3 | 25/30 [06:15<01:12, 14.60s/it]', ' 87%|########6 | 26/30 [06:31<00:59, 14.90s/it]', ' 90%|######### | 27/30 [06:46<00:45, 15.04s/it]', ' 93%|#########3| 28/30 [07:02<00:30, 15.27s/it]', ' 97%|#########6| 29/30 [07:18<00:15, 15.35s/it]', '100%|##########| 30/30 [07:33<00:00, 15.42s/it]', '100%|##########| 30/30 [07:33<00:00, 15.12s/it]']}}"
+    },
+    {
+      "job_id": "23bb23fea2f54d3f8708b114ab8da4fd",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 5,
+      "job_type": "vc",
+      "status": "failed",
+      "created_at": "2026-06-05T15:40:28.811954+00:00",
+      "started_at": "2026-06-05T15:40:57.411129+00:00",
+      "completed_at": "2026-06-05T15:41:15.909955+00:00",
+      "attempts": 1,
+      "last_error": "Speaker worker failed health check: {'type': 'progress', 'chunk_id': 4, 'current_step': 1, 'total_steps': 30, 'segment_index': 1, 'segment_total': 5}"
+    },
+    {
+      "job_id": "6d9b3eeaae7242699cae42f01707202a",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 6,
+      "job_type": "vc",
+      "status": "failed",
+      "created_at": "2026-06-05T15:40:33.111617+00:00",
+      "started_at": "2026-06-05T15:41:15.934775+00:00",
+      "completed_at": "2026-06-05T15:41:34.160141+00:00",
+      "attempts": 1,
+      "last_error": "Speaker worker failed health check: {'type': 'progress', 'chunk_id': 4, 'current_step': 2, 'total_steps': 30, 'segment_index': 1, 'segment_total': 5}"
+    },
+    {
+      "job_id": "2c282be270324c13b0aa181f77a89a9c",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 7,
+      "job_type": "vc",
+      "status": "failed",
+      "created_at": "2026-06-05T15:40:36.509982+00:00",
+      "started_at": "2026-06-05T15:41:34.182385+00:00",
+      "completed_at": "2026-06-05T15:41:52.491833+00:00",
+      "attempts": 1,
+      "last_error": "Speaker worker failed health check: {'type': 'progress', 'chunk_id': 4, 'current_step': 3, 'total_steps': 30, 'segment_index': 1, 'segment_total': 5}"
+    },
+    {
+      "job_id": "4741c38c3b6e4058a3e521c9d2621bdb",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 4,
+      "job_type": "vc",
+      "status": "failed",
+      "created_at": "2026-06-05T16:32:07.033031+00:00",
+      "started_at": "2026-06-05T16:32:07.077473+00:00",
+      "completed_at": "2026-06-05T16:32:07.106574+00:00",
+      "attempts": 1,
+      "last_error": "Speaker worker failed health check: {'type': 'progress', 'chunk_id': 4, 'current_step': 4, 'total_steps': 30, 'segment_index': 1, 'segment_total': 5}"
+    },
+    {
+      "job_id": "a02fcdd2c6854107970c67d38963c4cc",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 4,
+      "job_type": "vc",
+      "status": "failed",
+      "created_at": "2026-06-05T16:32:38.840584+00:00",
+      "started_at": "2026-06-05T16:32:39.180866+00:00",
+      "completed_at": "2026-06-05T16:32:39.219379+00:00",
+      "attempts": 1,
+      "last_error": "Speaker worker failed health check: {'type': 'progress', 'chunk_id': 4, 'current_step': 5, 'total_steps': 30, 'segment_index': 1, 'segment_total': 5}"
+    },
+    {
+      "job_id": "b9d8eefc12a3410abc73e58fc82f9405",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 4,
+      "job_type": "vc",
+      "status": "failed",
+      "created_at": "2026-06-05T16:32:41.148798+00:00",
+      "started_at": "2026-06-05T16:32:41.241567+00:00",
+      "completed_at": "2026-06-05T16:32:41.265099+00:00",
+      "attempts": 1,
+      "last_error": "Speaker worker failed health check: {'type': 'progress', 'chunk_id': 4, 'current_step': 6, 'total_steps': 30, 'segment_index': 1, 'segment_total': 5}"
+    },
+    {
+      "job_id": "170d713358a34c46b1fbed6de8363f44",
+      "project_id": "0001",
+      "part_id": "part-01",
+      "chunk_id": 4,
+      "job_type": "vc",
+      "status": "failed",
+      "created_at": "2026-06-05T16:47:28.178372+00:00",
+      "started_at": "2026-06-05T16:47:29.026235+00:00",
+      "completed_at": "2026-06-05T16:47:29.059857+00:00",
+      "attempts": 1,
+      "last_error": "Speaker worker failed health check: {'type': 'progress', 'chunk_id': 4, 'current_step': 7, 'total_steps': 30, 'segment_index': 1, 'segment_total': 5}"
     }
   ],
   "cancelled": []

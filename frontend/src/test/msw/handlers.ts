@@ -209,6 +209,14 @@ export const handlers = [
     },
   ),
   http.get(`${API}/worker`, () => HttpResponse.json(workerStatus)),
+  http.post(`${API}/worker/start`, () => {
+    workerStatus = { ...workerStatus, running: true, state: 'IDLE' }
+    return HttpResponse.json({ status: 'started' })
+  }),
+  http.post(`${API}/worker/stop`, () => {
+    workerStatus = { ...workerStatus, running: false, state: 'STOPPED' }
+    return HttpResponse.json({ status: 'stopped' })
+  }),
   ...queueMonitorHandlers,
   ...buildManagerHandlers,
   ...workspaceHandlers,

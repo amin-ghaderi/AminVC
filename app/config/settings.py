@@ -76,4 +76,5 @@ class AppSettings:
     narration_base_url: str = "http://127.0.0.1:8000"
     narration_timeout_seconds: int = 30
     narration_poll_interval_seconds: float = 2.0
+    auto_start_worker: bool = True
 

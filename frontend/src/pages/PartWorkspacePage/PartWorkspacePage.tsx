@@ -17,6 +17,7 @@ import { getPart } from '@/api/parts'
 import { useQuery } from '@tanstack/react-query'
 import { usePartWorkspaceStore } from '@/store/partWorkspaceStore'
 import { useUiStore } from '@/store/uiStore'
+import { WorkerStoppedBanner } from '@/components/worker/WorkerStoppedBanner'
 
 export function PartWorkspacePage() {
   const { projectId, partId } = useParams<{
@@ -93,6 +94,7 @@ export function PartWorkspacePage() {
       >
         ← Back to project
       </Link>
+      <WorkerStoppedBanner />
       <PartHeader
         part={partQuery.data}
         summary={summaryQuery.data}

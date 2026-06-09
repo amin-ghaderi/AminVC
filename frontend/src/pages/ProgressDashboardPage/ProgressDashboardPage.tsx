@@ -10,6 +10,7 @@ import { useQueueJobsMonitor } from '@/hooks/useQueueMonitor'
 import { useWorkerStatusMonitor } from '@/hooks/useQueueMonitor'
 import { useDashboardPartVcProgress } from '@/hooks/usePartVcProgress'
 import { useRecentEventsMonitor } from '@/hooks/useVcProgressEvents'
+import { WorkerStoppedBanner } from '@/components/worker/WorkerStoppedBanner'
 
 export function ProgressDashboardPage() {
   const workerQuery = useWorkerStatusMonitor()
@@ -31,6 +32,8 @@ export function ProgressDashboardPage() {
           Long-running VC visibility
         </p>
       </div>
+
+      <WorkerStoppedBanner />
 
       {workerQuery.isError ? (
         <p className="text-sm text-red-400" data-testid="worker-load-error">
