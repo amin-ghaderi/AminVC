@@ -5,8 +5,8 @@
       "intake_id": "narration",
       "request": {
         "chunk_index": 1,
-        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nماده ۱ ـ نام، هویت و جایگاه حقوقی پارمان الف) نام و عنوان رسمی پارمان نام رسمی این تشکل سیاسی «پارمان پادشاهی ایرانیان» است. به منظور پاسداشت و گسترش کاربرد زبان پارسی در اسناد و مکاتبات تشکیلاتی، در این اساسنامه واژه «پارمان» به عنوان برابر پارسی واژه «حزب» به کار می‌رود و در تمامی مواردی که از «پارمان» نام برده می‌شود، منظور «پارمان پادشاهی ایرانیان» است. ب) هویت پارمان پارمان یک تشکل سیاسی، مستقل، غیرانتفاعی و عضو‌محور است که بر پایه مشارکت داوطلبانه اعضا فعالیت می‌کند. پ) جایگاه حقوقی پارمان پارمان دارای شخصیت سازمانی مستقل بوده و حقوق، تعهدات، دارایی‌ها و مسئولیت‌های آن مستقل از اعضا، بنیان‌گذاران و مدیران پارمان می‌باشد. عضویت، استعفا، تغییر مسئولیت، عزل، فوت یا خروج اعضا، مدیران و بنیان‌گذاران تأثیری بر تداوم موجودیت، حقوق و تعهدات پارمان نخواهد داشت. مرکز اصلی پارمان در ایران خواهد بود و پارمان می‌تواند تا زمان فراهم شدن شرایط فعالیت رسمی در کشور، در خارج از ایران نیز دارای شعب، دفاتر، نمایندگی‌ها و فعالیت‌های تشکیلاتی باشد.",
-        "prompt_char_count": 1950,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nدرود بر شما، شنوندگان گرامی روزنامه صوتی پارمان پادشاهی ایرانیان.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nبه‌تاریخ بیست‌ و چهارم خرداد ماهه سال دو هزار و پانصد و هشتاد و پنج شاهنشاهی، با رصد چند خبر مهم روز ایران در خدمت شما هستیم.",
+        "prompt_char_count": 1226,
         "config": {
           "model": "gemini-3.1-flash-tts-preview",
           "temperature": 1,
@@ -18,19 +18,19 @@
         },
         "continuity_note": "",
         "scene_context": "",
-        "transcript": "ماده ۱ ـ نام، هویت و جایگاه حقوقی پارمان الف) نام و عنوان رسمی پارمان نام رسمی این تشکل سیاسی «پارمان پادشاهی ایرانیان» است. به منظور پاسداشت و گسترش کاربرد زبان پارسی در اسناد و مکاتبات تشکیلاتی، در این اساسنامه واژه «پارمان» به عنوان برابر پارسی واژه «حزب» به کار می‌رود و در تمامی مواردی که از «پارمان» نام برده می‌شود، منظور «پارمان پادشاهی ایرانیان» است. ب) هویت پارمان پارمان یک تشکل سیاسی، مستقل، غیرانتفاعی و عضو‌محور است که بر پایه مشارکت داوطلبانه اعضا فعالیت می‌کند. پ) جایگاه حقوقی پارمان پارمان دارای شخصیت سازمانی مستقل بوده و حقوق، تعهدات، دارایی‌ها و مسئولیت‌های آن مستقل از اعضا، بنیان‌گذاران و مدیران پارمان می‌باشد. عضویت، استعفا، تغییر مسئولیت، عزل، فوت یا خروج اعضا، مدیران و بنیان‌گذاران تأثیری بر تداوم موجودیت، حقوق و تعهدات پارمان نخواهد داشت. مرکز اصلی پارمان در ایران خواهد بود و پارمان می‌تواند تا زمان فراهم شدن شرایط فعالیت رسمی در کشور، در خارج از ایران نیز دارای شعب، دفاتر، نمایندگی‌ها و فعالیت‌های تشکیلاتی باشد.",
-        "transcript_char_count": 946,
+        "transcript": "درود بر شما، شنوندگان گرامی روزنامه صوتی پارمان پادشاهی ایرانیان.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nبه‌تاریخ بیست‌ و چهارم خرداد ماهه سال دو هزار و پانصد و هشتاد و پنج شاهنشاهی، با رصد چند خبر مهم روز ایران در خدمت شما هستیم.",
+        "transcript_char_count": 222,
         "token_name": "project-1",
         "attempt": 1
       },
       "response": {
         "success": true,
         "error": null,
-        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\telegram\\parts\\part-01\\narration\\0001.wav",
-        "wav_size_bytes": 4978604,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\akhbar\\parts\\25850324\\narration\\0001.wav",
+        "wav_size_bytes": 931244,
         "mime_type": "audio/l16; rate=24000; channels=1",
-        "audio_bytes": 4978560,
-        "timestamp": 1781029391.450469
+        "audio_bytes": 931200,
+        "timestamp": 1781436764.1962967
       }
     },
     {
@@ -38,8 +38,8 @@
       "intake_id": "narration",
       "request": {
         "chunk_index": 2,
-        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n-- ماده ۲ ـ اهداف و آرمان‌های پارمان پارمان با هدف پاسداری، ترویج و پیشبرد اندیشه پادشاهی ایرانی به عنوان نماد تداوم تاریخی ملت ایران، پاسدار یکپارچگی سرزمینی، حاکمیت قانون، آزادی‌های بنیادین شهروندان و پایداری دولت ملی فعالیت می‌نماید. پارمان می‌کوشد از طریق مشارکت سازمان‌یافته هموندان در حیات سیاسی کشور، زمینه تحقق حکمرانی مردم‌سالار، توسعه ملی، مسئولیت‌پذیری مدنی و پیشرفت پایدار ایران را فراهم آورد. اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان در مرامنامه تبیین و تفسیر می‌گردد.",
-        "prompt_char_count": 1501,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nخبر ۱ | تهران امضای توافق را رد نکرد؛ گزینه «امضای الکترونیکی» مطرح شد\n\n\n\nبر اساس گزارش خبرگزاری‌های جریان اصلی، مقام‌های جمهوری اسلامی امروز برای نخستین بار احتمال امضای غیرحضوری یا الکترونیکی توافق با آمریکا را به‌طور کامل رد نکردند. منابع نزدیک به مذاکرات می‌گویند متن توافق تا حد زیادی آماده شده و اختلاف‌ها بیشتر بر سر نحوه اعلام و زمان‌بندی نهایی است. طرح امضای الکترونیکی نشان می‌دهد طرفین می‌خواهند بدون تشریفات سیاسی سنگین، توافق را سریع نهایی کنند.\n\n\n\nتحلیل پارمان:\n\nصرف مطرح شدن امضای الکترونیکی خود یک پیام روشن دارد: رژیم می‌خواهد توافق را با کمترین هزینه روانی و تبلیغاتی داخلی انجام دهد. این نشان می‌دهد جمهوری اسلامی حتی از نمایش علنی عقب‌نشینی خود نیز می ترسد.",
+        "prompt_char_count": 1681,
         "config": {
           "model": "gemini-3.1-flash-tts-preview",
           "temperature": 1,
@@ -51,19 +51,19 @@
         },
         "continuity_note": "",
         "scene_context": "",
-        "transcript": "-- ماده ۲ ـ اهداف و آرمان‌های پارمان پارمان با هدف پاسداری، ترویج و پیشبرد اندیشه پادشاهی ایرانی به عنوان نماد تداوم تاریخی ملت ایران، پاسدار یکپارچگی سرزمینی، حاکمیت قانون، آزادی‌های بنیادین شهروندان و پایداری دولت ملی فعالیت می‌نماید. پارمان می‌کوشد از طریق مشارکت سازمان‌یافته هموندان در حیات سیاسی کشور، زمینه تحقق حکمرانی مردم‌سالار، توسعه ملی، مسئولیت‌پذیری مدنی و پیشرفت پایدار ایران را فراهم آورد. اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان در مرامنامه تبیین و تفسیر می‌گردد.",
-        "transcript_char_count": 497,
+        "transcript": "خبر ۱ | تهران امضای توافق را رد نکرد؛ گزینه «امضای الکترونیکی» مطرح شد\n\n\n\nبر اساس گزارش خبرگزاری‌های جریان اصلی، مقام‌های جمهوری اسلامی امروز برای نخستین بار احتمال امضای غیرحضوری یا الکترونیکی توافق با آمریکا را به‌طور کامل رد نکردند. منابع نزدیک به مذاکرات می‌گویند متن توافق تا حد زیادی آماده شده و اختلاف‌ها بیشتر بر سر نحوه اعلام و زمان‌بندی نهایی است. طرح امضای الکترونیکی نشان می‌دهد طرفین می‌خواهند بدون تشریفات سیاسی سنگین، توافق را سریع نهایی کنند.\n\n\n\nتحلیل پارمان:\n\nصرف مطرح شدن امضای الکترونیکی خود یک پیام روشن دارد: رژیم می‌خواهد توافق را با کمترین هزینه روانی و تبلیغاتی داخلی انجام دهد. این نشان می‌دهد جمهوری اسلامی حتی از نمایش علنی عقب‌نشینی خود نیز می ترسد.",
+        "transcript_char_count": 677,
         "token_name": "project-1",
         "attempt": 1
       },
       "response": {
         "success": true,
         "error": null,
-        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\telegram\\parts\\part-01\\narration\\0002.wav",
-        "wav_size_bytes": 2630444,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\akhbar\\parts\\25850324\\narration\\0002.wav",
+        "wav_size_bytes": 3166124,
         "mime_type": "audio/l16; rate=24000; channels=1",
-        "audio_bytes": 2630400,
-        "timestamp": 1781029424.5862484
+        "audio_bytes": 3166080,
+        "timestamp": 1781437069.0296962
       }
     },
     {
@@ -71,8 +71,8 @@
       "intake_id": "narration",
       "request": {
         "chunk_index": 3,
-        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nماده ۳ ـ اسناد بنیادین پارمان الف) اساسنامه اساسنامه عالی‌ترین سند سازمانی پارمان بوده و چارچوب حکمرانی، ارکان، حدود اختیارات، حقوق و تکالیف هموندان و نحوه اداره پارمان را تعیین می‌نماید. ب) مرامنامه مرامنامه بیان‌کننده اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان است. پ) آیین‌نامه‌ها آیین‌نامه‌ها به منظور تبیین فرآیندها، رویه‌ها و الزامات اجرایی در چارچوب اساسنامه و مرامنامه تدوین و تصویب می‌گردند. تبصره ۱- آیین‌نامه‌ها در چارچوب اساسنامه و مرامنامه تدوین می‌شوند و نمی‌توانند با مفاد آن‌ها مغایرت داشته باشند.",
-        "prompt_char_count": 1531,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nخبر ۲ | اختلاف در تهران آشکارتر شد؛ سپاه نگران هزینه ایدئولوژیک توافق است\n\n\n\nبر اساس گزارش خبرگزاری‌های جریان اصلی، هم‌زمان با نزدیک شدن به توافق، اختلاف میان دولت، سپاه و جریان‌های تندرو آشکارتر شده است. رسانه‌های نزدیک به سپاه نسبت به امتیازدهی گسترده به آمریکا هشدار داده‌اند و برخی این توافق را عبور از خطوط قرمز ایدئولوژیک توصیف کرده‌اند.\n\n\n\nتحلیل پارمان:\nاین توافق فقط یک معامله سیاسی نیست؛ برای هسته ایدئولوژیک رژیم یک بحران هویتی عمیق است. جمهوری اسلامی سال‌ها مشروعیت خود را بر پایه دشمنی با آمریکا بنا کرده بود، اما امروز با همان دشمنی پای میز توافق نشسته که در روایت رسمی نظام، مسئول کشته شدن خامنه‌ای در جنگ شناخته می‌شود.\n\nاینکه رژیم حتی پیش از خاکسپاری خامنه‌ای ناچار شده با همان دشمن وارد توافق شود، یکی از روشن‌ترین نشانه‌های ضعف و شکست روانی نظام است. تنها گروه قلیل وفادار به نظام نیز مشروعیت خود را بر همین دشمنی بنا کرده بود و حالا با فرو ریختن این ستون هویتی، در معرض ریزش بیشتری قرار می‌گیرد.",
+        "prompt_char_count": 1918,
         "config": {
           "model": "gemini-3.1-flash-tts-preview",
           "temperature": 1,
@@ -84,19 +84,19 @@
         },
         "continuity_note": "",
         "scene_context": "",
-        "transcript": "ماده ۳ ـ اسناد بنیادین پارمان الف) اساسنامه اساسنامه عالی‌ترین سند سازمانی پارمان بوده و چارچوب حکمرانی، ارکان، حدود اختیارات، حقوق و تکالیف هموندان و نحوه اداره پارمان را تعیین می‌نماید. ب) مرامنامه مرامنامه بیان‌کننده اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان است. پ) آیین‌نامه‌ها آیین‌نامه‌ها به منظور تبیین فرآیندها، رویه‌ها و الزامات اجرایی در چارچوب اساسنامه و مرامنامه تدوین و تصویب می‌گردند. تبصره ۱- آیین‌نامه‌ها در چارچوب اساسنامه و مرامنامه تدوین می‌شوند و نمی‌توانند با مفاد آن‌ها مغایرت داشته باشند.",
-        "transcript_char_count": 527,
+        "transcript": "خبر ۲ | اختلاف در تهران آشکارتر شد؛ سپاه نگران هزینه ایدئولوژیک توافق است\n\n\n\nبر اساس گزارش خبرگزاری‌های جریان اصلی، هم‌زمان با نزدیک شدن به توافق، اختلاف میان دولت، سپاه و جریان‌های تندرو آشکارتر شده است. رسانه‌های نزدیک به سپاه نسبت به امتیازدهی گسترده به آمریکا هشدار داده‌اند و برخی این توافق را عبور از خطوط قرمز ایدئولوژیک توصیف کرده‌اند.\n\n\n\nتحلیل پارمان:\nاین توافق فقط یک معامله سیاسی نیست؛ برای هسته ایدئولوژیک رژیم یک بحران هویتی عمیق است. جمهوری اسلامی سال‌ها مشروعیت خود را بر پایه دشمنی با آمریکا بنا کرده بود، اما امروز با همان دشمنی پای میز توافق نشسته که در روایت رسمی نظام، مسئول کشته شدن خامنه‌ای در جنگ شناخته می‌شود.\n\nاینکه رژیم حتی پیش از خاکسپاری خامنه‌ای ناچار شده با همان دشمن وارد توافق شود، یکی از روشن‌ترین نشانه‌های ضعف و شکست روانی نظام است. تنها گروه قلیل وفادار به نظام نیز مشروعیت خود را بر همین دشمنی بنا کرده بود و حالا با فرو ریختن این ستون هویتی، در معرض ریزش بیشتری قرار می‌گیرد.",
+        "transcript_char_count": 914,
         "token_name": "project-1",
         "attempt": 1
       },
       "response": {
         "success": true,
         "error": null,
-        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\telegram\\parts\\part-01\\narration\\0003.wav",
-        "wav_size_bytes": 2991404,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\akhbar\\parts\\25850324\\narration\\0003.wav",
+        "wav_size_bytes": 4362284,
         "mime_type": "audio/l16; rate=24000; channels=1",
-        "audio_bytes": 2991360,
-        "timestamp": 1781029460.6078222
+        "audio_bytes": 4362240,
+        "timestamp": 1781437286.959649
       }
     },
     {
@@ -104,8 +104,8 @@
       "intake_id": "narration",
       "request": {
         "chunk_index": 4,
-        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nدر ارزيابی ھايتان کجا دچار خطا شديد؟ رضا پھلوی : واقعيت آن است که رژيم اسلامی در نخستين سال استقرارش شکننده به نظر می رسيد و مراکز قدرت و تصميم گيری چندان ھمآھنگ نبودند . ھمانند بسياری از ھم ميھنانم، من نيز توانايی و ارادۀ ر ھبران رژيم انقلابی را در تامين و تثبيت پايگاه ھای قدرت خويش به ھر بھايی که شده، دستِ کم گرفتم . ھنوز از بازگشت خمينی به ايران در اول فوريۀ ۱۹۷۹ چيزی نگذشته بود که او سرکوبی ترسناک و بی رحمانه را، نه فقط عليه مخالفانش، عليه نيروھای سکوBر چپ و ملی گرايی که و ی را به قدرت رسانده بودند، آغاز کرد .",
-        "prompt_char_count": 1523,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nخبر ۳ | افت مقطعی دلار پس از اخبار توافق؛ بازار وارد فاز انتظار شد\n\n\n\nبر اساس گزارش خبرگزاری‌های جریان اصلی، هم‌زمان با افزایش احتمال نهایی شدن توافق میان جمهوری اسلامی و آمریکا، بازار ارز در ایران واکنش فوری نشان داد و قیمت دلار با افتی مقطعی مواجه شد. این کاهش بیشتر ناشی از اثر روانی اخبار مذاکرات و افزایش امید کوتاه‌مدت در بازار بوده است. هم‌زمان برخی فعالان اقتصادی معتقدند بازار فعلاً در وضعیت انتظار قرار گرفته تا ابعاد دقیق توافق مشخص شود.\n\n\n\nتحلیل پارمان:\n\nاز نگاه پارمان، افت فعلی دلار بیشتر یک واکنش روانی و خبری است تا یک تغییر بنیادی در اقتصاد ایران. تجربه سال‌های گذشته نشان داده چنین کاهش‌هایی معمولاً کاذب و موقتی هستند.\n\n\n\nدلیل اصلی روشن است: بحران اقتصاد ایران ریشه در ساختار ناکارآمد جمهوری اسلامی دارد، نه صرفاً در تحریم‌ها. تا زمانی که مشکلات بنیادینی مانند کسری بودجه، فساد ساختاری، فرار سرمایه، بحران بانکی و بی‌اعتمادی عمومی پابرجاست، بازار خیلی زود به سطح قبلی خود بازمی‌گردد.",
+        "prompt_char_count": 1906,
         "config": {
           "model": "gemini-3.1-flash-tts-preview",
           "temperature": 1,
@@ -117,19 +117,19 @@
         },
         "continuity_note": "",
         "scene_context": "",
-        "transcript": "در ارزيابی ھايتان کجا دچار خطا شديد؟ رضا پھلوی : واقعيت آن است که رژيم اسلامی در نخستين سال استقرارش شکننده به نظر می رسيد و مراکز قدرت و تصميم گيری چندان ھمآھنگ نبودند . ھمانند بسياری از ھم ميھنانم، من نيز توانايی و ارادۀ ر ھبران رژيم انقلابی را در تامين و تثبيت پايگاه ھای قدرت خويش به ھر بھايی که شده، دستِ کم گرفتم . ھنوز از بازگشت خمينی به ايران در اول فوريۀ ۱۹۷۹ چيزی نگذشته بود که او سرکوبی ترسناک و بی رحمانه را، نه فقط عليه مخالفانش، عليه نيروھای سکوBر چپ و ملی گرايی که و ی را به قدرت رسانده بودند، آغاز کرد .",
-        "transcript_char_count": 519,
+        "transcript": "خبر ۳ | افت مقطعی دلار پس از اخبار توافق؛ بازار وارد فاز انتظار شد\n\n\n\nبر اساس گزارش خبرگزاری‌های جریان اصلی، هم‌زمان با افزایش احتمال نهایی شدن توافق میان جمهوری اسلامی و آمریکا، بازار ارز در ایران واکنش فوری نشان داد و قیمت دلار با افتی مقطعی مواجه شد. این کاهش بیشتر ناشی از اثر روانی اخبار مذاکرات و افزایش امید کوتاه‌مدت در بازار بوده است. هم‌زمان برخی فعالان اقتصادی معتقدند بازار فعلاً در وضعیت انتظار قرار گرفته تا ابعاد دقیق توافق مشخص شود.\n\n\n\nتحلیل پارمان:\n\nاز نگاه پارمان، افت فعلی دلار بیشتر یک واکنش روانی و خبری است تا یک تغییر بنیادی در اقتصاد ایران. تجربه سال‌های گذشته نشان داده چنین کاهش‌هایی معمولاً کاذب و موقتی هستند.\n\n\n\nدلیل اصلی روشن است: بحران اقتصاد ایران ریشه در ساختار ناکارآمد جمهوری اسلامی دارد، نه صرفاً در تحریم‌ها. تا زمانی که مشکلات بنیادینی مانند کسری بودجه، فساد ساختاری، فرار سرمایه، بحران بانکی و بی‌اعتمادی عمومی پابرجاست، بازار خیلی زود به سطح قبلی خود بازمی‌گردد.",
+        "transcript_char_count": 902,
         "token_name": "project-1",
         "attempt": 1
       },
       "response": {
         "success": true,
         "error": null,
-        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\0001\\parts\\part-01\\narration\\0004.wav",
-        "wav_size_bytes": 2530604,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\akhbar\\parts\\25850324\\narration\\0004.wav",
+        "wav_size_bytes": 4402604,
         "mime_type": "audio/l16; rate=24000; channels=1",
-        "audio_bytes": 2530560,
-        "timestamp": 1780590610.5335433
+        "audio_bytes": 4402560,
+        "timestamp": 1781436909.9410017
       }
     },
     {
@@ -137,8 +137,8 @@
       "intake_id": "narration",
       "request": {
         "chunk_index": 5,
-        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nما در آغاز متوجه نبوديم که انقلاب اسلامی پديده ای موقتی در تاريخ پُر تلاطم ايران و پرانتزساده ای که به سرعت بسته می شد، نيست . به بيان روشن تر، نظامی که پدرم مظھر و نماينده اش بود، در سال ۱۹۷۹ از ميان رفت و ھر نوع بازگشت ی به گذشته نه امکان پذيراست و نه مطلوب . از سی سال پيش ھمۀ تلاش و توانم را يکسره در راه مبارزه با رژيم و رھايی ايران به کار برده ام، در پی مرگ پدرم، شاه فقيد ايران در ژوئيۀ ۱۹۸۰ ، به عنوان وليعھد، وارد عرصۀ پيکار شدم . در اين سال ھا ھم با طرفداران نظام پاد شاھی مشروطه ھمکاری کرده ام و ھم با جمهوری خواھان، ھم با نيروھای چپ و ھم با نيروھای راست .",
-        "prompt_char_count": 1571,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nجمع‌بندی روز\n\n جمهوری اسلامی چه به سمت توافق برود و چه از آن عقب‌نشینی کند، وارد مرحله‌ای شده که مدیریت آن برایش بسیار دشوار است.\n\nدر صورت نهایی شدن تفاهم، رژیم وارد دوره‌ای از فرسایش، بحران هویتی و شکست ایدئولوژیک می‌شود. بحران هویتی از این جهت که جمهوری اسلامی سال‌ها مشروعیت خود را بر پایه دشمنی با آمریکا بنا کرده بود، اما امروز با همان دشمنی پای میز توافق نشسته که در روایت رسمی نظام، مسئول کشته شدن خامنه‌ای در جنگ شناخته می‌شود. اینکه رژیم حتی پیش از خاکسپاری رهبر خود ناچار به توافق با همان دشمن شده، یکی از عمیق‌ترین نشانه‌های شکست روانی و ایدئولوژیک آن است. این روند می‌تواند به ریزش در هسته سخت قدرت و شکاف بیشتر در بدنه نظام منجر شود.\n\nاز سوی دیگر، اگر جمهوری اسلامی از همکاری واقعی خودداری کند، دوباره به مسیر تقابل و جنگ بازمی‌گردد؛ مسیری که هزینه‌های آن برای رژیم سنگین‌تر از گذشته خواهد بود.\n\nدر بعد اقتصادی نیز حتی توافق به‌ تنهایی قادر به نجات اقتصاد ایران نیست. مشکلات ریشه‌ای مانند فساد ساختاری، کسری بودجه، فرار سرمایه و فروپاشی اعتماد عمومی همچنان پابرجاست. به‌ویژه در ماه‌های اخیر، با افزایش احساس نااطمینانی در بدنه حاکمیت، حجم فساد در لایه‌های مختلف قدرت به شکل بی‌سابقه‌ای افزایش یافته؛ مسئله‌ای که نشان می‌دهد جمهوری اسلامی توان بازسازی اقتصاد ایران را ندارد.",
+        "prompt_char_count": 2190,
         "config": {
           "model": "gemini-3.1-flash-tts-preview",
           "temperature": 1,
@@ -150,19 +150,19 @@
         },
         "continuity_note": "",
         "scene_context": "",
-        "transcript": "ما در آغاز متوجه نبوديم که انقلاب اسلامی پديده ای موقتی در تاريخ پُر تلاطم ايران و پرانتزساده ای که به سرعت بسته می شد، نيست . به بيان روشن تر، نظامی که پدرم مظھر و نماينده اش بود، در سال ۱۹۷۹ از ميان رفت و ھر نوع بازگشت ی به گذشته نه امکان پذيراست و نه مطلوب . از سی سال پيش ھمۀ تلاش و توانم را يکسره در راه مبارزه با رژيم و رھايی ايران به کار برده ام، در پی مرگ پدرم، شاه فقيد ايران در ژوئيۀ ۱۹۸۰ ، به عنوان وليعھد، وارد عرصۀ پيکار شدم . در اين سال ھا ھم با طرفداران نظام پاد شاھی مشروطه ھمکاری کرده ام و ھم با جمهوری خواھان، ھم با نيروھای چپ و ھم با نيروھای راست .",
-        "transcript_char_count": 567,
+        "transcript": "جمع‌بندی روز\n\n جمهوری اسلامی چه به سمت توافق برود و چه از آن عقب‌نشینی کند، وارد مرحله‌ای شده که مدیریت آن برایش بسیار دشوار است.\n\nدر صورت نهایی شدن تفاهم، رژیم وارد دوره‌ای از فرسایش، بحران هویتی و شکست ایدئولوژیک می‌شود. بحران هویتی از این جهت که جمهوری اسلامی سال‌ها مشروعیت خود را بر پایه دشمنی با آمریکا بنا کرده بود، اما امروز با همان دشمنی پای میز توافق نشسته که در روایت رسمی نظام، مسئول کشته شدن خامنه‌ای در جنگ شناخته می‌شود. اینکه رژیم حتی پیش از خاکسپاری رهبر خود ناچار به توافق با همان دشمن شده، یکی از عمیق‌ترین نشانه‌های شکست روانی و ایدئولوژیک آن است. این روند می‌تواند به ریزش در هسته سخت قدرت و شکاف بیشتر در بدنه نظام منجر شود.\n\nاز سوی دیگر، اگر جمهوری اسلامی از همکاری واقعی خودداری کند، دوباره به مسیر تقابل و جنگ بازمی‌گردد؛ مسیری که هزینه‌های آن برای رژیم سنگین‌تر از گذشته خواهد بود.\n\nدر بعد اقتصادی نیز حتی توافق به‌ تنهایی قادر به نجات اقتصاد ایران نیست. مشکلات ریشه‌ای مانند فساد ساختاری، کسری بودجه، فرار سرمایه و فروپاشی اعتماد عمومی همچنان پابرجاست. به‌ویژه در ماه‌های اخیر، با افزایش احساس نااطمینانی در بدنه حاکمیت، حجم فساد در لایه‌های مختلف قدرت به شکل بی‌سابقه‌ای افزایش یافته؛ مسئله‌ای که نشان می‌دهد جمهوری اسلامی توان بازسازی اقتصاد ایران را ندارد.",
+        "transcript_char_count": 1186,
         "token_name": "project-1",
         "attempt": 1
       },
       "response": {
         "success": true,
         "error": null,
-        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\0001\\parts\\part-01\\narration\\0005.wav",
-        "wav_size_bytes": 2799404,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\akhbar\\parts\\25850324\\narration\\0005.wav",
+        "wav_size_bytes": 5497004,
         "mime_type": "audio/l16; rate=24000; channels=1",
-        "audio_bytes": 2799360,
-        "timestamp": 1780590646.8693743
+        "audio_bytes": 5496960,
+        "timestamp": 1781437411.8280718
       }
     },
     {
@@ -170,8 +170,8 @@
       "intake_id": "narration",
       "request": {
         "chunk_index": 6,
-        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nدر واقع، فعاليتم را به عنوان مخالف حکومت اسلامی از ھويت نھادی ام جدا کرده ام . بی ھيچ ابھا می، خوا ستار يک قانون اساسی دموکراتيک عرفی برای ايران ھستم که بر اعلاميۀ جھانی حقوق بشر استوار شده باشد . اين رژيم دموکراتيک و عرفی می تواند دو شکل به خود بگيرد : اگر اکثريت مردم ايران يک حکومت پادشاھی مُدرن و پارلمانی را برگزينند ) نظير آنچه که امروز در نروژ، سوئد، ھلند، اسپانيا يا ژاپن می بينيم ( از اين انتخاب خرسند خواھم شد و اين گز ينه ای است که من نمايندگی می کنم . اما اگر اکثريت ايرانيان موافقت خود را با يک جمهوری پارلمانی اعلام کنند، طبيعتا چنين انتخابی را نيز خواھم پذيرفت .",
-        "prompt_char_count": 1581,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nمجیدرضا رهنورد تنها یک نام نیست؛ او پایان یک تاریکی طولانی و آغاز بیداری ماست. جوانی که با آخرین کلامش، زنجیر خرافه را از پای ایران باز کرد و گفت: ------------------------------------------------------------------------------------------------------------------------- bakhsh dovom --------------------------------------\n\n\n\n\n\n\n\nامروز، پژواک صدای او را در رقص و پایکوبی خانواده‌های داغدار بر مزار جان‌باختگان دی‌ماه می‌بینیم. آن‌ها با رقص خود، بر بساط جهل و تاریکی خط بطلان کشیدند.\n\n\n\n\n\n\n\nاین دیگر سوگواری نیست؛ این رستاخیز یک ملت و بازگشت شکوهمندانه ما به ریشه و اصالت ایرانی‌مان است. راه مجیدرضا، راه زندگی و مسیر روشن ما به سوی ایرانی آزاد و آباد است.",
+        "prompt_char_count": 1657,
         "config": {
           "model": "gemini-3.1-flash-tts-preview",
           "temperature": 1,
@@ -183,19 +183,19 @@
         },
         "continuity_note": "",
         "scene_context": "",
-        "transcript": "در واقع، فعاليتم را به عنوان مخالف حکومت اسلامی از ھويت نھادی ام جدا کرده ام . بی ھيچ ابھا می، خوا ستار يک قانون اساسی دموکراتيک عرفی برای ايران ھستم که بر اعلاميۀ جھانی حقوق بشر استوار شده باشد . اين رژيم دموکراتيک و عرفی می تواند دو شکل به خود بگيرد : اگر اکثريت مردم ايران يک حکومت پادشاھی مُدرن و پارلمانی را برگزينند ) نظير آنچه که امروز در نروژ، سوئد، ھلند، اسپانيا يا ژاپن می بينيم ( از اين انتخاب خرسند خواھم شد و اين گز ينه ای است که من نمايندگی می کنم . اما اگر اکثريت ايرانيان موافقت خود را با يک جمهوری پارلمانی اعلام کنند، طبيعتا چنين انتخابی را نيز خواھم پذيرفت .",
-        "transcript_char_count": 577,
+        "transcript": "مجیدرضا رهنورد تنها یک نام نیست؛ او پایان یک تاریکی طولانی و آغاز بیداری ماست. جوانی که با آخرین کلامش، زنجیر خرافه را از پای ایران باز کرد و گفت: ------------------------------------------------------------------------------------------------------------------------- bakhsh dovom --------------------------------------\n\n\n\n\n\n\n\nامروز، پژواک صدای او را در رقص و پایکوبی خانواده‌های داغدار بر مزار جان‌باختگان دی‌ماه می‌بینیم. آن‌ها با رقص خود، بر بساط جهل و تاریکی خط بطلان کشیدند.\n\n\n\n\n\n\n\nاین دیگر سوگواری نیست؛ این رستاخیز یک ملت و بازگشت شکوهمندانه ما به ریشه و اصالت ایرانی‌مان است. راه مجیدرضا، راه زندگی و مسیر روشن ما به سوی ایرانی آزاد و آباد است.",
+        "transcript_char_count": 653,
         "token_name": "project-1",
         "attempt": 1
       },
       "response": {
         "success": true,
         "error": null,
-        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\0001\\parts\\part-01\\narration\\0006.wav",
-        "wav_size_bytes": 2618924,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\akhbar\\parts\\25850324\\narration\\0006.wav",
+        "wav_size_bytes": 2275244,
         "mime_type": "audio/l16; rate=24000; channels=1",
-        "audio_bytes": 2618880,
-        "timestamp": 1780590675.0451021
+        "audio_bytes": 2275200,
+        "timestamp": 1781545631.6714833
       }
     },
     {
@@ -203,8 +203,8 @@
       "intake_id": "narration",
       "request": {
         "chunk_index": 7,
-        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nاما امروز بحث کردن در مورد شکل حکومت آينده زودرس است . پيش از آن که چپ باشيم يا راست، مدافع حکومت پادشاھی باشي م يا جمهوری خواه، ما دموکرات ھای عرفی گرايی ھستيم که می خواھيم به نظام حکومت دينی در ايران پايان دھيم . امروز مھم مخالفت اساسی و بدون سازش ما با جمهوری اسلامی است . نمی توان در اين مورد موضع بينابينی داشت . يا بايد مدافع جمهوری اسلامی بود يا مخالف آن . در اين جا روی سخن من با طرفداران جمهوری اسلامی نيست . اما کسانی که مخالف نظام کنونی ھستند بايد با يکديگر گفتگو کنند و به جبھۀ واحدی برسند . در اين راستا ضروری است مرحلۀ نوينی را پشت سر بگذاريم .",
-        "prompt_char_count": 1562,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nامروز جلسه ، برگزار شد",
+        "prompt_char_count": 1026,
         "config": {
           "model": "gemini-3.1-flash-tts-preview",
           "temperature": 1,
@@ -216,22 +216,88 @@
         },
         "continuity_note": "",
         "scene_context": "",
-        "transcript": "اما امروز بحث کردن در مورد شکل حکومت آينده زودرس است . پيش از آن که چپ باشيم يا راست، مدافع حکومت پادشاھی باشي م يا جمهوری خواه، ما دموکرات ھای عرفی گرايی ھستيم که می خواھيم به نظام حکومت دينی در ايران پايان دھيم . امروز مھم مخالفت اساسی و بدون سازش ما با جمهوری اسلامی است . نمی توان در اين مورد موضع بينابينی داشت . يا بايد مدافع جمهوری اسلامی بود يا مخالف آن . در اين جا روی سخن من با طرفداران جمهوری اسلامی نيست . اما کسانی که مخالف نظام کنونی ھستند بايد با يکديگر گفتگو کنند و به جبھۀ واحدی برسند . در اين راستا ضروری است مرحلۀ نوينی را پشت سر بگذاريم .",
-        "transcript_char_count": 558,
+        "transcript": "امروز جلسه ، برگزار شد",
+        "transcript_char_count": 22,
         "token_name": "project-1",
         "attempt": 1
       },
       "response": {
         "success": true,
         "error": null,
-        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\0001\\parts\\part-01\\narration\\0007.wav",
-        "wav_size_bytes": 2501804,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\akhbar\\parts\\25850324\\narration\\0007.wav",
+        "wav_size_bytes": 170924,
         "mime_type": "audio/l16; rate=24000; channels=1",
-        "audio_bytes": 2501760,
-        "timestamp": 1780590703.899778
+        "audio_bytes": 170880,
+        "timestamp": 1781461490.4492683
+      }
+    },
+    {
+      "chunk_index": 8,
+      "intake_id": "narration",
+      "request": {
+        "chunk_index": 8,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nامروز جلسه ، برگزار شد",
+        "prompt_char_count": 1026,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "",
+        "scene_context": "",
+        "transcript": "امروز جلسه ، برگزار شد",
+        "transcript_char_count": 22,
+        "token_name": "project-1",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\akhbar\\parts\\25850324\\narration\\0008.wav",
+        "wav_size_bytes": 142124,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 142080,
+        "timestamp": 1781461504.8912935
+      }
+    },
+    {
+      "chunk_index": 9,
+      "intake_id": "narration",
+      "request": {
+        "chunk_index": 9,
+        "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nمجیدرضا رهنورد تنها یک نام نیست؛ او پایان یک تاریکی طولانی و آغاز بیداری ماست. جوانی که با آخرین کلامش، زنجیر خرافه را از پای ایران باز کرد و گفت: ------------------------------------------------------------------------------------------------------------------------- bakhsh dovom --------------------------------------\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nامروز، پژواک صدای او را در رقص و پایکوبی خانواده‌های داغدار بر مزار جان‌باختگان دی‌ماه می‌بینیم. آن‌ها با رقص خود، بر بساط جهل و تاریکی خط بطلان کشیدند.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nاین دیگر سوگواری نیست؛ این رستاخیز یک ملت و بازگشت شکوهمندانه ما به ریشه و اصالت ایرانی‌مان است. راه مجیدرضا، راه زندگی و مسیر روشن ما به سوی ایرانی آزاد و آباد است.",
+        "prompt_char_count": 1673,
+        "config": {
+          "model": "gemini-3.1-flash-tts-preview",
+          "temperature": 1,
+          "voice_name": "Sulafat",
+          "response_modalities": [
+            "audio"
+          ],
+          "speech_mode": "single_speaker"
+        },
+        "continuity_note": "",
+        "scene_context": "",
+        "transcript": "مجیدرضا رهنورد تنها یک نام نیست؛ او پایان یک تاریکی طولانی و آغاز بیداری ماست. جوانی که با آخرین کلامش، زنجیر خرافه را از پای ایران باز کرد و گفت: ------------------------------------------------------------------------------------------------------------------------- bakhsh dovom --------------------------------------\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nامروز، پژواک صدای او را در رقص و پایکوبی خانواده‌های داغدار بر مزار جان‌باختگان دی‌ماه می‌بینیم. آن‌ها با رقص خود، بر بساط جهل و تاریکی خط بطلان کشیدند.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nاین دیگر سوگواری نیست؛ این رستاخیز یک ملت و بازگشت شکوهمندانه ما به ریشه و اصالت ایرانی‌مان است. راه مجیدرضا، راه زندگی و مسیر روشن ما به سوی ایرانی آزاد و آباد است.",
+        "transcript_char_count": 669,
+        "token_name": "project-1",
+        "attempt": 1
+      },
+      "response": {
+        "success": true,
+        "error": null,
+        "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\akhbar\\parts\\25850323\\narration\\0009.wav",
+        "wav_size_bytes": 2632364,
+        "mime_type": "audio/l16; rate=24000; channels=1",
+        "audio_bytes": 2632320,
+        "timestamp": 1781545821.7890952
       }
     }
   ],
   "intake_id": "narration",
-  "updated_at": 1781029460.6217356
+  "updated_at": 1781545821.8213818
 }

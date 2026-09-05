@@ -3,8 +3,8 @@
   "intake_id": "narration",
   "request": {
     "chunk_index": 4,
-    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nدر ارزيابی ھايتان کجا دچار خطا شديد؟ رضا پھلوی : واقعيت آن است که رژيم اسلامی در نخستين سال استقرارش شکننده به نظر می رسيد و مراکز قدرت و تصميم گيری چندان ھمآھنگ نبودند . ھمانند بسياری از ھم ميھنانم، من نيز توانايی و ارادۀ ر ھبران رژيم انقلابی را در تامين و تثبيت پايگاه ھای قدرت خويش به ھر بھايی که شده، دستِ کم گرفتم . ھنوز از بازگشت خمينی به ايران در اول فوريۀ ۱۹۷۹ چيزی نگذشته بود که او سرکوبی ترسناک و بی رحمانه را، نه فقط عليه مخالفانش، عليه نيروھای سکوBر چپ و ملی گرايی که و ی را به قدرت رسانده بودند، آغاز کرد .",
-    "prompt_char_count": 1523,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nخبر ۳ | افت مقطعی دلار پس از اخبار توافق؛ بازار وارد فاز انتظار شد\n\n\n\nبر اساس گزارش خبرگزاری‌های جریان اصلی، هم‌زمان با افزایش احتمال نهایی شدن توافق میان جمهوری اسلامی و آمریکا، بازار ارز در ایران واکنش فوری نشان داد و قیمت دلار با افتی مقطعی مواجه شد. این کاهش بیشتر ناشی از اثر روانی اخبار مذاکرات و افزایش امید کوتاه‌مدت در بازار بوده است. هم‌زمان برخی فعالان اقتصادی معتقدند بازار فعلاً در وضعیت انتظار قرار گرفته تا ابعاد دقیق توافق مشخص شود.\n\n\n\nتحلیل پارمان:\n\nاز نگاه پارمان، افت فعلی دلار بیشتر یک واکنش روانی و خبری است تا یک تغییر بنیادی در اقتصاد ایران. تجربه سال‌های گذشته نشان داده چنین کاهش‌هایی معمولاً کاذب و موقتی هستند.\n\n\n\nدلیل اصلی روشن است: بحران اقتصاد ایران ریشه در ساختار ناکارآمد جمهوری اسلامی دارد، نه صرفاً در تحریم‌ها. تا زمانی که مشکلات بنیادینی مانند کسری بودجه، فساد ساختاری، فرار سرمایه، بحران بانکی و بی‌اعتمادی عمومی پابرجاست، بازار خیلی زود به سطح قبلی خود بازمی‌گردد.",
+    "prompt_char_count": 1906,
     "config": {
       "model": "gemini-3.1-flash-tts-preview",
       "temperature": 1,
@@ -16,18 +16,18 @@
     },
     "continuity_note": "",
     "scene_context": "",
-    "transcript": "در ارزيابی ھايتان کجا دچار خطا شديد؟ رضا پھلوی : واقعيت آن است که رژيم اسلامی در نخستين سال استقرارش شکننده به نظر می رسيد و مراکز قدرت و تصميم گيری چندان ھمآھنگ نبودند . ھمانند بسياری از ھم ميھنانم، من نيز توانايی و ارادۀ ر ھبران رژيم انقلابی را در تامين و تثبيت پايگاه ھای قدرت خويش به ھر بھايی که شده، دستِ کم گرفتم . ھنوز از بازگشت خمينی به ايران در اول فوريۀ ۱۹۷۹ چيزی نگذشته بود که او سرکوبی ترسناک و بی رحمانه را، نه فقط عليه مخالفانش، عليه نيروھای سکوBر چپ و ملی گرايی که و ی را به قدرت رسانده بودند، آغاز کرد .",
-    "transcript_char_count": 519,
+    "transcript": "خبر ۳ | افت مقطعی دلار پس از اخبار توافق؛ بازار وارد فاز انتظار شد\n\n\n\nبر اساس گزارش خبرگزاری‌های جریان اصلی، هم‌زمان با افزایش احتمال نهایی شدن توافق میان جمهوری اسلامی و آمریکا، بازار ارز در ایران واکنش فوری نشان داد و قیمت دلار با افتی مقطعی مواجه شد. این کاهش بیشتر ناشی از اثر روانی اخبار مذاکرات و افزایش امید کوتاه‌مدت در بازار بوده است. هم‌زمان برخی فعالان اقتصادی معتقدند بازار فعلاً در وضعیت انتظار قرار گرفته تا ابعاد دقیق توافق مشخص شود.\n\n\n\nتحلیل پارمان:\n\nاز نگاه پارمان، افت فعلی دلار بیشتر یک واکنش روانی و خبری است تا یک تغییر بنیادی در اقتصاد ایران. تجربه سال‌های گذشته نشان داده چنین کاهش‌هایی معمولاً کاذب و موقتی هستند.\n\n\n\nدلیل اصلی روشن است: بحران اقتصاد ایران ریشه در ساختار ناکارآمد جمهوری اسلامی دارد، نه صرفاً در تحریم‌ها. تا زمانی که مشکلات بنیادینی مانند کسری بودجه، فساد ساختاری، فرار سرمایه، بحران بانکی و بی‌اعتمادی عمومی پابرجاست، بازار خیلی زود به سطح قبلی خود بازمی‌گردد.",
+    "transcript_char_count": 902,
     "token_name": "project-1",
     "attempt": 1
   },
   "response": {
     "success": true,
     "error": null,
-    "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\0001\\parts\\part-01\\narration\\0004.wav",
-    "wav_size_bytes": 2530604,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\akhbar\\parts\\25850324\\narration\\0004.wav",
+    "wav_size_bytes": 4402604,
     "mime_type": "audio/l16; rate=24000; channels=1",
-    "audio_bytes": 2530560,
-    "timestamp": 1780590610.5335433
+    "audio_bytes": 4402560,
+    "timestamp": 1781436909.9410017
   }
 }

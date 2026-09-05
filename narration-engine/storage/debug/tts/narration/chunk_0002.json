@@ -3,8 +3,8 @@
   "intake_id": "narration",
   "request": {
     "chunk_index": 2,
-    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\n-- ماده ۲ ـ اهداف و آرمان‌های پارمان پارمان با هدف پاسداری، ترویج و پیشبرد اندیشه پادشاهی ایرانی به عنوان نماد تداوم تاریخی ملت ایران، پاسدار یکپارچگی سرزمینی، حاکمیت قانون، آزادی‌های بنیادین شهروندان و پایداری دولت ملی فعالیت می‌نماید. پارمان می‌کوشد از طریق مشارکت سازمان‌یافته هموندان در حیات سیاسی کشور، زمینه تحقق حکمرانی مردم‌سالار، توسعه ملی، مسئولیت‌پذیری مدنی و پیشرفت پایدار ایران را فراهم آورد. اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان در مرامنامه تبیین و تفسیر می‌گردد.",
-    "prompt_char_count": 1501,
+    "prompt": "Read the following Persian audiobook narration.\n\n# Director's note\n\nStyle:\nWarm, emotionally engaging, cinematic, deeply human.\n\nVoice:\nSingle narrator only — use prebuilt voice Sulafat for the entire audiobook.\nWarm masculine Persian narrator.\nDeep but soft voice.\nProfessional audiobook quality.\nNatural Persian pronunciation.\nDo not switch voices or introduce a second speaker.\n\nPacing:\nNatural pacing.\nNot too slow.\nNot robotic.\nSmooth storytelling rhythm.\n\nEmotion:\nWarm, reflective, emotionally engaging.\nSpeak naturally like a premium Persian audiobook narrator telling an important life story.\n\nAvoid:\nMonotone voice.\nCold documentary tone.\nExcessive slowness.\nOverly dramatic acting.\n\n## Sample Context:\nA premium Persian audiobook narrator telling an important life story in a warm, emotionally engaging, cinematic way. Natural pacing, warm emotional depth, human sounding voice.\n\n## Transcript (single narrator — Sulafat):\n\nNarration:\n[speak warmly]\n[natural pacing]\n[cinematic]\n[human tone]\n\nخبر ۱ | تهران امضای توافق را رد نکرد؛ گزینه «امضای الکترونیکی» مطرح شد\n\n\n\nبر اساس گزارش خبرگزاری‌های جریان اصلی، مقام‌های جمهوری اسلامی امروز برای نخستین بار احتمال امضای غیرحضوری یا الکترونیکی توافق با آمریکا را به‌طور کامل رد نکردند. منابع نزدیک به مذاکرات می‌گویند متن توافق تا حد زیادی آماده شده و اختلاف‌ها بیشتر بر سر نحوه اعلام و زمان‌بندی نهایی است. طرح امضای الکترونیکی نشان می‌دهد طرفین می‌خواهند بدون تشریفات سیاسی سنگین، توافق را سریع نهایی کنند.\n\n\n\nتحلیل پارمان:\n\nصرف مطرح شدن امضای الکترونیکی خود یک پیام روشن دارد: رژیم می‌خواهد توافق را با کمترین هزینه روانی و تبلیغاتی داخلی انجام دهد. این نشان می‌دهد جمهوری اسلامی حتی از نمایش علنی عقب‌نشینی خود نیز می ترسد.",
+    "prompt_char_count": 1681,
     "config": {
       "model": "gemini-3.1-flash-tts-preview",
       "temperature": 1,
@@ -16,18 +16,18 @@
     },
     "continuity_note": "",
     "scene_context": "",
-    "transcript": "-- ماده ۲ ـ اهداف و آرمان‌های پارمان پارمان با هدف پاسداری، ترویج و پیشبرد اندیشه پادشاهی ایرانی به عنوان نماد تداوم تاریخی ملت ایران، پاسدار یکپارچگی سرزمینی، حاکمیت قانون، آزادی‌های بنیادین شهروندان و پایداری دولت ملی فعالیت می‌نماید. پارمان می‌کوشد از طریق مشارکت سازمان‌یافته هموندان در حیات سیاسی کشور، زمینه تحقق حکمرانی مردم‌سالار، توسعه ملی، مسئولیت‌پذیری مدنی و پیشرفت پایدار ایران را فراهم آورد. اصول فکری، ارزش‌ها، آرمان‌ها و جهت‌گیری‌های سیاسی پارمان در مرامنامه تبیین و تفسیر می‌گردد.",
-    "transcript_char_count": 497,
+    "transcript": "خبر ۱ | تهران امضای توافق را رد نکرد؛ گزینه «امضای الکترونیکی» مطرح شد\n\n\n\nبر اساس گزارش خبرگزاری‌های جریان اصلی، مقام‌های جمهوری اسلامی امروز برای نخستین بار احتمال امضای غیرحضوری یا الکترونیکی توافق با آمریکا را به‌طور کامل رد نکردند. منابع نزدیک به مذاکرات می‌گویند متن توافق تا حد زیادی آماده شده و اختلاف‌ها بیشتر بر سر نحوه اعلام و زمان‌بندی نهایی است. طرح امضای الکترونیکی نشان می‌دهد طرفین می‌خواهند بدون تشریفات سیاسی سنگین، توافق را سریع نهایی کنند.\n\n\n\nتحلیل پارمان:\n\nصرف مطرح شدن امضای الکترونیکی خود یک پیام روشن دارد: رژیم می‌خواهد توافق را با کمترین هزینه روانی و تبلیغاتی داخلی انجام دهد. این نشان می‌دهد جمهوری اسلامی حتی از نمایش علنی عقب‌نشینی خود نیز می ترسد.",
+    "transcript_char_count": 677,
     "token_name": "project-1",
     "attempt": 1
   },
   "response": {
     "success": true,
     "error": null,
-    "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\telegram\\parts\\part-01\\narration\\0002.wav",
-    "wav_size_bytes": 2630444,
+    "wav_path": "C:\\Users\\Public\\Myapps\\AminVC\\storage\\projects\\akhbar\\parts\\25850324\\narration\\0002.wav",
+    "wav_size_bytes": 3166124,
     "mime_type": "audio/l16; rate=24000; channels=1",
-    "audio_bytes": 2630400,
-    "timestamp": 1781029424.5862484
+    "audio_bytes": 3166080,
+    "timestamp": 1781437069.0296962
   }
 }

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-06-13T08:53:06.222103+00:00",
+  "provider": "google_gemini",
+  "endpoint": "models/gemini-3.1-flash-tts-preview:generateContent",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "token_name": "project-5",
+  "attempt_number": 5,
+  "text_length": 3497,
+  "elapsed_ms": 4937.51,
+  "success": true,
+  "status_code": 200,
+  "google_error_status": null,
+  "google_error_message": null,
+  "token_switch_reason": null,
+  "request_id": null,
+  "chunk_id": 8,
+  "intake_id": "narration",
+  "fail_fast": true,
+  "http_timeout_ms": 10500
+}
