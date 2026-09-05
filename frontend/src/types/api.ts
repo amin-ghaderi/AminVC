@@ -207,6 +207,12 @@ export interface ApiErrorBody {
   error: string
 }
 
+export interface AgentStatus {
+  device_id: string
+  online: boolean
+  last_seen: string | null
+}
+
 export type ChunkQuality = 600 | 700 | 800 | 900 | 1000
 
 export const CHUNK_QUALITY_OPTIONS: ChunkQuality[] = [

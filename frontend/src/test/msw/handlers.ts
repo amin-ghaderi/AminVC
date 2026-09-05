@@ -217,6 +217,13 @@ export const handlers = [
     workerStatus = { ...workerStatus, running: false, state: 'STOPPED' }
     return HttpResponse.json({ status: 'stopped' })
   }),
+  http.get('/agent/status/:deviceId', ({ params }) =>
+    HttpResponse.json({
+      device_id: String(params.deviceId),
+      online: false,
+      last_seen: null,
+    }),
+  ),
   ...queueMonitorHandlers,
   ...buildManagerHandlers,
   ...workspaceHandlers,

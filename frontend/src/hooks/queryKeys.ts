@@ -10,6 +10,9 @@ export const queryKeys = {
     status: ['worker'] as const,
     statusMonitor: ['worker-status'] as const,
   },
+  agent: {
+    status: (deviceId: string) => ['agent-status', deviceId] as const,
+  },
   queue: {
     snapshot: ['queue', 'snapshot'] as const,
     jobs: ['queue-jobs'] as const,

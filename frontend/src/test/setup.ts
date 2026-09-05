@@ -44,5 +44,8 @@ function polyfillDomRange() {
 polyfillDomRange()
 
 beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
-afterEach(() => server.resetHandlers())
+afterEach(() => {
+  server.resetHandlers()
+  localStorage.removeItem('aminvc_device_id')
+})
 afterAll(() => server.close())

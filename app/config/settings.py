@@ -77,4 +77,7 @@ class AppSettings:
     narration_timeout_seconds: int = 30
     narration_poll_interval_seconds: float = 2.0
     auto_start_worker: bool = True
+    agent_cloud_url: str = ""
+    agent_heartbeat_interval_seconds: float = 10.0
+    agent_device_id_path: Path = STORAGE_ROOT / "agent" / "device_id"
 

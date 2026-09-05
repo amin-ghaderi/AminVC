@@ -17,9 +17,32 @@ async def _lifespan(app: FastAPI):
     services: ApplicationServices = app.state.services
     if services.settings.auto_start_worker:
         services.worker.start()
+    heartbeat = _maybe_start_heartbeat(services)
+    app.state.heartbeat = heartbeat
     yield
+    if heartbeat is not None:
+        heartbeat.stop()
     if services.worker.is_running():
         services.worker.stop()
+
+
+def _maybe_start_heartbeat(services: ApplicationServices):
+    import os
+
+    from app.agent.device_id import load_or_create_device_id
+    from app.agent.heartbeat import AgentHeartbeatService
+
+    settings = services.settings
+    cloud_url = settings.agent_cloud_url or os.environ.get(
+        "AMINVC_AGENT_CLOUD_URL",
+        "",
+    ).strip()
+    if not cloud_url:
+        return None
+    device_id = load_or_create_device_id(settings.agent_device_id_path)
+    service = AgentHeartbeatService(settings, device_id, cloud_url=cloud_url)
+    service.start()
+    return service
 
 
 def create_app(services: ApplicationServices | None = None) -> FastAPI:

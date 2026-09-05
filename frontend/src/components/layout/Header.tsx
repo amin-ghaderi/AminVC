@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+import { AgentStatusWidget } from '@/components/layout/AgentStatusWidget'
 import { QueueWidget } from '@/components/layout/QueueWidget'
 import { WorkerWidget } from '@/components/layout/WorkerWidget'
 import { useUiStore } from '@/store/uiStore'
@@ -25,6 +26,7 @@ export function Header() {
         ) : null}
       </div>
       <div className="flex items-center gap-3">
+        <AgentStatusWidget />
         <WorkerWidget />
         <QueueWidget />
       </div>

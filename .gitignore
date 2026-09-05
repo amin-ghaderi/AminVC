@@ -28,6 +28,9 @@ temp/
 logs/
 *.log
 
+# Local agent identity (Phase 1 heartbeat)
+storage/agent/
+
 # OS
 .DS_Store
 Thumbs.db
