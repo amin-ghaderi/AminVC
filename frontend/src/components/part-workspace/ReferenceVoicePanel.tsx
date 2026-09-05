@@ -5,7 +5,6 @@ import { deleteReferenceAudio, referenceAudioUrl, uploadReferenceAudio } from '@
 import { ApiError } from '@/api/client'
 import { Button } from '@/components/ui/button'
 import { useToast } from '@/components/shared/ToastProvider'
-import { queryKeys } from '@/hooks/queryKeys'
 import type { Part } from '@/types/api'
 
 function formatBytes(size: number): string {

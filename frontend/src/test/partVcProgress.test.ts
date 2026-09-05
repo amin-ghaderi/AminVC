@@ -1,12 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
 import {
-  averageSegmentDuration,
   calculateChunkEtaSeconds,
   completedSegmentDurationsForChunk,
   computePartVcProgress,
-  dedupeVcCompletionDurations,
-  remainingVcChunksAfterCurrent,
 } from '@/lib/partVcProgress'
 import { hasSegmentProgress, parseVcProgressPayload } from '@/lib/vcProgress'
 import type { EventEnvelope, PartSummary } from '@/types/api'
